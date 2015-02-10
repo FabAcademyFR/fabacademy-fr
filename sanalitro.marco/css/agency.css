@@ -268,7 +268,7 @@ header {
     text-align: center;
     color: #fff;
     background-attachment: scroll;
-    Background: rgba(44,62,80,150); -----modificato---------
+    Background-IMAGE: url(../img/BP.jpg); rgba(44,62,80,150); <<<<<<-----mod---------
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
