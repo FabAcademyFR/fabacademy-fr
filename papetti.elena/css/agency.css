@@ -6,19 +6,19 @@
 
 body {
     overflow-x: hidden;
-    font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family:"Construthinvism", Roboto Slab,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
 .text-muted {
-    color: #777;
+    color: #000;
 }
 
 .text-primary {
-    color: #fed136;
+    color: #999999;
 }
 
 p {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.75;
 }
 
@@ -35,14 +35,14 @@ a.active {
 }
 
 a {
-    color: #fed136;
+    color: #428bca;
 }
 
 a:hover,
 a:focus,
 a:active,
 a.active {
-    color: #fec503;
+    color: #428bca;
 }
 
 h1,
@@ -52,8 +52,8 @@ h4,
 h5,
 h6 {
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
+    font-family: "Construthinvism";
+    font-weight: 200;
 }
 
 .img-centered {
@@ -71,8 +71,8 @@ h6 {
 .btn-primary {
     border-color: #fed136;
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
+    font-family: "Construthinvism",Helvetica,Arial,sans-serif;
+    font-weight: 100;
     color: #fff;
     background-color: #fed136;
 }
@@ -119,14 +119,14 @@ fieldset[disabled] .btn-primary.active {
 
 .btn-xl {
     padding: 20px 40px;
-    border-color: none; #fed136;
+    border-color:  #000;
     border-radius: 3px;
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Construthinvism", Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
     font-size: 18px;
-    font-weight: 700;
-    color: #fff;
-    background-color: none; #fed136;
+    font-weight: 50;
+    color: #000;
+    background-color: none;
 }
 
 .btn-xl:hover,
@@ -134,9 +134,9 @@ fieldset[disabled] .btn-primary.active {
 .btn-xl:active,
 .btn-xl.active,
 .open .dropdown-toggle.btn-xl {
-    border-color: #f6bf01;
-    color: #fff;
-    background-color: #fec503;
+    border-color: #999999;
+    color: #999999;
+    background-color: #fff;
 }
 
 .btn-xl:active,
@@ -175,7 +175,7 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .navbar-default .navbar-brand {
-    font-family: "construthinvism","Helvetica Neue",Helvetica,Arial,cursive;
+    font-family: "Construthinvism",Helvetica Neue,Helvetica,Arial,cursive;
     color: #fff;    fed136;
 }
 
@@ -183,7 +183,7 @@ fieldset[disabled] .btn-xl.active {
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:active,
 .navbar-default .navbar-brand.active {
-    color: #00ffff; fec503;
+    color: #999999; fec503;
 }
 
 .navbar-default .navbar-collapse {
@@ -191,8 +191,8 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .navbar-default .navbar-toggle {
-    border-color: #fed136;
-    background-color: #fed136;
+    border-color: #999999;
+    background-color: #999999;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
@@ -201,13 +201,13 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-    background-color: #fed136;
+    background-color: #999999;
 }
 
 .navbar-default .nav li a {
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 400;
+    font-family: "Construthinvism",Helvetica,Arial,sans-serif;
+    font-weight: 100;
     letter-spacing: 1px;
     color: #fff;
 }
@@ -215,19 +215,19 @@ fieldset[disabled] .btn-xl.active {
 .navbar-default .nav li a:hover,
 .navbar-default .nav li a:focus {
     outline: 0;
-    color: #fed136;
+    color: #999999;
 }
 
 .navbar-default .navbar-nav>.active>a {
     border-radius: 0;
     color: #fff;
-    background-color: #fed136;
+    background-color: #000;
 }
 
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>.active>a:focus {
     color: #fff;
-    background-color: #fec503;
+    background-color: #000;
 }
 
 @media(min-width:768px) {
@@ -263,9 +263,9 @@ fieldset[disabled] .btn-xl.active {
 
 header {
     text-align: center;
-    color: #fff;
+    color: #000;
     background-attachment: scroll;
-    background-image: url(../img/header-bg.jpg);
+    background-image:  url(../img/header-bg.jpg)
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
@@ -281,42 +281,42 @@ header .intro-text {
 
 header .intro-text .intro-lead-in {
     margin-bottom: 25px;
-    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Construthinvism",Droid Serif,Helvetica,Arial,sans-serif;
     font-size: 22px;
-    font-style: italic;
+    font-style: normal;
     line-height: 22px;
 }
 
 header .intro-text .intro-heading {
     margin-bottom: 25px;
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Construthinvism",Helvetica,Arial,sans-serif;
     font-size: 50px;
-    font-weight: 700;
+    font-weight: 300;
     line-height: 50px;
 }
 
 @media(min-width:768px) {
     header .intro-text {
-        padding-top: 300px;
+        padding-top: 110px;
         padding-bottom: 200px;
     }
 
     header .intro-text .intro-lead-in {
         margin-bottom: 25px;
-        font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-size: 40px;
-        font-style: italic;
+        font-family: "Construthinvism",Droid Serif,Helvetica Neue,Helvetica,Arial,sans-serif;
+        font-size: 30px;
+        font-style: normal;
         line-height: 40px;
     }
 
     header .intro-text .intro-heading {
         margin-bottom: 50px;
         text-transform: uppercase;
-        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-size: 75px;
-        font-weight: 700;
-        line-height: 75px;
+        font-family:"Construthinvism",Helvetica,Arial,sans-serif;
+        font-size: 40px;
+        font-weight: 100;
+        line-height: 60px;
     }
 }
 
@@ -333,9 +333,9 @@ section h2.section-heading {
 section h3.section-subheading {
     margin-bottom: 75px;
     text-transform: none;
-    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Construthinvism", Droid Serif,Helvetica Neue,Helvetica,Arial,sans-serif;
     font-size: 16px;
-    font-style: italic;
+    font-style: none;
     font-weight: 400;
 }
 
@@ -412,9 +412,9 @@ section h3.section-subheading {
 
 #portfolio .portfolio-item .portfolio-caption p {
     margin: 0;
-    font-family: "construthinvism","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Construthinvism",Helvetica Neue,Helvetica,Arial,sans-serif;
     font-size: 16px;
-    font-style: italic;
+    font-style: normal;
 }
 
 #portfolio * {
@@ -573,7 +573,7 @@ section h3.section-subheading {
     .timeline>li.timeline-inverted>.timeline-panel {
         float: right;
         padding: 0 30px 20px 20px;
-        text-align: left;
+        text-align: justify;
     }
 }
 
@@ -605,7 +605,7 @@ section h3.section-subheading {
 
 @media(min-width:1200px) {
     .timeline>li {
-        min-height: 170px;
+        min-height: 300px;
     }
 
     .timeline>li .timeline-panel {
@@ -613,9 +613,9 @@ section h3.section-subheading {
     }
 
     .timeline>li .timeline-image {
-        width: 170px;
-        height: 170px;
-        margin-left: -85px;
+        width: 250px;
+        height: 250px;
+        margin-left: -400px;
     }
 
     .timeline>li .timeline-image h4 {
@@ -627,94 +627,9 @@ section h3.section-subheading {
     }
 }
 
-.team-member {
-    margin-bottom: 50px;
-    text-align: center;
-}
 
-.team-member img {
-    margin: 0 auto;
-    border: 7px solid #fff;
-}
 
-.team-member h4 {
-    margin-top: 25px;
-    margin-bottom: 0;
-    text-transform: none;
-}
 
-.team-member p {
-    margin-top: 0;
-}
-
-aside.clients img {
-    margin: 50px auto;
-}
-
-section#contact {
-    background-color: #222;
-    background-image: url(../img/map-image.png);
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-section#contact .section-heading {
-    color: #fff;
-}
-
-section#contact .form-group {
-    margin-bottom: 25px;
-}
-
-section#contact .form-group input,
-section#contact .form-group textarea {
-    padding: 20px;
-}
-
-section#contact .form-group input.form-control {
-    height: auto;
-}
-
-section#contact .form-group textarea.form-control {
-    height: 236px;
-}
-
-section#contact .form-control:focus {
-    border-color: #fed136;
-    box-shadow: none;
-}
-
-section#contact::-webkit-input-placeholder {
-    text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
-    color: #bbb;
-}
-
-section#contact:-moz-placeholder {
-    text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
-    color: #bbb;
-}
-
-section#contact::-moz-placeholder {
-    text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
-    color: #bbb;
-}
-
-section#contact:-ms-input-placeholder {
-    text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
-    color: #bbb;
-}
-
-section#contact .text-danger {
-    color: #e74c3c;
-}
 
 footer {
     padding: 25px 0;
@@ -724,7 +639,7 @@ footer {
 footer span.copyright {
     text-transform: uppercase;
     text-transform: none;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family:"Construthinvism",Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
     line-height: 40px;
 }
 
@@ -732,7 +647,7 @@ footer ul.quicklinks {
     margin-bottom: 0;
     text-transform: uppercase;
     text-transform: none;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Construthinvism", Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
     line-height: 40px;
 }
 
@@ -749,7 +664,7 @@ ul.social-buttons li a {
     line-height: 40px;
     outline: 0;
     color: #fff;
-    background-color: #222;
+    background-color: #000;
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     transition: all .3s;
@@ -758,7 +673,7 @@ ul.social-buttons li a {
 ul.social-buttons li a:hover,
 ul.social-buttons li a:focus,
 ul.social-buttons li a:active {
-    background-color: #fed136;
+    background-color: #999999;
 }
 
 .btn:focus,
@@ -851,7 +766,7 @@ ul.social-buttons li a:active {
 
 ::selection {
     text-shadow: none;
-    background: #fed136;
+    background: #000;
 }
 
 img::selection {

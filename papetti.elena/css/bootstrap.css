@@ -1074,7 +1074,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family:"Construthinvism", Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
@@ -1287,7 +1287,7 @@ p {
 }
 @media (min-width: 768px) {
   .lead {
-    font-size: 21px;
+    font-size: 14px;
   }
 }
 small,
@@ -1511,7 +1511,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: "Construthinvism", Menlo, Monaco, Consolas, Courier New, monospace;
 }
 code {
   padding: 2px 4px;
