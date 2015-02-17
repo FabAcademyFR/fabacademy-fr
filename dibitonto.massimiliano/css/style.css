@@ -781,6 +781,11 @@
 				background-color: #81918E;
 				background-image: url('../images/b_papera.jpg');
 			}
+			#main > section.danbo
+			{
+				background-color: #81918E;
+				background-image: url('../images/banner_danbo.jpg');
+			}
 
 			#main > section.two
 			{

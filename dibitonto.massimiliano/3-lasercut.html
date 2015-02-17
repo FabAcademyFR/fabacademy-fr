@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>How to make [almost] everything</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Massimiliano Dibitonto, Fablab 2015 project and assignments portfolio" />
+		<meta name="keywords" content="fablab, makers, fabacademy" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.scrolly.min.js"></script>
+		<script src="js/jquery.scrollzer.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<div id="header" class="skel-layers-fixed">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar48"><img src="images/profilo.jpg" alt="" /></span>
+							<h1 id="title">Massimiliano</h1>
+							<h1 id="title">Dibitonto</h1>
+							<p>How to make [almost] everything</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<!--
+							
+								Prologue's nav expects links in one of two formats:
+								
+								1. Hash link (scrolls to a different section within the page)
+								
+								   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
+
+								2. Standard link (sends the user to another page/site)
+
+								   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
+							
+							-->
+							<ul>
+								<li><a href="index.html" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Home</span></a></li>
+								</ul>
+						</nav>
+						
+				</div>
+				
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<li><a href="mailto:max.dbt@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+				
+				</div>
+			
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="danbo dark cover" >
+						<div class="container">
+
+							<header>
+								<h2> <strong> 3 - Computer-Controlled Cutting </strong> </h2>
+							
+							</header>
+							
+
+						</div>
+					</section>
+							
+					<section id="about" class="two">
+						<div class="container">
+						
+							<header>
+								<h3>Intro </h3>
+							</header>
+							<p> The assignment of the second week was get familiar with Computer Controlled Cutting using a lasercut to make a press fit construction kit. </p>
+						<header>
+								<h3>Making a press-fit construction kit</h3>
+							</header>
+							<p>As I’m a beginner with CAD and 3d modeling I tried some interesting tools that help to make things that can be complex at the beginning.
+A very nice software is 123D Make that transforms 3D models in constructions kit for laser cutter. I attended also a webinar about Grassopper held by my FabAcademy tutor Aldo Sollazzo and Efilena Baseta. It’s a very powerful tool for parametric and generative design, however I need a little bit of practice to get good results.
+I tried also some software to make press fit boxes
+<a href="http://boxmaker.connectionlab.org/"> boxmaker</a> is a web app that exports pdf that could be edited to make layers and other customizations.
+<a href="http://www.makercase.com/">makercase</a> helps make boxes too and allows to choose between different joints type, you can write on the box’s faces and assign different colors to the lines to help setting up the cutter. It exports in svg format.
+There is also an extension for Inkscape <a href="http://www.keppel.demon.co.uk/111000/111000.html">extension for Inkscape</a> but has only 1 type of joints.
+However I decide to make it in Rhino as I'm practicing that software also for 3D modelling .
+I decided to start with an easy project: make some characters (that look like a Danbo) that can be customized by swapping modular pieces (at the beginning I choose to change the face. </p>
+As this week I have some problems to go the the Fablab I used a 40 W Full Spectrum laser Cutter 20"x12". Due to the dimensions I had to choose to make everything in a small scale. Moreover an annoying thing is that the printer accepts only bmp and xps (Microsoft propietary) formats. 
+The first challenge was to choose the right way to join pieces making also some experiment to check the right measure. Indeed the laser burns at least 0,1 mm and it should be considered to make the join snap correctly.
+As the cardboard is 2,5 mm thick I made a 2.5 , 2.45 and 2.4 holes. The 2.4 worked fine.
+</p><p><img src="images/firstpiece.jpg"> </p><p>This was my first test piece</p><p>I noticed that, even if in Rhino the drawing is clear, seems that the printer sees more lines. Thus makes the printer cut twice the same piece, consuming too much material. Probably this is caused by the different steps I have to do to convert the file. However i solved just calibrating the power and the speed. </p>
+<p>This is the result</p><p><img src="images/twodanbo.jpg">    <img src="images/threedanbo.jpg"></p><p>And the slices</p><p><img src="images/slices_danbo.png"></p><p>Red is only for the engrave, green for the inner cut and purple for the outer ones. </p><p> Moreover I made some paper dresses for the characters</p> <p>Here's the final output and the dresses</p><p><img src="images/dressed.jpg">    <img src="images/dressed-slices.jpg"></p>
+
+
+</div>
+						
+					</section>
+				
+		
+			
+				
+			
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+				
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy;  <img src="images/license.png" alt="" /> Attribution, non-commercial, share alike.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				
+			</div>
+
+	</body>
+</html>
