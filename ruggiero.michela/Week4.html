@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Week 3</title>
+    <title>Week 4</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -80,9 +80,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Week 3</h2>
+                    <h2 class="section-heading">Week 4</h2>
                     
-                    <h3 class="section-subheading text-muted"> computer-controlled cutting </h3>
+                    <h3 class="section-subheading text-muted"> Electronics Production </h3>
                 </div>
             </div>
                <hr class="featured-divider">
@@ -91,88 +91,64 @@
 	<!-- First Featured -->
         <div class="featured" id="about">
            
-            <div><h2 class="featured-heading">SLICES</h2></div>
+            <div><h2 class="featured-heading">CIRCUITS</h2></div>
            
-            <p class="lead">Computer-controlled cutting.</p>
+            <p class="lead">PCB fabrication</p>
             
-            <p class="lead">The third task is to design, make and record the construction</p>
+            <p class="lead">This assignment is about to make the FabISP in-circuit programmer. The FabISP is an in-system programmer for AVR microcontrollers. That allows you to program the microcontrollers on other boards using a USB cable and 6-pin IDC to 6-pin IDC cable. We will be using these programmers through the semester to program the other boards we create.</p>
          
-            <p class="lead">Problem n.1: I have never used a laser cutter.
-<br/>Problem n.2: material
-<br/>Problem n.3: dimensions / weight</p>
- <p class="lead">To reach the goal I DECIDED to design a lamp.
-I used "Rhinoceros", to shape the lamp and to check joints, I choose "Illustrator" to create a useful file.</p>
-<p class="lead">The material we can use is a honeycomb cardboard (1300x900x2,5).
-A very versatile material, but with different behaviors depending of the cut, so I chose to use curved cuts.</p>
-<p class="lead">Design idea was born from the simple act of slicing a pear.</p>
-            
-            <img class="featured-image  img-responsive pull-center" src="img/week3/pera.jpg">
+            <p class="lead">Tools:
+<br/>Roland MonoFab SRM20,  1/64 "(engraving) e 1/32" (cutting) frese, and copper plate.</p>
+ <p class="lead">1 Steps: Milling the board </p>
+<p class="lead">For milling the board we used the Roland MonoFab SRM20 and the Fab Modules, we placed a sacrifical level before starting work, and I glued the board in the milling machine with double sided tape to keep the model from moving in the milling machine.</p>
+            <img class="featured-image  img-responsive pull-center" src="img/week4/engraving.jpg">
             <!-- < img src="i1.jpg" style="margin-bottom: 5px" /><br/> 
 < img src="i2.jpg" /> -->
             <br/>
-            <p class="lead">SOFTWARE
-<br/>Rhino 3D: to develop forms, and to create joints.
-<br/>Illustrator: to convert files in the right format for the Laser cut.</p>
+    <p class="lead">Instructions:
+<br/>- We turned on the machine for the heating, at least for 20 minutes
+<br/>- We set the 1/64"  tip in the machine, we set X /Y axesas  0.0 and then Z.
+<br/>- When the machine was ready, we opened Fab Modules on terminal and on the new window we selected the endmill settings as 1/64". We clicked on the “load button” and we selected my file (miky.ISP.44.traces.png) and we set the machine type as SRM20. We sent.
+<br/>- To cut the board we usually need 1/32th n-mill, we changed the drill tool to the 1/32" on the Mondela, and selected the endmill settings as 1/32", We set the z origin, loosen the set screw and pushed the bit all the way onto the copper. Tighten the screw.
+<br/>- We clicked on the “load button” and we selected my file (miky.ISP.44.interior.png)  and we set the machine type as SRM20. We sent</p>
             <br/>
-            
-            <p><img class="featured-image  img-responsive pull-center" src="img/week3/step1.jpg"></p>
+	<p class="lead">2 Steps: Soldering the board </p>
+            <p><img class="featured-image  img-responsive pull-center" src="img/week4/soldering.jpg"></p>
             <br/>
-            
-            <p class="lead">FABRICATION PROCESS
-<br/>The lamp consists of 12 vertical slabs, and 9 horizontal.</p>
+<p class="lead">Components:
+<br/>. 1 ATTiny 44 microcontroller
+<br/>. 1 Capacitor 1uF
+<br/>. 2 Capacitor 10 pF 
+<br/>. 2 Resistor 100 ohm
+<br/>. 1 Resistor 499 ohm
+<br/>. 1 Resistor 1K ohm
+<br/>. 1 Resistor 10K
+<br/>. one 6 pin header
+<br/>. 1 USB connector
+<br/>. 2 jumpers - 0 ohm resistors
+<br/>. 1 Cystal 20MHz
+<br/>. two Zener Diode 3.3 V
+<br/>. one usb mini cable
+<br/>. one ribbon cable
+<br/>. two 6 pin connectors</p>
+           <br/>
+	<p class="lead">- We downloaded the FabISP labeled board diagram, so we could see where to place the components on the board, and we we soldered the components to the board using a soldering iron and solder.</p>
+	<br/>
+	<p class="lead">-The first day of soldering I had problems, because my solder did not work. On the second attempt I managed to finish the PCB.</p>
+            <br/>
+            <p class="lead">- We checked the connections with the multimeter to make sure that power and ground were not connected and there was not a short on the power line.
+I did the "smoke test". Plug the FabISP into your computer via the mini USB cable. Install the necessary software for AVR programming, the ATtiny44</p>
              <br/>
-            
-            <p><img class="featured-image  img-responsive pull-center" src="img/week3/step2.jpg"></p>
-            <br/>
-              <p><img class="featured-image  img-responsive pull-center" src="img/week3/step3.jpg"></p>
-            <br/>
-              <p><img class="featured-image  img-responsive pull-center" src="img/week3/step4.jpg"></p>
-            <br/>
-	<p class="lead">ADVICE and SETTINGS (for laser cutting)
-	<br/>I use:  Speed 200, Power cut 26, Power corners and curves 11.</p>
+             <p class="lead">TIPS:
              <br/>
-              <p><img class="featured-image  img-responsive pull-center" src="img/week3/step5.jpg"></p>
-            <br/>
-            <p class="lead">ASSEMBLY PROCESS
-	<br/>I took the socket, the electric cable, the switch, purposely bought, and I assembled the support for electricity. I joined it with the first horizontal ring and I started to assemble vertical slats.</p>
-             <br/>
-             <p class="lead">P.S.: Friday, ready for the first test, the machine got crazy and did not cut. We decided to insist on Saturday, and at 18pm we found the way. We managed to cut one layer at time.</p>
+             <p class="lead">I advise to settle first the USB and microcontroller and then the rest. Soldered these two elements, you can say that you job is finished.
+<br/>Carefully check the direction of the microcontroller, and the polarity of the diodes.
+Copper is an excellent tool to remove tin in excess.</p>
           </div>
-<br/>
-             <p class="lead">PHOTOGRAPHIC DOCUMENTATION</p>
           </div>
           <br/>
-          <p><img class="featured-image  img-responsive pull-center" src="img/week3/1.jpg"></p>
-           <br/>
-          <p><img class="featured-image  img-responsive pull-center" src="img/week3/2.jpg"></p> 
-          <br/>
-          <p><img class="featured-image  img-responsive pull-center" src="img/week3/3.jpg"></p> 
-          <br/>
-          <p><img class="featured-image  img-responsive pull-center" src="img/week3/4.jpg"></p> 
-          <br/>
-          <p><img class="featured-image  img-responsive pull-center" src="img/week3/5.jpg"></p> 
-          <br/>
-          <p><img class="featured-image  img-responsive pull-center" src="img/week3/6.jpg"></p> 
-          <br/>
-          <p><img class="featured-image  img-responsive pull-center" src="img/week3/7.jpg"></p> 
-          <br/>
-          <p><img class="featured-image  img-responsive pull-center" src="img/week3/8.jpg"></p> 
-          <br/>
-          <p><img class="featured-image  img-responsive pull-center" src="img/week3/9.jpg"></p> 
-          <br/>
-          <p><img class="featured-image  img-responsive pull-center" src="img/week3/10.jpg"></p> 
-          <br/>
-          <p><img class="featured-image  img-responsive pull-center" src="img/week3/11.jpg"></p>
-           <br/>
-          <p><img class="featured-image  img-responsive pull-center" src="img/week3/13.jpg"></p>
-           <br/>
-          <p><img class="featured-image  img-responsive pull-center" src="img/week3/14.jpg"></p>
-           <br/>
-          <p><img class="featured-image  img-responsive pull-center" src="img/week3/15.jpg"></p>
-           <br/>
-          <p><img class="featured-image  img-responsive pull-center" src="img/week3/17.jpg"></p>
-           <br/>
-          <p><img class="featured-image  img-responsive pull-center" src="img/week3/18.jpg"></p>
+         
+      </p>
            
         <hr class="featured-divider">
         <div class="featured" id="about">
