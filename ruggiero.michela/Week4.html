@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Week 4</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/agency.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="index.html"><strong>Home
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="index.html">about me</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#index.html">portfolio</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#index.html">my vision</a>
+                    </li>
+                   
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+        
+    </nav> 
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Week 4</h2>
+                    
+                    <h3 class="section-subheading text-muted"> Electronics Production </h3>
+                </div>
+            </div>
+               <hr class="featured-divider">
+               
+                    
+	<!-- First Featured -->
+        <div class="featured" id="about">
+           
+            <div><h2 class="featured-heading">CIRCUITS</h2></div>
+           
+            <p class="lead">PCB fabrication</p>
+            
+            <p class="lead">This assignment is about to make the FabISP in-circuit programmer. The FabISP is an in-system programmer for AVR microcontrollers. That allows you to program the microcontrollers on other boards using a USB cable and 6-pin IDC to 6-pin IDC cable. We will be using these programmers through the semester to program the other boards we create.</p>
+         
+            <p class="lead">Tools:
+<br/>Roland MonoFab SRM20,  1/64 "(engraving) e 1/32" (cutting) frese, and copper plate.</p>
+ <p class="lead">1 Steps: Milling the board </p>
+<p class="lead">For milling the board we used the Roland MonoFab SRM20 and the Fab Modules, we placed a sacrifical level before starting work, and I glued the board in the milling machine with double sided tape to keep the model from moving in the milling machine.</p>
+            <img class="featured-image  img-responsive pull-center" src="img/week4/engraving.jpg">
+            <!-- < img src="i1.jpg" style="margin-bottom: 5px" /><br/> 
+< img src="i2.jpg" /> -->
+            <br/>
+    <p class="lead">Instructions:
+<br/>- We turned on the machine for the heating, at least for 20 minutes
+<br/>- We set the 1/64"  tip in the machine, we set X /Y axesas  0.0 and then Z.
+<br/>- When the machine was ready, we opened Fab Modules on terminal and on the new window we selected the endmill settings as 1/64". We clicked on the “load button” and we selected my file (miky.ISP.44.traces.png) and we set the machine type as SRM20. We sent.
+<br/>- To cut the board we usually need 1/32th n-mill, we changed the drill tool to the 1/32" on the Mondela, and selected the endmill settings as 1/32", We set the z origin, loosen the set screw and pushed the bit all the way onto the copper. Tighten the screw.
+<br/>- We clicked on the “load button” and we selected my file (miky.ISP.44.interior.png)  and we set the machine type as SRM20. We sent</p>
+            <br/>
+	<p class="lead">2 Steps: Soldering the board </p>
+            <p><img class="featured-image  img-responsive pull-center" src="img/week4/soldering.jpg"></p>
+            <br/>
+<p class="lead">Components:
+<br/>. 1 ATTiny 44 microcontroller
+<br/>. 1 Capacitor 1uF
+<br/>. 2 Capacitor 10 pF 
+<br/>. 2 Resistor 100 ohm
+<br/>. 1 Resistor 499 ohm
+<br/>. 1 Resistor 1K ohm
+<br/>. 1 Resistor 10K
+<br/>. one 6 pin header
+<br/>. 1 USB connector
+<br/>. 2 jumpers - 0 ohm resistors
+<br/>. 1 Cystal 20MHz
+<br/>. two Zener Diode 3.3 V
+<br/>. one usb mini cable
+<br/>. one ribbon cable
+<br/>. two 6 pin connectors</p>
+           <br/>
+	<p class="lead">- We downloaded the FabISP labeled board diagram, so we could see where to place the components on the board, and we we soldered the components to the board using a soldering iron and solder.</p>
+	<br/>
+	<p class="lead">-The first day of soldering I had problems, because my solder did not work. On the second attempt I managed to finish the PCB.</p>
+            <br/>
+            <p class="lead">- We checked the connections with the multimeter to make sure that power and ground were not connected and there was not a short on the power line.
+I did the "smoke test". Plug the FabISP into your computer via the mini USB cable. Install the necessary software for AVR programming, the ATtiny44</p>
+             <br/>
+             <p class="lead">TIPS:
+             <br/>
+             <p class="lead">I advise to settle first the USB and microcontroller and then the rest. Soldered these two elements, you can say that you job is finished.
+<br/>Carefully check the direction of the microcontroller, and the polarity of the diodes.
+Copper is an excellent tool to remove tin in excess.</p>
+          </div>
+          </div>
+          <br/>
+         
+      </p>
+           
+        <hr class="featured-divider">
+        <div class="featured" id="about">
+             <!--
+             <img class="featured-image  img-responsive pull-right" src="img/week2/concept.png">
+             -->
+        				<!--
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/agency.js"></script>
+
+</body>
+
+</html>
+
