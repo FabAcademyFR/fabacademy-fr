@@ -119,6 +119,26 @@
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/week3.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/week5.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
                     <a href="#portfolioModalCW" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
@@ -278,11 +298,12 @@
                     </div>
                 </div>
             </div>
+
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>WEEK 1</h2>
+                            <h2>WEEK 2</h2>
                             <hr class="star-primary">
                             <img src="img/portfolio/week2.png" class="img-responsive img-centered" alt="">
                             <p>In the Week#2 I designed the 3d model of my instrument. I started using the software I already knew, THINKERCAD, realizing the esagonal model with a command console on top and the speaker on bottom and the holes fort the sensors on each side, and the table in which the instrument could be inserted.</p>
@@ -310,7 +331,156 @@
                 </div>
             </div>
         </div>
-    </div><div class="portfolio-modal modal fade" id="portfolioModalCW" tabindex="-1" role="dialog" aria-hidden="true">
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>WEEK 3</h2>
+                            <hr class="star-primary">
+                            <img src="img/portfolio/week3.png" class="img-responsive img-centered" alt="">
+                            <p>During this third week assignment, I started to learn a nice software I never used before as Rhinoceros. At the same time, I cut with a lasercutter for the first time in my life. 
+                               
+<br>
+<br>
+DESIGN with RHINOCEROS <br>
+I decided to draw a press fit model of my final project, as it means an hexagonal box with 6 hollowed side faces and a loudspeaker at bottom.
+<br> <a href = "http://www.thingiverse.com/thing:707372">File Sources and some images on thingiverse
+</a> <br>
+At first I designed the box without loudspeaker. To render the sticking out corners, I planned to fit every face up and down beneath two rectangle 2 cm far from the hexagons edge, and to connect each couple of sides using as joint 6 rectangular corner tile fixed at hexagons corner. 
+<br>
+<img src="img/speaker.jpg" class="img-responsive img-centered" alt=""> 
+Then I decided to realize the loudspeaker model too, using 6 concentric circles, 7 counting the circle in the middle of the base, each of them 1 cm above and 2 cm of diameter bigger than the next one. 
+With the aim to fasten more as possible the box, I chose to insert the 6 friction point to fit the 6 circles at the 6 corner tile, adding to  them a diagonal section. 
+That was a good solution to me, even if it creates some fitting problems, because each corner tile has to be joined to other 10 pieces (2 sides, top, bottom and 6 circles). 
+<br>
+<img src="img/LC1.png" class="img-responsive img-centered" alt=""> 
+CUTTING with LASERCUTTER <br>
+As I told, I have never cut with laser before, so it was very exciting. The first step was exporting the .dxf file. 
+I had a cardboard sheet 1.2 x 0.7 m so I placed all the pieces of the design to save space, checking if I have enough, as it was. 
+In the model I planned to cut 3 of the 6 circles directly from the bottom hexagon. 
+I learned how to save a file to lasercut it, selecting “R12 Lines & Arcs” option.
+<img src="img/modello.jpg" class="img-responsive img-centered" alt=""> 
+Using the machine was relatively easy, I mean more than a 3d printer. I imported the .dxf on the proper software and then I assigned to each form the respective color. Actually all pieces to be cut but the letters on the top hexagon. I added those letters just to experience engrave and etching, so I assigned to E the etching color and to PP the engrave. 
+Me and my mates spend an afternoon optimizing the values of speed and power to the cardboard 2.5 mm and we found out: 
+<br>
+cut 200 25 11 <br>
+engrave 300 7.5 <br>
+etching 250 5.8 5 <br>
+
+Anyway, it didn’t work as well as expected. Engrave and etching was perfect but the cut of pieces was not deeper as needed, so I had to cut a second time turning off engrave and etching. <br>
+<img src="img/LC2.jpg" class="img-responsive img-centered" alt=""> 
+
+FITTING the PIECES <br>
+To find out if the joint beneath 2 bases, 2 sides and a corner fit works good, I rendered it in 3d in Rhinoceros. 
+It was a good suggest by my tutor, but the software join the surfaces just in virtual way, I had to join them physically and it was very hard! A good experience that thought to me a lot of things about press fit planning! <img src="img/incrocio.jpg" class="img-responsive img-centered" alt=""> 
+So I needed a second person helping me to press together all pieces and parts, and a lot of time thinking the best way to join everything. <br>
+At the end, I realized I did a mistake, because was impossible join the top to the corner sliding it laterally, as I planned, but I had to press it downward, fastening it by 18 friction points. So I modified the design of the corner tiles, as we can see in the next image, and I cut them again. Then everything worked. <img src="img/errore.jpg" class="img-responsive img-centered" alt=""> 
+<br>
+To push together all pieces, follow this order: <br>
+On the hexagon base (hole in the center) join 4 corner pieces and the 3 sides between. <br>
+Then join all circles. Now join out of base the 2 corner and 3 sides left. <br>
+Then press this group of pieces all together on the base, joining the outer sides of each group too. <br>
+At last press the top hexagon to the body fastening it with 18 friction points. <br>
+<img src="img/fitting.jpg" class="img-responsive img-centered" alt=""> 
+Click on this
+<a href = "http://www.thingiverse.com/thing:707372">link
+</a> to the source files and more images on thingiverse.
+</p>
+                            <ul class="list-inline item-details">
+                                <li>Maker:
+                                    <strong>Leonardo Zaccone
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong>02/03/2015
+                                    </strong>
+                                </li>
+                                <li>FabLab:
+                                    <strong>Frosinone, Italy
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>WEEK 3</h2>
+                            <hr class="star-primary">
+                            <img src="img/portfolio/week5.png" class="img-responsive img-centered" alt="">
+                            <p>3D SCANNING 
+During this week I explored a series of 3d-scan methods to define the difference and to improve myself.
+I used in order <br>
+3dSense and his software at FabLab Giardino with my FabAcademy mates and tutor, <br>
+Kinect and skanect at my FabLab (Roma Makers) <br>
+iPhone 5 and 123D Catch at Museum Centrale MonteMartini in Rome <br>
+
+At Frosinone was just a first attempt to scan an object. I try to scan a fire estinguisher, putting it on a table in a corner of the room and moving myself around the object. I was not satisfied by the results. The main problem I found was the difficulty to walk around an object keeping always the same distance from it.<br>
+
+The day after I scanned the Robot EMILIO at FabLab Roma Makers using our Kinect. It works better, probably just because I started from my early experience. The problem here was the capture of 2 triangles in the bottom part. The angle of capture, slightly over the middle of the body, generate a blind point under those two surfaces protruding the upside down cone. So the triangles were kept as holes. I used MeshMixer to flatten the cone but the result is not so good.
+<img src="img/emilio.jpg" class="img-responsive img-centered" alt="">
+<br>
+
+The day after again I went to Centrale MonteMartini and there I used 123D Catch with my iPhone to scan some ancient roman statue here exposed between old electric machines. I chose to capture a bronze statue of Agrippina. The reason I chose to scan this statue was that it stays in a good enlightened empty wide space. So I could walk around it without obstacle, moving my body slower and firmer as possible, receiving a good light even at the back of the statue. <img src="img/Agrippina.jpg" class="img-responsive img-centered" alt=""> <br>
+
+Indeed during the earlier scanning experience I got 3 important rules about a good 3d scanning: <br>
+
+keep the same distance from the center of the object <br>
+keep the same height of the camera view <br>
+have a good light all around the object <br>
+
+clearly, when we scan moving around the object is very hard to respect all those points. <br>
+
+The capture of Agrippina Statue really satisfied me. 123D Catch works very well. I needed to kept 33 pictures around it following the slices crown and then the cloud software gives back to me the entire room with the statue in the middle. 
+I clean it around using Netfabb Basic which cuts X, Y, Z very simply and quickly, without needing to repair the model. <img src="img/AgrippinaNF.jpg" class="img-responsive img-centered" alt=""><br>
+Another nice feature of 123D Catch is that you can publish your scanning projects, with .stl and all photos you kept. Download <a href = "http://www.123dapp.com/catch/agrippina/3568806"> Agrippina files here.
+</a> 
+</p>
+                            <ul class="list-inline item-details">
+                                <li>Maker:
+                                    <strong>Leonardo Zaccone
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong>02/03/2015
+                                    </strong>
+                                </li>
+                                <li>FabLab:
+                                    <strong>Frosinone, Italy
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModalCW" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -362,7 +532,13 @@
                             <h2>Final Project</h2>
                             <hr class="star-primary">
                             <img src="img/portfolio/finalpro.png" class="img-responsive img-centered" alt="">
-                            <p>FINAL PROJECT DESCRIPTION <br> I would realize an interactive music instrument using arduino or raspberryPI to handle the interaction, and using lasercutter and 3d printing to realize the body of the instrument. I need some more time to design the intereaction between external input and sound, to decide which sensors I would use and how generate sounds. </p>
+                            <p>FINAL PROJECT DESCRIPTION <br> I would realize an interactive music instrument. I called it MODULAR ESAPURPLEPHONE because the project has been started modifying the PurplePhone, an earlier synth I realized using Arduino and a light sensor. <br>
+This project is modular because I would realize 6 input box in which you can insert an input face following an open standard I give, and every input face could be realized using a different sensor.
+For my work, I mind to realize 2 light sensor faces, 2 interactive textile faces and 2 distance sensor faces.  <br>
+I would use a Raspberry PI to handle the interaction and generate sounds using the software pure data, so the instrument could work without a laptop. Anyway I need to realize the DAC and the ADC and a system which transform every input in a MIDI output, so you can use this instrument as a MIDI control. <br>
+I designed the body of the instrument as shown in the second assignment. I mind to build it using wood and lasercutter. At the bottom I would insert a loudspeaker, so that you can use it without an external sound system.
+ </p>
+
                             <ul class="list-inline item-details">
                                 <li>Maker:
                                     <strong>Leonardo Zaccone
