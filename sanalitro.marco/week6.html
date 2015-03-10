@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Week_6</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/agency.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="index.html"> 
+                <strong>FA15 | MS<strong></a>
+                
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a class="page-scroll" href="index.html">FA15|MS</a>
+                    </li>
+                     
+                   
+                    <li>
+                        <a href="http://www.fabacademy.org/" target="_blank">FAB ACADEMY</a>
+                    </li>
+                    <li>
+                        <a href="http://officinegiardino.org/" target="_blank">FAB LAB Fr</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+  
+ 
+        <!-- /.row -->
+
+            
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div><h2 class="section-heading">Week 6</h2></div>
+                    <div>
+                      <h2 class="section-subheading text-muted">Electronics Design</h2></div><br/>
+                    
+                    <img width="1140" src="img/week6/cover6.jpg">
+                    
+                    <div></div>
+                </div>
+            </div>
+            <hr class="featurette-divider">
+            <!-- First Featurette -->
+            
+        <div class="featurette" id="about">
+            
+            
+            <img class="featurette-image img-responsive pull-right" src="img/week6/board0.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week6/board1.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week6/board2.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week6/board3.jpg">
+            
+
+            
+            <div>
+              <h2 class="featurette-heading">Redraw, add, check and make the board</h2></div>
+            <p class="lead">The assignment for this week is to produce the <a class="page-scroll" href="http://academy.cba.mit.edu/classes/embedded_programming/hello.ftdi.44.png">Hello World board</a>, adding at least a button and an LED to the original design, using some of the proposed software. Furthermore we should investigate the tools needed to simulate electronic designs.</p>
+            
+                <div class="text-muted">
+                  <h3>Re-design board</h3></div>
+            
+            <p class="lead">I use <a class="page-scroll" href="http://www.cadsoftusa.com/download-eagle/">Eagle freeware version</a> to redesign the hello board.
+To work with Fab inventory components it is necessary to download the <a class="page-scroll" href="http://academy.cba.mit.edu/2012/labs/providence/tutorials/Downloads/eagle_libraries.zip">eagle libraries</a> from Fab Lab Providence' tutorial.</p>
+
+<p class="lead"> I started studying basic tutorials of Eagle following mainly the process as the video and reading the Data Sheet of each component that interested me.</p>
+           
+            <p class="lead">After loading the library in Eagle and opening the Hello World board I started to re-design the bord:</p>
+            
+             <p class="lead">- I decided to put two LEDs 1206 (<a class="page-scroll" href="http://docs-europe.electrocomponents.com/webdocs/08b8/0900766b808b8d44.pdf">Osram Opto CHIPLED 1206 Series Red LED</a> and <a class="page-scroll" href="http://docs-europe.electrocomponents.com/webdocs/04f4/0900766b804f4bbe.pdf">Osram Opto CHIPLED 1206 Series Yellow LED</a>) and a Button (<a class="page-scroll" href="http://docs-europe.electrocomponents.com/webdocs/0912/0900766b80912216.pdf">Black Button Tactile Switch, SPST-NO 0.05 A@ 12 V dc 1.4mm</a>). After reading the Data Sheet I calculated and chose the  appropriate Resistors 1206 (I=V/R);</p> 
+             
+             <p class="lead">- I placed all the extra-components over the schematics and I assigned each net-structure to the pins of the microcontroller, to the GNR and to the VCC;</p>
+             
+             <p class="lead">- Into the board panel I distributed all the components. Then I skip and create ease connections: I have studied the connections and the components to Hello board and I tried to follow the same order to add my custom components;</p>
+
+<p class="lead">- To create the "traces.png" file I turned off all layers except for top layer into Eagle. After going to file> export> image and I chose 600 dpi resolution and I checked the button Monochrome;</p>
+
+<p class="lead">- After created my .png traces file I opened it into Photoshop and I edited cutting the extra black parts on the borders and then I added change the canvas size expanding 20px for each side of the area;</p>
+
+<p class="lead">- I Duplicated the same file and I selected the white border. Painted it black and then "select inverse" to painted the other area white.</p>
+
+<div class="text-muted">
+                  <h3>milling, soldering and testing</h3></div>
+
+<p class="lead">Using these files processed by <a class="page-scroll" href="http://fabmodules.org/">Fab Modules</a> I milled the new borad with Roland SRM-20 and then I soldered each components. Using a tester I checked the circuit and components, but not everything worked: I had to change the red LED because I burned it and re-soldered the 6 pin header.</p> 
+
+<p class="lead">Using <a class="page-scroll" href="http://fritzing.org/home/">Fritzing</a> and <a class="page-scroll" href="http://123d.circuits.io/circuits/638914-the-unnamed-circuit/edit">123D Circuits</a> I tested and simulated the circuit before building it. </p>
+
+
+<p class="lead">Programs: CS Eagle, 123D Circuits, Fritzing, Photoshop.</p> 
+<p class="lead">Machinery: Roland SRM-20.</p>
+
+<img width="1140" src="img/week6/cover6b.jpg">
+
+   
+
+         
+                        
+                                   
+              
+
+              
+                  
+           </section>
+           
+        
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; 2015, Marco Sanalitro</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="https://twitter.com/SanalitroMarco"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="https://www.facebook.com/marco.sanalitro.9"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li>arch.marco.sanalitro@gmail.com
+                        </li>
+                        
+                    </ul>
+                </div>
+             </div>
+        </div>
+    </footer>
+
+    
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/agency.js"></script>
+
+</body>
+
+</html>
