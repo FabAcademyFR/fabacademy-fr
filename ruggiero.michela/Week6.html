@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Week 6</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/agency.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="index.html"><strong>Home
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="index.html">about me</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#index.html">portfolio</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#index.html">my vision</a>
+                    </li>
+                   
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+        
+    </nav> 
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Week 6</h2>
+                    
+                    <h3 class="section-subheading text-muted"> Electronics Design </h3>
+                </div>
+            </div>
+               <hr class="featured-divider">
+               
+                    
+	<!-- First Featured -->
+        <div class="featured" id="about">
+           
+            <div><h2 class="featured-heading">ECHO HELLO</h2></div>
+            
+            <p class="lead">Assignment:
+   <br/>- Redraw the echo hello-world board,
+      <br/>- Add (at least) a button and LED (with current-limiting resistor)
+      <br/>- Check the design rules, and make it
+      <br/>
+      <br/>To redesign the weekly assignment, we have downloaded the software Eagle, and his components library.
+      </p>
+         
+            <p class="lead">DESIGN THE CIRQUIT
+
+<br/>I used Eagle to redesign the hello board. 
+ 		<p class="lead">I followed the tutorials http://academy.cba.mit.edu/content/tutorials/akf/electronics_design_eagle.html to design my circuit. Select all the components that you need from the libraries and do the schematic connecting them with "net".</p>
+ </p>
+<p class="lead">In the board view distribute the components in that way that they create easy connections. Draw the routes in my board i have used one button and one LED.</p>
+<img class="featured-image  img-responsive pull-center" src="img/week6/EAGLE.jpg">
+</p>
+<p class="lead">CREATING THE MILLING FILES
+		<br/>Hide all layers except from the top layer. Go to file> export> image, choose 500 dpi resolution and check the button Monochrome. This is the "traces.png" file. After created the png traces file edit it in Photoshop and create a border by changing the canvas size expanding it 20px for each side of the area and paint it black. Paint the rest of the area white.This is the "outside.png" file. </p>
+<br/>
+		<img class="featured-image  img-responsive pull-center" src="img/week6/fabmodules.jpg">
+		<br/>
+<p class="lead">MILLING
+	<br/>- Roland SRM-20
+	<br/>- copper plate
+	<br/>- mill out the traces of a circuit board(1/64th n-mill)
+	<br/>- cut out the board(1/32 bit) </p>
+	<img class="featured-image  img-responsive pull-center" src="img/week6/milling.jpg">
+    </p>
+            <br/>
+<p class="lead">SOLDERING
+    <p class="lead">I was involved in a domestic accident, i had a burn of II degree. In the picture you can see my left hand bandaged.</p>
+            <br/>
+            <img class="featured-image  img-responsive pull-center" src="img/week6/SEAM.jpg">
+            <br/>
+	<p class="lead">COMPONENTS
+	<br/>- 1 Capacitor 1Uf
+	<br/>- 2 Resistors 10K
+	<br/>- 1 Resistor 150
+	<br/>- 1 Resonator(C = Q/V, I = C dV/dt) 
+	<br/>- 1 Microcontroller(attiny44) 
+	<br/>- 1 Resonator 20MHZ(C = Q/V, I = C dV/dt) 
+	<br/>- 1 Button
+	<br/>- 1 Led white 3,2V
+	
+	
+	</p>
+	<p><img class="featured-image  img-responsive pull-center" src="img/week6/PCB.jpg"></p>
+            <br/>
+          </div>
+          </div>
+          <br/>
+         
+      </p>
+           
+        <hr class="featured-divider">
+        <div class="featured" id="about">
+             <!--
+             <img class="featured-image  img-responsive pull-right" src="img/week2/concept.png">
+             -->
+        				<!--
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/agency.js"></script>
+
+</body>
+
+</html>
+
