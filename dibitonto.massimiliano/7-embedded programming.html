@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>How to make [almost] everything</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Massimiliano Dibitonto, Fablab 2015 project and assignments portfolio" />
+		<meta name="keywords" content="fablab, makers, fabacademy" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.scrolly.min.js"></script>
+		<script src="js/jquery.scrollzer.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<div id="header" class="skel-layers-fixed">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar48"><img src="images/profilo.jpg" alt="" /></span>
+							<h1 id="title">Massimiliano</h1>
+							<h1 id="title">Dibitonto</h1>
+							<p>How to make [almost] everything</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<!--
+							
+								Prologue's nav expects links in one of two formats:
+								
+								1. Hash link (scrolls to a different section within the page)
+								
+								   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
+
+								2. Standard link (sends the user to another page/site)
+
+								   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
+							
+							-->
+							<ul>
+								<li><a href="index.html" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Home</span></a></li>
+								</ul>
+						</nav>
+						
+				</div>
+				
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<li><a href="mailto:max.dbt@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+				
+				</div>
+			
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="one dark cover" >
+						<div class="container">
+
+							<header>
+								<h2> <strong>  6 - Embedded Programming </strong> </h2>
+							
+							</header>
+							
+
+						</div>
+					</section>
+							
+					<section id="about" class="two">
+						<div class="container">
+						
+							<header>
+								<h3>Intro </h3>
+							</header>
+							<p> The assignment of this week was to program the FabISP and the Helloboard using different techniques.</p>
+						<header>
+								<h3>Programming the FabIsp</h3>
+							</header>
+							<p><br>
+						    I used avrdude line command and Arduino as ISP. However, as we are using an Attiny 44a, I had to change the Device signature in the avrdude.conf . I wasn’t able to find online references about other values to change in that file.</p>
+						  <p>To tell avrdude to use Arduino as ISP I changed this line in the Makefile:<br>
+							  AVRDUDE = avrdude -c arduino -P /dev/tty.usbmodem1421  -p t44 # edit this line for your programmer</p>
+						  <p>For the connections I followed this tutorial <a href="http://highlowtech.org/?p=1695">http://highlowtech.org/?p=1695</a> and this reference <a href="http://arduino.cc/en/Reference/SPI">http://arduino.cc/en/Reference/SPI</a>. </p>
+						  <p><img src="images/program_isp.jpg" width="250" height="282"></p>
+						  <p>The connection worked fine however I had this error and I wasn't able to solve it.</p>
+							<p align="left">MacBook-Pro-di-Massimiliano:firmware Massimiliano$ make fuse<br>
+							  avrdude -c arduino -P /dev/tty.usbmodem1421  -p t44  -U hfuse:w:0xDF:m -U lfuse:w:0xFF:m</p>
+							<p align="left">avrdude: AVR device initialized and ready to accept instructions</p>
+							<p align="left">Reading | ################################################## | 100% 0.00s</p>
+							<p align="left">avrdude: Device signature = 0x1e950f<br>
+							  avrdude: reading input file &quot;0xDF&quot;<br>
+							  avrdude: writing hfuse (1 bytes):</p>
+							<p align="left">Writing |                                                    | 0% 0.00s ***failed; <br>
+							  Writing | ################################################## | 100% 0.08s</p>
+							<p align="left">avrdude: 1 bytes of hfuse written<br>
+							  avrdude: verifying hfuse memory against 0xDF:<br>
+							  avrdude: load data hfuse data from input file 0xDF:<br>
+							  avrdude: input file 0xDF contains 1 bytes<br>
+							  avrdude: reading on-chip hfuse data:</p>
+							<p align="left">Reading | ################################################## | 100% 0.00s</p>
+							<p align="left">avrdude: verifying ...<br>
+							  avrdude: verification error, first mismatch at byte 0x0000<br>
+							  0x00 != 0xdf<br>
+							  avrdude: verification error; content mismatch</p>
+							<p align="left">avrdude: safemode: hfuse changed! Was df, and is now 0<br>
+							  Would you like this fuse to be changed back? [y/n] n<br>
+							  avrdude: safemode: Fuses OK (H:00, E:DF, L:00)<br>
+							  <br>
+							  avrdude: stk500_recv(): programmer is not responding<br>
+make: *** [fuse] Error 1<br>
+						  </p>
+						  <p align="center">Then I decided to put the Arduino bootloader in it. To do this I had to tell to the Arduio IDE the characteristics of the board. Inside the /hardware folder of Arduino IDE I added the boards.txt taken from <a href="https://github.com/damellis/attiny/tree/master/attiny">https://github.com/damellis/attiny/tree/master/attiny</a> but, once again I found the reference for the ATtiny44 and not for the 44a.After adding the file another section appeared in the &quot;boards&quot; submenu:</p>
+						  <p align="center"><img src="images/boards_list.jpg" width="250" height="193" alt="boards list"></p>
+							<p>In the board.txt file i had to add also this line: attiny44-20.bootloader.tool=avrdude</p>
+							<p>However I got this error and I wasn't able to solve it:</p>
+							<p align="left">Arduino:1.5.8 (Mac OS X), Scheda:&quot;ATtiny44 (external 20 MHz clock)&quot;</p>
+							<p align="left">avrdude: stk500_getparm(): (a) protocol error, expect=0x14, resp=0x14</p>
+							<p align="left">avrdude: stk500_getparm(): (a) protocol error, expect=0x14, resp=0x01<br>
+							  avrdude: stk500_initialize(): (a) protocol error, expect=0x14, resp=0x10<br>
+							  avrdude: initialization failed, rc=-1<br>
+							  Double check connections and try again, or use -F to override<br>
+						    this check.</p>
+							<p align="left">avrdude: stk500_disable(): unknown response=0x12<br>
+							  Errore durante la scrittura del bootloader</p>
+							<p>&nbsp;</p>
+							<p>&nbsp;</p>
+
+<header>
+								<h3>Programming the HelloBoard</h3>
+						  </header>
+                          <p>
+                          After several attempts of flashing the board I realized that the problem was caused by several short circuits. Indeed a trace underneath the microcontroller was too close to the pads and, after soldering there was unwanted junctions. I wasn't able to fix it eve rith the desoldering wire. So I designed another version of the board with more space between pads and traces adding an extra 0 ohm resisto as a jumper. But I don't have enough time in this week so I'll complete the assignement in the next week.
+                          </p>
+                          <p><img src="images/program_hello.jpg" width="250" height="196"><img src="images/problem_hellob.jpg" width="300" height="375"> <img src="images/traces_hello2.jpg" width="300" height="245"></p>
+                            
+                            
+                          <header>
+							<h3>Programming an AtTmega328</h3>
+							</header>
+                            <p>As the previous experiments wasn't successfull I decided to try with another microcontrolled. I went to a couple of shops in Rome but they didn't had neither the ATtiny44 nor the ATtiny45. So I bought an ATmega328P (throughole) for 9 euro. My objective was to burn the Arduino bootloader on it to have a minimal Arduino board. I followed this tutorial <a href="http://arduino.cc/en/Tutorial/ArduinoISP">http://arduino.cc/en/Tutorial/ArduinoISP</a>. However I keep receiving a sync error until I added an electrolitic 100uF capacitor between the ground and the reset pin on the Arduino board. The bootloader was correctly flashed. I wrote a simple sketch to send messages over the serial port.The ATmega cannot communicate directly with the computer so I used another Arduino board as USB-serial converter. To do this I removed the ATmega from the Arduino board and connected the pin 0(rx) to the pin 3(tx) of the microcontroller and the pin 1(tx) on the pin 2(rx) of the microcontroller. So I was able to program the microcontroller as a normal Arduino Uno and then I received the messages over the serial port, as expected.</p>
+                            <p><img src="images/arduino.jpg" ><img src="images/program_atmega.jpg" ></p>
+                      </div>
+						
+					</section>
+				
+		
+			
+				
+			
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+				
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy;  <img src="images/license.png" alt="" /> Attribution, non-commercial, share alike.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				
+			</div>
+
+	</body>
+</html>

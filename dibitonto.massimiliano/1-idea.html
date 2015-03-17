@@ -195,9 +195,12 @@ Regarding giving a personality to the objects my inspiration is the work of simo
 							To make this devices more attractive they could have the shape of different characters, each one with a special "superpower", some ideas:
 							<ul class="default">
 							<li>Sense the light: a simple way to interface objects is to check if some led/light is on/off. For example the fridge or a status indicator on other.</li>
-							<li>Sense movements: through an accelerometer is possible to detect if something is moving. For example a washing machine stops moving when finishes to wash.
-							<li>Control everything: using IR leds is possible to create a remote control for almost everything.
-							</ul></p>
+							<li>Sense temperature: through a temperature sensor is possible to check the temperature in a room.<li>Control everything: using IR leds is possible to create a remote control for almost everything.
+							<li>Communicate with light: using an RGB led is possible to use color to communicate something.
+							</ul>
+							<p><img src="images/schema-idea.jpg" ></p>
+							<p><img src="images/flow_idea.png" ></p>
+							</p>
 							<p>I asked to a friend of mine (she's an illustrator) to help me think to some character. So the girl could change color reflecting some mood, the dog could sense react to vibration, the guy could be the universal remote control and the android could sense the light. <img src="images/superhero.jpg">   <img src="images/superhero_c.jpg">.
 							</p>
 							<p>
@@ -206,9 +209,33 @@ Regarding giving a personality to the objects my inspiration is the work of simo
 							<p>I made a research to find similar projects: <a href="https://www.kickstarter.com/projects/supermechanical/twine-listen-to-your-world-talk-to-the-internet">Twine</a> . It monitors temperature, vibration and orientation. Additional sensors detect floods, leaks, opened doors, and signals from your other home systems. Tell a web app what to listen to with simple rules, and you'll get notifications and peace of mind via email, SMS, Twitter and more.
 
 A very similar project is <a href="https://www.kickstarter.com/projects/52038469/knut-stay-connected">Knut </a> that has interchangeable sensors and allows to monitor them from a smartphone. <a href="https://ninjablocks.com/">NinjaBlocks</a> also has the capability to control different objects through add-ons.</p>
+					<header>
+								<h3>Scenario </h3>
+						  </header>
+                            
+<p>1: Domotic</p><p>
+An example scenario could be self regulating the temperature in a smart home environment. One (or more than one) temperature module checks the temperature in a certain point of the house and sends the data to the concentrator. The concentrator checks if the temperature is within the range given by the user. If the temperature is too high or too low thells to the IR modules to turn on/off the air conditioning. It could also post something on Twitter as ("Today is too hot to work :) "  if the temperature is too high). </p>	
+<p>2: Mood lamp</p><p>
+The concentrator looks on the internet to check some variables according to the user request. As an example it could check the weather (es. Yahoo weather) and set a color on the RGB module according to it (es. a cold color if the weather is bad a warm color if the weather is good).</p>
+<p>3: Diet helper</p>
+<p>The light sensing module could be set inside the fridge. It sends a message to the concentrator each time the fridge is opened (the light of the fridge goes on).The concentrator checks the number of times per hour the fridge is opened, if it is opened too often it sends a message to the user like "Hey, remember you are on diet!". </p>
+<header>
+								<h3>To do list </h3>
+						  </header>
+                    <p>
+                    
+						  <ul class="default">
+                            <li>find an energy efficient way to communicate between modules and coordinator (Xbee?)</li>
+							<li>design, make and program the board to read an analog sensor (light and temperature)</li>
+                            <li>design, make and program the board for the IR module. </li>
+                            <li>find the codes for the IR modules</li>
+                            <li>design, make and program the coordinator</li>
+                          </ul>
+                            </p>        
+
+                           
 						
-						
-				</div>
+		  </div>
 						
 					</section>		
 			
