@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Week_7</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/agency.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="index.html"> 
+                <strong>FA15 | MS<strong></a>
+                
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a class="page-scroll" href="index.html">FA15|MS</a>
+                    </li>
+                     
+                   
+                    <li>
+                        <a href="http://www.fabacademy.org/" target="_blank">FAB ACADEMY</a>
+                    </li>
+                    <li>
+                        <a href="http://officinegiardino.org/" target="_blank">FAB LAB Fr</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+  
+ 
+        <!-- /.row -->
+
+            
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div><h2 class="section-heading">Week 7</h2></div>
+                    <div>
+                      <h2 class="section-subheading text-muted">Embedded Programming</h2></div><br/>
+                    
+                    <img width="1140" src="img/week7/cover7.jpg">
+                    
+                    <div></div>
+                </div>
+            </div>
+            <hr class="featurette-divider">
+            <!-- First Featurette -->
+            
+        <div class="featurette" id="about">
+            
+            
+            <img class="featurette-image img-responsive pull-right" src="img/week7/skt5.jpg">
+            
+            
+
+            
+            <div>
+              <h2 class="featurette-heading">Programming</h2></div>
+            <p class="lead">The assignment for this week was to read a microcontroller <a class="page-scroll" href="http://academy.cba.mit.edu/classes/embedded_programming/doc8183.pdf">data sheet</a>,
+program my <a class="page-scroll" href="file:///C:/Users/marco/Desktop/MS%20-FAB_2/week6.html">re-designed "Hello board"</a> to do something, with as many different programming languages and programming environments as possible.   </p>
+            
+                <div class="text-muted">
+                  <h3>Before Programming</h3></div>
+            
+            <p class="lead">I used <a class="page-scroll" href="http://www.fischl.de/usbasp/">USBasp - USB programmer for Atmel AVR controllers</a> to program the microcontroller ATtiny44A, the 2 leds and the buttom of my re-designed "hello board" using the <a class="page-scroll" href="http://arduino.cc/en/pmwiki.php?n=main/software">Arduino IDE</a>.</p>  
+            <p class="lead">To start I need to have all Softwares and Drivers installed:</p>
+            <p class="lead">- <a class="page-scroll" href="http://arduino.cc/en/pmwiki.php?n=main/software">Arduino IDE Software</a></p>
+            <p class="lead">- <a class="page-scroll" href="https://github.com/damellis/attiny/archive/master.zip">Arduino ATtiny hardware Library</a></p>
+            <p class="lead">- <a class="page-scroll" href="http://www.fischl.de/usbasp/">USBasp Drivers</a></p>
+            
+            <p class="lead"> After downloaded and installed Arduino IDE and USBasp Drivers, to install ATtiny Arduno Hardware Library I created a new sub-folder called “hardware” in the sketchbook folder and I copied the “attiny” folder (not the attiny-master folder) from the unzipped ATtiny master.zip to "hardware" folder.</p>
+            
+            <div class="text-muted">
+                  <h3>Programming</h3></div>
+                  
+            <p class="lead"> I started studying basic tutorials of Arduino IDE Software and the <a class="page-scroll" href="http://arduino.cc/en/Reference/HomePage">Reference</a> web-page Arduino. I also attended the Fab Lab Frosinone Webinar and the open lecture of IDE.</p>
+            
+            <p class="lead">Steps to programming the microcontroller with Arduino:</p>
+            
+            <p class="lead"> - After loading the Arduino ATtiny hardware library and opening the Arduino IDE Software I set the "Programmer","Board", "Processor", "Clock" and "Serial Port" in "Tools" menu of IDE Software.</p> 
+            <p class="lead"> In my case:</p>
+            <p class="lead"> "Programmer" -> USBasp</p>
+            <p class="lead"> "Board" -> ATtiny</p>
+            <p class="lead"> "Processor" -> ATtiny44</p>
+            <p class="lead"> "Clock" -> 20 MHz (external) to program and 1 MHz (internal) to write bootloader</p>
+            
+            <p class="lead"> - I connected the programmer and the board to the Computer; Before to program the board, I tried to write bootloader and set the fuses, but the Software gave me a generic error. I tried several times, but nothing. I checked again every parts, components and soldering, but nothing again. Finally with the help of the tutor, I discovered that I "cooked" the microcontroller. I made another board and I restared; this time it worked and I was able to set the fuses (using "Clock" 1 MHz (internal))and started the programming.</p>
+            
+            <p class="lead"> - To test the LEDs I modified a basic example sketch of Arduino IDE (File>Example>01.Basics>Blink) changing the value to corresponding pin number of my microcontroller setting and using a double (opposite) blinking. I Uploaded the code with the "upload" button.</p>
+            <p class="lead"> - I tried to use the <a class="page-scroll" href="http://www.arduino.cc/en/Tutorial/PWM">PWM~</a> pins to make a fade with LEDs while the button is pressed
+. I also tested the functioning of the button.</p>
+            
+            <div class="text-muted">
+                  <h3>Playing, Studing and Programming</h3></div>
+
+            <p class="lead">Established the operation of the board,  I played with <a class="page-scroll" href="http://arduino.cc/en/Reference/Random">random()</a> and <a class="page-scroll" href="http://arduino.cc/en/Reference/RandomSeed">randomSeed()</a> to have a random system controlling the LEDs.</p>
+            <p class="lead">I tried one last program to understand how to solve the problem of <a class="page-scroll" href="http://arduino.cc/en/Tutorial/Debounce">Debouncing</a> of the button.</p>
+            
+            
+                  
+            
+                  
+
+
+<p class="lead">Programs: CS Eagle, Arduino IDE Software, Photoshop.</p> 
+<p class="lead">Machinery: Roland SRM-20.</p>
+
+
+            <img class="featurette-image img-responsive pull-right" src="img/week7/skt1m.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week7/skt2m.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week7/skt3m.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week7/skt4m.jpg">
+<span class="featurette-image img-responsive"> <iframe width="560" height="468" src="https://www.youtube.com/embed/nC5-L6O--S0" frameborder="0" allowfullscreen></iframe></span> <span class="featurette-image img-responsive"><iframe width="560" height="468" src="https://www.youtube.com/embed/T1WBGjryAXo" frameborder="0" allowfullscreen></iframe></span>
+<span class="featurette-image img-responsive"><iframe width="560" height="468" src="https://www.youtube.com/embed/ic6me2nJRCs" frameborder="0" allowfullscreen></iframe></span>
+<span class="featurette-image img-responsive"><iframe width="560" height="468" src="https://www.youtube.com/embed/ROCTJFcMwkY" frameborder="0" allowfullscreen></iframe></span>
+
+
+   
+
+         
+                        
+                                   
+              
+
+              
+                  
+           </section>
+           
+        
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; 2015, Marco Sanalitro</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="https://twitter.com/SanalitroMarco"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="https://www.facebook.com/marco.sanalitro.9"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li>arch.marco.sanalitro@gmail.com
+                        </li>
+                        
+                    </ul>
+                </div>
+             </div>
+        </div>
+    </footer>
+
+    
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/agency.js"></script>
+
+</body>
+
+</html>
