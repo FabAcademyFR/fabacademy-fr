@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>How to make [almost] everything</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Massimiliano Dibitonto, Fablab 2015 project and assignments portfolio" />
+		<meta name="keywords" content="fablab, makers, fabacademy" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.scrolly.min.js"></script>
+		<script src="js/jquery.scrollzer.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<div id="header" class="skel-layers-fixed">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar48"><img src="images/profilo.jpg" alt="" /></span>
+							<h1 id="title">Massimiliano</h1>
+							<h1 id="title">Dibitonto</h1>
+							<p>How to make [almost] everything</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<!--
+							
+								Prologue's nav expects links in one of two formats:
+								
+								1. Hash link (scrolls to a different section within the page)
+								
+								   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
+
+								2. Standard link (sends the user to another page/site)
+
+								   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
+							
+							-->
+							<ul>
+								<li><a href="index.html" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Home</span></a></li>
+								</ul>
+						</nav>
+						
+				</div>
+				
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<li><a href="mailto:max.dbt@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+				
+				</div>
+			
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="one dark cover" >
+						<div class="container">
+
+							<header>
+								<h2> <strong> 8 - Computer-Controlled Machining </strong> </h2>
+							
+							</header>
+							
+
+						</div>
+					</section>
+							
+					<section id="about" class="two">
+						<div class="container">
+						
+							<header>
+								<h3>Intro </h3>
+							</header>
+							<p> The assignment of this week was to use a CNC machine to make something big.</p>
+						<header>
+								<h3>Making something big</h3>
+						  </header>
+							<p>
+                             decided to make something not huge but useful. 
+I needed a guitar stand and in the Fablab we needed a coffe table for our breaks.
+To start i checked several website to get inspired like <a href="http://atfab.co/cnc-furniture/">AtFab</a> and <a href="https://www.opendesk.cc/">OpenDesk</a> . Moreover I start to think about how to join pieces and, as a consequence, the different shapes I can create. I found very useful the <a href="http://makezine.com/2012/04/13/cnc-panel-joinery-notebook/">CNC panel joinery notebook</a> from Make. It is a review of many different joint types that could be used for different needs.</p>
+							<p>Is very important to know how to make joints with the CNC. Indeed the end mill il rounded so it is not possible to make 90° angles (it's easy only when they are external corners). As can be seen from the Make notebook  the end mill make a rounded corner. So it's important to make an extra cut for a perfect snapping <p><img src="http://i0.wp.com/cdn.makezine.com/uploads/2012/03/figure-001.png?zoom=2&resize=580%2C291"><img src="http://i1.wp.com/cdn.makezine.com/uploads/2012/03/figure-004.png?zoom=2&resize=580%2C320">. </p></p><p> Another important aspect is to understand the tolerance of the CNC-router and also if the end mill cuts inside, outside or on the line of the model (this last setting coul be desinide in the CNC control panel). In the Fablab we have a big <a href="http://www.macchinecnc.com/enterprise.html">CNC router </a> that has a working area of 2100 x 1100 mm. </p>
+							<p><img src="images/cnc/machine.jpg" width="400" height="300"></p>
+							<p>We payed a lot of attention to the safety rules as the machine is dangerous. In the room there a photodetector barrier to stop the machine if someone gets too close.</p>
+							<p>The wood used was a panel of OSB/3 of 1050 x 2050 centimeters,  18 millimeters thick. After several tests we decided to use a tolerance of +0,5mm to have good joints (not too loose not tight).</p>
+							<p>I used Rhino to design the model. I made a 3d model to test the correct matching of the joints then I make a 2D model for the CNC router. I designed a coffe table and a guitar stand. I drew up also the drilling holes to fix the table. So I was sure to put the screw in the right place. To design the guitar stand I used the measure of my guitar. I pay attention to the center of gravity, to be sure that the guitar will not fall down. The tricky part was to design angled joints, but I found very useful to create a 3D model. For the table I choose a simple design. I used a 3D model to verify the joints and the procedure to mount it. </p>
+							<p><img src="images/cnc/modello.png" width="511" height="272"></p>
+							<p>You can download the model from <a href="http://www.massimilianodibitonto.it/fablab/CNC_router_table_guitar.dxf">here</a>. </p>
+							<p> To send the model to the CNC-router it had to be processed by a program. I place the model in the negative quadrant and exported it from Rhino in .dxf format. I imported it in the CNC design software, then I set several parameters. One of the most important was the cutting depth, that had to be bigger that the panel thickness (to be sure to cut it). Of course under the panel there was a sacrifical panel, to avaid damages to the machine. 
+						    <p> <img src="images/cnc/settings_cut_depth.jpg" width="400" height="533">                                                                                     
+							<p>Moreover i set up the origin of the machine. I set up different working steps:                                                        
+				          <ol>
+					          <li>1. Drilling holes to fix the panel </li>
+					          <li>2. Fixing the screws (manually)</li>
+					          <li>3. Cutting the holes</li>
+					          <li>4. Cutting the profiles</li>
+					          <li>Here is the video of the machine drilling the holes:</li>
+					          <li></li>
+				          </ol>
+				          <p><iframe src="https://player.vimeo.com/video/124114186" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/124114186">drilling</a> from <a href="https://vimeo.com/user3066449">Massimiliano Dibitonto</a> on <a href="https://vimeo.com">Vimeo</a>.</p></p><p>Here you can see the cutting:</p><iframe src="https://player.vimeo.com/video/124114185" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/124114185">CNC cutting</a> from <a href="https://vimeo.com/user3066449">Massimiliano Dibitonto</a> on <a href="https://vimeo.com">Vimeo</a>.</p><p>And it's very interesting to see the control panel while the machine is working. It shows the GCODE and the model with the current progress of the machine.</p><iframe src="https://player.vimeo.com/video/124114184" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/124114184">CNC control panel</a> from <a href="https://vimeo.com/user3066449">Massimiliano Dibitonto</a> on <a href="https://vimeo.com">Vimeo</a>.</p><p>this is the result:</p>
+				          <p><img src="images/cnc/cutted_panel.jpg" width="450" height="600"></p>
+				          <p>After this I refined the parts with sandpaper especially to avoid splinters. Below you find the final objects:</p>
+				          <p>Guitar stand:</p>
+				          <p><img src="images/cnc/guitar_stand.jpg" width="300" height="400"> <img src="images/cnc/guitarfront.jpg" width="205" height="361"></p>
+				          <p><img src="images/cnc/guitar_side.jpg" width="300" height="738"></p>
+				          <p>And the table:</p>
+				          <p><img src="images/cnc/table.jpg" width="400" height="300"></p>
+				          <p>A detail of the joint:</p>
+				          <p><img src="images/cnc/joint_detail.jpg" width="300" height="225"></p>
+                          
+                      </div>
+						
+					</section>
+				
+		
+			
+				
+			
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+				
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy;  <img src="images/license.png" alt="" /> Attribution, non-commercial, share alike.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				
+			</div>
+
+	</body>
+</html>

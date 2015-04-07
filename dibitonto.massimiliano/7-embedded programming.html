@@ -81,7 +81,7 @@
 						<div class="container">
 
 							<header>
-								<h2> <strong>  6 - Embedded Programming </strong> </h2>
+								<h2> <strong>  7 - Embedded Programming </strong> </h2>
 							
 							</header>
 							
@@ -95,7 +95,12 @@
 							<header>
 								<h3>Intro </h3>
 							</header>
-							<p> The assignment of this week was to program the FabISP and the Helloboard using different techniques.</p>
+							<p> The assignment of this week was to read and understand the datasheet of a microcontroller, to program the FabISP and the echoBoard using different techniques.</p>
+                            <header>
+							<h3>Reading the ATTiny 44/a datasheet</h3>
+						  </header>
+                          <p>When you use an electronic component it is very useful to read the datasheet. It contains many information about the characteristics of the components, especially the power requirements (helpful to don't damage the component) and the pinout (useful to correctly connect the component). Moreover the datasheet tell us the behaviour of the component and, if necessary, the configuration parameters (that could be software or hardware). A microcontroller is a complex component so the datasheet is very rich of information. The ATTiny datasheet can be found <a href="http://www.atmel.com/images/doc8183.pdf">here</a>.</p>
+                          <p>The pinout scheme was very useful to design the circuit of the echoBoard to add the button and the led but also to check the connections and the alimentation. Moreover was also useful to understand the role of the fuses and to know how big could be the program that I can upload into it. Indeed using Arduino IDE means to have a bigger program as it imports libraries (and the bootloader), so sometimes is necessary to optimize the code or writing it in C.</p>
 						<header>
 								<h3>Programming the FabIsp</h3>
 							</header>
@@ -145,22 +150,151 @@ make: *** [fuse] Error 1<br>
 						    this check.</p>
 							<p align="left">avrdude: stk500_disable(): unknown response=0x12<br>
 							  Errore durante la scrittura del bootloader</p>
-							<p>&nbsp;</p>
-							<p>&nbsp;</p>
-
-<header>
-								<h3>Programming the HelloBoard</h3>
+							<p align="left">The I tried with the usbasp programmer and it worked fine. I changed a line in the Makefile to tell to the system to use usbasp: </p>
+							<p align="left">AVRDUDE = avrdude -c usbasp  -p $(DEVICE) # edit this line for your programmer</p>
+							<p align="left">After the make clean and make hex command I sent the make fuse command with this output:</p>
+							<p align="left">MBPdiMaimiliano:firmware Massimiliano$ make fuse<br>
+							  avrdude -c usbasp  -p attiny44  -U hfuse:w:0xDF:m -U lfuse:w:0xFF:m</p>
+							<p align="left">avrdude: warning: cannot set sck period. please check for usbasp firmware update.<br>
+							  avrdude: AVR device initialized and ready to accept instructions</p>
+							<p align="left">Reading | ################################################## | 100% 0.00s</p>
+							<p align="left">avrdude: Device signature = 0x1e9207<br>
+							  avrdude: reading input file &quot;0xDF&quot;<br>
+							  avrdude: writing hfuse (1 bytes):</p>
+							<p align="left">Writing | ################################################## | 100% 0.00s</p>
+							<p align="left">avrdude: 1 bytes of hfuse written<br>
+							  avrdude: verifying hfuse memory against 0xDF:<br>
+							  avrdude: load data hfuse data from input file 0xDF:<br>
+							  avrdude: input file 0xDF contains 1 bytes<br>
+							  avrdude: reading on-chip hfuse data:</p>
+							<p align="left">Reading | ################################################## | 100% 0.00s</p>
+							<p align="left">avrdude: verifying ...<br>
+							  avrdude: 1 bytes of hfuse verified<br>
+							  avrdude: reading input file &quot;0xFF&quot;<br>
+							  avrdude: writing lfuse (1 bytes):</p>
+							<p align="left">Writing | ################################################## | 100% 0.00s</p>
+							<p align="left">avrdude: 1 bytes of lfuse written<br>
+							  avrdude: verifying lfuse memory against 0xFF:<br>
+							  avrdude: load data lfuse data from input file 0xFF:<br>
+							  avrdude: input file 0xFF contains 1 bytes<br>
+							  avrdude: reading on-chip lfuse data:</p>
+							<p align="left">Reading | ################################################## | 100% 0.00s</p>
+							<p align="left">avrdude: verifying ...<br>
+							  avrdude: 1 bytes of lfuse verified</p>
+						  <p align="left">avrdude: safemode: Fuses OK (H:FF, E:DF, L:FF)</p>
+							<p align="left">avrdude done.  Thank you.</p>
+							<p align="left">Then I proceeded with the make program command with this output:</p>
+							<p align="left">MBPdiMaimiliano:firmware Massimiliano$ make program<br>
+							  avrdude -c usbasp  -p attiny44  -U flash:w:main.hex:i</p>
+							<p align="left">avrdude: warning: cannot set sck period. please check for usbasp firmware update.<br>
+							  avrdude: AVR device initialized and ready to accept instructions</p>
+							<p align="left">Reading | ################################################## | 100% 0.00s</p>
+							<p align="left">avrdude: Device signature = 0x1e9207<br>
+							  avrdude: NOTE: &quot;flash&quot; memory has been specified, an erase cycle will be performed<br>
+							  To disable this feature, specify the -D option.<br>
+							  avrdude: erasing chip<br>
+							  avrdude: warning: cannot set sck period. please check for usbasp firmware update.<br>
+							  avrdude: reading input file &quot;main.hex&quot;<br>
+							  avrdude: writing flash (2002 bytes):</p>
+							<p align="left">Writing | ################################################## | 100% 1.38s</p>
+							<p align="left">avrdude: 2002 bytes of flash written<br>
+							  avrdude: verifying flash memory against main.hex:<br>
+							  avrdude: load data flash data from input file main.hex:<br>
+							  avrdude: input file main.hex contains 2002 bytes<br>
+							  avrdude: reading on-chip flash data:</p>
+							<p align="left">Reading | ################################################## | 100% 1.06s</p>
+							<p align="left">avrdude: verifying ...<br>
+							  avrdude: 2002 bytes of flash verified</p>
+							<p align="left">avrdude: safemode: Fuses OK (H:FF, E:DF, L:FF)</p>
+							<p align="left">avrdude done.  Thank you.</p>
+							<p align="left">avrdude -c usbasp  -p attiny44  -U hfuse:w:0xDF:m -U lfuse:w:0xFF:m</p>
+							<p align="left">avrdude: warning: cannot set sck period. please check for usbasp firmware update.<br>
+							  avrdude: AVR device initialized and ready to accept instructions</p>
+							<p align="left">Reading | ################################################## | 100% 0.00s</p>
+							<p align="left">avrdude: Device signature = 0x1e9207<br>
+							  avrdude: reading input file &quot;0xDF&quot;<br>
+							  avrdude: writing hfuse (1 bytes):</p>
+							<p align="left">Writing | ################################################## | 100% 0.00s</p>
+							<p align="left">avrdude: 1 bytes of hfuse written<br>
+							  avrdude: verifying hfuse memory against 0xDF:<br>
+							  avrdude: load data hfuse data from input file 0xDF:<br>
+							  avrdude: input file 0xDF contains 1 bytes<br>
+							  avrdude: reading on-chip hfuse data:</p>
+							<p align="left">Reading | ################################################## | 100% 0.00s</p>
+							<p align="left">avrdude: verifying ...<br>
+							  avrdude: 1 bytes of hfuse verified<br>
+							  avrdude: reading input file &quot;0xFF&quot;<br>
+							  avrdude: writing lfuse (1 bytes):</p>
+							<p align="left">Writing | ################################################## | 100% 0.00s</p>
+							<p align="left">avrdude: 1 bytes of lfuse written<br>
+							  avrdude: verifying lfuse memory against 0xFF:<br>
+							  avrdude: load data lfuse data from input file 0xFF:<br>
+							  avrdude: input file 0xFF contains 1 bytes<br>
+							  avrdude: reading on-chip lfuse data:</p>
+							<p align="left">Reading | ################################################## | 100% 0.00s</p>
+							<p align="left">avrdude: verifying ...<br>
+							  avrdude: 1 bytes of lfuse verified</p>
+						  <p align="left">avrdude: safemode: Fuses OK (H:FF, E:DF, L:FF)</p>
+							<p align="left">avrdude done.  Thank you.</p>
+							<p align="left">Then i checked my system to see if the FabISP was recognized. </p>
+							<p align="left"><img src="images/fabisp_usb.jpg" width="500" height="245"></p>
+							<p align="left">&nbsp;</p>
+                          
+                          <header>
+							<h3>Programming the Echo Board</h3>
 						  </header>
-                          <p>
-                          After several attempts of flashing the board I realized that the problem was caused by several short circuits. Indeed a trace underneath the microcontroller was too close to the pads and, after soldering there was unwanted junctions. I wasn't able to fix it eve rith the desoldering wire. So I designed another version of the board with more space between pads and traces adding an extra 0 ohm resisto as a jumper. But I don't have enough time in this week so I'll complete the assignement in the next week.
-                          </p>
-                          <p><img src="images/program_hello.jpg" width="250" height="196"><img src="images/problem_hellob.jpg" width="300" height="375"> <img src="images/traces_hello2.jpg" width="300" height="245"></p>
-                            
-                            
+                          <p>I started using the FabISP to program the Echo Board, however I received many errors, the most common was &quot;target not responding&quot;. So to reduce the possible causes of error i used a commercial programmer &quot;<a href="http://www.fischl.de/usbasp/">usbasp</a>&quot; . It gave me the same error so I checked the board for electrical problems.</p>
+                          <p>After several attempts of flashing the board I realized that the problem was caused by several short circuits. Indeed a trace underneath the microcontroller was too close to the pads and, after soldering there was unwanted junctions. I wasn't able to fix it eve rith the desoldering wire. So I designed another version of the board with more space between pads and traces adding an extra 0 ohm resisto as a jumper. </p>
+                          <p><img src="images/program_hello.jpg" width="250" height="196"><img src="images/problem_hellob.jpg" width="300" height="375"> </p>
+                          <p>Above the first version of the board. Below the second version. You can download the <a href="http://www.massimilianodibitonto.it/fablab/hellomax2.sch">scheme</a> and the <a href="http://www.massimilianodibitonto.it/fablab/hellomax2.brd">board</a> file for Eagle</p>
+                          <p><img src="images/traces_hello2.jpg" width="300" height="245"></p>
+                          <p>After milling and soldering again the board I was able to program it using the Arduino IDE and the usbasp. The ArduinoIDEwas already configured as I already changed the boards.txt. At the beginning i burnt the bootloader. However it doesn't really load the bootloader but just set the fuses. Then i wrote a simple sketch based on the button example(in the Arduino IDE you call the programs &quot;sketches&quot;) to turn on the led when I press the button. The pin where the button is connected is recognized by Arduino software as pin 3. The pin where the led is connected is recognized by Arduino software as pin 8. For this is useful to check the pinout of the Attiny 44a:</p>
+                          <p><img src="http://highlowtech.org/wp-content/uploads/2011/10/ATtiny44-84.png"></p>
+                          <p>Here is the code:</p>
+                          <p align="left">const int buttonPin = 3;     // the number of the pushbutton pin<br>
+                          const int ledPin =  8;      // the number of the LED pin</p>
+                          <p align="left">// variables will change:<br>
+                            int buttonState = 0;         // variable for reading the pushbutton status</p>
+                          <p align="left">void setup() {<br>
+                            // initialize the LED pin as an output:<br>
+                            pinMode(ledPin, OUTPUT);<br>
+                            // initialize the pushbutton pin as an input:<br>
+                            pinMode(buttonPin, INPUT);<br>
+                            }</p>
+                          <p align="left">void loop() {<br>
+                            // read the state of the pushbutton value:<br>
+                            buttonState = digitalRead(buttonPin);</p>
+                          <p align="left"> // check if the pushbutton is pressed.<br>
+                            // if it is, the buttonState is HIGH:<br>
+                            if (buttonState == HIGH) {<br>
+                            // turn LED on:<br>
+                            digitalWrite(ledPin, HIGH);<br>
+                            }<br>
+                            else {<br>
+                            // turn LED off:<br>
+                            digitalWrite(ledPin, LOW);<br>
+                            }<br>
+                            }</p>
+                          <p align="left">Here is a video of the working board:</p>
+                          <iframe src="https://player.vimeo.com/video/124108374" width="500" height="889" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/124108374">Hello Board</a> from <a href="https://vimeo.com/user3066449">Massimiliano Dibitonto</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+                          <p align="left">&nbsp;</p>
+                          <p align="left">&nbsp;</p>
+                          <header>
+							<h3>Using the FabISP as a programmer</h3>
+						  </header>
+                            <p>To use the FabISP i removed the two jumpers as reported in this very useful <a href="http://fabacademy.org/archives/2015/doc/programming_FabISP.html">tutorial</a> then I gave power to the Echo Board through the FTDI connector.
+Af first I tried to upload a sketch using the Arduino IDE (1.5.8)selecting the ATTIny board and UsbTiny as a programmer.But I received an error because the ArduinoIDE was not able to recognize the FabISP as an USBtiny.To make the Arduino IDE recognize the FabISP as programmer i put a programmer.txt file in the hardware folder inside the Arduino sketches folder putting the following parameters found on this <a href="http://forum.arduino.cc/index.php?topic=70841.0">forum</a></p>
+                            <p>fabisp.name=FabISP<br>
+                              fabisp.communication=usb<br>
+                              fabisp.protocol=usbtiny<br>
+                              fabisp.program.protocol=stk500v1<br>
+                            fabisp.program.tool=avrdude</p>
+                            <p> However while uploading the Arduino IDE says that the parameter 'program.params.verbose' is missing. I cannot find any suggestion on forums so I’ll keep trying changing the parameters in the programmers.txt file.</p>
+                            <p>After several attempts I decided to delete the programmers.txt file and try again to select USBTinyISP as programmer, I chose the command &quot;Upload with a programmer&quot; from the File menu and it worked fine:) I used it to program the echoBoard with the button sketch.</p>
                           <header>
 							<h3>Programming an AtTmega328</h3>
 							</header>
-                            <p>As the previous experiments wasn't successfull I decided to try with another microcontrolled. I went to a couple of shops in Rome but they didn't had neither the ATtiny44 nor the ATtiny45. So I bought an ATmega328P (throughole) for 9 euro. My objective was to burn the Arduino bootloader on it to have a minimal Arduino board. I followed this tutorial <a href="http://arduino.cc/en/Tutorial/ArduinoISP">http://arduino.cc/en/Tutorial/ArduinoISP</a>. However I keep receiving a sync error until I added an electrolitic 100uF capacitor between the ground and the reset pin on the Arduino board. The bootloader was correctly flashed. I wrote a simple sketch to send messages over the serial port.The ATmega cannot communicate directly with the computer so I used another Arduino board as USB-serial converter. To do this I removed the ATmega from the Arduino board and connected the pin 0(rx) to the pin 3(tx) of the microcontroller and the pin 1(tx) on the pin 2(rx) of the microcontroller. So I was able to program the microcontroller as a normal Arduino Uno and then I received the messages over the serial port, as expected.</p>
+                            <p>As the first experiments with the echoBard weren't successfull I decided to try with another microcontrolled. I went to a couple of shops in Rome but they didn't had neither the ATtiny44 nor the ATtiny45. So I bought an ATmega328P (throughole) for 9 euro. My objective was to burn the Arduino bootloader on it to have a minimal Arduino board. I followed this tutorial <a href="http://arduino.cc/en/Tutorial/ArduinoISP">http://arduino.cc/en/Tutorial/ArduinoISP</a>. However I keep receiving a sync error until I added an electrolitic 100uF capacitor between the ground and the reset pin on the Arduino board. The bootloader was correctly flashed. I wrote a simple sketch to send messages over the serial port.The ATmega cannot communicate directly with the computer so I used another Arduino board as USB-serial converter. To do this, as in this <a href="http://arduino.cc/en/Tutorial/ArduinoToBreadboard">tutorial</a> I removed the ATmega from the Arduino board and connected the pin 0(rx) to the pin 2(rx) of the microcontroller and the pin 1(tx) on the pin 3(tx) of the microcontroller. So I was able to program the microcontroller as a normal Arduino Uno and then I received the messages over the serial port, as expected.</p>
                             <p><img src="images/arduino.jpg" ><img src="images/program_atmega.jpg" ></p>
                       </div>
 						
