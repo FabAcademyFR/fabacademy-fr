@@ -1,0 +1,48 @@
+/* le regole per sistemare l'immagine principale in testa alla pagina */
+.main-picture {
+	margin-top: 51px;
+}
+
+@media(min-width:768px) {
+	.main-picture {
+		margin-top: 100px;
+	}
+}
+
+p {
+	text-align: justify;
+}
+
+/* di seguito le regole per sistemare il footer quando lo scehrmo diventa piccolo */
+.col-md-4-left {
+	text-align: center;
+}
+.col-md-4-right {
+	text-align: center;
+}
+
+@media (min-width: 992px) {
+	.col-md-4-left {
+		text-align: left;
+	}
+	.col-md-4-right {
+		text-align: right;
+	}
+}
+
+#portfolio .portfolio-item .portfolio-caption {
+	margin: 0 auto;
+	padding: 0px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	max-width: 800px;
+	text-align: justify !important;
+	background-color: #fff;
+}
+
+#portfolio .portfolio-item .portfolio-link {
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	max-width: 800px;
+}

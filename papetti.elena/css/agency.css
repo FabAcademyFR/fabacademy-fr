@@ -3,10 +3,15 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+@font-face {
+    font-family: 'Construthinvism';
+    src:
+    url('fonts/construthinvism.tff') format('truetype')
+    }
 
 body {
     overflow-x: hidden;
-    font-family:"Construthinvism", Roboto Slab,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-family:"Inconsolata", Roboto Slab,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
 .text-muted {
@@ -52,7 +57,6 @@ h4,
 h5,
 h6 {
     text-transform: uppercase;
-    font-family: "Construthinvism";
     font-weight: 200;
 }
 
@@ -71,7 +75,6 @@ h6 {
 .btn-primary {
     border-color: #fed136;
     text-transform: uppercase;
-    font-family: "Construthinvism",Helvetica,Arial,sans-serif;
     font-weight: 100;
     color: #fff;
     background-color: #fed136;
@@ -122,7 +125,6 @@ fieldset[disabled] .btn-primary.active {
     border-color:  #000;
     border-radius: 3px;
     text-transform: uppercase;
-    font-family: "Construthinvism", Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
     font-size: 18px;
     font-weight: 50;
     color: #000;
@@ -175,8 +177,7 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .navbar-default .navbar-brand {
-    font-family: "Construthinvism",Helvetica Neue,Helvetica,Arial,cursive;
-    color: #fff;    fed136;
+    color: #fff;    /*fed136;*/
 }
 
 .navbar-default .navbar-brand:hover,
@@ -206,7 +207,6 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default .nav li a {
     text-transform: uppercase;
-    font-family: "Construthinvism",Helvetica,Arial,sans-serif;
     font-weight: 100;
     letter-spacing: 1px;
     color: #fff;
@@ -276,12 +276,11 @@ header {
 
 header .intro-text {
     padding-top: 100px;
-    padding-bottom: 50px;
+    /*padding-bottom: 50px*/;
 }
 
 header .intro-text .intro-lead-in {
     margin-bottom: 25px;
-    font-family: "Construthinvism",Droid Serif,Helvetica,Arial,sans-serif;
     font-size: 22px;
     font-style: normal;
     line-height: 22px;
@@ -290,7 +289,6 @@ header .intro-text .intro-lead-in {
 header .intro-text .intro-heading {
     margin-bottom: 25px;
     text-transform: uppercase;
-    font-family: "Construthinvism",Helvetica,Arial,sans-serif;
     font-size: 50px;
     font-weight: 300;
     line-height: 50px;
@@ -299,12 +297,11 @@ header .intro-text .intro-heading {
 @media(min-width:768px) {
     header .intro-text {
         padding-top: 110px;
-        padding-bottom: 200px;
+        /* padding-bottom: 200px; */
     }
 
     header .intro-text .intro-lead-in {
         margin-bottom: 25px;
-        font-family: "Construthinvism",Droid Serif,Helvetica Neue,Helvetica,Arial,sans-serif;
         font-size: 30px;
         font-style: normal;
         line-height: 40px;
@@ -313,7 +310,6 @@ header .intro-text .intro-heading {
     header .intro-text .intro-heading {
         margin-bottom: 50px;
         text-transform: uppercase;
-        font-family:"Construthinvism",Helvetica,Arial,sans-serif;
         font-size: 40px;
         font-weight: 100;
         line-height: 60px;
@@ -333,17 +329,16 @@ section h2.section-heading {
 section h3.section-subheading {
     margin-bottom: 75px;
     text-transform: none;
-    font-family: "Construthinvism", Droid Serif,Helvetica Neue,Helvetica,Arial,sans-serif;
     font-size: 16px;
     font-style: none;
     font-weight: 400;
 }
-
+/*
 @media(min-width:768px) {
     section {
         padding: 150px 0;
     }
-}
+}*/
 
 .service-heading {
     margin: 15px 0;
@@ -412,7 +407,6 @@ section h3.section-subheading {
 
 #portfolio .portfolio-item .portfolio-caption p {
     margin: 0;
-    font-family: "Construthinvism",Helvetica Neue,Helvetica,Arial,sans-serif;
     font-size: 16px;
     font-style: normal;
 }
@@ -639,7 +633,6 @@ footer {
 footer span.copyright {
     text-transform: uppercase;
     text-transform: none;
-    font-family:"Construthinvism",Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
     line-height: 40px;
 }
 
@@ -647,7 +640,6 @@ footer ul.quicklinks {
     margin-bottom: 0;
     text-transform: uppercase;
     text-transform: none;
-    font-family: "Construthinvism", Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif;
     line-height: 40px;
 }
 
@@ -705,7 +697,6 @@ ul.social-buttons li a:active {
 
 .portfolio-modal .modal-content p.item-intro {
     margin: 20px 0 30px;
-    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 16px;
     font-style: italic;
 }
@@ -766,7 +757,7 @@ ul.social-buttons li a:active {
 
 ::selection {
     text-shadow: none;
-    background: #000;
+    background: #63B8FF;
 }
 
 img::selection {
