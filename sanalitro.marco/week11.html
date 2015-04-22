@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Week_10</title>
+    <title>Week_11</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -82,14 +82,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <div><h2 class="section-heading">Week 10</h2></div>
+                    <div><h2 class="section-heading">Week 11</h2></div>
                     <div>
-                      <h2 class="section-subheading text-muted">Input Devices</h2></div><br/>
+                      <h2 class="section-subheading text-muted">output Devices</h2></div><br/>
                     
-                    <img width="1140" src="img/week10/cover10.jpg">
-                    <p class="featurette-image img-responsive pull-left"> <iframe width="570" height="630" src="https://www.youtube.com/embed/zlOCxOFJqGs" frameborder="0" allowfullscreen></iframe></p>
-                    <p class="featurette-image img-responsive pull-right"> <iframe width="570" height="630" src="https://www.youtube.com/embed/xDwiYVwGKKQ" frameborder="0" allowfullscreen></iframe></p>
-                    
+                    <img width="1140" src="img/week11/cover11.jpg">
+                    <p class="featurette-image img-responsive pull-left"> <iframe width="570" height="630" src="https://www.youtube.com/embed/fBFb1Vs-tmc" frameborder="0" allowfullscreen></iframe></p>
+                    <p class="featurette-image img-responsive pull-right"> <iframe width="570" height="630" src="https://www.youtube.com/embed/HTyyFYbqHkI" frameborder="0" allowfullscreen></iframe></p>
+                    <img width="1140" src="img/week11/cover11c.jpg">
+                   
                     
                     <div></div>
                 </div>
@@ -100,66 +101,67 @@
         <div class="featurette" id="about">
             
             
-            <img class="featurette-image img-responsive pull-right" src="img/week10/b5.jpg">
-            <img class="featurette-image img-responsive pull-right" src="img/week10/b1.jpg">
-            <img class="featurette-image img-responsive pull-right" src="img/week10/b2.jpg">
-            <img class="featurette-image img-responsive pull-right" src="img/week10/b3.jpg">
-            <img class="featurette-image img-responsive pull-right" src="img/week10/b4.jpg">
-            
+            <img class="featurette-image img-responsive pull-right" src="img/week11/i1.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week11/i6.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week11/i3.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week11/i2.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week11/i4.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week11/i5.jpg">
+           <img class="featurette-image img-responsive pull-right" src="img/week11/i7.jpg">
 
             
             <div>
-              <h2 class="featurette-heading">Input Devices</h2></div>
-            <p class="lead">Measure something: add a sensor to a microcontroller board that you've designed and read it</p>
+              <h2 class="featurette-heading">Output Devices</h2></div>
+            <p class="lead">Add an output device to a microcontroller board you've designed and program it to do something</p>
             
-                <div class="text-muted">
-                  <h3>Arduino Board Design</h3></div>
-            
-            
-<p class="lead">For this exercise I decided to make an Arduino from scratch and then work in some breakout boards to make the inputs and outputs.</p>
-<p class="lead">Based on <a href="http://www.fabacademy.org/archives/2015/doc/fabkit-0.4.html">Fabkit 0.4</a></p> 
-<p class="lead">Components:</p>
-<p class="lead">- <a href="http://www.digikey.it/product-detail/it/ATMEGA328P-AU/ATMEGA328P-AU-ND/1832260">Atmega 328P</a></p> 
-<p class="lead">- <a href="http://www.digikey.it/product-detail/it/AWSCR-8.00CV-T/535-10004-1-ND/2001627">8 MHz external resonator</a></p> 
-<p class="lead">- <a href="http://befr.rs-online.com/web/p/tactile-switches/4791508/">Switch Button</a></p> 
-<p class="lead">- FTDI Communication</p>
-<p class="lead">- <a href="http://www.digikey.it/product-detail/it/C1206C104KARACTU/399-4674-1-ND/992199">2 Unpolarized Capacitors 1206 0.1 uf</a></p>
-<p class="lead">- <a href="http://www.digikey.it/product-detail/it/C3216X7R1H105K160AB/445-1423-1-ND/569089">Unpolarized Capacitor 1206 1 uf</a></p> 
-<p class="lead">- Electrolytic capacitor 10 uf</p>
-<p class="lead">- <a href="http://www.digikey.it/product-detail/it/RC1206FR-0710KL/311-10.0KFRCT-ND/731430">Resistor 1206 10k</a></p> 
-<p class="lead">- <a href="http://www.digikey.it/product-detail/it/RC1206FR-07499RL/311-499FRCT-ND/731891">Resistor 1206 499</a></p> 
-<p class="lead">- <a href="http://docs-europe.electrocomponents.com/webdocs/04f4/0900766b804f4bbe.pdf">LED YELLOW CLEAR 1206 SMD</a></p> 
-<p class="lead">To write the bootloader I used the IDE from Arduino. It's necessary choose on Tools > Board > Arduino Pro or Pro mini (3.3V, 8) before and press the Reset Button when you are making the booloader</p>
+                <div class="text-muted"><h3>My Output device</h3></div>
 
-
-<div class="text-muted"><h3>Input device</h3></div>
-
-<p class="lead">The aim of this class assignment was to create a microcontroller with an input device.</p> 
-<p class="lead">I am including this assignment for my final project. Initially I designed a shield with a limit switch, but that was really similar at button switch used 3 week ago. For this reason I created a microswitch using a photoresistor to try another sensor. I want to try infrared led and ultrasonic sensor soon.</p> 
-<p class="lead">I used the sensor as a resistor and I located a resistor 10k after the input trace to read the changing values. I used the led just for an immediate output and to calibrate the range of the sensor.</p>
+<p class="lead">My final project involves the use of two DC motors: they are necessary to move the Robot. For this reason I decided to do an output shield device to control them.</p> 
+<p class="lead">To control direction and speed of rotation of the motor I used an H bridge. I studied the datasheet of the components and I designed the shield. After milled and soldered, I tried the shield, but didn’t work.</p>
+<p class="lead">I have done numerous checks and tests: I had made two mistakes. I thought there was a problem of current return I placed a capacitor 0.1 uf between tracks out1 and out2 to the motor, but it really isn’t necessary, this didn’t permit the functioning of shield; Also in the datasheet of the H Bridge, pin LSS must be connected to GNR, I read "optional" in the Functional Diagram, but actually "optional" is referring just to the resistor.</p>
+<p class="lead">I corrected the Eagle files, but I haven’t milled again shield: I unsoldered the capacitor and I did a jumper between pin LSS and the GNR.</p>
+<p class="lead">The H bridge, available to me, doesn’t accept less than 8 V (pin VBB) for this reason I put in series 4 DC motors (I had not the datasheet of the DC motor, I tested with the DC Power Supply each motor worked at 3 V). I powered motors using DC POWER SUPPLY (for security I used 9 V instead of 12 V).
+</p> 
 
 <p class="lead">Components:</p>
-<p class="lead">- Photoresistor</p>
-<p class="lead">- <a href="http://www.digikey.it/product-detail/it/RC1206FR-0710KL/311-10.0KFRCT-ND/731430">Resistor 1206 10k</a></p> 
-<p class="lead">- <a href="http://www.digikey.it/product-detail/it/RC1206FR-07499RL/311-499FRCT-ND/731891">Resistor 1206 499</a></p> 
-<p class="lead">- <a href="http://docs-europe.electrocomponents.com/webdocs/04f4/0900766b804f4bbe.pdf">LED RED 1206 SMD</a></p>
-<p class="lead">- Header 4 pin </p>
+<p class="lead">- <a href="http://www.digikey.com/product-detail/en/A4953ELJTR-T/620-1428-1-ND/2765622"> H Bridge </a></p>
+<p class="lead">- PCB connector </p>
+<p class="lead">- Female Header 4 pin </p>
+<p class="lead">- Electrolytic Capacitor 10 uf</p>
+<p class="lead">- <a href="http://www.digikey.it/product-detail/it/C1206C104KARACTU/399-4674-1-ND/992199">Unpolarized Capacitor 1206 0.1 uf</a></p>
+
+
 
 <div class="text-muted"><h3>Programming </h3></div>
-<p class="lead">IDE Arduino Sketch to program the microcontroller:
-<img class="" src="img/week10/ex.jpg">
 
+<p class="lead">I programmed the microcontroller board with a simple sketch: a loop of alternate rotations in opposite directions and breaks. I controlled the speed using the PWM pin. IDE Arduino Sketch:</p>
+
+<img class="" src="img/week11/ex1.jpg">
+<p class="lead"> Then I programmed the microcontroller to handle the shield output using the shield input designed in the previous assignment: I mapped input signal on the maximum frequency of rotation of the motor. IDE Arduino Sketch: </p>
+<img class="" src="img/week11/ex2.jpg">
+<h2 class="featurette-heading">Download Files</h2></div>
+              <p class="lead">Eagle:</p>
+              <p class="lead"><a href="https://www.dropbox.com/s/dzevl5jqisnebik/dc_motor.sch?dl=0">- dc_motor.sch</a></p>
+              <p class="lead"><a href="https://www.dropbox.com/s/5mfj8ly8g79csw4/dc_motor.brd?dl=0">- dc_motor.brd</a></p>
+              <p class="lead">PNG:</p>
+              <p class="lead"><a href="https://www.dropbox.com/s/nxrpyvu4wn428w7/dc_motor_traces.png?dl=0">- dc_motor_traces.png</a></p>
+              <p class="lead"><a href="https://www.dropbox.com/s/5y343zunmnzgxwx/dc_motor_holes.png?dl=0">- dc_motor_holes.png</a></p>
+              <p class="lead"><a href="https://www.dropbox.com/s/llhpispcuby7b8q/dc_motor_interior.png?dl=0">- dc_motor_interior.png</a></p>
+            <p class="lead">IDE:</p>
+              <p class="lead"><a href="https://www.dropbox.com/s/llpinuxlpz407hp/in_out.ino?dl=0">- in_out.ino</a></p>
+              <p class="lead"><a href="https://www.dropbox.com/s/thrjegf7bv2vpnx/acc_dec2.ino?dl=0">- acc_dec2.ino</a></p>
+              
 <p class="lead">Programs: Eagle, Photoshop, IDE Arduino.</p> 
 <p class="lead">Machinery: Roland SRM-20.</p>
 
    
 
-<p class="featurette-image img-responsive pull-right"> <iframe width="1140" height="630" src="https://www.youtube.com/embed/B6unaJmyPBc" frameborder="0" allowfullscreen></iframe></p>
+<!--<p class="featurette-image img-responsive pull-right"> <iframe width="1140" height="630" src="https://www.youtube.com/embed/HTyyFYbqHkI" frameborder="0" allowfullscreen></iframe></p>
+<!-- <img width="1140" src="img/week11/cover11b.jpg"> -->
+<!-- <img class="featurette-image img-responsive pull-right" src="img/week11/i7.jpg">-->
 
 
-
-<img width="1140" src="img/week10/cover10b.jpg">
-            
+              
                         
                                    
               
