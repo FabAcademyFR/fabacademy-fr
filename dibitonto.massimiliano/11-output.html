@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>How to make [almost] everything</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Massimiliano Dibitonto, Fablab 2015 project and assignments portfolio" />
+		<meta name="keywords" content="fablab, makers, fabacademy" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.scrolly.min.js"></script>
+		<script src="js/jquery.scrollzer.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<div id="header" class="skel-layers-fixed">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar48"><img src="images/profilo.jpg" alt="" /></span>
+							<h1 id="title">Massimiliano</h1>
+							<h1 id="title">Dibitonto</h1>
+							<p>How to make [almost] everything</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<!--
+							
+								Prologue's nav expects links in one of two formats:
+								
+								1. Hash link (scrolls to a different section within the page)
+								
+								   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
+
+								2. Standard link (sends the user to another page/site)
+
+								   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
+							
+							-->
+							<ul>
+								<li><a href="index.html" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Home</span></a></li>
+								</ul>
+						</nav>
+						
+				</div>
+				
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<li><a href="mailto:max.dbt@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+				
+				</div>
+			
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="one dark cover" >
+						<div class="container">
+
+							<header>
+								<h2> <strong> 11 - Output devices </strong> </h2>
+							
+							</header>
+							
+
+						</div>
+					</section>
+							
+					<section id="about" class="two">
+						<div class="container">
+						
+							<header>
+								<h3>Intro </h3>
+							</header>
+							<p> The assignment of this week was to create a board to use an output device.</p>
+	
+                     <header>
+					   <h3>Designing the shield</h3>
+					  </header>
+                      <p>Starting from my final project idea i decided to create a universal IR remote control that can be used to command any object. I found a very useful and interesting <a href="https://github.com/shirriff/Arduino-IRremote">library</a> that allows to receive and send IRcommands. IRcommands are not so easy as you have to consider the frequency and the specific command. Each vendor has his own commands so there are online libraries with remote control codes. For this reason I decided to make a board that could receive a command, store it and then send it back when asked.
+                      <p>For this reason I has to use a IRreceiver decoder and an IR led. The IR decoder receives the IR signal and gives a digital output. It has 3 pins and you can see the pinout below:
+                      <p><img src="http://3.bp.blogspot.com/-1QukdtWT5zY/U80MkupMOhI/AAAAAAAAAT8/GcJGR1U1jtI/s1600/2-sensores-ir-telefunken-tsop4838-38khz-pcm-p-control-remot_MLA-O-3306937218_102012.jpg">                      
+                      <p>To test the circuit I made a prototype on a breadboard.                      
+                      <p><img src="images/output/irremote.JPG" width="320" height="240">                                            
+                      <p>Using the IRrecord example of the library I used the circuit to turn off my tv.                                            
+                      <p> So, in order to make a shield to host the sensor and the led I need two digital pin and the power. On the Fabkit left side we have a VCC, GND and two digital pin close.     
+                      <p>I designed the board with Eagle and you can see the board image below.
+                      <p><img src="images/output/board.png" width="446" height="640">
+                      <p>I didn't had the chance to mill the board so I will complete it during the next weeks.
+                      <p>
+                      <p>You can download the <a href="http://www.massimilianodibitonto.it/fablab/output2.brd">board</a> and the <a href="http://www.massimilianodibitonto.it/fablab/output2.sch">schematic</a>.
+                    <p>                    
+                    <p>                    					
+              </section>
+				
+		
+			
+				
+			
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+				
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy;  <img src="images/license.png" alt="" /> Attribution, non-commercial, share alike.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				
+			</div>
+
+	</body>
+</html>

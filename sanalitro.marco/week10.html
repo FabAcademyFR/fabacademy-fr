@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Week_10</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/agency.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="index.html"> 
+                <strong>FA15 | MS<strong></a>
+                
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a class="page-scroll" href="index.html">FA15|MS</a>
+                    </li>
+                     
+                   
+                    <li>
+                        <a href="http://www.fabacademy.org/" target="_blank">FAB ACADEMY</a>
+                    </li>
+                    <li>
+                        <a href="http://officinegiardino.org/" target="_blank">FAB LAB Fr</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+  
+ 
+        <!-- /.row -->
+
+            
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div><h2 class="section-heading">Week 10</h2></div>
+                    <div>
+                      <h2 class="section-subheading text-muted">Input Devices</h2></div><br/>
+                    
+                    <img width="1140" src="img/week10/cover10.jpg">
+                    <p class="featurette-image img-responsive pull-right"> <iframe width="1140" height="630" src="https://www.youtube.com/embed/zlOCxOFJqGs" frameborder="0" allowfullscreen></iframe></p>
+                    
+                    
+                    <div></div>
+                </div>
+            </div>
+            <hr class="featurette-divider">
+            <!-- First Featurette -->
+            
+        <div class="featurette" id="about">
+            
+            
+            <img class="featurette-image img-responsive pull-right" src="img/week10/b5.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week10/b1.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week10/b2.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week10/b3.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week10/b4.jpg">
+            
+
+            
+            <div>
+              <h2 class="featurette-heading">Input Devices</h2></div>
+            <p class="lead">Measure something: add a sensor to a microcontroller board that you've designed and read it</p>
+            
+                <div class="text-muted">
+                  <h3>Arduino Board Design</h3></div>
+            
+            
+<p class="lead">For this exercise I decided to make an Arduino from scratch and then work in some breakout boards to make the inputs and outputs.</p>
+<p class="lead">Based on <a href="http://www.fabacademy.org/archives/2015/doc/fabkit-0.4.html">Fabkit 0.4</a></p> 
+<p class="lead">Components:</p>
+<p class="lead">- <a href="http://www.digikey.it/product-detail/it/ATMEGA328P-AU/ATMEGA328P-AU-ND/1832260">Atmega 328P</a></p> 
+<p class="lead">- <a href="http://www.digikey.it/product-detail/it/AWSCR-8.00CV-T/535-10004-1-ND/2001627">8 MHz external resonator</a></p> 
+<p class="lead">- <a href="http://befr.rs-online.com/web/p/tactile-switches/4791508/">Switch Button</a></p> 
+<p class="lead">- FTDI Communication</p>
+<p class="lead">- <a href="http://www.digikey.it/product-detail/it/C1206C104KARACTU/399-4674-1-ND/992199">2 Unpolarized Capacitors 1206 0.1 uf</a></p>
+<p class="lead">- <a href="http://www.digikey.it/product-detail/it/C3216X7R1H105K160AB/445-1423-1-ND/569089">Unpolarized Capacitor 1206 1 uf</a></p> 
+<p class="lead">- Unpolarized Capacitor 1206 10 uf</p>
+<p class="lead">- <a href="http://www.digikey.it/product-detail/it/RC1206FR-0710KL/311-10.0KFRCT-ND/731430">Resistor 1206 10k</a></p> 
+<p class="lead">- <a href="http://www.digikey.it/product-detail/it/RC1206FR-07499RL/311-499FRCT-ND/731891">Resistor 1206 499</a></p> 
+<p class="lead">- <a href="http://docs-europe.electrocomponents.com/webdocs/04f4/0900766b804f4bbe.pdf">LED YELLOW CLEAR 1206 SMD</a></p> 
+<p class="lead">To write the bootloader I used the IDE from Arduino. It's necessary choose on Tools > Board > Arduino Pro or Pro mini (3.3V, 8) before and press the Reset Button when you are making the booloader</p>
+
+
+<div class="text-muted"><h3>Input devices</h3></div>
+
+<p class="lead">The aim of this class assignment was to create a microcontroller with an input device.</p> 
+<p class="lead">I am including this assignment for my final project. Initially I designed a shield with a limit switch, but that was really similar at button switch used 3 week ago. For this reason I created a microswitch using a photoresistor to try another sensor. I want to try infrared led and ultrasonic sensor soon.</p> 
+<p class="lead">I used the sensor as a resistor and I located a resistor 10k after the input trace to read the changing values. I used the led just for an immediate output and to calibrate the range of the sensor.</p>
+
+
+<div class="text-muted"><h3>Programming </h3></div>
+<p class="lead">IDE Arduino Sketch to program the microcontroller:
+<img class="" src="img/week10/ex.jpg">
+
+<p class="lead">Programs: Eagle, Photoshop, IDE Arduino.</p> 
+<p class="lead">Machinery: Roland SRM-20.</p>
+
+   
+
+<p class="featurette-image img-responsive pull-right"> <iframe width="1140" height="630" src="https://www.youtube.com/embed/B6unaJmyPBc" frameborder="0" allowfullscreen></iframe></p>
+
+
+
+<img width="1140" src="img/week10/cover10b.jpg">
+            
+                        
+                                   
+              
+
+              
+                  
+           </section>
+           
+        
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; 2015, Marco Sanalitro</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="https://twitter.com/SanalitroMarco"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="https://www.facebook.com/marco.sanalitro.9"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li>arch.marco.sanalitro@gmail.com
+                        </li>
+                        
+                    </ul>
+                </div>
+             </div>
+        </div>
+    </footer>
+
+    
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/agency.js"></script>
+
+</body>
+
+</html>
