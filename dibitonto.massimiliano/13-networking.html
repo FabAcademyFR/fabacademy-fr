@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>How to make [almost] everything</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Massimiliano Dibitonto, Fablab 2015 project and assignments portfolio" />
+		<meta name="keywords" content="fablab, makers, fabacademy" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.scrolly.min.js"></script>
+		<script src="js/jquery.scrollzer.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<div id="header" class="skel-layers-fixed">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar48"><img src="images/profilo.jpg" alt="" /></span>
+							<h1 id="title">Massimiliano</h1>
+							<h1 id="title">Dibitonto</h1>
+							<p>How to make [almost] everything</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<!--
+							
+								Prologue's nav expects links in one of two formats:
+								
+								1. Hash link (scrolls to a different section within the page)
+								
+								   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
+
+								2. Standard link (sends the user to another page/site)
+
+								   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
+							
+							-->
+							<ul>
+								<li><a href="index.html" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Home</span></a></li>
+								</ul>
+						</nav>
+						
+				</div>
+				
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<li><a href="mailto:max.dbt@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+				
+				</div>
+			
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="one dark cover" >
+						<div class="container">
+
+							<header>
+								<h2> <strong> 13- Networking </strong> </h2>
+							
+							</header>
+							
+
+						</div>
+					</section>
+							
+					<section id="about" class="two">
+						<div class="container">
+						
+							<header>
+								<h3>Intro </h3>
+							</header>
+							<p> For this assignment I decided to experiment the I2C protocol. It is a very useful wired protocol as it uses only two wires. The SCL (for the clock) and SDA (for the data). There is a master that can have multiple slaves, each one with a specific address. The master can send messages to the slaves and scan request messages from them.</p>
+	
+                     <header>
+					   <h3>Making and connecting the boards</h3>
+					  </header>
+                      <p> I milled two boards taking the design from the FabAcademy page. I made a Hello I2C bridge and a Hello I2C node (that has also a led, very useful for testing).</p>
+                      <p>I used the Arduino IDE. I already installed the definition for ATTiny 45 in a previous assignment. </p>
+                      <p>However the Arduino’s Wire library didn’t compile for the ATTiny so I had to use<a href="http://playground.arduino.cc/Code/USIi2c"> http://playground.arduino.cc/Code/USIi2c</a>. for the FabKit I used the Wire library included in the Arduino IDE.</p>
+                      <p>Then I started just sending a number (one byte) from the master (the FabKit)to the slave (hello 45 node) and then checking for an answer (the echo of the number sent).<br>
+                        The FabKit has the SCL and SDA pins on PC5 and PC4 (on the Arduino IDE A05 and A04).</p>
+                      <p>The master sends one byte representing an integer between 0 and 255</p>
+                      <p>byte x = 7;<br>
+                        Wire.beginTransmission(SLAVE1_ADDR); // transmit to a slave device<br>
+                        Wire.write(x);              // sends one byte<br>
+                        Wire.endTransmission();    // stop transmitting</p>
+                      <p>I put a delay of 500 milliseconds to allow the slave receive the command and then ask back for a feedback<br>
+                        Wire.requestFrom(ADDR, 1);</p>
+                      <p>In the meantime the slave receive the command, send it back to the master and blinks for the number of times corresponding to the integer transmitted</p>
+                      <p> byte byteRcvd = 0;<br>
+                        if (TinyWireS.available()){           // got I2C input!<br>
+                        byteRcvd = TinyWireS.receive();     // get the byte from master<br>
+                        TinyWireS.send(byteRcvd);           // send it back to master<br>
+                        Blink(LED1_PIN,byteRcvd);           // blink</p>
+                      <p>To make a more interesting test i decided to connect simultaneously the Hello node and the Hello bridge and commend them with two buttons. As I had no chance to mill a new board I used a breadboard and attached two buttons to the pin PD3 and PD4 (Arduino 3 and 4).<br>
+                        Then as the hello bridge board doesn’t have any, I attached a led to the TX  and GND pins of the FTDI connector.<br>
+                        To connect the 3 boards I used a ribbon cable savaged from an old pc.<br>
+                        In the code I send a different number to the two boards. The number is used to decide how many times the led has to blink.</p>
+                      <p>Then I sed serial communication from pc to the computer to have debug messages.</p>
+                      <p>Here you can see a video showing how pressing a button a different board starts to blink.</p>
+                      <p><iframe src="https://player.vimeo.com/video/126954385" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/126954385">Networking using I2C</a> from <a href="https://vimeo.com/user3066449">Massimiliano Dibitonto</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+                      <p>Moreover
+                       you can see here the complete code of the master:</p>
+                      <p>#include &lt;Wire.h&gt;<br>
+                      </p>
+                      <p>int btnPin1 = 3;<br>
+                        int btnPin2 = 4;</p>
+                      <p>byte addr1 = 0x26;<br>
+                        byte addr2 = 0x27;<br>
+                        void setup()<br>
+                        {<br>
+                        Serial.begin(9600);<br>
+                        pinMode(btnPin1,INPUT);<br>
+                        pinMode(btnPin2,INPUT);<br>
+                        pinMode(13,OUTPUT);<br>
+                        Wire.begin(); // join i2c bus (address optional for master)<br>
+                        }</p>
+                      <p>&nbsp;</p>
+                      <p>void loop()<br>
+                        {<br>
+                        <br>
+                        digitalWrite(13,LOW);<br>
+                        int btn1= digitalRead(btnPin1); <br>
+                        int btn2= digitalRead(btnPin2); <br>
+                        // Serial.println(btn);<br>
+                        if(btn1 ==HIGH){<br>
+                        byte x= 1;<br>
+                        Serial.print(&quot;send to &quot;);<br>
+                        Serial.println(addr1);<br>
+                        digitalWrite(13,HIGH);<br>
+                        Wire.beginTransmission(addr1); // transmit to device #4<br>
+                        Wire.write(x);              // sends one byte<br>
+                        Wire.endTransmission();    // stop transmitting<br>
+                        delay(500);<br>
+                        Wire.requestFrom(addr1, 1);    // request 6 bytes from slave device #2</p>
+                      <p> while (Wire.available())   // slave may send less than requested<br>
+                        {<br>
+                        byte c = Wire.read(); // receive a byte as character<br>
+                        Serial.print(&quot;receive from &quot;);<br>
+                        Serial.print(addr1);<br>
+                        Serial.print(&quot; - &quot;);<br>
+                        Serial.println(c);         // print the character<br>
+                        }<br>
+                        }<br>
+  <br>
+                        if(btn2 ==HIGH){<br>
+                        byte x= 2;<br>
+                        Serial.print(&quot;send to &quot;);<br>
+                        Serial.println(addr2);<br>
+                        digitalWrite(13,HIGH);<br>
+                        Wire.beginTransmission(addr2); // transmit to device #4<br>
+                        Wire.write(x);              // sends one byte<br>
+                        Wire.endTransmission();    // stop transmitting<br>
+                        delay(1500);<br>
+                        Wire.requestFrom(addr2, 1);    // request 6 bytes from slave device #2</p>
+                      <p> while (Wire.available())   // slave may send less than requested<br>
+                        { <br>
+                        byte c = Wire.read(); // receive a byte as character<br>
+                        Serial.print(&quot;receive from &quot;);<br>
+                        Serial.print(addr2);<br>
+                        Serial.print(&quot; - &quot;);<br>
+                        Serial.println(c);         // print the character<br>
+                        }<br>
+                        } <br>
+                      </p>
+                      <p>&nbsp;</p>
+                      <p>}</p>
+                      </p>
+		              </div>            					
+              </section>
+				
+		
+			
+				
+			
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+				
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy;  <img src="images/license.png" alt="" /> Attribution, non-commercial, share alike.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				
+			</div>
+
+	</body>
+</html>
