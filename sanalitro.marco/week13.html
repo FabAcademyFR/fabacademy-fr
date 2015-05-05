@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Week_13</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/agency.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="index.html"> 
+                <strong>FA15 | MS<strong></a>
+                
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a class="page-scroll" href="index.html">FA15|MS</a>
+                    </li>
+                     
+                   
+                    <li>
+                        <a href="http://www.fabacademy.org/" target="_blank">FAB ACADEMY</a>
+                    </li>
+                    <li>
+                        <a href="http://officinegiardino.org/" target="_blank">FAB LAB Fr</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+  
+ 
+        <!-- /.row -->
+
+            
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div><h2 class="section-heading">Week 13</h2></div>
+                    <div>
+                      <h2 class="section-subheading text-muted">Networking and Communications</h2></div><br/>
+                    
+                    <img width="1140" src="img/week13/cover13.jpg">
+                    <p class="featurette-image img-responsive pull-left"> <iframe width="1140" height="630" src="https://www.youtube.com/embed/rO3DNENixzI" frameborder="0" allowfullscreen></iframe></p>
+            
+                    <div></div>
+                </div>
+            </div>
+            <hr class="featurette-divider">
+            <!-- First Featurette -->
+            
+        <div class="featurette" id="about">
+            
+            
+            <img class="featurette-image img-responsive pull-right" src="img/week13/n1.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week13/n2.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week13/n5.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week13/n3.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week13/n4.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week13/n6.jpg">
+           
+            
+            <div>
+              <h2 class="featurette-heading">Assignment purpose</h2></div>
+            <p class="lead">The purpose of this assignment was created networking between computer and boards using the example of serial bus. The bridge board was connected to a computer via a FTDI cable. The two node boards were connected to the bridge board using a connector. </p>
+            <p class="lead">For this example I used two node boards, but was possible to connect multiple nodes. </p>
+            
+                <div class="text-muted"><h3>Bridge and Node Boards</h3></div>
+
+<p class="lead">I used 1  <a href="http://academy.cba.mit.edu/classes/networking_communications/bus/hello.bus.45.bridge.png">hello.bus.45.bridge</a> and 2  <a href="http://academy.cba.mit.edu/classes/networking_communications/bus/hello.bus.45.node.png">hello.bus.45.node</a>. Components for each board: </p> 
+
+
+
+<p class="lead">- 6 pin header </p>
+<p class="lead">- 4 pin header </p>
+<p class="lead">- FTDI header ( just for the Bridge Board to connect to computer)</p>
+<p class="lead">- Resistor 10 K</p>
+<p class="lead">- Resistor 1 K</p>
+<p class="lead">- Capacitor 1 uf</p>
+<p class="lead"> <a href="http://www.atmel.com/Images/Atmel-2586-AVR-8-bit-Microcontroller-ATtiny25-ATtiny45-ATtiny85_Datasheet.pdf">- Microcontroller Attiny45</a></p>
+<p class="lead">- LEDs</p>
+
+<div class="text-muted"><h3>C code and Programming</h3></div>
+
+<p class="lead">I downloaded and used the <a href="http://academy.cba.mit.edu/classes/networking_communications/bus/hello.bus.45.c">hello.bus.45.c</a> code ( and <a href="http://academy.cba.mit.edu/classes/networking_communications/bus/hello.bus.45.make">makefile</a>) proposed in the schedule of Fab Academy week. Each board was programmed individually, to do this I modified the C code for each board:</p>
+
+<p class="lead">- Each node needs to have a different node ID number (0, 1, 2, 3, etc). The "bridge" board is also a "node". </p>
+ 
+<p class="lead">- In the C code, I changed the line:<i>#define node_id '0'</i>  and  I saved the file.</p> 
+<p class="lead">- I connected the bridge board to computer with the FTDI header and I programmed it using the FabISP, I flashed the bridge board as node 0:  <i>sudo make -f hello.bus.45.make program-usbtiny</i></p>
+<p class="lead">- Next, I modified again the C code and changed the node ID to 1:<i>#define node_id '1'</i> and  I saved the file.</p>
+<p class="lead">- I used the bridge board to power node boards and connect them to TX and RX. Then I flashed the node board as node 1: <i>sudo make -f hello.bus.45.make program-usbtiny</i></p>
+<p class="lead">I Repeated this process for node 2.
+
+<div class="text-muted"><h3>INTERFACE: USING THE SERIAL MONITOR IN ARDUINO TO TALK TO NETWORK</h3></div>
+
+<p class="lead"> After flashing boards whit 3 different node numbers:</p>
+<p class="lead">- I Plugged the bridge Board into computer (FTDI cable);</p>
+<p class="lead">- I Connected the nodes with 4 pin header (Tx,Rx,Vcc,Gnd);</p>
+<p class="lead">- Open a Arduino IDE and the serial monitor;</p>
+<p class="lead">- Make sure the baud rate is set to 9600;</p>
+<p class="lead">- Enter number of a note (pick a number) into serial monitor - press the <enter> key or the "send" button on the serial monitor;</p>
+<p class="lead">- The LEDs on all the boards lighted up once;</p>
+<p class="lead">- After all the boards lighted up, the board with the number entered into the serial monitor lighted up again;</p>
+<p class="lead">- The node name (node 0, node1, node2) also was displayed on the serial monitor.
+</p>
+
+<div class="text-muted"><h3>Problems and Solutions</h3></div>
+
+<p class="lead">The first time I programmed the boards at low speed (I tried to 1 Mhz), but in the serial monitor I could not read anything. I increased the programming speed at 8 MHz and I fixed it. </p>
+<p class="lead">To read better the lighted up of LEDs, I changed the delay in the C code from 100 ms to 1000 ms: <i>#define led_delay() _delay_ms(1000)</i> ,  I saved the file and re-programmed all the boards.</p>
+<p class="lead">I had a lot problems with noise of node 2 . When I used the Arduino serial monitor the node name displayed was “strange” and each time different. I controlled the board and solder, I changed the connector and rolled the wires to reduce the interference, but I just reduced the noise. I could not fixed completely this problem.</p>
+
+<h2 class="featurette-heading">Download Files</h2></div>
+              <p class="lead">PNG:</p>
+              <p class="lead"><a href="http://academy.cba.mit.edu/classes/networking_communications/I2C/hello.I2C.45.bridge.traces.png">- hello.bus.45.bridge_traces.png</a></p>
+              <p class="lead"><a href="http://academy.cba.mit.edu/classes/networking_communications/bus/hello.bus.45.bridge.interior.png">- hello.bus.45.bridge_interior.png</a></p>
+              <p class="lead"><a href="http://academy.cba.mit.edu/classes/networking_communications/bus/hello.bus.45.node.traces.png">- hello.bus.45.node_traces.png</a></p>
+              <p class="lead"><a href="http://academy.cba.mit.edu/classes/networking_communications/bus/hello.bus.45.node.interior.png">- hello.bus.45.node_interior.png</a></p>
+            <p class="lead">C code and makefile:</p>
+              <p class="lead"><a href="http://academy.cba.mit.edu/classes/networking_communications/bus/hello.bus.45.c">-   hello.bus.45.c</a></p>
+              <p class="lead"><a href="http://academy.cba.mit.edu/classes/networking_communications/bus/hello.bus.45.make">-   hello.bus.45.make</a></p>
+              
+<p class="lead">Programs: Eagle, Photoshop, IDE Arduino.</p> 
+<p class="lead">Machinery: Roland SRM-20.</p>
+
+   
+
+<!--<p class="featurette-image img-responsive pull-right"> <iframe width="1140" height="630" src="https://www.youtube.com/embed/HTyyFYbqHkI" frameborder="0" allowfullscreen></iframe></p>
+<!-- <img width="1140" src="img/week11/cover11b.jpg"> -->
+<!-- <img class="featurette-image img-responsive pull-right" src="img/week11/i7.jpg">-->
+
+
+              
+                        
+                                   
+              
+
+              
+                  
+           </section>
+           
+        
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; 2015, Marco Sanalitro</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="https://twitter.com/SanalitroMarco"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="https://www.facebook.com/marco.sanalitro.9"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li>arch.marco.sanalitro@gmail.com
+                        </li>
+                        
+                    </ul>
+                </div>
+             </div>
+        </div>
+    </footer>
+
+    
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/agency.js"></script>
+
+</body>
+
+</html>
