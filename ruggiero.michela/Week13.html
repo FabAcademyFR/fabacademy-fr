@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Week 11</title>
+    <title>Week 13</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -80,9 +80,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Week 11</h2>
+                    <h2 class="section-heading">Week 13</h2>
                     
-                    <h3 class="section-subheading text-muted"> Output Devices </h3>
+            <h3 class="section-subheading text-muted">Networking and Communications</h3>
                 </div>
             </div>
                <hr class="featured-divider">
@@ -91,60 +91,59 @@
 	<!-- First Featured -->
         <div class="featured" id="about">
            
-            <div><h2 class="featured-heading">OUTPUT DEVICES - MICRO SERVO SG90</h2></div>
+            <div><h2 class="featured-heading">NETWORK CONNECTING</h2></div>
             
-            <p class="lead">Assignment: Add an output device to a microcontroller board you've designed and program it to do something
+            <p class="lead">Assignment: Design and build a wired &/or wireless network connecting at least two processors
       <br/>
-      </p>
-         <p class="lead">I tried to design a shield that could be useful for my final project.
+<p class="lead">For this assignment I used 1 Hello.bus.45.bridge and 2 hello.bus.45.node.
          </p>
- <p class="lead"> FABKIT: microcontroller board
-	<img class="featured-image  img-responsive pull-center" src="img/week10/fabkit.jpg">
+ <p class="lead"> BRIDGE: Hello.bus.45.bridge
+	<img class="featured-image  img-responsive pull-center" src="img/week13/bridge.jpg">
+	         </p>
+	          <p class="lead">The bridge board has a FTDI header for the serial communication with the computer and a 4 pin header to communicate with the nodes.
+      <br/>
+ <p class="lead"> NODES: hello.bus.45.node
+	<img class="featured-image  img-responsive pull-center" src="img/week13/node.jpg">	
 	<p class="lead"> Components: 
-	<br/>- 1 Resistors 10K
-	<br/>- 2 Resistors 499
-	<br/>- Yellow Led
-	<br/>- S1 switch 6mm
-	<br/>- 2 Capacitors 0.1 UF
-	<br/>- 1 Capacitors 1 UF
+	<br/>- Resistors 10K
+	<br/>- Resistors 1K
+	<br/>- Capacitor 1uf
+	<br/>- Microcontroller Attiny45
+	<br/>- 3 Leds
+	<br/>- FTDI header
 	<br/>- Header 6 Pin
-	<br/>- Resonator 8MHZ
-	</p>
-	<br/>
-	<br/>
-<p class="lead"> OUTPUT: SERVO MOTOR
-    <p class="lead">I have chosen the Servomotore because I would like to apply this output device in my final project. I want to create a mechanical movement based on that. My intention is to move a surface according to inputs such as light, sound and humidity.
- </p>
- 	<p class="lead"> Components: 
- 	<br/>- Micro servo SG90 9G TOWERPRO
-	<br/>- Trimpot 10K with Knob
 	<br/>- Header 4 Pin
-<p class="lead"> EAGLE:
-<br/>
-	<img class="featured-image  img-responsive pull-center" src="img/week11/EAGLE.jpg">
 	</p>
 	<br/>
-	<p class="lead"> PHOTOSHOP:
+	<p class="lead"> MILLING - WELDING:
 	<br/>
-	<img class="featured-image  img-responsive pull-center" src="img/week11/photoshop.jpg">
+	<img class="featured-image  img-responsive pull-center" src="img/week13/milling.jpg">
 	</p>
-	<br/>
-<p class="lead"> MONOFAB SRM-20:
-	<br/>
-	<img class="featured-image  img-responsive pull-center" src="img/week11/MILLING.jpg">
-</p>
 	<br/>
 <p class="lead"> PROGRAMMING:
-<img class="featured-image  img-responsive pull-center" src="img/week11/sketch.jpg">
-	<img class="featured-image  img-responsive pull-center" src="img/week11/PROGRAMMING.jpg">
+<img class="featured-image  img-responsive pull-center" src="img/week13/programming.jpg">
 	</p>
+	<p class="lead">Each board needs a different node id.
+      	  <p class="lead">For the bridge board I used as node id the number 0. I connected the bridge board to the FabISP and typed "sudo make -f hello.bus.45.make program-usbtiny". The LED should flash.
+      	  <p class="lead">You have to repeat the same thing for the rest of the nodes.
 	<br/>
-	<p class="lead"> As you can see, I added a potentiometer in the output card, even if it was not included in the project of this week. It was an exercise.
-	<p class="lead"> The output was a success.
+<p class="lead"> COMUNICATIONS:
+<img class="featured-image  img-responsive pull-center" src="img/week13/communications.jpg">
+	<p class="lead"> NODE 1: define node_id '1' and save the file. Connect the board to the FabISP and type "sudo make -f hello.bus.45.make program-usbtiny". The LED should flash.
 	</p>
+	<p class="lead"> NODE 2: define node_id '2' and save the file. Connect the board to the FabISP and type "sudo make -f hello.bus.45.make program-usbtiny". The LED should flash.
+	</p>
+	<p class="lead"> Now connect the boards and plug the bridge board to the computer with a FTDI cable. Connect them to Tx and Rx and flash the first node board as node 1.(type in terminal: sudo make -f hello.bus.45.make program-usbtiny). You have to repeat the same thing for the second node board as node 2
+	<p class="lead"> Open the Arduino IDE and go to Tools>Serial Monitor to open the serial monitor. Into the serial port enter the number of a node and "send" it. After all the LEDs light up once, the board that corresponds to the number that is entered into the serial port, should light up again.
 	<br/>
-	<iframe width="1140" height="640" src="https://www.youtube.com/embed/2texQeg8vJw" frameborder="0" allowfullscreen></iframe></iframe>
-		<br/>
+<iframe width="1140" height="640" src="https://www.youtube.com/embed/Pi2GNSwzzuQ" frameborder="0" allowfullscreen></iframe>
+		<br/>	
+		<p class="lead"> The programming was a success.
+<p class="lead"> Notes:
+	<br/>- Make sure the baud rate is set to 9600;
+	<br/>- Each board needs to have a different node id;
+	<br/>- Problems with noise of nodes. Using the Arduino serial monitor the nodes name showed was unusual. I checked the solders, I changed the connectors and rolled the wires. The result was just to reduce the noise.
+<br/>	
 </p>
 	
              <!--
