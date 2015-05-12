@@ -101,8 +101,8 @@
 					  </header>
 							<p>At first I decided to expand the Hello Board. Indeed, when not used for programming the pin of ICSP connector can be used for other purposes. For example the MISO pin has also an ADC converter, so it can be used to read from an analog sensor like a photoresistor. It corresponds to the Arduino analog pin 5 as you can see from the image below.</p>
 							<p><img src="http://fc04.deviantart.net/fs70/f/2013/038/3/7/attiny_web_by_pighixxx-d5u4aur.png" width="700"> </p>
-							<p><img src="images/input/IMG_4333.JPG" width="320" height="240"></p>
-                      <p>So, as I live far from the Fablab, I decided at first to make a prototype on a breadboard. I used a photoresistor to read the light levels in the room. To read from it I had to make a voltage divider addign a 10k resistor. To read the values I printed them on the seria port. I programmed the board using the Arduino IDE and the SoftwareSerial library. I used an Arduino board without the microcontroller to have regulated +5V and to use the FTDI chip for the serial communication between the board and the computer.
+							<p>&nbsp;</p>
+                      <p>So, as I live far from the Fablab, I decided at first to make a prototype using jumpers. I used a photoresistor to read the light levels in the room. To read from it I had to make a voltage divider addign a 10k resistor. To read the values I printed them on the seria port. I programmed the board using the Arduino IDE and the SoftwareSerial library. I used an Arduino board without the microcontroller to have regulated +5V and to use the FTDI chip for the serial communication between the board and the computer.
                             Here is the code:</p>
                             <p align="left"><br>
                             #include &lt;SoftwareSerial.h&gt;</p>
@@ -207,9 +207,9 @@ void draw () {</p>
                       I didn't follow the tutorial as it uses the 8MHz internal clock even if the board has a 20MHz resonator. I looked at a mapping of microcontroller pins to Arduino pins (figure below) and I made the led mounted on pin PB5 - PIN13 blink (Arduino blink example).
                       <p><img src="http://1.bp.blogspot.com/-CoYms1FRXt8/Ue61oKNsqQI/AAAAAAAAAIM/377wUC_bAMs/s1600/atmega328_qtfp_web-600x424.png">
                         
-                      <p>I had some problems with the serial communication that I wasn't able to solve. I receive strange characters. I tested different command as write and print with the same result.I checked also for short circuits but I had no result.</p>
-                      <p><img src="images/input/IMG_4331.JPG" width="320" height="240"></p>
-                      <p><img src="images/input/IMG_4332.JPG" width="320" height="240"></p>
+                      <p>I had some problems with the serial communication that I wasn't able to solve. I receive strange characters. I tested different command as write and print with the same result.I checked also for short circuits but I had no result. Then I discovered that I put a wrong resonator on the board. So i had to modify the boards.txt file in the Arduino IDE changing the value of the microcontroller frequency. And then it worked fine.</p>
+                      <p><img src="images/input/sb_connected.JPG" width="300" height="400"></p>
+                      <p><img src="images/input/sb_connected2.jpg" width="300" height="400"></p>
                     
                      <header>
 					   <h3>Designing the shield</h3>
@@ -236,8 +236,7 @@ void draw () {</p>
                     <p align="left">void loop()<br>
                       {<br>
                       temp = analogRead(tempPin);<br>
-                      temp = temp * 0.48828125; // LM35 vuole una costante<br>
-                      //temp = temp * 0.137;<br>
+                      temp = temp * 0.48828125; // the constant to obtain the temperature<br>
                       light = analogRead(ldrPin);<br>
                       <br>
                       Serial.print(&quot;TEMPERATURE = &quot;);<br>
@@ -250,13 +249,13 @@ void draw () {</p>
   <br>
                       delay(1000);<br>
                       }</p>
-                    <p>Then, as I cannot use the serial communication, I connected the shield to the Fabkit and added a conditional statement to make the led on the board lights up at a certain threshold. I added the following code:
+                    <p>Then, I connected the shield to the Fabkit and added a conditional statement to make the led on the board lights up at a certain threshold. I added the following code:
                     <p align="left">if(light &gt; 400){<br>
 digitalWrite(13,HIGH); <br>
 }else{<br>
 digitalWrite(13,LOW); <br>
 }
-                    <p align="center"><img src="images/input/sb_connected.JPG" width="318" height="281" align="middle">                                                            
+                    <p align="center">
                     <p>                    					
                     </section>
 				
