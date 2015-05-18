@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>How to make [almost] everything</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Massimiliano Dibitonto, Fablab 2015 project and assignments portfolio" />
+		<meta name="keywords" content="fablab, makers, fabacademy" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.scrolly.min.js"></script>
+		<script src="js/jquery.scrollzer.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<div id="header" class="skel-layers-fixed">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar48"><img src="images/profilo.jpg" alt="" /></span>
+							<h1 id="title">Massimiliano</h1>
+							<h1 id="title">Dibitonto</h1>
+							<p>How to make [almost] everything</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<!--
+							
+								Prologue's nav expects links in one of two formats:
+								
+								1. Hash link (scrolls to a different section within the page)
+								
+								   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
+
+								2. Standard link (sends the user to another page/site)
+
+								   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
+							
+							-->
+							<ul>
+								<li><a href="index.html" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Home</span></a></li>
+								</ul>
+						</nav>
+						
+				</div>
+				
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<li><a href="mailto:max.dbt@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+				
+				</div>
+			
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="one dark cover" >
+						<div class="container">
+
+							<header>
+								<h2> <strong>  14- Interface and application programming </strong> </h2>
+							
+							</header>
+							
+
+						</div>
+					</section>
+							
+					<section id="about" class="two">
+					  <div class="container">
+						
+							<header>
+								<h3>Intro </h3>
+							</header>
+							<p>The assignment for this week was to create a GUI that is able to receive data and send commands to a board we designed. For this assignment I decided to connect to the Fabkit the input and output boards I made for the previous assignments and give them and interface using Processing and serial communication.
+
+
+
+  </p>
+						<header>
+								<h3>Choosing the right tool</h3>
+							</header>
+							<p>For this assignment I decided to use Processing as, in the past I used it to make some little projects of visualization or modifying examples but I never made a structured graphical gui. I have previous experience even with other languages but I find Processing very useful for making fast prototypes. Moreover it accepts also Java code and there are interesting libraries (like OpenCV) to do a lot of cool things and it is multi platform.</p>
+                            
+                            <header>
+								<h3>Designing the system</h3>
+							</header>
+                            <p>I wanted to made a system able to turn on and off my air conditioning system according to the temperature. To do this I used the input board that has a:
+                          <ul class="default">
+                            <li>LM35 analog temperature sensor</li>
+                            <li>Light dependant resistor (10k)</li>
+                            </ul>
+                            
+                          <p><img src="images/gui/in.jpg" width="250" height="333"></p>
+                          <p>and the output board that has a: </p>
+                          <ul class="default">
+                            <li>TSOP1730 IR receiver</li>
+                            <li>IR LED</li>
+                        </ul>
+                            
+                            <p><img src="images/gui/out.JPG" width="250" height="188">
+                          <p><img src="images/gui/inout.JPG" width="250" height="188">                                                                                                                
+                        <p>The system should allow the used to set a simple rule: if the temperature gety major or minor a certain value that turn on or off the air conditioning.
+                            So the user should set:
+                            <ul class="default">
+                            <li>major or minor</li><li>reference temperature</li>
+                            <li>if the air conditioner shold be turned on or off</li>
+                        </ul>
+                            </p>
+                            <p>Once the user set the rule the system proceeds as follow:</p>
+                            
+
+                         <div class="mxgraph" style="position:relative;overflow:auto;width:100%;"><div style="width:1px;height:1px;overflow:hidden;">3VpNc+I4E/41qdr3AIUxkOQYksnuHnZ2qjJV885pS7EFqGIsjywSmF8/3XK3v0mYYAIJB7Dbkiw93f10t8SZf71c/2lEsvhHhzI6Gw7C9Zl/czYcno/P4RsFm0ww8rxMMDcqzEQlwZ36KUk4IOlKhTKtNLRaR1YlVWGg41gGtiKb6aj6ikTMefhCcBeIqCn9pkK7yKQXw0kh/0uq+YJf400usyep3fAYoZyJVWR7TgTP8PFS8Fi0qvUgux1T/w3d020i4sqEfmq9rAiMTAukaLGquvhYPFZeea9NKE1FFKn4oYyi/wkUabSGgfBqub6WESqTFZV1u93yNAfPyJim8nwHAudRRCtaylWSRCoQVunYgSqMTRsAp9boh1w/MOvpwi4juPTgMl2IBNst13M0x/4s0k/BAsbpu9H+wzZPC2XlXSICbPgEzUDWnDst51EaK8mYC5DA2qVeSms2qExazoRgJUtnC34qLMkbkGxRsqILkglSxTwfucAOLgi+dij9BpRfFxJh26RWLnHw4MdKgdWg+7gnobDibDgRS1x9fJ9mIEwimNQ0VI9wOcfLmQHL4z6pjFNtYIysGUyq1LIrPbmJHUxJ3mVNSX5TS8NRi5ZYuftoiWikpKW/SwqRgUrJ8FlrMhb3kYTet52hy285nBsweoTwsAVhrw1hj2lpH4gp2pSAkiFQPN1qYxd6rmMRfSqkU6NXcYgo3wALl2GUa2X/j+L+mO6+l558kUbB/BynYkeAzGxKzfEW2+fP6h22gp3qlXFaKTwbyGsu2RQzES7sWYUYGQGVPlbDxD7gesTYHwddWlAZXQL8COiOm/HQIDNk/ODEyL0vUbaKU0iZ8n5GxLCSLZTd6FwfX8+KgVaoT2Cig7L/wflpxDRD/ORzRCjzE3NWhZ9YuJeSiaBaYoDTtYidbSHUMEO0yXdE/XVoW6n/cNBeHIKd+NpxTc5U29mpwk0FVb2KnYjoy+zE9nMEeqLapGS535GPapCDqSAflJB0tQrmMbx0fyoiNccKJ4DVIyRTtDFI/KMrerBUYej0E4l7GU1F8DB3mrrWkc5qGH/mPu1QkiVQTUjvLuqe3S26N+hTiCCT7tHtzvDS0F+0gtkVTfRsloJO6/jnM9hJJRy+Oo7Hv2nxXcbjFovvPNtxXa+MEdiLGySoH2fNNYW9kNUWystGfLUqmxXcZ32SzsVG14lzDc55ByX3r9F+DpbrqzYsJVfd+h8Nesh8mL3xbSIOh5fDhpxXeeC25KIzD2xW56fqgWR23YS30aQa4fIdxlMIcM2co6tsWMSxtm6n0e0JssoiOSvKmb2S4Qnv//HG94DUVkqGx225MO8R7rUfyKZQBi6r21LcXC4jOPmxwh3fKewGyx7P5AqaeOO+513C5+JiPB5feskahA6cAbpBjzDDpmTp+VhcFuKGLmJSqiCHgz9UX/Zxsq62lMtEGmFXWP6017aw2GzSz1Wtb782hXVbPmeaB6zUTQGHg0XjJSwNf4SCMdBnQ4VWp+L5C+vbpVZ/+1U3Ngji//3mOn6bUcXKajruaHHVOrdajdOCiQQA8Ve8uemNnnPp/Wl0UgtNIx66vKnMdFD2dfb/vVydw/iH2ZRrTUKIPN++7vWbx1SnWveyKRyg7j2lrMBvOe3azrEDeGdXSUNidCBTWMuhdtBqR4htOYPHsu6TBqqZdsUVnrwTWIcTMhnCdXzedjZ7MFyblcW3hUC3cClElhuJgE69LRQdg1C/rzM/DmRH2VP3Oz302y1Eka1UDo6Odi7n037newhRpKtOQhRr4RRjVPOPQW+/Neu6drU1xOZdMfmjHZbydmwzVv172yTOk7B8sohOLH80HnVq+zwyp968bVoboRPXGH24gqXVNSiZOoJrNAsWdo3PJ+kZbBD7ewYcKHiXpAxORTpxjA78AG6Lv1ZmzYs/zPqffgE=</div></div>
+
+<script type="text/javascript" src="https://www.draw.io/embed.js?s=flowchart"></script>
+
+ <header>
+								<h3>Implementing the system</h3>
+					    </header>
+                            <p>To implement the system I split my work in different parts:
+                            <ul class="default">
+                            <li> I have to program the Fabkit to read sensor values and send it to Processing and make processing visualize the values on the GUI.</li>
+                            <li>I have to program Processing to let the user sets some parameters that have to be examinated to send a proper command to the Fabkit</li>
+                            <li>Make the Fabkit send a command to the air conditioner. To do this I have a subtask related to find the right IR code for the air conditioner</li>
+                            </ul>
+                            </p>
+                            <h4>A note about IR communication</h4>
+                            <p>I found very useful the documentation of this <a href="http://www.righto.com/2009/08/multi-protocol-infrared-remote-library.html">IR remote library </a>for Arduino: 
+                        <blockquote style="font-style:italic">An IR remote works by turning the LED on and off in a particular pattern. However, to prevent inteference from IR sources such as sunlight or lights, the LED is not turned on steadily, but is turned on and off at a modulation frequency (typically 36, 38, or 40KHz). The time when a modulated signal is being sent will be called a mark, and when the LED is off will be called a space.
+Each key on the remote has a particular code (typically 12 to 32 bits) associated with it, and broadcasts this code when the key is pressed. If the key is held down, the remote usually repeatedly broadcasts the key code. For an NEC remote, a special repeat code is sent as the key is held down, rather than repeatedly sending the code. For Philips RC5 or RC6 remotes, a bit in the code is toggled each time a key is pressed; the receiver uses this toggle bit to determine when a key is pressed down a second time.</blockquote></p>
+<p>I saw that is possible to decode (and copy for re -sending) the code with the IRremote library but also using an oscilloscope.
+
+                         
+
+
+I did this with the library with thr IR Record example an I obtained the following code (testing with my tv and my air conditioner):</p>
+<p><img src="images/gui/irdump.png" width="1050"></p><p> Pressing the button on my board made the sketch send back the command. I noticed that with my tv worked while eith the conditioner doesn't. So I made other researches and I found that Mitsubishi give several issues with this library and I found this useful <a href="https://github.com/r45635/HVAC-IR-Control">project</a> with a modified version of the library to work well with Mitsubishi.  </p>
+
+<h4>Sending the sensor values to Processing</h4>
+<p>To send the sensor value to Processing from the Fabkit I used serial communication. As I want to send two values I separated the values with a / so it's easy to parse it from Processing. Even if the light is not used now i want to send it for future implementation. I used the Arduino IDE to make the code:</p>
+<textarea style="width:80%; height:400px; font-size:16px"> const int ldrPin = 4;  
+const int tempPin = 5;
+
+void setup() {
+  Serial.begin(9600);
+  while(!Serial){
+    
+  }
+   
+}
+
+void loop() {
+ int light = analogRead(ldrPin);
+int temp = analogRead(tempPin);
+//float t  = temp * 0.48828125; // LM35 vuole una costante
+
+  //temp = temp * 0.137;
+Serial.print(light);
+Serial.print("/");  
+Serial.println(temp);
+
+
+delay(15);
+}
+</textarea>
+<p> The delay at the end is important to avoid problems with the serial buffer</p>
+<p>The I implemented the code on Processing. The choice was to make the application event driven (reacting to serial messages from the Fabkit) or reading the values in the loop. I chose the sencond strategy as the data flow is continous and would result disturbing.<br> The code for reading from the serial is very easy in Processing. You have to use the serial library, open the right port with the right baudrate and then read the buffer. On my pc the right port is 3 so if you use my code you have to change it (maybe).</p><textarea style="width:80%; height:300px; font-size:16px"> while (myPort.available() > 0) {
+    myString = myPort.readStringUntil(lf);
+    if (myString != null) {
+      myString= trim(myString);
+      println(myString);
+      String[] q = split(myString, "/");
+//println(q.length + " values found");  // Prints "4 values found"
+light = int(q[0]);  
+temp = int(q[1]);  
+lightR(light);
+t = temp * 0.48828125; // the constant to have temperature in °C
+tempR(t);
+println("l="+light + " t=" + t);
+    }
+  }
+  </textarea><p> The interesting part is the split command that splits the message when it finds the / so I can have two separate values for light and temperature. I’ve seen that using float has a bad effect on the ATMega performances so I decided to use Processing to operate the calculation to obtain the temperature multiplying the red value for a constant.</p>
+  <h4>Creating the GUI</h4>
+  <p>I started visualizing the sensor values using two rectangles that dynamically changes the height.</p>
+  <iframe src="https://player.vimeo.com/video/127891847" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/127891847">Reading sensor values</a> from <a href="https://vimeo.com/user3066449">Massimiliano Dibitonto</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+  <p> But to have a right visualization I used the map command to make the values adapt proportionally to the dimensions of the screen.</p>
+  <p>To create the GUI I used the <a href="http://www.sojamo.de/libraries/controlP5/">ControlP5</a> library that has some nice controls.I started from the examples to make the toggles and a slider to set up the rule.  There is a switch to turn on and off the rule execution. </p>
+  <p><img src="images/gui/gui.png" width="839" height="704">					  </p>
+  <p>When you click on the toggles they change the colour. Pressing the &quot;set rule&quot; button you confirm the rule that appears in a list.</p>
+  <p><img src="images/gui/gui2.png" width="836" height="696"></p>
+  <p>Then when a command is fired you see a label saying on or off depending if you turned on or off the air conditioner.</p>
+  <p><img src="images/gui/gui3.png" width="825" height="700"></p>
+  <p>If you try to set the rule without setting the parameters you recive an alert message:</p>
+  <p><img src="images/gui/gui4.png" width="832" height="703"></p>
+ <h4>Sending messages to the Fabkit</h4>
+ <p>To turn on and off the air conditioner Processing sends to the Fabkit an integer through serial communication. According to the number received the Fabkit choose the command to be sent to the air conditioner.</p>
+ <textarea style="width:80%; height:300px; font-size:16px"> 
+  if (Serial.available() > 0) {
+    int code = Serial.parseInt();
+  if(code == 1){ // on
+     Serial.println("Turn ON\nCommand 'HVAC_HOT, 21, FAN_SPEED_AUTO, VANNE_AUTO_MOVE'  Next Command in 10 sec.");
+      irsend.sendHvacMitsubishi(HVAC_HOT, 23, FAN_SPEED_1, VANNE_AUTO_MOVE, false);
+      delay(10000);
+    }else if(code == 0){//off
+    Serial.println("Switch OFF and Wait 15 Seconds to send ON command.");
+      irsend.sendHvacMitsubishi(HVAC_HOT, 21, FAN_SPEED_AUTO, VANNE_AUTO_MOVE, true);
+      delay(15000); 
+    }
+     
+  }
+ </textarea>
+ <p>The result</p>
+ <iframe src="https://player.vimeo.com/video/128192030" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/128192030">Interface programming</a> from <a href="https://vimeo.com/user3066449">Massimiliano Dibitonto</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+  <p>You can download the <a href="www.massimilianodibitonto.it/fablab/light_temp_ir.zip">Arduino code</a> and the <a href="www.massimilianodibitonto.it/fablab/light_temp_ir.zip">Processing code</a></p>
+					  </div>
+						
+					</section>
+				
+		
+			
+				
+			
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+				
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy;  <img src="images/license.png" alt="" /> Attribution, non-commercial, share alike.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				
+			</div>
+
+	</body>
+</html>

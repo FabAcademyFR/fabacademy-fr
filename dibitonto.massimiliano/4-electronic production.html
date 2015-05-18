@@ -98,11 +98,146 @@
 							<p> The assignment of the third week was to mill and solder an ISP.</p>
 						<header>
 								<h3>Making an ISP programmer</h3>
-							</header>
-							<p>I used a Roland monoFab SRM-20 milling machine to mill the circuit shared on the Fabacademy website. The task was quite easy and was a good way to approach the milling machine. Then I soldered the components on the PCB. Even if I'm quite familiar with electronics I'm not used to solder SMD components. Moreover some components had packages really difficult to use. The quartz was too big and I had to put it on one side and the diodes were too small, so I had to create a little jumper with the stain. I made the smoke test but I didn't program it as I (still) don't have a programmer. </p><p><img src="images/milling.jpg"> </p><p> <img src="images/pcb.jpg"> </p>
+						  </header>
+							<p>I used a Roland monoFab SRM-20 milling machine to mill the circuit shared on the Fabacademy website. The task was quite easy and was a good way to approach the milling machine. Then I soldered the components on the PCB. Even if I'm quite familiar with electronics I'm not used to solder SMD components. Moreover some components had packages really difficult to use. The quartz was too big and I had to put it on one side and the diodes were too small, so I had to create a little jumper with the stain. I made the smoke test and it worked fine.</p><p><img src="images/milling.jpg"> </p><p> <img src="images/pcb.jpg"> </p>
+							<header>
+							  <h3>Programming the FabIsp</h3>
+						  </header>
+                            <p><br>
+                              I used avrdude line command and Arduino as ISP. However, as we are using an Attiny 44a, I had to change the device signature in the avrdude.conf . I wasn’t able to find online references about other values to change in that file.</p>
+                            <p>To tell avrdude to use Arduino as ISP I changed this line in the Makefile:<br>
+                              AVRDUDE = avrdude -c arduino -P /dev/tty.usbmodem1421  -p t44 # edit this line for your programmer</p>
+                            <p>For the connections I followed this tutorial <a href="http://highlowtech.org/?p=1695">http://highlowtech.org/?p=1695</a> and this reference <a href="http://arduino.cc/en/Reference/SPI">http://arduino.cc/en/Reference/SPI</a>. </p>
+                            <p><img src="images/program_isp.jpg" width="250" height="282"></p>
+                            <p>The connection worked fine however I had this error and I wasn't able to solve it.</p>
+<textarea style="width:80%; height:300px; font-size:16px">MacBook-Pro-di-Massimiliano:firmware Massimiliano$ make fuse<br>
+                          avrdude -c arduino -P /dev/tty.usbmodem1421  -p t44  -U hfuse:w:0xDF:m -U lfuse:w:0xFF:m                            avrdude: AVR device initialized and ready to accept instructions                            Reading | ################################################## | 100% 0.00s
+                          avrdude: Device signature = 0x1e950f
+                          avrdude: reading input file &quot;0xDF&quot;
+                          avrdude: writing hfuse (1 bytes):                            Writing |                                                    | 0% 0.00s ***failed; 
+                          Writing | ################################################## | 100% 0.08s                            avrdude: 1 bytes of hfuse written
+                          avrdude: verifying hfuse memory against 0xDF:
+                          avrdude: load data hfuse data from input file 0xDF:
+                          avrdude: input file 0xDF contains 1 bytes
+                          avrdude: reading on-chip hfuse data:                            Reading | ################################################## | 100% 0.00s                            avrdude: verifying ...
+                          avrdude: verification error, first mismatch at byte 0x0000
+                          0x00 != 0xdf
+                          avrdude: verification error; content mismatch                            avrdude: safemode: hfuse changed! Was df, and is now 0
+                          Would you like this fuse to be changed back? [y/n] n
+                          avrdude: safemode: Fuses OK (H:00, E:DF, L:00)
+  
+                          avrdude: stk500_recv(): programmer is not responding
+                          make: *** [fuse] Error 1</textarea>
+                          
+                            <p align="center">Then I decided to put the Arduino bootloader in it. To do this I had to tell to the Arduio IDE the characteristics of the board. Inside the /hardware folder of Arduino IDE I added the boards.txt taken from <a href="https://github.com/damellis/attiny/tree/master/attiny">https://github.com/damellis/attiny/tree/master/attiny</a> but, once again I found the reference for the ATtiny44 and not for the 44a.After adding the file another section appeared in the &quot;boards&quot; submenu:</p>
+                            <p align="center"><img src="images/boards_list.jpg" width="250" height="193" alt="boards list"></p>
+                            <p>In the board.txt file i had to add also this line: attiny44-20.bootloader.tool=avrdude</p>
+                            <p>However I got this error and I wasn't able to solve it:</p>
+                         <textarea style="width:80%; height:200px; font-size:16px">
+                          Arduino:1.5.8 (Mac OS X), Scheda:&quot;ATtiny44 (external 20 MHz clock)&quot;
+                          
+
+                          avrdude: initialization failed, rc=-1
+                          Double check connections and try again, or use -F to override<br>
+                          this check.
+                           avrdude: stk500_disable(): unknown response=0x12
+                           
+                          Errore durante la scrittura del bootloader</textarea></p>
+                            <p align="left">The I tried with the usbasp programmer and it worked fine. I changed a line in the Makefile to tell to the system to use usbasp: </p>
+                        AVRDUDE = avrdude -c usbasp  -p $(DEVICE) # edit this line for your programmer<br>
+After the make clean and make hex command I sent the make fuse command with this output:
+                  <textarea style="width:80%; font-size:16px; height:300px">MBPdiMaimiliano:firmware Massimiliano$ make fuse
+avrdude -c usbasp  -p attiny44  -U hfuse:w:0xDF:m -U lfuse:w:0xFF:m
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+Reading | ################################################## | 100% 0.00s
+avrdude: Device signature = 0x1e9207
+avrdude: reading input file &quot;0xDF&quot;
+avrdude: writing hfuse (1 bytes):
+Writing | ################################################## | 100% 0.00s
+avrdude: 1 bytes of hfuse written
+avrdude: verifying hfuse memory against 0xDF:
+avrdude: load data hfuse data from input file 0xDF:
+avrdude: input file 0xDF contains 1 bytes
+avrdude: reading on-chip hfuse data:
+Reading | ################################################## | 100% 0.00s
+avrdude: verifying ...
+avrdude: 1 bytes of hfuse verified
+avrdude: reading input file &quot;0xFF&quot;
+avrdude: writing lfuse (1 bytes):
+Writing | ################################################## | 100% 0.00s
+avrdude: 1 bytes of lfuse written
+avrdude: verifying lfuse memory against 0xFF:
+avrdude: load data lfuse data from input file 0xFF:
+avrdude: input file 0xFF contains 1 bytes
+avrdude: reading on-chip lfuse data:
+Reading | ################################################## | 100% 0.00s
+avrdude: verifying ...
+avrdude: 1 bytes of lfuse verified
+avrdude: safemode: Fuses OK (H:FF, E:DF, L:FF)
+avrdude done.  Thank you.
+Then I proceeded with the make program command with this output:
+MBPdiMaimiliano:firmware Massimiliano$ make program
+avrdude -c usbasp  -p attiny44  -U flash:w:main.hex:i
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+Reading | ################################################## | 100% 0.00s
+avrdude: Device signature = 0x1e9207
+avrdude: NOTE: &quot;flash&quot; memory has been specified, an erase cycle will be performed
+To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file &quot;main.hex&quot;
+avrdude: writing flash (2002 bytes):
+Writing | ################################################## | 100% 1.38s
+avrdude: 2002 bytes of flash written
+avrdude: verifying flash memory against main.hex:
+avrdude: load data flash data from input file main.hex:
+avrdude: input file main.hex contains 2002 bytes
+avrdude: reading on-chip flash data:
+Reading | ################################################## | 100% 1.06s
+avrdude: verifying ...
+avrdude: 2002 bytes of flash verified
+avrdude: safemode: Fuses OK (H:FF, E:DF, L:FF)
+avrdude done.  Thank you.
+avrdude -c usbasp  -p attiny44  -U hfuse:w:0xDF:m -U lfuse:w:0xFF:m
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+Reading | ################################################## | 100% 0.00s
+avrdude: Device signature = 0x1e9207
+avrdude: reading input file &quot;0xDF&quot;
+avrdude: writing hfuse (1 bytes):
+Writing | ################################################## | 100% 0.00s
+avrdude: 1 bytes of hfuse written
+avrdude: verifying hfuse memory against 0xDF:
+avrdude: load data hfuse data from input file 0xDF:
+avrdude: input file 0xDF contains 1 bytes
+avrdude: reading on-chip hfuse data:
+Reading | ################################################## | 100% 0.00s
+avrdude: verifying ...
+avrdude: 1 bytes of hfuse verified
+avrdude: reading input file &quot;0xFF&quot;
+avrdude: writing lfuse (1 bytes):
+Writing | ################################################## | 100% 0.00s
+avrdude: 1 bytes of lfuse written
+avrdude: verifying lfuse memory against 0xFF:
+avrdude: load data lfuse data from input file 0xFF:
+avrdude: input file 0xFF contains 1 bytes
+avrdude: reading on-chip lfuse data:
+Reading | ################################################## | 100% 0.00s
+avrdude: verifying ...
+avrdude: 1 bytes of lfuse verified
+avrdude: safemode: Fuses OK (H:FF, E:DF, L:FF)
+avrdude done.  Thank you.                            
+                            </textarea>
+                            <p>Then i checked my system to see if the FabISP was recognized. </p>
+                            <p><img src="images/fabisp_usb.jpg" width="500" height="245"></p>
+                            <p>The FabISP was recognized so it was ready to be used as a programmer recognized by the Arduino IDE as USBTinyISP.</p>
+                            <p></p>
+                            <p>&nbsp;</p>
 
 
-</div>
+                      </div>
 						
 					</section>
 				

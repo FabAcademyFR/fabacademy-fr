@@ -104,96 +104,99 @@
 							<p>&nbsp;</p>
                       <p>So, as I live far from the Fablab, I decided at first to make a prototype using jumpers. I used a photoresistor to read the light levels in the room. To read from it I had to make a voltage divider addign a 10k resistor. To read the values I printed them on the seria port. I programmed the board using the Arduino IDE and the SoftwareSerial library. I used an Arduino board without the microcontroller to have regulated +5V and to use the FTDI chip for the serial communication between the board and the computer.
                             Here is the code:</p>
-                            <p align="left"><br>
-                            #include &lt;SoftwareSerial.h&gt;</p>
-                            <p align="left">SoftwareSerial mySerial(0, 1); // RX, TX<br>
-                              // constants won't change. They're used here to<br>
-                              // set pin numbers:<br>
-                              const int ldrPin = 5;     // the number of the pushbutton pin<br>
-                              const int ledPin =  8;      // the number of the LED pin                      </p>
-                      <p align="left">void setup() {<br>
-                              // initialize the LED pin as an output:<br>
-                              pinMode(ledPin, OUTPUT);<br>
-                              mySerial.begin(4800);<br>
-  <br>
-                              }</p>
-                            <p align="left">void loop() {<br>
-                              <br>
-                              int val = analogRead(ldrPin);<br>
-                              mySerial.println(val);<br>
-                              delay(2);<br>
-                              }</p>
+                            <textarea style="width:80%; height:500px; font-size:16px">
+                    #include &lt;SoftwareSerial.h&gt;
+                    SoftwareSerial mySerial(0, 1); // RX, TX<br>
+                    // constants won't change. They're used here to<br>
+                    // set pin numbers:<br>
+                      const int ldrPin = 5;     // the number of the pushbutton pin<br>
+                      const int ledPin =  8;      // the number of the LED pin  
+                       
+                      void setup() {<br>
+                      // initialize the LED pin as an output:
+                      pinMode(ledPin, OUTPUT);
+                      mySerial.begin(4800);
+                      }                            
+                            
+                      void loop() {<br>
+                      <br>
+                      int val = analogRead(ldrPin);<br>
+                      mySerial.println(val);<br>
+                      delay(2);<br>
+                      }
+                      </textarea>
                             <p>Moreover I decided to visualize it on a graph. So I used Processing that is very helpful to make fast data visualization.</p>
                             <p><img src="images/input/ldr_graph.png" width="300" height="238"></p>
                             <p>I started from <a href="http://arduino.cc/en/tutorial/graph">this example</a> then I customized it.As the message is a string I parsed it to an int. Then I mapped it to the dimension of the graph. You can find the code below:</p>
-                            <p align="left"> import processing.serial.*;<br>
-boolean connesso = false;<br>
-Serial myPort;        // The serial port<br>
-int xPos = 1;         // horizontal position of the graph<br>
-<br>
-void setup () {<br>
-// set the window size:<br>
-size(400, 300); <br>
-stroke(255,255,0);<br>
-for(int i=0;i&lt;300;i=i+50){<br>
-line(0,i,400,i);<br>
-}<br>
-<br>
-// elenca le porte seriali<br>
-for(int i=0; i &lt;Serial.list().length;i++){<br>
-println(&quot;[&quot;+ i +&quot;] &quot; + Serial.list()[i]); <br>
-text(&quot;[&quot;+ i +&quot;] &quot; + Serial.list()[i], 15, 20*i +45); <br>
-}<br>
-// set inital background:<br>
-background(0);<br>
-}<br>
-void draw () {</p>
-                            <p align="left"> // everything happens in the serialEvent()<br>
-                              }<br>
-  <br>
-                              void serialEvent (Serial myPort) {<br>
-                              stroke(255,255,255);<br>
-                              for(int i=0;i&lt;300;i=i+50){<br>
-                              line(0,i,400,i);<br>
-                              }<br>
-                              // get the ASCII string:<br>
-                              String inString = myPort.readStringUntil('\n');<br>
-  <br>
-                              if (inString != null) {<br>
-                              // trim off any whitespace:<br>
-                              inString = trim(inString);<br>
-                              // convert to an int and map to the screen height:<br>
-                              int ldr = int(inString); <br>
-                              print(ldr);<br>
-                              println(&quot; - &quot;);<br>
-                              float ldrRel = map(ldr, 0, 1023, 0, height);<br>
-                              println(ldrRel);<br>
-  <br>
-                              // draw the line:<br>
-                              stroke(127,34,255);<br>
-                              //line(xPos, height, xPos, height - inByte);<br>
-                              point(xPos, height - ldrRel);<br>
-  <br>
-                              // at the edge of the screen, go back to the beginning:<br>
-                              if (xPos &gt;= width) {<br>
-                              xPos = 0;<br>
-                              background(0); <br>
-                              } <br>
-                              else {<br>
-                              // increment the horizontal position:<br>
-                              xPos++;<br>
-                              }<br>
-                              }<br>
-                              }<br>
-  <br>
-                              void keyPressed() {<br>
-                              int k = key - 48;<br>
-                              println(k);<br>
-                              println(&quot;apro seriale &quot; + Serial.list()[k]);<br>
-                              myPort = new Serial(this, Serial.list()[k], 4800);<br>
-                              myPort.bufferUntil('\n');<br>
-                              connesso= true;<br>
-                              }</p>
+                            <textarea style="width:80%; height:500px; font-size:16px">
+ import processing.serial.*;
+boolean connesso = false;
+Serial myPort;        // The serial port
+int xPos = 1;         // horizontal position of the graph
+
+void setup () {
+// set the window size:
+size(400, 300); 
+stroke(255,255,0);
+for(int i=0;i<300;i=i+50){
+line(0,i,400,i);
+}
+
+// elenca le porte seriali
+for(int i=0; i &lt;Serial.list().length;i++){
+println("["+ i +"] " + Serial.list()[i]); 
+text("["+ i +"] " + Serial.list()[i], 15, 20*i +45); 
+}
+// set inital background:
+background(0);
+}
+void draw () {                             // everything happens in the serialEvent()
+                      }
+  
+                      void serialEvent (Serial myPort) {
+                      stroke(255,255,255);
+                      for(int i=0;i<;300;i=i+50){
+                      line(0,i,400,i);
+                      }
+                      // get the ASCII string:
+                      String inString = myPort.readStringUntil('\n');
+  
+                      if (inString != null) {
+                      // trim off any whitespace:
+                      inString = trim(inString);
+                      // convert to an int and map to the screen height:
+                      int ldr = int(inString); 
+                      print(ldr);
+                      println(" - ");
+                      float ldrRel = map(ldr, 0, 1023, 0, height);
+                      println(ldrRel);
+  
+                      // draw the line:
+                      stroke(127,34,255);
+                      //line(xPos, height, xPos, height - inByte);
+                      point(xPos, height - ldrRel);
+  
+                      // at the edge of the screen, go back to the beginning:
+                      if (xPos >= width) {
+                      xPos = 0;
+                      background(0); 
+                      } 
+                      else {
+                      // increment the horizontal position:
+                      xPos++;
+                      }
+                      }
+                      }
+  
+                      void keyPressed() {
+                      int k = key - 48;
+                      println(k);
+                      println("apro seriale" + Serial.list()[k]);
+                      myPort = new Serial(this, Serial.list()[k], 4800);
+                      myPort.bufferUntil('\n');
+                      connesso= true;
+                      }
+                      </textarea>
                             <p>I decided also to read the temperature using th LM35 sensor.</p>
                             <p><img src="http://www.learningaboutelectronics.com/images/LM35-temperature-sensor-pinout.png"></p>
                             <p>However using a float for the temperature value made the skech too big fot the ATTiny (4986Kb). So I used an int type and made other calculations in Processing. </p>
@@ -222,39 +225,37 @@ void draw () {</p>
                     <p>I had some problems because the holes exported by Eagle (even if the resolution was 2400 dpi) were too small (77px) to be recognized by the fabmodules. So I had to manually change the holes making it bigger (93px).	The	result	was	good:                                        
                     <p><img src="images/input/sensb_adone.jpg" width="96" height="173">                                        
                     <p><img src="images/input/sb_soldered.JPG" width="88" height="194">                                        
-                    <p>As I got problems with the serial communication  of the Fabkit board I tested the shield with an Arduino Uno. I uploaded this sketch:
-                    <p align="left">float temp;<br>
+                    </p>
+                     As at the moment I didn't have female headers to put on the board I used a breadboard only for connections. I uploaded this sketch:    <textarea style="width:80%; height: 300px; font-size:16px;"  >             		  float temp;<br>
                       const int tempPin = A5;<br>
                       const int ldrPin = A4;<br>
-                      int light;
-                    <p align="left">void setup()<br>
+                      int light;                    void setup()<br>
                       {<br>
                       pinMode(13, OUTPUT);<br>
                       Serial.begin(9600);<br>
                       digitalWrite(13,HIGH); <br>
-                      }</p>
-                    <p align="left">void loop()<br>
+                      }                    void loop()<br>
                       {<br>
                       temp = analogRead(tempPin);<br>
                       temp = temp * 0.48828125; // the constant to obtain the temperature<br>
                       light = analogRead(ldrPin);<br>
                       <br>
-                      Serial.print(&quot;TEMPERATURE = &quot;);<br>
+                      Serial.print("TEMPERATURE = ");<br>
                       Serial.print(temp);<br>
-                      Serial.print(&quot;*C&quot;);<br>
+                      Serial.print("*C");<br>
                       Serial.println();<br>
-                      Serial.print(&quot;LIGHT = &quot;);<br>
+                      Serial.print("LIGHT = ");<br>
                       Serial.print(light);<br>
                       Serial.println();<br>
   <br>
                       delay(1000);<br>
-                      }</p>
-                    <p>Then, I connected the shield to the Fabkit and added a conditional statement to make the led on the board lights up at a certain threshold. I added the following code:
-                    <p align="left">if(light &gt; 400){<br>
+                      }
+                      </textarea>
+<p>Then, I connected the shield to the Fabkit and added a conditional statement to make the led on the board lights up at a certain threshold. I added the following code:</p>                    <textarea style="width:80%; height: 100px; font-size:16px;"  > if(light > 400){<br>
 digitalWrite(13,HIGH); <br>
 }else{<br>
 digitalWrite(13,LOW); <br>
-}
+}</textarea>
                     <p align="center">
                     <p>                    					
                     </section>
