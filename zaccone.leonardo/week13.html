@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Leonardo Zaccone FA15</title>
+
+    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/freelancer.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href=index.html>Back to home</a>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>WEEK 13</h2>
+                            <hr class="star-primary">
+                            <img src="img/portfolio/week13.png" class="img-responsive img-centered" alt="">
+                            NETWORKING COMMUNICATION <br>
+
+To complete this assignment I designed this networking system:
+
+As MASTER a control board with an input (the photoresistor shield I realized for the INPUT ASSIGNMENT)
+communicates with a SLAVE by wireless  (a RGBdriver) and with a pc by serial using a USB-FTDI cable.  
+
+To build the wireless connection I used two 
+<a href= http://github.com/panStamp/panstamp/wiki/panStamp%20AVR.-Technical%20details> 
+    PANSTAMP AVR radio transceiver </a>
+so I designed and realized two board supporting them.
+
+The first one is a control board, in which you can insert several input board as the photoresistor shield I realized for the INPUT ASSIGNMENT.
+
+The second one is a RGBdriver board, to control a RGB led strip.
+
+The program I realized let the led strips blink using the photoresistor value as delay time, and writes on the serial monitor of my mac this value, as I show in this 
+<a href= http://www.youtube.com/watch?v=-RMCg5hN3hE> video </a> <br>
+
+<br>BOARDS DESIGN AND REALIZATION <br>
+
+I designed those boards using eagle and I realized them using fabmodules on roland srm-20 mill.
+
+To design the control board I focused about what I need on this board:
+
+<br>2 row 12 pins to insert the PANSTAMP
+<br>3 row 7 pins to insert input shields using the same FABKIT scheme (5 input pins + gnd + vcc)
+<br>1 row 5 pins to FTDI Serial Programming
+<br>alimentation system to take power from a 9v battery and convert to 3.3v (PANSTAMP voltage)
+<br>To realize the power regulation, I used a LM1117 and two polar capacitor using the FIXED OUTPUT REGOLATOR scheme in the 
+<a href= http://html.alldatasheet.com/html-pdf/8597/NSC/LM1117/37/1/LM1117.html> DATASHEET </a>
+The chance to power the board with a 9v battery allows to control the RGBstrip by wireless, walking in the room.
+I add a switch to turn on and off the board without removing the battery.<br>
+
+<a href= /files/RGBdriverPSholes.png> CBholes.png</a>
+<a href= /files/RGBdriverPStraces.png> CBtraces.png</a>
+<a href= /files/RGBdriver.brd> CB.brd</a>
+<a href= /files/RGBdriver.sch> CB.sch</a><br>
+
+<br>To design the RGBdriver board I focused about:
+
+<br>2 row 12 pins to insert the PANSTAMP
+<br>1 row 5 pins to FTDI Serial Programming
+<br>all others pins broken out just in the easier way (no really needed)
+<br>alimentation system to take power from a 12v transformer and power the LEDstrip directly and the PANSTAMP converting to 3.3v 
+<br>3 pwm digital pins out each to a transistor to convert pwm line in electric power input to control the 3 components RGB
+<br>a 4 I/O screw a the end to join the led strips - Red Green Blue Line12v
+
+<br>The power regulation is the same of the earlier board, without switch.
+I used the transistor TIP 31following this scheme <img src="img/TIP31schematics.jpg" class="img-responsive img-centered" alt="">
+The digital pins I used were 3, 5, 6. <br>
+
+<a href= /files/CBholes.png> CBholes.png</a>
+<a href= /files/CBtraces.png> CBtraces.png</a> 
+<a href= /files/PSprogramboard.brd> CB.brd</a> 
+<a href= /files/PSprogramboard.sch> CB.sch</a><br>
+
+<br> SERIAL COMMUNICATION <br>
+
+I used an 
+<a href= http://www.ftdichip.com/Support/Documents/DataSheets/Cables/DS_TTL-232R_CABLES.pdf> USB-FTDI cable </a>
+to connect my Mac to the Panstamp Serial programming 5 pins that I broke out. 
+To let them comunicate, just connect GROUND and each RX to the respective TX. Because the board is self-powered you don’t need to connect vcc.
+
+Now, just adding to the program, written using arduino ide, the <a href= http://www.arduino.cc/en/Serial/Begin>
+Serial.begin</a>
+ to set the baudrate (normally 9600) and the <a href= http://www.arduino.cc/en/Serial/Println>
+Serial.println</a>
+ command to receive the info we want (in this case the photoresistor value) and visualize them to the serial monitor.<br>
+
+<br>WIRELESS COMMUNICATION <br>
+
+<br>TRANSMITTING<br>
+
+In the same <a href= /files/CBsend.ino> transmitter .ino file</a>
+ I programmed the wireless communication using the <a href= http://github.com/panStamp/panstamp/wiki/Downloads>
+PANSTAMP libraries. </a>
+
+At beginning of the sketch we need to define this 5 parameters. <br>
+#define RFCHANNEL        0       <br>
+#define SYNCWORD1        0xB5    <br>
+#define SYNCWORD0        0x47    <br>
+#define SOURCE_ADDR      5      <br>
+#define DESTINATION_ADDR 4  <br>
+The first three can not be changed, the last two instead are very important, they define the address of communication.
+PANSTAMP has 12 channels eligible (0-11), if we want that 2 transceiver comunicate each to the other, they need to have same source and destination address parameters. 
+It means that we can also use more PANSTAMP series in the same room and let them totally ignore, just giving to each series different address.
+
+In the void setup insert this 4 lines: <br>
+
+panstamp.radio.setChannel(RFCHANNEL); <br>
+panstamp.radio.setSyncWord(SYNCWORD1, SYNCWORD0); <br>
+panstamp.radio.setDevAddress(SOURCE_ADDR); <br>
+panstamp.radio.setCCregs(); <br>
+
+Then in the void loop prepare the packet to be sent, using the function “txPacket”. 
+With "txPacket.length = N;"  you decide how many data compose your packet. In this case 2, the destination address and the sensor value.
+With “txPacket.data[n] = name;" you insert in each data of your packet the value (from 0 to 255) you want send.
+The first one has to be always the destination address you define at beginning of the sketch. Remember that the list starts from [0].
+
+At the end we can send the packet we created using this command "panstamp.radio.sendData(txPacket);”
+
+<br><br>RECEIVING<br>
+
+As we see in the <a href= /files/RGBrcv0.ino> receiver .ino file</a>
+ in initialization and setup we need to add the same code we wrote for the transmitting file.
+But before the usual void setup, we need to add the void rfPacketReceived(CCPACKET *packet) in which we open the received packet.
+As in the transmitting code, in the receiving code we can use a similar “packet” function using the symbol -> instead the dot.
+I add an “if” on the packet length just in case we received a broken packet with less data than we want. 
+Then just compile “$[n] = int (packet -> data[n]);” to split the data received in the variable you create.
+                            <ul class="list-inline item-details">
+                                <li>Maker:
+                                    <strong>Leonardo Zaccone
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong>02/03/2015
+                                    </strong>
+                                </li>
+                                <li>FabLab:
+                                    <strong>Frosinone, Italy
+                                    </strong>
+                                </li>
+                            </ul>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
