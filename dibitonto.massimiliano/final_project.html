@@ -106,13 +106,13 @@
 					
 						<header>
 								<h3>The Concept</h3>
-							</header>
+						  </header>
 							<p>The concept is to create a "social robot" that can create an “emotional” interaction with the user and that is able to move him/her to do something. I focused on a specific context of use: pool in a garden during summer. My social robot is a duck that is happy when people are in the pool having fun and that feels lonely when is left alone. So, communicating thorugh social networks, it is able to share its feelings.
                             
 </p>
 						<header>
 								<h3>Background</h3>
-							</header>
+						  </header>
 							<p>There are several projects aimed to control water quality in pools or aquariums. Almost all projects control temperature and pH/oxidation-reduction potential (ORP) as it’s very expensive (and difficult) to control other chemical parameters. However all projects are just measurement tools and the interaction it's just based on a functional goal:
 <a href=" https://www.sparkyswidgets.com/portfolio-item/ph-probe-interface/">Ph-Probe</a>,
 <a href="https://code.google.com/p/phduino/">pHDuino</a>,
@@ -131,13 +131,13 @@ Regarding giving a personality to the objects my inspiration is the work of simo
                     
 						<header>
 								<h3>Scenario</h3>
-							</header>
+						  </header>
 							<p>It is a hot summer evening. The duck is in the pool, alone. Everybody is at work. The duck is feeling alone and starts sending pictures on Twitter/Facebook to invite people to come in. In the meantime the duck checks the temperature and the pH of the water, adding chlorine if needed, so the pool will be ready when people will arrive. 
 							Later Max comes back with some friends and they enter into the pool, the duck feels the presence of other people and is happy. It shares a status on Twitter/Facebook. Other ducks in the network read the status...   </p>
 							
 					<header>
 								<h3>Main Functionalities</h3>
-							</header>	
+						  </header>	
 		<p>	After the first concept I pointed out the main functionalities of the duck.
 		<ul class="default" >
 		<li>Tweet some status according to some rules applied to the parameters monitored showing a personality: require attention when nobody is in the pool for a long time, be happy when there are people around, be happy when the water is at a good temperature to swim;</li>
@@ -148,16 +148,16 @@ Regarding giving a personality to the objects my inspiration is the work of simo
         <ul class="default">
 		<li>Check the temperature of the water</li>
 		<li>Check the air temperature</li>
-		<li>Know if is day, night, sunny or cloudy (light detection + Yahoo Weather API)</li>
-		<li>Detect waves as sign of human activity (people in the pool)</li>
+		<li>Know if is day, night, sunny or cloudy (time + Yahoo Weather API)</li>
+		<li>Detect waves as sign of human activity (people in the pool with accelerometer)</li>
         <li>Detect if someone tries to sink it<li>Connect to the Internet to access information and share data</li>
 		
 		</ul>
 		<p>And should have these basic electronic components:
 		<ul class="default">
 		<li>Temperature sensors</li>
-		<li>Light sensor</li>
 		<li>Accelerometer (to feel the waves)</li>
+		<li>RGB led for a feedback</li>
 		<li>Wireless connection to the Internet</li>
 		<li>Electronics to make everything work!</li>
 		</ul></p>
@@ -168,7 +168,7 @@ Regarding giving a personality to the objects my inspiration is the work of simo
 						
 						<header>
 								<h3>Challenges</h3>
-							</header>
+						  </header>
 							<p>I think that the main challenges to develop the project will be:
 							<ul class="default">
 							<li>Water and electronics! : choose the right materials to make the structure and protect the electronics from the water and corrosion.</li>
@@ -180,7 +180,7 @@ Regarding giving a personality to the objects my inspiration is the work of simo
 					
 					<header>
 								<h3>Development</h3>
-							</header>
+						  </header>
 							<p>In this section I will update the current progress of the project development according to the activities reported in the <a href="15-application.html">applications and implications assignment</a>.
           </p>
           <div class="progress">
@@ -191,23 +191,118 @@ Regarding giving a personality to the objects my inspiration is the work of simo
 
           
      <h4>Design an make the case (the duck)</h4>    
-     <p>I'm building first the electronic part to correctly size the duck to host it. A preview of the model could be seen <a href="http://a360.co/1DX8Voa">here</a> and below. </p><p><iframe src="https://myhub.autodesk360.com/ue298cd1c1/shares/public/SH7f1edQT22b515c761e8a1a6eee4835897f" width="90%" height="400"></iframe>
-     </p>
+     <p>I'm building first the electronic part to correctly size the duck to host it. In the meantime I'm studiyng about buoyancy (<a href="https://books.google.it/books?id=js3tCAAAQBAJ&lpg=PA92&ots=EfIfqxHjSY&dq=weight%20distribution%20and%20buoyancy&pg=PA92#v=onepage&q=weight%20distribution%20and%20buoyancy&f=false">interesting book here</a>) tho be sure that the duck can float over the water. A preview of the model could be seen <a href="http://a360.co/1DX8Voa">here</a> and below.    </p>
+     <p><iframe src="https://myhub.autodesk360.com/ue298cd1c1/shares/public/SH7f1edQT22b515c761e8a1a6eee4835897f" width="90%" height="400"></iframe>
+   </p>
       <h4>Design the board and put pieces together</h4>
-      <p>I'm trying to reduce the size of the Fabkit removing the pin I'm not using. I've already ordered some of the material needed. <p>
+      <p>I designed a board to host the voltage regulator, the logic level shofter for the Wi-Fi board and connections for sensor and actuators. I've already ordered some of the material needed. 
+      You can see the evolution of my board and download the files in my <a href="https://github.com/maxdbt/fabmax/tree/master/boards/fabduck">GIThub repo</a>.
+      
+      <p><img src="images/final/fabduck_exp.jpg" width="592" height="250">            
       <h4>Making the code</h4>
       <p>As I still don't have all the electronics I'm reasoning on the behaviour and how to translate it into code.Some of the behavior I want to implement:</p>
       <ul class="default">
       <li>if the duck doesn't feel presence in the water for a couple of hours and is daytime (NTP) post on Twitter some random sentence to say it feels lonely. If the weather is good (Yahoo Weather API) and the water is warm invites people to bath.</li>
       <li>In the morning it wishes a good morning to everybody on Twitter</li>
-      <li>At the dawns it wishes a good night to everybody on Twitter</li>
-      <li>If someone try to sink it send an help request on Twitter</li>
+      <li>At the dawn it wishes a good night to everybody on Twitter</li>
+      <li>If someone try to sink it, sends an help request on Twitter</li>
       <li>If t it feels presence of people(accelerometers) sends happy statuses on Twitter</li>
-      <li>If is bad weather (Yahoo Weather API) is sad and sends sad statuses on Twitter</li>
+      <li>If it is bad weather (Yahoo Weather API) it is sad and sends sad statuses on Twitter</li>
       </ul>
       
+      <h4>Code implementation progress</h4>
+      <p>I developed a php page that prints a series of useful values about time and weather (of Rome, IT) using <a href="https://developer.yahoo.com/weather/">Yahoo Weather API</a> <a href="http://weather.yahooapis.com/forecastrss?w=721943&u=c">(example request)</a>: current temperature, current <a href="https://developer.yahoo.com/weather/documentation.html">condition code</a> (a number representing the weather condition eg. sunny), max and min temperature expected, sunrise and sunset time, current time (Rome time), current weekday.<a href="http://www.my-id.org/utilities/getweather_time.php">You can test here</a> and see the code in my <a href="https://github.com/maxdbt/fabmax/tree/master/code">Github repo</a> or below:</p>
       
-     </div>
+     
+      <p>
+        <textarea style="width:80%; height:500px; font-size:16px"><?php
+
+$result = file_get_contents('http://weather.yahooapis.com/forecastrss?w=721943&u=c');
+$xml = simplexml_load_string($result);
+
+//echo htmlspecialchars($result, ENT_QUOTES, 'UTF-8');
+
+$xml->registerXPathNamespace('yweather', 'http://xml.weather.yahoo.com/ns/rss/1.0');
+$location = $xml->channel->xpath('yweather:location');
+$astr =  $xml->channel->xpath('yweather:astronomy');
+
+
+if(!empty($location)){
+    foreach($xml->channel->item as $item){
+        $current = $item->xpath('yweather:condition');
+        $forecast = $item->xpath('yweather:forecast');
+        $current = $current[0];
+       // $output = <<<END
+            echo $current['temp']."/"; //current temp
+            echo $current['code']."/"; //current forecast code
+            echo $forecast[0]['high']."/"; //max temp expected today
+            echo $forecast[0]['low']."/";//min temp expected today
+           
+
+$suns = $astr[0]['sunset']; //several operation to transform h:min pm into h:min
+$suns = trim($suns);
+$suns = explode(":",$suns);
+$suns_h=$suns[0];
+$suns_m_a = explode(" ",$suns[1]);
+$suns_m = $suns_m_a[0];
+echo $suns_h."/";
+echo $suns_m."/";
+    }
+}else{
+    $output = '<h1>99</h1>';
+    echo $output;
+}
+
+ 
+$hour = date('G', time()); //24h format without 0
+echo $hour."/";
+$min = 1*(date('i'));
+echo $min."/";
+$weekday = date('w');
+echo $weekday;
+?>
+        </textarea>
+      </p>
+      <p>As posting status on Twitter it is a little bit tricky due to openAuth process I used <a href="http://www.temboo.com">Temboo</a>, an online service that acts like a bridge towards many APIs simplifying many operations. To reduce the code on the board I made a php page that receives a message and sends it to Twitter using Temboo API. In such a way the microcontroller just have to send an HTTP GET. You can see the code in my <a href="https://github.com/maxdbt/fabmax/tree/master/code">Github repo</a> or below (for obvious security reasons I changed my data with xxxxx):</p>
+      <textarea style="width:80%; height:500px; font-size:16px">
+      <?php
+require 'php-sdk/src/temboo.php';
+if(isset($_GET['msg']) ){
+    $msg = $_GET['msg'];
+}else{
+    $msg = 'Quack'.date('s');
+}
+if(isset($_GET['xxxx']) ){
+    $xxxx = $_GET['xxxx'];
+}else{
+    $xxxx = "0";
+}
+
+
+// Instantiate the Choreo, using a previously instantiated Temboo_Session object, eg:
+$session = new Temboo_Session('xxxxxxxxxxxxxxxxxx', 'myFirstApp', 'xxxxxxxxxxxxxxxxxx');
+
+$statusesUpdate = new Twitter_Tweets_StatusesUpdate($session);
+
+// Get an input object for the Choreo
+$statusesUpdateInputs = $statusesUpdate->newInputs();
+
+
+
+// Set inputs
+$statusesUpdateInputs->setAccessToken("xxxx")->setAccessTokenSecret("xxxx")->setConsumerSecret("xxxx")->setStatusUpdate($msg)->setConsumerKey("xxxx");
+
+if($xxxx == "xxxxxxxxxxxxxxxxxx"){
+// Execute Choreo and get results
+$statusesUpdateResults = $statusesUpdate->execute($statusesUpdateInputs)->getResults();
+echo "ok";
+}else{
+echo "no permission";
+}
+
+?>
+      </textarea>
+				      </div>
 						
 					</section>		
 			

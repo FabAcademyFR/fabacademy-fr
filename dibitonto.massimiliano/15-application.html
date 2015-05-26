@@ -134,20 +134,18 @@ From a theoretical point of view my project took inspiration from Affective Comp
     PLA rolls (yellow and red or orange)
   </li>
    <li>
-     all the components needed to make a Fabkit  <a href=“http://fabacademy.org/archives/2015/doc/projects/fabkit-0.4.html> (BOM here)</a> just changing the resonator with a 16MHz one like <a href=“http://www.digikey.it/product-detail/it/AWSCR-16.00CV-T/535-10008-2-ND/2001375”></a>   </li>
+     all the components needed to make a Satshakit  <a href=“http://fabacademy.org/archives/2015/doc/projects/fabkit-0.4.html> (BOM here)</a><a href=“http://www.digikey.it/product-detail/it/AWSCR-16.00CV-T/535-10008-2-ND/2001375”></a>   </li>
    <li>
      a temperature sensor. I’ll use a LM35 or TMP36 trough-hole as I need to mount it on the external part. I need to measure the temperature of the water so I’ll try to insulate one of this sensor rather to buy an expensive one.
    </li>
    <li>
-     a phototransistor to measure light intensity
-   </li>
-   <li>
      a 3 axis accelerometer
    </li>
+   <li>an RGB led</li>
    <li>
      a ESP8266 wireless module for communication and a voltage regulator, like the LM1117T-3.3  IC
      , as the chip works at 3,3V while I’m powering the board with 5V.
-   </li>
+   I need also a logic level shifter.</li>
    <li>
      a rechargeable battery</li>
   
@@ -164,7 +162,7 @@ From a theoretical point of view my project took inspiration from Affective Comp
 <li>
  the components for the Fabkit  and the accelerometer will come from <a href=“http://www.digikey.it!>Digikey.it</a></li>
 <li>
-  the temperature sensor and the phototransistor will come from my local store of from Digikey
+  the temperature sensor and the RGB led will come from my local store of from Digikey
 
   the ESP8266 will come from  <a href=“http://www.amazon.it/ESP8266-Wireless-Transceiver-Arduino-Raspberry/dp/B00P2KDTEC/ref=sr_1_1?ie=UTF8&qid=1431871104&sr=8-1&keywords=ESP8266”>Amazon</a></li>
 
@@ -201,7 +199,8 @@ For the printed parts I still haven’t finished the 3D module so I cannot estim
 Physical parts:
 <ul class="default">
     <li> the duck shaped case will be 3D printed</li>
-    <li> the Fabduino will be modified, milled and soldered</li>
+    <li> the Satshakit will be milled and soldered</li>
+    <li>A board will be designed, milled and soldered to implement the voltage regulator, the logic level shifter and connection with sensors and the RGB led</li>
   </ul>
   </p> 
    Software:
@@ -232,7 +231,7 @@ Physical parts:
  <ul class="default">
 <li> Complete the design of the 3D model of the duck</li>
 <li> Print the duck</li>
-<li> Modify the Fabkit to reduce it’s dimensions</li>
+<li> Design the circuit and make the board as mentioned above</li>
 <li> Assembly the electronics</li>
 <li> Program the firmware and the proxy</li>
 </ul>

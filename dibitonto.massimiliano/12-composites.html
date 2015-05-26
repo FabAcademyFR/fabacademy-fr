@@ -101,9 +101,61 @@
 					   <h3>Designing the mold</h3>
 					  </header>
                       <p>
-                      I decided to design the hull of a boat. To design it I used Fusion 360 starting with the sculpting mode. It is very intuitive and allows to easily manipulate curved surface.  Fusion 360 has also a cloud storage so the model could be downloaded from <a href="http://a360.co/1bojN5O">here</a>.
-                      The complete process is very time consuming and it is still incomplete so I will finish to document it in the next days.
+                      I decided to design the hull of a boat. This was done creating a mold milling a polyurethane block ( 600x800x100 mm of which profits 500x600x60 mm) and then laminating linen fiber with linen fabric and epoxy resin.
+                      The complete process is complex and has a lot of phases and subphases.Here the procedure I did:
                       </p>
+                      <ol class="default">
+                      <li>designing a 3D model:</li>
+                      <li>putting the model in a CAM software (I used MeshCAM) to generate toolpaths (roughing and finishing)</li>
+                      <li>placing and fixing a polyurethane block in the CNC</li>
+                      <li>sending roughing toolpath to the CNC router (end mill 8 mm) </li>
+                      <li>sending finishing toolpath to the CNC router (ball mill 3mm) </li>
+                      <li>smoothing the mold with sandpaper and clean it</li>
+                      <li>hardening the mold with epoxy resin (3 coats waiting at least 30 min in between). The epoxy resin should be mixed with the hardener to catalyze.</li>
+                      <li>placing release agent in the mold</li>
+                      <li>prepare (measure and cut) the different materials needed for laminating</li>
+                      <li>place the peel ply inside the mold</li>
+                      <li>mix the resin (from now you have 30 minutes)</li>
+                      <li>place the first layer of linen fabric</li>
+                      <li>pour and spread a first coat of epoxy resin</li>
+                      <li>place the second layer of linen fabric</li>
+                      <li>pour and spread a second coat of epoxy resin</li>
+                      <li>place the third layer of linen fabric</li>
+                      <li>pour and spread a third coat of epoxy resin</li>
+                      <li>place the peel ply</li>
+                      <li>place the hole breather</li>
+                      <li>put everything in an air-vacuum bag</li>
+                      <li>extract the air from the bag</li>
+                      <li>wait for 24h</li>
+                      <li>extract it!</li>
+                      <li>finishing with gelcoat</li>
+                      </ol>
+                      <p>Below you can se a slideshow with all the passages commented</p>
+                      
+                      <div style='position: relative; padding-bottom: 76%; height: 0; overflow: hidden;'><iframe id='iframe' src='https://flickrit.com/slideshowholder.php?height=75&size=big&count=64&setId=72157653250224616&caption=on&counter=true&credit=1&thumbnails=1&transition=0&layoutType=responsive&sort=0' scrolling='no' frameborder='0'style='width:100%; height:100%; position: absolute; top:0; left:0;' ></iframe></div>
+
+<h3>Some details</h3>
+
+<h4>The model</h4>
+<p>
+To design it I used Fusion 360 starting with the sculpting mode. It is very intuitive and allows to easily manipulate curved surface.  Fusion 360 has also a cloud storage so the model could be downloaded from <a href="http://a360.co/1bojN5O">here</a>. You can see the model below.</p>
+<iframe src="https://myhub.autodesk360.com/ue298cd1c1/shares/public/SH7f1edQT22b515c761e03e785cf07af7bcd" width="90%" height="400"></iframe><p>
+While designing the model it is to consider the dimensions of the splindle. If you don't consider it can hit and breaks the mold. You can see in the pictures above the splindle going very close to the mold. Moreover consider some border when you dig your model. Consider that you must have enough polyurethane to make borders resist to the different processes. </p>
+<h4>Extracting the hull from the mold</h4>
+
+<h4>Roughing and finishing</h4>
+<p>The roughing tool paths is to remove excess material and, ideally, leave a constant thickness of stock all over the part for the finishing operations. For roughing we used an end mill of 8 mm. For the finishing a 3 mm ball mill. We manually modified the GCODE to stop the machine after the roughing to change the tool. M5 to stop the spindle, G0 and x,y,z coordinates to move the axis.You can see the video of the beginning of the roughing.</p>
+<iframe src="https://player.vimeo.com/video/128674063" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/128674063">Making a boat!</a> from <a href="https://vimeo.com/user3066449">Massimiliano Dibitonto</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<h4>epoxy resin</h4>
+<p>The epoxy resin should be mixed with the hardener (2:1 ratio) to start catalyze. For this reason you have to be fast to laminate as the resin starts to become harder (we had around 20-30 minutes).</p>
+
+<h4>Extracting the hull from the mold</h4>
+<p>It was quite difficult as, despite the release agent, the hull was stuck in the mold. The only solution was to break the mold. You can see a video of an attemp of extraction.</p>
+<iframe src="https://player.vimeo.com/video/127521929" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/127521929">Extracting the hull from the mold</a> from <a href="https://vimeo.com/user3066449">Massimiliano Dibitonto</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+<h4>Security</h4>
+<p>The epoxy resin, gelcoat and other chemical products you use are toxic. Do not breath them. Wear a mask and protectiong glasses. Remember gloves and don't touch your smartphone while working!</p>
+
                       </div>            					
               </section>
 				
