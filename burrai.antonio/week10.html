@@ -85,23 +85,56 @@
                     <h2 class="section-heading">Input devices</h2>
                                          
                     <h3 class="section-subheading text-muted">.</h3>
-                    <img src="img/w10/w10_1.jpg " width="600" height="450" class="img-responsive">
-                    <h3 class="section-subheading text-muted"> The first part of the weekly assignment is the design of a FabKit. FabKit has a lot of components, described in the BOM, so I need half an hour to collect them all using the method described by the previous picture.  </h3> 
-                    
+                    <img src="img/w10/w10_1a.jpg " width="600" height="450" class="img-responsive">
+                    <h3 class="section-subheading text-muted"> The first part of the weekly assignment is the design of a FabKit and an input device. FabKit, who has been designed for first, has a lot of components, described in the BOM, so I need half an hour to collect them all using the method described by the previous picture. </h3> 
+
+                    <img src="img/w10/w10_1b.jpg " width="600" height="450" class="img-responsive">
+                    <h3 class="section-subheading text-muted"> Apart from the component, I drilled the  
+board using the Roland machine. Three different tasks have been performed: traces (1/64), drill and cut (1/32).</h3> 
+
                     <img src="img/w10/w10_2.jpg " width="600" height="450" class="img-responsive">
-                    <h3 class="section-subheading text-muted"> The most complex component is surely the ATMEGA328, that is very small and very difficult to solder.  </h3> 
+                    <h3 class="section-subheading text-muted"> The most complex component is surely the ATMEGA328, that is very small and very difficult to solder. The other components are briefly resumed in the following: Components: Atmega 328P, Switch Button, FTDI Communication, 8 MHz external resonator, 3 Capacitors (2 : 0.1uf and 1: 1uf), 2 Resistor (10kΩ and 499kΩ) and 1 LED. </h3> 
                     
                     <img src="img/w10/w10_3.jpg " width="600" height="450" class="img-responsive">
-                    <h3 class="section-subheading text-muted">  It takes one hour or more to solder all the components, briefly resumed in the following: Components: Atmega 328P, Switch Button, FTDI Communication, 8 MHz external resonator, 3 Capacitors (2 : 0.1uf and 1: 1uf), 2 Resistor (10kΩ and 499kΩ) and 1 LED. </h3> 
+                    <h3 class="section-subheading text-muted">  As it can be seen, FabKit is really very very small !!!! </h3> 
                 
                 <img src="img/w10/w10_4.jpg " width="600" height="450" class="img-responsive">
-                    <h3 class="section-subheading text-muted"> After this, I start studying the ATMEGA328 pinout,  it has been quite complex, but at the end, in order to write the bootloader, I understand I need the following pins: MISO,MOSI, SCK, RESET, VCC and GND.  </h3> 
+                    <h3 class="section-subheading text-muted"> After this, I start studying the ATMEGA328 pinout,  it has been quite complex, but at the end, in order to write the BOOTLOADER, I understand I need the following pins: MISO,MOSI, SCK, RESET, VCC and GND.  </h3> 
                     
                  <img src="img/w10/w10_5.jpg " width="600" height="450" class="img-responsive">
-                    <h3 class="section-subheading text-muted"> A good help for finding the correct usage has been Eagle, who enlight every trace from the beginning to the end. I take note of the pins I’m going to use for the project. </h3> 
+                    <h3 class="section-subheading text-muted"> A good help for finding the correct usage has been Eagle, who ENLIGHT EVERY TRACE from the beginning to the end. I take note of the pins I’m going to use for the project. </h3> 
 
                  <img src="img/w10/w10_6.jpg " width="600" height="450" class="img-responsive">
-                    <h3 align="center" class="section-subheading text-muted"> At the moment I’m experiencing different problem trying to write the bootloader. I’m looking for the problem, maybe a soldering problem or maybe the high temperature destroyed or damaged the ATMEGA328. This section will be updated as soon as possible.  </h3> 
+                    <h3 class="section-subheading text-muted"> At the beginning I experienced different problem trying to write the bootloader. I’ve tried to use Arduino as ISP, just to make a test, but it was a procedure very full of problem, so I give up. </h3> 
+
+                 <img src="img/w10/w10_7.jpg " width="600" height="450" class="img-responsive">
+                    <h3 class="section-subheading text-muted"> I decide to use an USB programmer, so I powered the FabKit using the FTDI cable. Then I’ve built a cable used to connect the programmer to the FabKit. </h3> 
+
+                 <img src="img/w10/w10_8.jpg " width="600" height="450" class="img-responsive">
+                    <h3 class="section-subheading text-muted"> During the above mentioned connection, Windows required lots of drivers in order to make usable even the cable !!!  </h3> 
+
+                 <img src="img/w10/w10_9.jpg " width="600" height="450" class="img-responsive">
+                    <h3 class="section-subheading text-muted"> I change the boards list in the Arduino folder and the operation (thanks God!) went good at first time ! I’m very proud of my FabKit. </h3> 
+
+                 <img src="img/w10/w10_10.jpg " width="600" height="450" class="img-responsive">
+                    <h3 class="section-subheading text-muted"> Despite of my final project it’s a fish, I’ve used a light sensor, considering that sun light is RELATED TO THE THE DEPTH of the water at which the fish is swimming. The deeper you go, the darker it is. </h3> 
+
+                 <img src="img/w10/w10_11.jpg " width="600" height="450" class="img-responsive">
+                    <h3 class="section-subheading text-muted"> As weel as a submarine, if the depth is excessive and the pressure is too high, several damages can occur to the hull. So the purpose of the input device is to send a constant signal to the processor in order to measure indirectly the depth of water.</h3> 
+
+                 <img src="img/w10/w10_12.jpg " width="600" height="450" class="img-responsive">
+                    <h3 class="section-subheading text-muted"> This is the folder of my input device milling files: PNG and RML files.</h3> 
+
+                 <img src="img/w10/w10_13.jpg " width="600" height="450" class="img-responsive">
+                    <h3 class="section-subheading text-muted"> At the end of the soldering I burn the resistor and destroy also a portion of the traces (blue arrow zone) !!! I didn’t have the time to go back to the FabLab, so, just because it was an emergency I place one of the header connector in an unused part of the traces (green arrow) and I’ve also used a classic resistor . It works ! Using the SERIAL MONITOR command of the Arduino IDE,FabKit receive a signal from A0 pin. </h3> 
+
+                 <img src="img/w10/w10_14.jpg " width="600" height="450" class="img-responsive">
+                    <h3 class="section-subheading text-muted"> This is an artistic picture of my digital snail ! </h3> 
+
+
+
+
+ 
 
             </div>
             </div>

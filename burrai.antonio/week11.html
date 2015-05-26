@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Agency - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/agency.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                     
+                    <li>
+                        <a class="page-scroll" href="#portfolio">Fab Academy 2015</a>
+                    </li>
+                      
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header> 
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">Antonio Burrai</div>
+                <div class="intro-heading">[WEEK 11]</div>
+                 
+            </div>
+        </div>
+    </header>
+
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Output devices</h2>
+                                         
+                    <h3 class="section-subheading text-muted">.</h3>
+                    <img src="img/w11/w11_1.jpg " width="600" height="450" class="img-responsive">
+                    <h3 class="section-subheading text-muted"> I’ve designed a double output device composed of a visual alarm (a triple led:red, yellow and green) and two servos (that move the lateral fins of the fish). When the depth became excessive, the signal from the input devices (separated into 3 different range of values: 0-500, 500-800 and >800) a led corresponding to the mentioned range lights up. More specifically: 0-500 GREEN LED is HIGH and the others LOW (Arduino code); 500-800 YELLOW LED is HIGH and the others LOW (Arduino code); >800 RED LED is HIGH and the others LOW (Arduino code). RED LIGHT MEANS A VERY DANGEROUS SITUATION FOR THE FISH (excessive pressure – poor sun light). At this point the emergency system move the servos and the rotation of the fins determines the return of the fish to a more comfortable depth. Please note that the fish body is moved by a small DC motor with autonomous functionality. </h3> 
+                    
+                    <img src=" img/w11/w11_2.jpg " width="600" height="450" class="img-responsive">
+                    <h3 class="section-subheading text-muted"> This is the folder of my input device milling files: PNG and RML files.</</h3> 
+                    
+                    <img src=" img/w11/w11_3.jpg " width="600" height="450" class="img-responsive">
+                    <h3 class="section-subheading text-muted">  This is the milled board (after the three tasks). Please note the presence of small problem in the zone in which O (zero) ohm resistor are needed. </h3> 
+                
+                <img src="img/w11/w11_4.jpg " width="600" height="450" class="img-responsive">
+                    <h3 class="section-subheading text-muted"> Even in this case I destroy (too much time soldering the components) the SMD LED. This was a great problem, but I consider that I can not use SMD components, because I want the small lights visible as points in the exterior skin of the fish. Thus I’ve used the classical LED. </h3> 
+                    
+                 <img src="img/w11/w11_5.jpg " width="600" height="450" class="img-responsive">
+                    <h3 class="section-subheading text-muted"> This is the final shot of all the boards I proudly (for first time in my life) designed and milled. The system correctly works. I just need to place all this stuff inside of the fish.  </h3> 
+
+            </div>
+            </div>
+             
+
+    <!-- Clients Aside -->
+    
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/agency.js"></script>
+
+</body>
+
+</html>
