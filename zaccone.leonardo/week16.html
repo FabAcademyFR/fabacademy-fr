@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>MACHINING</title>
+
+    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/freelancer.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href=index.html>Back to home</a>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>MACHINING</h2>
+                            <hr class="star-primary">
+                            <img src="img/portfolio/week16.png" class="img-responsive img-centered" alt="">
+                           <p align="justify"> 
+
+GROUP WORK <br>
+
+During this assignment we all six students in FabLab Frosinone Officine Giardino had the opportunity to work together. I find it very useful because in my experience as FabLab Roma Makers project manager I could see how difficult is for a lot of makers working together.<br>
+At beginning my duty was coordinating the group during the organization phase, in which we decided kind of machine to realize and we share the several tasks to be accomplished. 
+After a couple of days during which we studied and analyzed a lot of machines and the Gestalt system, we choose to build a styrofoam 3 axes machine, even respecting the idea that FabLab Frosinone had not yet a machine like this.
+<br>
+The six tasks we found out are:<br>
+
+<ul>
+<li>Mill the control board, solder it and connect the nodes.</li>
+<li>Design the 3-axes system.</li>
+<li>Lasercut the body with cardboard.</li>
+<li>Design and realize the tool.</li>
+<li>Study and compile the py software.</li>
+<li>Compile a web interface to control the machine.</li></ul>
+<br>
+    <p align="justify"> 
+I was assigned to the last one, but indeed we agree that each of us had to lead his task, taking part into all of them and collaborating with the other students. 
+
+<img src="img/groupwork.jpg" class="img-responsive img-centered" alt="">
+
+WEB INTERFACE <br>
+
+To realize the web interface I used html5. <br>
+
+Massimiliano Di Bitonto and me studied the communication system of Gestalt, that uses as commands of the nodes a series of functions called by a local address.
+It means that you can target the function you need by a browser, addressing to “http://127.0.0.1:27272/“ where 27272 is a defined local port. <br>
+
+The commands we use are: <br><br>
+
+<div style="color:#0000FF"> /setPosition?position=[0,0,0] </div>         set the actual position as zero. <br> <br>
+   <div style="color:#0000FF">/move?position=[x,y,z]&velocity=v  </div>  the 3 values are the coordinates that each axis reaches. “none” doesn’t move it. “v” is the speed machine value. <br><br>
+      <div style="color:#0000FF">/jog?incrementalPosition=[x,y,z] </div> the 3 values are the numbers of step that each axis jogs. no velocity needed. negative numbers to reverse direction.  <br><br>
+                   <div style="color:#0000FF">/disableMotors  </div> to stop the machine immediately and disable the motors. <br><br>
+                      <div style="color:#0000FF"> /runfile? </div>  to run the uploaded file. <br><br> 
+  <p align="justify"> 
+I projected 3 graphical elements, the HEADER, introducing our FabLab and the machine, the BODY, with the control panel based on an embedded png representing the x,y,z scheme, and the FOOTER, linking to the Gestalt project.<br>
+
+For the control panel I projected 3 structural elements, a responsive area for the axes control, responsive buttons for the general control and a response frame to which target the sent addresses.<br><br>
+
+<img src="img/polycutter.png" class="img-responsive img-centered" alt="">
+
+To realize the responsive area I drew a square representing the 3 axes and 3 home (global, x and y,z), then I embedded the png converting it in a base 64 text line using <a href="http://websemantics.co.uk/online_tools/image_to_data_uri_convertor/result/"> this convertor.</a> 
+In this way you could upload and use this interface on a controller without file system too.
+Using “map" and “area" functions, each area was transformed in a button referring to the correct command address. Adding the target to the response frame allows the interface to call the address page without leaving. <br><br>
+
+To realize the responsive buttons I assigned a style to the button function and then I inserted it in a simple targeted referral link. To upload a file, according with Massimiliano, I used two “input" function, "file type" to select it and "submit type" to upload, inserted in a "post type form" linked to a .php file realized by himself. The "file type input" has a preassigned style that I modified inserting it in a label after calling it off with the command “style=display:none;”. <br>
+
+At the end, during the last sunday in which we completed the machine, I doubled the “z” value in the command addresses adding a fourth value, because we used two motors to control the z axis. <br>
+
+Here’s the <a href = "https://github.com/purplezack/PFfiles/blob/master/files/Polycutter.html"> html file </a>. 
+
+
+
+                            
+                            <ul class="list-inline item-details">
+                                <li>Maker:
+                                    <strong>Leonardo Zaccone
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong>02/03/2015
+                                    </strong>
+                                </li>
+                                <li>FabLab:
+                                    <strong>Frosinone, Italy
+                                    </strong>
+                                </li>
+                            </ul>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
