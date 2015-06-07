@@ -87,7 +87,7 @@
 						<div class="container">
 
 							<header>
-								<h2> <strong> Final Project: Pool Companion </strong> </h2>
+								<h2> <strong> Final Project: Fabduck! A pool social robot. </strong> </h2>
 							
 							</header>
 							
@@ -146,7 +146,7 @@ Regarding giving a personality to the objects my inspiration is the work of simo
         <p>The duck should have this capabilities:
         
         <ul class="default">
-		<li>Check the temperature of the water</li>
+		<li>Check the temperature of the water and share it </li>
 		<li>Know if is day, night, sunny or cloudy (time + Yahoo Weather API)</li>
 		<li>Detect waves as sign of human activity (people in the pool with accelerometer)</li>
         <li>Detect if someone tries to sink it<li>Connect to the Internet to access information and share data</li>
@@ -178,57 +178,114 @@ Regarding giving a personality to the objects my inspiration is the work of simo
 					
 					
 					<header>
-								<h3>Development</h3>
+								<h3>Project Development</h3>
 						  </header>
 							<p>In this section I will update the current progress of the project development according to the activities reported in the <a href="15-application.html">applications and implications assignment</a>.
           </p>
           
 
           
-     <h3>Design an make the case (the duck)</h3>    <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-      70% Complete
+     <h3>Design an make the case (the duck)</h3>    <div class="progress" style="height:40px">
+    <div class="progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+      100% Complete
     </div>
   </div>
-     <p>I'm building first the electronic part to correctly size the duck to host it. In the meantime I'm studiyng about buoyancy (<a href="https://books.google.it/books?id=js3tCAAAQBAJ&lpg=PA92&ots=EfIfqxHjSY&dq=weight%20distribution%20and%20buoyancy&pg=PA92#v=onepage&q=weight%20distribution%20and%20buoyancy&f=false">interesting book here</a>) tho be sure that the duck can float over the water. A irst version of the model could be seen <a href="http://a360.co/1DX8Voa">here</a>.
+     <p>I'm building first the electronic part to correctly size the duck to host it. In the meantime I'm studiyng about buoyancy (<a href="https://books.google.it/books?id=js3tCAAAQBAJ&lpg=PA92&ots=EfIfqxHjSY&dq=weight%20distribution%20and%20buoyancy&pg=PA92#v=onepage&q=weight%20distribution%20and%20buoyancy&f=false">interesting book here</a>) tho be sure that the duck can float over the water. A first version of the model could be seen <a href="http://a360.co/1DX8Voa">here</a>.
      <p>However I wanted to try also other software and, following this <a href="https://www.youtube.com/watch?v=BRRIBptfFxg">tutorial </a>I drawn another duck using Rhino. With Rhino I feel more in control of shapes than whith sculpting even if, for organic shapes, could be better. I took inspiration from the The <a href="http://www.huffingtonpost.com/2013/05/02/giant-rubber-duck-inflatable-sculpture-by-artist-florentijin-hofman-hong-kong_n_3200069.html" target="_hplink" sl-processed="1">giant rubber duck</a> is  in Hong Kong's Victoria Harbor made by Dutch artist Florentijn Hofman. I started taking two images (front and right) to model it.</p>
      <p><img src="images/final/pictureduck.png" ></p>
-     <p>One of the hardest part is find a way to let me open and close the duck to put electronics inside keeping the water out! To do this I made the duck cave and I made a screwable head. In this way I can open the duck when I want (i.e. to recharge the battery) and I can keep the water out adding some insulating material. However modelling a screw is not so easy and I adapted a <a href="http://fabacademy.org/archives/2014/students/sollazzo.aldo/wfp.html">Grasshopper definition</a> made made by Aldo Sollazzo. </p>
+     <p>One of the hardest part is find a way to let me open and close the duck to put electronics inside keeping the water out! To do this I made the duck cave and I made a screwable head. In this way I can open the duck when I want (i.e. to recharge the battery) and I can keep the water out adding some insulating material. However modelling a screw is not so easy and I adapted a <a href="http://fabacademy.org/archives/2014/students/sollazzo.aldo/wfp.html">Grasshopper definition</a> made made by Aldo Sollazzo. I left much space between the outer and the inner shell. This is made to better protect the electronics from the water (there is more distance) and to make the duck more resistant. </p>
      <p><img src="images/final/xray.png" width="300" height="223"> <img src="images/final/duck render unmounted.png" width="300" height="217"></p>
      <p><img src="images/final/duck_render_eyes.jpg" width="300" height="217"></p>
-     <p>Next step will be printing the duck! You can find th 3dm and stl file in my <a href="https://github.com/maxdbt/fabmax/tree/master/3D models/duck_final">Github repo</a>.</p>
-     <h3>Design the board and put pieces together</h3>
- <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="80" style="width:90%">
-      90% Complete
+     <p> You can find th 3dm and stl file in my <a href="https://github.com/maxdbt/fabmax/tree/master/3D models/duck_final">Github repo</a>.</p>
+     <p>While designing I figured out where to put the electronics as in the schema below (look at the assemblation paragraph for more detailed information).</p>
+     <p><img src="images/final/duck-schema.jpg" width="814" height="432"></p>
+     <p>The printing part was not so easy. The duck is very big and required many hours of printing. I splitted the body of the duck in two so I could use two printers to do the job and it is less expensive to make tests. </p>
+     <p><img src="images/final/duck_sliced.jpg" width="600" height="289"></p>
+     <p>To reduce the time I used Cura to change some setting. I'm printing in PLA with an Ultimaker 2 with a 0.4 mm extruder. Mainly I augmented a little bith the layer height and the shell thickness. The first parameter make thr print less precise but faster, the second make the shell more robust even if is more time demanding. After a several attempts (you can see pictures of different attempts) I found the correct balance in 0.14 mm layer height and 1.2 mm shell thickness. I didn't fill up the bottom as the two pieces will join together. This reduced the printing time of 20% and the quality was acceptable. The print quality, however,should ensure that the water doesn't penetrate in the inner shell.</p>
+     <p>In the following image there is a trial with a lyer height of 0.17. It left big holes in between the traces.</p>
+     <p><img src="images/final/no_good_2.jpg" width="300" height="400"></p>
+     <p>The printing times were long: head 9 hours 80 grams of PLA, upper part of the body 12 hours 100 grams of PLA, lower part 21 hours 221 grams of PLA.</p>
+     <p>This is the top part of the body:</p>
+     <p><img src="images/final/body-superior.jpg" width="300" height="278"></p>
+     <p>The head in a shakespearean monologue:</p>
+     <p><img src="images/final/head.jpg" width="400" height="507"></p>
+     <p>Then screwing the head on the top pf the body:</p>
+     <p><img src="images/final/thread.jpg" width="391" height="239"><img src="images/final/head_turned.JPG" width="400" height="300"><img src="images/final/head_over.JPG" width="400" height="300"></p>
+     <p>Waiting for the last piece to be baked...</p>
+     <p><img src="images/final/printing.jpg" width="400" height="300"><img src="images/final/waiting.jpg" width="400" height="300"></p>
+     <p>Done!</p>
+     <p><img src="images/final/body_inferior2.jpg" width="500" height="331"></p>
+     <p>The quality was not good as expected despite the 20 hours of job however the outer shell is fine. I hope the duck will not sink!     </p>
+     <p><img src="images/final/duck-profile.jpg" width="500" height="375"></p>
+     <header>
+	    <h4>Testing the case</h4>
+						  </header>
+                          <p>Before putting the electronics inside I made a test in the water. At first with the lower part of the duck and then with the body assembled (just with some tape inside). For the test I used an inflatable pool (diameter 70 cm water height 30 cm).</p>
+                          <p><img src="images/final/sailing_half.jpg" width="500" height="353"> <img src="images/final/sailing_complete.jpg" width="500" height="375"></p>
+                          <p><img src="images/final/sailing_complete2.jpg" width="500" height="375"></p>
+                          <p>It is a little bit overweight in the front however the things I'll punt inside will balance it. Or I can add a keel as used in some boats. I noticed that there is 
+                        
+                    
+                         					  
+					a little bit of water entering inside. It is because of the quality of the printing. However as printing the hull with a 100% fill and a lower layer height will be expensive and time consuming I decided to use epoxy resin (I used <a href="http://www.prochima.it/pages/e30.htm">this one</a>). I used 50 grams of the A component and 30 of B as suggested.</p>
+                          <p><img src="images/final/epoxy1.jpg" width="500" height="375"><img src="images/final/epoxi2.jpg" width="500" height="375"></p>
+                          <p>Then I have to wait for 10 hours to see the result. Ant it was good! The picture below it is not very clear however you can see water drops on the resin, sign of the impermeability of the hull.</p>
+                          <p><img src="images/final/result_hull.jpg" width="400" height="533"></p>
+                          <p>However I'm still not satisfied so I'll work more in the future on the prototype to make it more resistant and waterproof. Maybe I'll make it in a composite material.</p>
+                          <p>&nbsp;</p>
+                          <h3>Make the electronics</h3>
+ <div class="progress" style="height:40px">
+    <div class="progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="80" style="width:100%">
+      100% Complete
     </div>
   </div>
-      <p>I designed a board to host the voltage regulator, the logic level shofter for the Wi-Fi board and connections for sensor and actuators. I've already ordered some of the material needed. 
-      You can see the evolution of my board and download the files in my <a href="https://github.com/maxdbt/fabmax/tree/master/boards/fabduck">GIThub repo</a>. I also want to make a satshakit however I'm still waiting for some components ordered from Digikey so now I'm using the Fabkit.</p>
+      <p>As I analyzed in is in the <a href="15-application.html">applications and implications</a> page I need the board to communicate over Wi-Fi and send/receive data, sense water temperature, sense the waves (sign of presence of people) give feedback with two RGB LEDs and of course power up with a rechargeable battery. Below the boards I used. Two of them were self produced</p>
+      <p><img src="images/final/duck_components.jpg" ></p>
+      <p>As the ESP8266 and the acceleromenter work at 3.3v and the ESP8266 needs to communicate over serial and the Fabkit works at 5v I designed a board to host the voltage regulator, the logic level shifter for the ESP8266 Wi-Fi board  and connections for sensor and actuators. For the logic level shifter I adapted an open source project shared by <a href="https://www.sparkfun.com/products/12009">sparkfun</a>. It is 4 channel but I reduced it at two.
+        You can see the details of my board and download the files in my <a href="https://github.com/maxdbt/fabmax/tree/master/boards/fabduck">GIThub repo</a>. It is important to regulate the voltage and also the logic levels of the communication otherwise you will burn the ESP board! You can use also a voltage divider but it will not work for shifting up the level when the ESP is transmitting to the Fabkit. </p>
+      <p>I designed the board using Eagle, you can see below the file with the tracesready for the milling machine. I used the <a href="http://fabmodules.org/">fabmodules</a> to prepare the G-CODE. To make the traces I used the 1/64&quot; tool and I saw that I got better result changing the number of offsets to 5. It helps to have cleaner traces. To mill the circuit I used a Roland SRM-20</p>
       
       <p><img src="images/final/fabduck_exp.jpg" width="592" height="250">            
+      <p>At the beginning, for the main cointrol board, I wanted to make a Satshakit however I had problems receiving  some components ordered from Digikey and I decided to use the <a href="http://fabacademy.org/archives/2015/doc/projects/fabkit-0.4.html">Fabkit</a> modifying if with a <a href="http://www.abracon.com/Resonators/AWSCR_CV.pdf">16MHz resonator</a> (to maximize compatibility with the temperature sensor library I'm using). For the power supply I used a 5v 2400 mah rechargeable battery. It has a usb female plug so I soldered two wires on a usb male plug and powered the Fabkit board.
+      <p>To use the ESP8266 I connected the VCC to the low voltage output of my board (LV). I connected also the RST and the CH_PD to the LV. The board resets when RST goes to ground.<a href="http://www.instructables.com/id/noobs-guide-to-ESP8266-with-Arduino-Mega-2560-or-U/#step0">Here</a> you can find a good tutorial for connecting the ESP8266. I used the logic level converter to connect the RX pin of the board to the TX pin of the Fabkit and TX to the RX(I used software-serial library with RX 10 and TX 11). To debug I used a USB-TTL cable connected to tha RX/TX pin of the Fabkit (0 and 1).
+      <p>To sense the water temperature I used a waterproof Dallas sensor DS18B20. It's a digital temperature sensor and it's very accurate. It uses the &quot;<a href="http://playground.arduino.cc/Learning/OneWire">One wire</a>&quot; protocol. This particular protocol allow to connect the sensor with 3 (GND, VCC and digital signal) or with 2 (GND and VCC + signal) wires. I used the 3 wire configuration. I made a specific connector on my board.
+      
+      <p>I made a specific connector for the accelerometer on my board to give the 3.3V and the GND. The accelerometer is analog and has a pin for each axe. So I connected the three pins to three analog pins on the Fabkit (ADC).
+      <p>I used two common anode led I already had. I connected them in parallel.
       <h3>Making the code</h3>
-      <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-      70% Complete
+      <div class="progress" style="height:40px">
+    <div class="progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+      100% Complete
     </div>
   </div>
-      <p>As I still don't have all the electronics I'm reasoning on the behaviour and how to translate it into code.Some of the behavior I want to implement:</p>
+      <p>To develop the code I starded from the behaviours I wanted to implement.Some of the behaviors I want to implement:</p>
       <ul class="default">
-      <li>if the duck doesn't feel presence in the water for a couple of hours and is daytime (NTP) post on Twitter some random sentence to say it feels lonely. If the weather is good (Yahoo Weather API) and the water is warm invites people to bath.</li>
-      <li>In the morning it wishes a good morning to everybody on Twitter</li>
-      <li>At the dawn it wishes a good night to everybody on Twitter</li>
+      <li>if the duck doesn't feel presence in the water for a couple of hours and is daytime (some NTP) post on Twitter some random sentence to say it feels lonely. If the weather is good (Yahoo Weather API) and the water is warm invites people to bath.</li>
       <li>If someone try to sink it, sends an help request on Twitter</li>
-      <li>If t it feels presence of people(accelerometers) sends happy statuses on Twitter</li>
-      <li>If it is bad weather (Yahoo Weather API) it is sad and sends sad statuses on Twitter</li>
+      <li>If it feels the presence of people(accelerometers) sends happy statuses on Twitter. If not send bored statuses.</li>
+      <li>If it is bad weather (Yahoo Weather API) it is sad and sends sad statuses on Twitter and says when the weather will be fine.</li>
+      <li>Sometimes sends random statuses, for fun :)</li>
       </ul>
       
      
-      <p>I developed a php page that prints a series of useful values about time and weather (of Rome, IT) using <a href="https://developer.yahoo.com/weather/">Yahoo Weather API</a> <a href="http://weather.yahooapis.com/forecastrss?w=721943&u=c">(example request)</a>: current temperature, current <a href="https://developer.yahoo.com/weather/documentation.html">condition code</a> (a number representing the weather condition eg. sunny), max and min temperature expected, sunrise and sunset time, current time (Rome time), current weekday.<a href="http://www.my-id.org/utilities/getweather_time.php">You can test here</a> and see the code in my <a href="https://github.com/maxdbt/fabmax/tree/master/code">Github repo</a> or below:</p>
+      <p>I decided to make a distributed architecture and don't leave all the computational effort to the Fabkit. I developed a php page that acts likea proxy, accesses <a href="https://developer.yahoo.com/weather/">Yahoo Weather API</a> <a href="http://weather.yahooapis.com/forecastrss?w=721943&u=c">(example request)</a> and prints a series of useful values about time and weather of Rome (the city I live in) : current temperature, current <a href="https://developer.yahoo.com/weather/documentation.html">condition code</a> (a number representing the weather condition eg. 32=sunny), max and min temperature expected, current time (Rome time) and current weekday. I made this kind of proxy to simplify the access to the web API of Yahoo Weather. Indeed Yahoo replies with a long xml and I was afraid of filling up the memory of the ATMega. In this way I receive only the data I need. Morever I always writte &quot;/123&quot; at the beginning and I separate the values with &quot;/&quot;. <a href="http://www.my-id.org/utilities/getweather_time.php">You can test here</a> .So it's easier to parse the string and find the correct values. Moreover I use another service of ThingSpeack to share the water temperature values on this <a href="https://thingspeak.com/channels/3305">channel</a> (watch it in real time).</p>
+      <p><iframe width="450" height="260" style="border: 1px solid #cccccc;" src="http://api.thingspeak.com/channels/3305/charts/1?width=450&height=260&results=60&dynamic=true" ></iframe></p>
+      <p>Yo can  see and download the code in my <a href="https://github.com/maxdbt/fabmax/tree/master/code">Github repo</a> or below:</p>
       
      
       <p>
         <textarea style="width:80%; height:500px; font-size:16px"><?php
+if(isset($_POST['temp']) ){
+
+
+    $temp = $_POST['temp'];
+    //echo($temp);
+    
+    $req= "https://api.thingspeak.com/update?key=UF9TU277I3USN86N&field1=".$temp;
+    
+$html = file_get_contents_curl($req);
+  
+}
 
 $result = file_get_contents('http://weather.yahooapis.com/forecastrss?w=721943&u=c');
 $xml = simplexml_load_string($result);
@@ -238,6 +295,7 @@ $xml = simplexml_load_string($result);
 $xml->registerXPathNamespace('yweather', 'http://xml.weather.yahoo.com/ns/rss/1.0');
 $location = $xml->channel->xpath('yweather:location');
 $astr =  $xml->channel->xpath('yweather:astronomy');
+echo("/123/");
 
 
 if(!empty($location)){
@@ -247,10 +305,19 @@ if(!empty($location)){
         $current = $current[0];
        // $output = <<<END
             echo $current['temp']."/"; //current temp
-            echo $current['code']."/"; //current forecast code
+            echo $forecast[0]['code']."/"; //current forecast code
             echo $forecast[0]['high']."/"; //max temp expected today
             echo $forecast[0]['low']."/";//min temp expected today
-           
+            echo $forecast[0]['code']."/";//forecast code for tomorrow
+
+$sunr = $astr[0]['sunrise']; //several operation to transform h:min pm into h:min
+$sunr = trim($sunr);
+$sunr = explode(":",$sunr);
+$sunr_h=$sunr[0];
+$sunr_m_a = explode(" ",$sunr[1]);
+$sunr_m = $sunr_m_a[0];
+//echo $sunr_h."/";
+//echo $sunr_m."/";
 
 $suns = $astr[0]['sunset']; //several operation to transform h:min pm into h:min
 $suns = trim($suns);
@@ -258,8 +325,8 @@ $suns = explode(":",$suns);
 $suns_h=$suns[0];
 $suns_m_a = explode(" ",$suns[1]);
 $suns_m = $suns_m_a[0];
-echo $suns_h."/";
-echo $suns_m."/";
+//echo $suns_h."/";
+//echo $suns_m."/";
     }
 }else{
     $output = '<h1>99</h1>';
@@ -273,11 +340,29 @@ $min = 1*(date('i'));
 echo $min."/";
 $weekday = date('w');
 echo $weekday;
+
+function file_get_contents_curl($url)
+{
+    $ch = curl_init();
+
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+
+    $data = curl_exec($ch);
+    curl_close($ch);
+
+    return $data;
+}
+
 ?>
         </textarea>
       </p>
-      <p>As posting status on Twitter it is a little bit tricky due to openAuth process I used <a href="http://www.temboo.com">Temboo</a>, an online service that acts like a bridge towards many APIs simplifying many operations. To reduce the code on the board I made a php page that receives a message and sends it to Twitter using Temboo API. In such a way the microcontroller just have to send an HTTP GET. You can see the code in my <a href="https://github.com/maxdbt/fabmax/tree/master/code">Github repo</a> or below (for obvious security reasons I changed my data with xxxxx):</p>
-      <textarea style="width:80%; height:500px; font-size:16px">
+      <p>However I encountered a problem with the HTTP request made by the Fabkit to the page (you can see the code below) and I wasn't able to reach my website while the same script worked with others. I tried to add headers as a normal browser (i.e. adding the browser agent) request but probably some security settings is pushing me out. So I used ThingHTTP, a service of <a href="https://thingspeak.com">Thingspeak</a>, that acts like a proxy. So the system is a bit strange. I call ThingHTTP that call my website that parses the Yahoo APIs.</p>
+      <p>As posting status on Twitter it is a little bit tricky due to openAuth process I used <a href="http://www.temboo.com">Temboo</a>, an online service that acts like a bridge towards many APIs simplifying many operations. To reduce the code on the board I made a php page that receives a message and sends it to Twitter using Temboo API. In such a way the microcontroller just have to send an HTTP GET. You can see the code in my <a href="https://github.com/maxdbt/fabmax/tree/master/code">Github repo</a> or below (for obvious security reasons I changed my data with xxxxx). For the same reason I explained above I used the ThingHTTP proxy.</p>
+      <p>
+        <textarea style="width:80%; height:500px; font-size:16px">
       <?php
 require 'php-sdk/src/temboo.php';
 if(isset($_GET['msg']) ){
@@ -314,60 +399,156 @@ echo "no permission";
 }
 
 ?>
-      </textarea>
-      <p>I made the ESP8266 workig using athe AT commandsover serial even if it was a little bit tricky because of the asincronous communication between the Fabkit and the board. Indeed when sending a command I habe to wait that the ESP8266 answers and then take further actions.</p>
-      <p>I made the "core" character function that generates sentences that will be posted on Twitter according to some variables. Below you can see some sentences. The code is still incomplete I will share it once finished.</p>
-       <textarea style="width:80%; height:500px; font-size:16px">switch (rand) {
+        </textarea>
+      </p>
+      <p>And here you can see the message updated (in real time):</p>
+  <a class="twitter-timeline" href="https://twitter.com/MaxandtheDuck" data-widget-id="607271544151281666">Tweet di @MaxandtheDuck</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      <p>&nbsp;</p>
+      <p>The code for the Fabkit was made using the Arduino IDE. I made the ESP8266 workig using athe AT commands over serial. I found very useful documentation <a href="https://nurdspace.nl/ESP8266">here</a> and <a href="http://rancidbacon.com/files/kiwicon8/ESP8266_WiFi_Module_Quick_Start_Guide_v_1.0.4.pdf">here</a> (pdf). The AT commands are easy to use and to understand but it was a little bit tricky because of the asincronous communication between the Fabkit and the board. Indeed when sending a command I have to wait that the ESP8266 answers and then take further actions.For doing this I made a function that waits for the reply of the ESP8266 and parses it. If it replies OK means that the command was correctly received. A &gt; means that I connected to a webserver and I'm ready to send the GET request (see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec5.html">here</a> for references about HTTP requests). If I receive a &quot;/123&quot; I know that is the answer from my proxy and I parse the message. The data are separated by &quot;/&quot; so I used the <a href="http://linux.die.net/man/3/strtok_r">strtok</a> command to split the message.  Moreover, as the ESP uses the serial communication I had to use also the <a href="http://www.arduino.cc/en/Reference/SoftwareSerial">softwareserial</a> library to create another communication port for debugging. The debug was useful as I find out a bug with my website. Even if formatting a right HTTP request it answers with an error. So, as descrived above, I use a proxy (ThingHTTP), that seems to accept my requests without problems. However the important thing in the communication is the sequence to make the request:</p>
+      <p>AT+CIPSTART=&quot;TCP&quot;,&quot;api.thingspeak.com&quot;,80   - open the communication with the webserver and get an OK reply</p>
+      <p>AT+CIPSEND=70 - the lenght (bytes) of the message to be sent</p>
+      <p>GET /apps/thinghttp/send_request?api_key=2M3F9GBGFLGHTI0D HTTP/1.0\r\n\r\n - the request to obtain a page. Don't forget the \r\n at the end! They make the server understand that the message is terminated</p>
+      <p>then an AT+CIPCLOSE is useful to close the communication and to be ready to made another request</p>
+      <p>To sense the water temperature I used a waterproof Dallas sensor DS18B20. It's a digital temperature sensor and it's very accurate. It uses the &quot;<a href="http://playground.arduino.cc/Learning/OneWire">One wire</a>&quot; protocol. This particular protocol allow to connect the sensor with 3 (GND, VCC and digital signal) or with 2 (GND and VCC + signal) wires. I used the 3 wire configuration. I needed a <a href="https://github.com/milesburton/Arduino-Temperature-Control-Library">library</a> to make it work. As the temperature doesn't change very quickly I check it every 60 seconds.</p>
+      <p>I decide to use the waves as a sign of human presence. To do this I used a 3 axis accelerometer <a href="http://www.analog.com/media/en/technical-documentation/data-sheets/ADXL337.pdf">ADXL377</a>. It gives the acceleration as a voltage variation. As it works at 3,3V and the reference of the Fabkit's ADCis 5v it means that the maximum value is 675. As the sensor can read from -3 to +3 g it means that 0g is at 337,5. At the beginning I used the map funcion to remap the value red from the ADC in g. Then I use the formula sqrt(x^2+y^2+z^2) to obtain the total movement (plus g). However all this math was too much for the SRAM of the microcontroller (I'm using it a lot for the communication with the ESP8266) so I had to simplify the code. I used only the z axis that is perpendicular to the ground. I setted two thresholds: one for a normal wave (presence of people), one for a big wave (maybe a dive). Then I implemented the &quot;bored&quot; function that measures the time since the last movement and after a certain interval of inactivity set the &quot;bored&quot;status on. </p>
+      <p>I made the core &quot;character&quot; function that generates sentences that will be posted on Twitter according to some variables. Below you can see some sentences. There is a function that sends a random phrase every interval of time (to be set). One of the problem with the Twitter API is that you cannot send the same sentence twice in a short time or it will not post the message. However the random function returns a pseudo random number so, even if I gave as a seed a disconnected analog pin, so sometimes Twitter doesn't accept some sentence. However as with future developments the number of sentences will increase the problem will be reduced. Moreover some sentences are event driven by the accelerometers (e.g. a big wave, maybe a dive, make the duck says &quot;Nice cannonball! But I can do it better!&quot;). Moreover the high presence of Strings gave me some problems with low SRAM so I followed this <a href="https://learn.adafruit.com/memories-of-an-arduino/optimizing-sram">suggestions</a> to optimize it and use the Flash memory to store some strings. It is also useful to <a href="http://playground.arduino.cc/Code/AvailableMemory">check the free SRAM</a>. I doubled the SRAM available just pushing the string in the Flash memory.</p>
+       <p>
+         <textarea style="width:80%; height:500px; font-size:16px">void phrase(){
+  Serial.println("ph");
+  if(hour >= 8 && hour < 20){ //send message only during the day
+int rand = random(1,9);
+DEBUG.println(rand);
+String msg= "";
+ switch (rand) {
     case 1:
-      msg = "Quack!";
+      msg = "Quack!!!";
       break;
     case 2:
       msg = "Don't waste water, I need it to swim!";
+      //msg += mins;
       break;
       case 3:
       if(todayCode >28 && todayCode < 35){
-      msg = "Today will be a very good day, what about a swim in the pool?";
+      msg = "Today the weather is amazing! Wanna swim?";
+      //msg += mins;
       }else if(tomorrowCode >28 && tomorrowCode < 35){
-      msg = "The wether today is not so good, but tomorrow will be great! Get ready for a swim! See ya tomorrow!";  
+      msg = "Tomorrow will be sunny! Get ready for a swim!";
+      //msg += mins;  
       }else{
       msg= "This weather makes me sad";
+      //msg += mins;
       }
       break;
        case 4:
        if(todayHigh >28){
-      msg = "Today will be very very hot. ";
-     msg  += todayHigh;
-   msg += " degrees. Get into the water!";
+        msg = "Today will be very very hot.  ";
+       msg  += todayHigh;
+       msg += " degrees. Get into the water!";
+       //msg += mins;
        }else{
          msg="Brrr!";
         msg = msg + todayHigh;
         msg = msg +" degrees!!Today you need a woolen swimming suite!";
+        //msg += mins;
        }
       break;
+      
        case 5:
        msg = "Today the water is at ";
       msg = msg + waterTemp;
       msg = msg + " degrees.";
+      //msg += mins;
       if(waterTemp > 25){
       msg = msg + "Perfect for swimming!";
+      //msg += mins;
       }else{
-       msg = msg + "Cold water keeps me young!!"; 
+       msg = msg + "Cold water keeps me young!!";
+      //msg += mins; 
       }
       break;
+      
       case 6:
       if(weekd == 5){
       msg = "It's friday I'm in love!!!";
       }else if(weekd == 6 || weekd == 0){
-      msg = "It's the weekend. Let's go party?"; 
+      msg = "It's the weekend. Let's go party?";
+     //msg += mins; 
       }else if(weekd == 1){
         msg = "It's monday :(";
+       // msg += mins;
+      }else{
+         msg ="Hold on, the weekend will come soon!";
+         //msg += mins;
       }
       break;
-    
+      case 7:
+      msg ="42!";
+      break;  
+      case 8:
+      if(bored){
+        msg = "I'm feeling alone...";
+      }else{
+       msg = "hey, there is a party here!"; 
+      } 
+      break;
+      case 9:
+      msg = "Does androids swim with electric ducks?";
+      break;
   }
-       
-       </textarea>
-				      </div>
+  Serial.println(msg); 
+  tweet(msg);
+  } 
+  
+}</textarea>
+       </p>
+       <p>Some examples of the sentences choosen according to the external variables:</p>
+     <div class="mxgraph" style="position:relative;overflow:auto;width:100%;background-color:#E6E6E6;"><div style="width:1px;height:1px;overflow:hidden;">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</div></div>
+     <p>Moreover, as a physical feedback, I have 2 RGB leds representing the eyes of the duck. Using colors to communicate something is not always easy because you are not sure that your user will understand or like them. Moreover using too many colours or blinking means creating a complex dictionary that would be hard to learn in the absence of other feedback. So I designed a simple behaviour. The eyes indicates if the temperature of the water is good to swim (how many time you are afraid about the temperature of the water?) .</p>
+     <p>Green = the temperature is above 24 (many forums about pools say that is the ideal temperature)</p>
+     <p>Blue = it's cold (below 24)</p>
+     <p>Then if the accelerometer detects a big wave they become red for a second.</p>
+     <p>When the duck is exchanging data with the web the eyes are white. I tought at the withe as a sign of absence. Indeed the microcontroller can do only one thing at once so during the procedure of getting and posting data the duck doesn't react to the waves.     </p>
+     <p>A test of the eyes (could it be IronDuck?)</p>
+     <p><img src="images/final/iron_duck.jpg" width="450" height="514"></p>
+     <p>All the code is available on my <a href="https://github.com/maxdbt/fabmax/tree/master/final%20project">GitHub repo</a>.</p>
+
+
+					<header>
+					  <h3>Put the parts together</h3>
+						  </header>
+					<p>At firstt I made a simple test to see if the electronics fits in the body as expected. I placed the sensor the Fabkit and the board for voltage regulation, logic converting and sensor attachment.                     
+					<p><img src="images/final/duck_filled.jpg" width="500" height="375">                                        
+					<p>I placed the accelerometer in a position that lets the Z axis be perpendicular to gravity.                    
+					<p><img src="images/final/duck_filled-accel.jpg" width="500" height="375">                                        
+					<p> I placed the battery in a longitudinal position for stability and to let me access the connector to recharge it from the hole of the body. I left outside the ESP8266 and the leds because they will go into the head.                     
+					<p><img src="images/final/duck_filled-closed.jpg" width="500" height="375">                                        
+					<p>The leds will be the eyes. I placed the ESP8266 in the head as radio waves doesn't like very much the water., high frequencies are absorbed by the water. As the head till turn to screw into the body I left some extra cable.
+					<p><img src="images/final/duck_eyes.jpg" width="375" height="500">                                        
+					<p>I made a hole in the  lower part of the duck with the hot point of the solder to let the water temperature sensor pass. I sealed it with silicone rubber
+					.
+					<p><img src="images/final/hole_back.jpg" width="400" height="455">                                        
+					<p>And now everything is inside and connected!
+					<p><img src="images/final/closed.jpg" width="500" height="375">                                        
+					<p>As the duck, even after placing resin on the hull, is not wareproof I placed the electronics into a plastic bag and I closed the two part of the body with a waterproof tape to make some fast test in the water.</p>
+					<p>The duck doesn't sink, feels the temperature (the sensor is working), send tweets (means that the wifi is working near the water) and reacts to the waves (even if I have to make a fine calibration).</p>
+					<p>So the test was ok for the electronics and also for the case, even if in future I'll work on the waterproof issue before leaving it alone in the water.</p>
+					<p><img src="images/final/final-in-water.jpg" width="600" height="450"></p>
+                    <header>
+					  <h3>Future developments</h3>
+						  </header><p>This was the first prototype and was very useful to test my initial idea and refine it. Moreover I learn a lot of things while making the prototype. The most important one was the problem with the water. Even with a good print I didn't had a waterproof case. I used epoxy resin but it partially solved the problem. So one of the future developments will be to find another way to make the case waterproof.</p><p> WHile designing the system I followed the KISS rule (keep it simple and stupid) but there are a couple of things that I want to develop in the future:</p>
+                          <ul class="default">
+                          <li> improve the interaction with the user adding more physical feedbacks</li>
+                          <li>make a distributed architecture that allows to expand the system adding sensors and actuators (maybe wireless connected)</li>
+                          <li>add a ph sensor</li>
+                          <li>add a chlorine dispenser</li>
+                          <li>add a solar panel for battery recharge</li>
+                          </ul>
+                          
+              
+                        
+                      
+                    
+                    </div>
 						
 					</section>		
 			
@@ -384,6 +565,6 @@ echo "no permission";
 					</ul>
 				
 			</div>
-
+<script type="text/javascript" src="https://www.draw.io/embed.js?s=flowchart"></script>
 	</body>
 </html>
