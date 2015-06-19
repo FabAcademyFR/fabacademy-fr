@@ -20,7 +20,6 @@
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
@@ -56,17 +55,17 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="index.html">about me</a>
+                        <a class="page-scroll" href="index.html#services">about me</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#index.html">portfolio</a>
+                        <a class="page-scroll" href="index.html#portfolio">portfolio</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#index.html">my vision</a>
+                        <a class="page-scroll" href="index.html#about">my vision</a>
                     </li>
                    
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="index.html#contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -92,14 +91,21 @@
         <div class="featured" id="about">
            
             <div><h2 class="featured-heading">CIRCUITS</h2></div>
-           
-            <p class="lead">PCB fabrication</p>
-            
+<p class="lead">ASSIGNMENT:make the FabISP in-circuit programmer</p>
+<a href="http://academy.cba.mit.edu/classes/electronics_production/index.html"> Assignment:Electronics Production </a> 
+<br></br> 
+            <h4 class="section-subheading text-muted">PCB fabrication</h4> 
             <p class="lead">This assignment is about to make the FabISP in-circuit programmer. The FabISP is an in-system programmer for AVR microcontrollers. That allows you to program the microcontrollers on other boards using a USB cable and 6-pin IDC to 6-pin IDC cable. We will be using these programmers through the semester to program the other boards we create.</p>
-         
-            <p class="lead">Tools:
-<br/>Roland MonoFab SRM20,  1/64 "(engraving) e 1/32" (cutting) frese, and copper plate.</p>
- <p class="lead">1 Steps: Milling the board </p>
+<a href="http://academy.cba.mit.edu/classes/electronics_production/index.html"> hello.ISP.44.cad board components traces interior </a>   <br></br>  
+<h4 class="section-subheading text-muted">Tools:</h4> 
+<p class="lead">Roland MonoFab SRM20 
+<a href="http://www.rolanddg.it/it/prodotti/modellatori-3d/monofab-srm-20"><h5>Roland MonoFab SRM20 </h5></a> </p>   <br></br>  
+<p class="lead">1/64 "(engraving) </p> <div>
+<a href="http://www.carbidedepot.com/detail.aspx?ID=180142"> DIA 0.0156" DIA 2FL SE AlTiN 1/64</a>    <br></br>  
+<p class="lead">1/32" (milling), and copper plate.</p> 
+<a href="http://www.carbidedepot.com/detail.aspx?ID=180143">0.0312" DIA 2FL SE AlTiN 1/32</a> 
+   <br></br>   
+<h4 class="section-subheading text-muted">1° Steps: Milling the board </h4> 
 <p class="lead">For milling the board we used the Roland MonoFab SRM20 and the Fab Modules, we placed a sacrifical level before starting work, and I glued the board in the milling machine with double sided tape to keep the model from moving in the milling machine.</p>
             <img class="featured-image  img-responsive pull-center" src="img/week4/engraving.jpg">
             <!-- < img src="i1.jpg" style="margin-bottom: 5px" /><br/> 
@@ -112,7 +118,7 @@
 <br/>- To cut the board we usually need 1/32th n-mill, we changed the drill tool to the 1/32" on the Mondela, and selected the endmill settings as 1/32", We set the z origin, loosen the set screw and pushed the bit all the way onto the copper. Tighten the screw.
 <br/>- We clicked on the “load button” and we selected my file (miky.ISP.44.interior.png)  and we set the machine type as SRM20. We sent</p>
             <br/>
-	<p class="lead">2 Steps: Soldering the board </p>
+<h4 class="section-subheading text-muted">2° Steps: Soldering the board </h4> 
             <p><img class="featured-image  img-responsive pull-center" src="img/week4/soldering.jpg"></p>
             <br/>
 <p class="lead">Components:
@@ -131,28 +137,32 @@
 <br/>. one usb mini cable
 <br/>. one ribbon cable
 <br/>. two 6 pin connectors</p>
-           <br/>
+
 	<p class="lead">- We downloaded the FabISP labeled board diagram, so we could see where to place the components on the board, and we we soldered the components to the board using a soldering iron and solder.</p>
-	<br/>
+	
 	<p class="lead">-The first day of soldering I had problems, because my solder did not work. On the second attempt I managed to finish the PCB.</p>
-            <br/>
-            <p class="lead">-  We checked the connections with the multimeter to make sure that power and ground were not connected and there was not a short on the power line.
+    
+    <p class="lead">-  We checked the connections with the multimeter to make sure that power and ground were not connected and there was not a short on the power line.
 I did the "smoke test". Plug the FabISP into your computer via the mini USB cable. Install the necessary software for AVR programming, the ATtiny44</p>
-             <br/>
+            <br/>
+<h4 class="section-subheading text-muted">3° Steps: Programming </h4> 
+
+<p class="lead">Programming I could run with my computer (MAC), but I had to use the computer of one of the students, with linux I did.</p>
+
     <p><img class="featured-image  img-responsive pull-center" src="img/week4/programming.jpg"></p>
             <br/>
 <iframe width="1140" height="640" src="https://www.youtube.com/embed/LoJ-vP4X518" frameborder="0" allowfullscreen></iframe>
-         <br/> 
-          </p>   
-             <p class="lead">TIPS:
-             <br/>
+			<br></br>   
+<h4 class="section-subheading text-muted">TIPS:</h4> 
              <p class="lead">I advise to settle first the USB and microcontroller and then the rest. Soldered these two elements, you can say that you job is finished.
 <br/>Carefully check the direction of the microcontroller, and the polarity of the diodes.
 Copper is an excellent tool to remove tin in excess.</p>
           </div>
-          </div>
-          <br/>
-         
+                 <br/>
+<h4 class="section-subheading text-muted">Download the files:</h4> 
+            <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week4/max.ISP.44.interior.png">max.ISP.44.interior.png</a>   
+             <br/>
+            <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week4/max.ISP.44.traces.png">max.ISP.44.traces.png</a>   
       </p>
            
         <hr class="featured-divider">
