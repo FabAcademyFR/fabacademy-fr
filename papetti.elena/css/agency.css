@@ -265,9 +265,9 @@ header {
     text-align: center;
     color: #000;
     background-attachment: scroll;
-    background-image:  url(../img/header-bg.jpg)
+    background-image:  url(../img/portfolio/cover1.jpg)
     background-position: center center;
-    background-repeat: none;
+    background-repeat: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
