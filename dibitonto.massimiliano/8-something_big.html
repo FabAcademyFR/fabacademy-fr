@@ -58,6 +58,11 @@
 							<ul>
 								<li><a href="index.html" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Home</span></a></li>
 								</ul>
+                                     <ul>
+								<li><a id="top-link" class="skel-layers-ignoreHref">Downloads for this week:</a></li>
+                                <li><a href="https://github.com/maxdbt/fabmax/tree/master/2D%20models/something%20big"><span class="icon fa-git">Repo</span></a></li><li><a href="http://www.massimilianodibitonto.it/fablab/guitar_stand_and_table.3dm"><span class="icon fa-cube">Model</span></a></li>
+								
+                              </ul>
 						</nav>
 						
 				</div>
@@ -100,23 +105,29 @@
 								<h3>Making something big</h3>
 						  </header>
 							<p>
-                             decided to make something not huge but useful. 
+                             I decided to make something not huge but useful. 
 I needed a guitar stand and in the Fablab we needed a coffe table for our breaks.
-To start i checked several website to get inspired like <a href="http://atfab.co/cnc-furniture/">AtFab</a> and <a href="https://www.opendesk.cc/">OpenDesk</a> . Moreover I start to think about how to join pieces and, as a consequence, the different shapes I can create. I found very useful the <a href="http://makezine.com/2012/04/13/cnc-panel-joinery-notebook/">CNC panel joinery notebook</a> from Make. It is a review of many different joint types that could be used for different needs.</p>
-							<p>Is very important to know how to make joints with the CNC. Indeed the end mill il rounded so it is not possible to make 90° angles (it's easy only when they are external corners). As can be seen from the Make notebook  the end mill make a rounded corner. So it's important to make an extra cut for a perfect snapping <p><img src="http://i0.wp.com/cdn.makezine.com/uploads/2012/03/figure-001.png?zoom=2&resize=580%2C291"><img src="http://i1.wp.com/cdn.makezine.com/uploads/2012/03/figure-004.png?zoom=2&resize=580%2C320">. </p></p><p> Another important aspect is to understand the tolerance of the CNC-router and also if the end mill cuts inside, outside or on the line of the model (this last setting coul be desinide in the CNC control panel). In the Fablab we have a big <a href="http://www.macchinecnc.com/enterprise.html">CNC router </a> that has a working area of 2100 x 1100 mm. </p>
+To start I checked several website to get inspired like <a href="http://atfab.co/cnc-furniture/">AtFab</a> and <a href="https://www.opendesk.cc/">OpenDesk</a> . Moreover I start to think about how to join pieces and, as a consequence, the different shapes I can create. I found very useful the <a href="http://makezine.com/2012/04/13/cnc-panel-joinery-notebook/">CNC panel joinery notebook</a> from Make. It is a review of many different joint types that could be used for different needs.</p>
+							<p>It is very important to know how to make joints with the CNC. Indeed the tool of the machine is rounded so it is not possible to make 90° angles (it's easy only when there are external corners). As can be seen from the Make notebook  the end mill make a rounded corner. So it's important to make an extra cut for a perfect snapping <p><img src="http://i0.wp.com/cdn.makezine.com/uploads/2012/03/figure-001.png?zoom=2&resize=580%2C291"><img src="http://i1.wp.com/cdn.makezine.com/uploads/2012/03/figure-004.png?zoom=2&resize=580%2C320">. </p></p><p> Another important aspect is to understand the tolerance of the CNC-router and also if the end mill cuts inside, outside or on the line of the model (this last setting coul be desinide in the CNC control panel). In the Fablab we have a big <a href="http://www.macchinecnc.com/enterprise.html">CNC router </a> that has a working area of 2100 x 1100 mm. </p>
 							<p><img src="images/cnc/machine.jpg" width="400" height="300"></p>
-							<p>We payed a lot of attention to the safety rules as the machine is dangerous. In the room there a photodetector barrier to stop the machine if someone gets too close.</p>
-							<p>The wood used was a panel of OSB/3 of 1050 x 2050 centimeters,  18 millimeters thick. After several tests we decided to use a tolerance of +0,5mm to have good joints (not too loose not tight).</p>
-							<p>I used Rhino to design the model. I made a 3d model to test the correct matching of the joints then I make a 2D model for the CNC router. I designed a coffe table and a guitar stand. I drew up also the drilling holes to fix the table. So I was sure to put the screw in the right place. To design the guitar stand I used the measure of my guitar. I pay attention to the center of gravity, to be sure that the guitar will not fall down. The tricky part was to design angled joints, but I found very useful to create a 3D model. For the table I choose a simple design. I used a 3D model to verify the joints and the procedure to mount it. </p>
-							<p><img src="images/cnc/modello.png" width="511" height="272"></p>
-							<p>You can download the model from <a href="http://www.massimilianodibitonto.it/fablab/CNC_router_table_guitar.dxf">here</a>. </p>
-							<p> To send the model to the CNC-router it had to be processed by a program. I place the model in the negative quadrant and exported it from Rhino in .dxf format. I imported it in the CNC design software, then I set several parameters. One of the most important was the cutting depth, that had to be bigger that the panel thickness (to be sure to cut it). Of course under the panel there was a sacrifical panel, to avaid damages to the machine. 
-						    <p> <img src="images/cnc/settings_cut_depth.jpg" width="400" height="533">                                                                                     
-							<p>Moreover i set up the origin of the machine. I set up different working steps:                                                        
-				          <ol>
-					          <li>1. Drilling holes to fix the panel </li>
-					          <li>2. Fixing the screws (manually)</li>
-					          <li>3. Cutting the holes</li>
+							<p>We payed a lot of attention to the safety rules as the machine is dangerous. In the room there is a photodetector barrier to stop the machine if someone gets too close.</p>
+							<p>The wood used was a panel of OSB/3 of 1050 x 2050 centimeters,  18 millimeters thick. After several tests with simple joints we decided to use a tolerance of +0,5mm to have good joints (not too loose not too tight).</p>
+							<p> I designed a coffe table and a guitar stand. I used Rhino to design the model. I started from the outline then I made the joints. For both objects I made a 3d model to test the correct matching of the joints then I make a 2D model for the CNC router. I drew up also the drilling holes to fix the wood table to the sacrificial plate. So I was sure to put the screw in the right place. </p>
+						  <p>To design the guitar stand I used the measure of my guitar. I paid attention to the center of gravity, to be sure that the guitar will not fall down. The tricky part was to design angled joints, but I found very useful to create a 3D model.</p>
+						  <p><img src="images/cnc/guitar_stand" width="270" height="475"> </p>
+							<p>For the coffee table I choose a simple design. It is made by 3 squares. One for the top and two to hold it.  I used a 3D model to verify the joints and the procedure to mount it. </p>
+							<p><img src="images/cnc/table3d1.jpg" width="300" height="289"><img src="images/cnc/table3d2.jpg" width="300" height="324"></p>
+							<p>On the Rhino file I made 3 levels: one for the inside cut (blue) , one for the outside cut (green) and one for the drilling (white) (to put screws to fix the table).</p>
+							<p><img src="images/cnc/modello.jpg" width="500" height="296"></p>
+							<p> To send the model to the CNC-router it had to be processed by a CAM program. I place the model in the negative quadrant and exported it from Rhino in .dxf format. I imported it in the CNC design software, then I set several parameters. One of the most important was the cutting depth, that had to be bigger that the panel thickness (to be sure to cut it). Of course under the panel there was a sacrifical panel, to avoid damages to the machine. 
+					      <p> <img src="images/cnc/settings_cut_depth.jpg" width="400" height="533">                                                                                     
+							<img src="images/cnc/settings.jpg" width="225" height="300">
+					      <p>With the ArtCam software I selected different settings to generate the profile.As the material thickness is 18 mm I setted the finish depth at 19 mm so I'm sure it will be cutted (there is a sacrificial board below!). Then I set  feed rate: 76 mm/s, plunge: 50 mm/s, spindle: 15000 rpm.I also added bridges to the cut to avoid objects to fall.</p>
+					      <p>I exported 3 files: one for the drilling to fix the panel, one for the exterior cuts and one for the interior cuts. Before sending the files I set up the X,Y, and Z origin of the machine. I mounted the 6mm tool. I planned different working steps:                                                        
+			              <ol>
+				            <li>1. Drilling holes to fix the panel: I send the file only with the holes to be drilled.</li>
+					          <li>2. Fixing the screws (manually): I fixed the screws in the holes drilled.</li>
+					          <li>3. Cutting the holes: make the interior cuts. It is important to do it before cutting the profile as pieces can move after that.</li>
 					          <li>4. Cutting the profiles</li>
 					          <li>Here is the video of the machine drilling the holes:</li>
 					          <li></li>
@@ -132,6 +143,15 @@ To start i checked several website to get inspired like <a href="http://atfab.co
 				          <p>A detail of the joint:</p>
 				          <p><img src="images/cnc/joint_detail.jpg" width="300" height="225"></p>
                           
+                          <header>
+                          <h3>
+                          Downloads
+                          </h3>
+                          </header>
+                                <ul>
+								
+                                <li><a href="https://github.com/maxdbt/fabmax/tree/master/2D%20models/something%20big"><span class="icon fa-git">Repo</span></a></li><li><a href="http://www.massimilianodibitonto.it/fablab/guitar_stand_and_table.3dm"><span class="icon fa-cube">Model</span></a></li>
+								</ul>
                       </div>
 						
 					</section>

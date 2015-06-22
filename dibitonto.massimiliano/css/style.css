@@ -263,6 +263,13 @@
 				list-style-type: circle;
 				 text-align: left;
 			}
+			ul.num
+			{
+				list-style: disc;
+				padding-left: 1em;
+				list-style-type: decimal;
+				 text-align: left;
+			}
 			
 				ul.default li
 				{

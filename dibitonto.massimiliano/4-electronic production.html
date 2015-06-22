@@ -58,6 +58,10 @@
 							<ul>
 								<li><a href="index.html" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Home</span></a></li>
 								</ul>
+                                 <ul>
+								<li><a id="top-link" class="skel-layers-ignoreHref">Downloads for this week:</a></li>
+                                <li><a href="http://academy.cba.mit.edu/classes/electronics_production/index.html"><span class="icon fa-link">FabAcademy website</span></a></li>
+                             </ul>
 						</nav>
 						
 				</div>
@@ -95,16 +99,32 @@
 							<header>
 								<h3>Intro </h3>
 							</header>
-							<p> The assignment of the third week was to mill and solder an ISP.</p>
+							<p><a href="https://en.wikipedia.org/wiki/In-system_programming">Wikipedia</a> says that "In-system programming (ISP), also called In-Circuit Serial Programming (ICSP), is the ability of some programmable logic devices, microcontrollers, and other embedded devices to be programmed while installed in a complete system, rather than requiring the chip to be programmed prior to installing it into the system.". So an ISP is a board the allows to program other boards. In our case we are making a board to program AVR microcontrollers. For this week we will have to make an ISP using a milling machine and then soldering the components on it.</p>
 						<header>
-								<h3>Making an ISP programmer</h3>
+						  <h3>Making an ISP programmer</h3>
 						  </header>
-							<p>I used a Roland monoFab SRM-20 milling machine to mill the circuit shared on the Fabacademy website. The task was quite easy and was a good way to approach the milling machine. Then I soldered the components on the PCB. Even if I'm quite familiar with electronics I'm not used to solder SMD components. Moreover some components had packages really difficult to use. The quartz was too big and I had to put it on one side and the diodes were too small, so I had to create a little jumper with the stain. I made the smoke test and it worked fine.</p><p><img src="images/milling.jpg"> </p><p> <img src="images/pcb.jpg"> </p>
+							<p>As designing circuit is very complex and the focus of this week was to learn the skill to produce electronics I started from the board shared on the <a href="http://academy.cba.mit.edu/classes/electronics_production/index.html">Fabacademy website</a>.</p>
+                            <img src="http://academy.cba.mit.edu/classes/embedded_programming/hello.ISP.44.png" width="300">
+							<p> I used a Roland monoFab SRM-20 milling machine that is in the Frosinone Fablab. The task was a good way to approach the milling machine. To mill something you need to make a GCODE for the specific machine to tell it what is the path to follow. To mill a circuit you have mainly 2 jobs to do. Make the traces and the (eventually) drill holes and cut the board away from the plate.This is made with two different tools of the machine: one is 1/62&quot; so is able to remove small amounts of copper so the traces could be nearer and the board could be smaller, 1/32&quot; to cut and drill holes. So we used two different png representing the traces(left) and the border(right) of the board. The black part will be milled.</p>
+							<p><img src="http://academy.cba.mit.edu/classes/embedded_programming/hello.ISP.44.traces.png" width="300"> <img src="http://academy.cba.mit.edu/classes/embedded_programming/hello.ISP.44.interior.png" width="300"></p>
+							<p>To make the GCODE we used the <a href="http://fabmodules.org/">fabmodules</a>. It is a very useful tool. You can upload your png, vector or 3d model and make the GCODE for different machines.This are the steps for the traces: </p>
+							<ul class="num"><li>I uploaded the traces png file </li><li>I selected Roland Mill (.rml) as the output format.</li><li>	Then I set	the	kind of process: PCB traces (1/64)</li>
+							  <li>I set the correct output machine (SRM-20) and xmin ymin to 0</li>
+							  <li>In the process panel I set an higher offset (5) to have more spaces between the traces</li>
+							  <li>calculate to generate the path. It is important to check if everything is ok (maybe some traces are too close or some detail was not calculated)</li>
+							  <li>save the file</li>
+						    </ul>
+							<p>To cut the borders I followed the same process but, at step 3, I chose PCB outline (1/32) and I didn't change the offset at step 5. I changed the tool placing the 1/32&quot; one. I set again the Z of the machine as it may vary changing the tool.</p>
+							<p>Before using the machine I left it working for 30 min to warm up.	I	placed	a	FR-1	copper	plate	on a sacrificial boad that was already inside the machine. The important thing is to check that everything is parallel to the build plate.	I mounted the 1/64&quot; tool. Then	I	set	up	the	X,Y	and Z home with the control panel of the machine. </p>
+							<p><img src="images/milling.jpg" alt=""></p>
+							<p>Then I soldered the components on the PCB. I never soldered SMD components. Moreover some components had packages really small difficult to solder. At first I melted a little bit of solder on the pad. Then I placed the component and melted again the solder (touching both the stain and the component with the point of the soldering iron). The important thing is to put very little solder  or it will go over different pads making short circuits. Howeber if it is too much you can use the desoldering pump or the desoldering wire.In the first case you have to melt the solder and pull it out with the pump. In the second case the excess of solder will stick on the wire.</p>
+							<p>Using the continuity test function of the multimeter I tested that all the connections were working and the absence of short circuits. I made the smoke test and it don't made smoke :D</p>
+							<p>&nbsp;</p><p> <img src="images/pcb.jpg"> </p>
 							<header>
 							  <h3>Programming the FabIsp</h3>
 						  </header>
                             <p><br>
-                              I used avrdude line command and Arduino as ISP. However, as we are using an Attiny 44a, I had to change the device signature in the avrdude.conf . I wasn’t able to find online references about other values to change in that file.</p>
+                              Even if the ISP is used to program, at the beginning it needs to be programmed.To program the ISP I followed <a href="http://fabacademy.org/archives/2015/doc/programming_FabISP.html">this tutorial</a>. As I'm on a Mac I installed Cross Pack AVR that has avrdude and gcc. I downloaded the <a href="http://academy.cba.mit.edu/classes/embedded_programming/firmware.zip">firmware</a>. Inside there is the makefile file that contains all the commands and parameters to program the board. While the real code is in the file main.c. </p>
                             <p>To tell avrdude to use Arduino as ISP I changed this line in the Makefile:<br>
                               AVRDUDE = avrdude -c arduino -P /dev/tty.usbmodem1421  -p t44 # edit this line for your programmer</p>
                             <p>For the connections I followed this tutorial <a href="http://highlowtech.org/?p=1695">http://highlowtech.org/?p=1695</a> and this reference <a href="http://arduino.cc/en/Reference/SPI">http://arduino.cc/en/Reference/SPI</a>. </p>
@@ -129,24 +149,11 @@
                           avrdude: stk500_recv(): programmer is not responding
                           make: *** [fuse] Error 1</textarea>
                           
-                            <p align="center">Then I decided to put the Arduino bootloader in it. To do this I had to tell to the Arduio IDE the characteristics of the board. Inside the /hardware folder of Arduino IDE I added the boards.txt taken from <a href="https://github.com/damellis/attiny/tree/master/attiny">https://github.com/damellis/attiny/tree/master/attiny</a> but, once again I found the reference for the ATtiny44 and not for the 44a.After adding the file another section appeared in the &quot;boards&quot; submenu:</p>
-                            <p align="center"><img src="images/boards_list.jpg" width="250" height="193" alt="boards list"></p>
-                            <p>In the board.txt file i had to add also this line: attiny44-20.bootloader.tool=avrdude</p>
-                            <p>However I got this error and I wasn't able to solve it:</p>
-                         <textarea style="width:80%; height:200px; font-size:16px">
-                          Arduino:1.5.8 (Mac OS X), Scheda:&quot;ATtiny44 (external 20 MHz clock)&quot;
-                          
-
-                          avrdude: initialization failed, rc=-1
-                          Double check connections and try again, or use -F to override<br>
-                          this check.
-                           avrdude: stk500_disable(): unknown response=0x12
-                           
-                          Errore durante la scrittura del bootloader</textarea></p>
-                            <p align="left">The I tried with the usbasp programmer and it worked fine. I changed a line in the Makefile to tell to the system to use usbasp: </p>
-                        AVRDUDE = avrdude -c usbasp  -p $(DEVICE) # edit this line for your programmer<br>
-After the make clean and make hex command I sent the make fuse command with this output:
-                  <textarea style="width:80%; font-size:16px; height:300px">MBPdiMaimiliano:firmware Massimiliano$ make fuse
+                            <p> I searched a lot in different forums and, even if I didn't find the exact solution, I found out that people had many problems using Arduino as ISP so I decided to use another programmer to see if the problem was in my board. I tried with the usbasp programmer and it worked fine.</p>
+                            <p> I changed a line in the Makefile to tell to the system to use usbasp:                        </p>
+                            <p>AVRDUDE = avrdude -c usbasp  -p $(DEVICE) # edit this line for your programmer<br>
+                              After the make clean and make hex command I sent the make fuse command with this output:
+                              <textarea style="width:80%; font-size:16px; height:300px">MBPdiMaimiliano:firmware Massimiliano$ make fuse
 avrdude -c usbasp  -p attiny44  -U hfuse:w:0xDF:m -U lfuse:w:0xFF:m
 avrdude: warning: cannot set sck period. please check for usbasp firmware update.
 avrdude: AVR device initialized and ready to accept instructions
@@ -230,12 +237,18 @@ avrdude: 1 bytes of lfuse verified
 avrdude: safemode: Fuses OK (H:FF, E:DF, L:FF)
 avrdude done.  Thank you.                            
                             </textarea>
-                            <p>Then i checked my system to see if the FabISP was recognized. </p>
+                            </p>
+                            <p>Then I checked my system to see if the FabISP was recognized. </p>
                             <p><img src="images/fabisp_usb.jpg" width="500" height="245"></p>
-                            <p>The FabISP was recognized so it was ready to be used as a programmer recognized by the Arduino IDE as USBTinyISP.</p>
+                            <p>The FabISP was recognized so it was ready to be used as a programmer and it is recognized by the Arduino IDE as USBTinyISP.</p>
                             <p></p>
                             <p>&nbsp;</p>
-
+<header>
+<h3>Downloads</h3>
+</header>
+<ul>
+  <li><a href="http://academy.cba.mit.edu/classes/electronics_production/index.html"><span class="icon fa-link">FabAcademy website</span></a></li>
+                          </ul>
 
                       </div>
 						

@@ -95,12 +95,12 @@
 							<header>
 								<h3>Intro </h3>
 							</header>
-							<p> The assignment of this week was to create a board to use an output device.</p>
+							<p> The assignment of this week was to create a board to use an output device. Outputs are importants because they allows to make effect in the physical world and give feedback to the user.</p>
 	
                      <header>
 					   <h3>Designing the shield</h3>
 					  </header>
-                      <p>Starting from my final project idea i decided to create a universal IR remote control that can be used to command any object. I found a very useful and interesting <a href="https://github.com/shirriff/Arduino-IRremote">library</a> that allows to receive and send IRcommands. IRcommands are not so easy as you have to consider the frequency and the specific command. Each vendor has his own commands so there are online libraries with remote control codes. For this reason I decided to make a board that could receive a command, store it and then send it back when asked.
+                      <p>I decided to create a universal IR remote control that can be used to command any object. I found a very useful and interesting <a href="https://github.com/shirriff/Arduino-IRremote">library</a> that allows to receive and send IRcommands. IRcommands are not so easy as you have to consider the frequency and the specific command. Each vendor has his own commands so there are online libraries with remote control codes. For this reason I decided to make a board that could receive a command, store it and then send it back when asked.
                       <p>For this reason I has to use a IRreceiver decoder and an IR led. The IR decoder receives the IR signal and gives a digital output. It has 3 pins and you can see the pinout below:
                       <p><img src="http://3.bp.blogspot.com/-1QukdtWT5zY/U80MkupMOhI/AAAAAAAAAT8/GcJGR1U1jtI/s1600/2-sensores-ir-telefunken-tsop4838-38khz-pcm-p-control-remot_MLA-O-3306937218_102012.jpg">                      
                       <p>I decided to add a button to trigger the command learned.                                            

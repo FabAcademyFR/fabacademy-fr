@@ -58,6 +58,11 @@
 							<ul>
 								<li><a href="index.html" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Home</span></a></li>
 								</ul>
+                                <ul>
+								<li><a id="top-link" class="skel-layers-ignoreHref">Downloads for this week:</a></li>
+                                <li><a href="https://github.com/maxdbt/fabmax/tree/master/3D%20models/composites"><span class="icon fa-git">Repo</span></a></li><li><a href="http://www.massimilianodibitonto.it/fablab/scafo_max.3dm"><span class="icon fa-cube">Model</span></a></li>
+								
+                              </ul>
 						</nav>
 						
 				</div>
@@ -123,7 +128,7 @@
                       <li>place the third layer of linen fabric</li>
                       <li>pour and spread a third coat of epoxy resin</li>
                       <li>place the peel ply</li>
-                      <li>place the hole breather</li>
+                      <li>place the bleeder</li>
                       <li>put everything in an air-vacuum bag</li>
                       <li>extract the air from the bag</li>
                       <li>wait for 24h</li>
@@ -144,10 +149,10 @@ While designing the model it is to consider the dimensions of the splindle. If y
 <h4>Extracting the hull from the mold</h4>
 
 <h4>Roughing and finishing</h4>
-<p>The roughing tool paths is to remove excess material and, ideally, leave a constant thickness of stock all over the part for the finishing operations. For roughing we used an end mill of 8 mm. For the finishing a 3 mm ball mill. We manually modified the GCODE to stop the machine after the roughing to change the tool. M5 to stop the spindle, G0 and x,y,z coordinates to move the axis.You can see the video of the beginning of the roughing.</p>
+<p>The roughing tool paths is to remove excess material and, ideally, leave a constant thickness of stock all over the part for the finishing operations. To generate the GCODE we used the MeshCAM software. For roughing we used an end mill of 8 mm and this settings: feed rate : 1100 mm/s, plunge: 500 mm/s, spindle speed: 12000 rpm, depth per pass: 4 mm. For the finishing a 3 mm ball mill with this settings: feedrate: 1100 mm/s,plunge: 500 mm/s, spindle speed: 12000 rpm, depth per pass 1 mm. We manually modified the GCODE to stop the machine after the roughing to change the tool. M5 to stop the spindle, G0 and x,y,z coordinates to move the axis.You can see the video of the beginning of the roughing.</p>
 <iframe src="https://player.vimeo.com/video/128674063" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/128674063">Making a boat!</a> from <a href="https://vimeo.com/user3066449">Massimiliano Dibitonto</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 <h4>epoxy resin</h4>
-<p>The epoxy resin should be mixed with the hardener (2:1 ratio) to start catalyze. For this reason you have to be fast to laminate as the resin starts to become harder (we had around 20-30 minutes).</p>
+<p>The epoxy resin should be mixed with the hardener (2:1 ratio) to start catalyze. For this reason you have to be fast to laminate as the resin starts to become harder (we had around 20-30 minutes). To decide the quntity you know that the resin should be the 35-40% of the weight of the material that you laminate with. The linen used is 300g/m^2. I'm using 3 layer of 19 x 35 cm for a total of 1995 cm^2 so I will need at least 60 g of resin.</p>
 
 <h4>Extracting the hull from the mold</h4>
 <p>It was quite difficult as, despite the release agent, the hull was stuck in the mold. The only solution was to break the mold. You can see a video of an attemp of extraction.</p>
@@ -155,6 +160,14 @@ While designing the model it is to consider the dimensions of the splindle. If y
 
 <h4>Security</h4>
 <p>The epoxy resin, gelcoat and other chemical products you use are toxic. Do not breath them. Wear a mask and protectiong glasses. Remember gloves and don't touch your smartphone while working!</p>
+<header>
+<h3>Downloads</h3>
+</header>
+   <ul>
+								
+                                <li><a href="https://github.com/maxdbt/fabmax/tree/master/3D%20models/composites"><span class="icon fa-git">Repo</span></a></li><li><a href="http://www.massimilianodibitonto.it/fablab/scafo_max.3dm"><span class="icon fa-cube">Model</span></a></li>
+								
+                              </ul>
 
                       </div>            					
               </section>

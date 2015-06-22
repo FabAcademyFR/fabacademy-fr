@@ -58,6 +58,12 @@
 							<ul>
 								<li><a href="index.html" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Home</span></a></li>
 								</ul>
+                                <ul>
+								<li><a id="top-link" class="skel-layers-ignoreHref">Downloads for this week:</a></li>
+                                <li><a href="http://www.massimilianodibitonto.it/fablab/Button_hello.ino"><span class="icon fa-file-code-o">Arduino code</span></a></li><li><a href="http://www.massimilianodibitonto.it/fablab/hellomax2.brd"><span class="icon fa-cube">Eagle brd file</span></a></li>
+								
+                                <li><a href="http://www.massimilianodibitonto.it/fablab/hellomax2.sch"><span class="icon fa-cube">Eagle sch file</span></a></li>
+								</ul>
 						</nav>
 						
 				</div>
@@ -107,54 +113,61 @@
 <header>
 		<h3>Programming the Echo Board</h3>
 						  </header>
-                          <p>I started using the FabISP to program the Echo Board, however I received many errors, the most common was &quot;target not responding&quot;. So to reduce the possible causes of error i used a commercial programmer &quot;<a href="http://www.fischl.de/usbasp/">usbasp</a>&quot; . It gave me the same error so I checked the board for electrical problems.</p>
-                          <p>After several attempts of flashing the board I realized that the problem was caused by several short circuits. Indeed a trace underneath the microcontroller was too close to the pads and, after soldering there was unwanted junctions. I wasn't able to fix it eve rith the desoldering wire. So I designed another version of the board with more space between pads and traces adding an extra 0 ohm resisto as a jumper. </p>
-                          <p><img src="images/program_hello.jpg" width="250" height="196"><img src="images/problem_hellob.jpg" width="300" height="375"> </p>
+                          <p>To program the Hello board I started by the behaviour to give to it. I decided to make te led light up when I press the button. So I wrote a simple sketch based on the button example(in the Arduino IDE you call the programs &quot;sketches&quot;) to turn on the led when I press the button. When programming using the Arduino IDE the pin are addressed with a number. I found a schematic with the right correspondance <a href=""http://highlowtech.org/wp-content/uploads/2011/10/ATtiny44-84.png">here</a> (look at the image below). From the schematic I saw that the pin where the button is connected is recognized by Arduino software as pin 3. The pin where the led is connected is recognized by Arduino software as pin 8. Below a useful image of the pinout of the Attiny 44a:</p>
+                          <p><img src="http://highlowtech.org/wp-content/uploads/2011/10/ATtiny44-84.png" alt=""></p>
+                          <p>Here is the code:</p>
+                          <p>
+                            <textarea style="width:80%; height:300px; font-size:16px">
+const int buttonPin = 3; // the number of the pushbutton pin<br>
+const int ledPin = 8; // the number of the LED pin                          // variables will change:<br>
+int buttonState = 0; // variable for reading the pushbutton status                          
+void setup() {<br>
+// initialize the LED pin as an output:<br>
+pinMode(ledPin, OUTPUT);<br>
+// initialize the pushbutton pin as an input:<br>
+pinMode(buttonPin, INPUT);<br>
+}                          
+void loop() {<br>
+// read the state of the pushbutton value:<br>
+buttonState = digitalRead(buttonPin);
+// check if the pushbutton is pressed.<br>
+// if it is, the buttonState is HIGH:<br>
+	if (buttonState == HIGH) {<br>
+	// turn LED on:<br>
+	digitalWrite(ledPin, HIGH);<br>
+	}<br>
+	else {<br>
+	// turn LED off:<br>
+	digitalWrite(ledPin, LOW);<br>
+	}<br>
+}
+                            </textarea>
+                          </p>
+                          <p>In the setup() I said to the microcontroller that the pin 3 (button) is used as input and that the pin 8 (led) is used as an output. Then in the loop(), that is the code that is continuosly executed on the microcolntroller, I said to read the logic value of the pin 3 with the command digitalRead(). The value is 0 when the button is notpressed or 1 when is pressed. The with an if statement I check the value and I turn on or off the led according to it using the digitalWrite() command. I found very useful the <a href="http://www.arduino.cc/en/Reference/HomePage">reference page</a> of the Arduino software.</p>
+                          <p align="left">&nbsp;</p>
+                          <header>
+                            <h3>Using the FabISP as a programmer</h3>
+                          </header>
+                          <p>To use the FabISP i removed the two jumpers as reported in this very useful <a href="http://fabacademy.org/archives/2015/doc/programming_FabISP.html">tutorial</a> then I gave power to the Echo Board through the FTDI connector. I started using the FabISP to program the Echo Board, however I received many errors, the most common was &quot;target not responding&quot;. So to reduce the possible causes of error i used a commercial programmer &quot;<a href="http://www.fischl.de/usbasp/">usbasp</a>&quot; . It gave me the same error so I checked the board for electrical problems.</p>
+                          <p>After several attempts of flashing the board I realized that the problem was caused by several short circuits. Indeed a trace underneath the microcontroller was too close to the pads and, after soldering there were unwanted junctions. I used the desoldering wire and the desoldering pump but I wasn't able to fix. So I designed another version of the board with more space between pads and traces adding an extra 0 ohm resistor as a jumper. </p>
+                          <p><img src="images/problem_hellob.jpg" width="300" height="375"> </p>
                           <p>Above the first version of the board. Below the second version. You can download the <a href="http://www.massimilianodibitonto.it/fablab/hellomax2.sch">scheme</a> and the <a href="http://www.massimilianodibitonto.it/fablab/hellomax2.brd">board</a> file for Eagle</p>
                           <p><img src="images/traces_hello2.jpg" width="300" height="245"></p>
-                          <p>After milling and soldering again the board I was able to program it using the Arduino IDE and the usbasp. The ArduinoIDEwas already configured as I already changed the boards.txt. At the beginning i burnt the bootloader using the Arduino IDE. However it doesn't really load the bootloader but just set the fuses. Then I wrote a simple sketch based on the button example(in the Arduino IDE you call the programs &quot;sketches&quot;) to turn on the led when I press the button. The pin where the button is connected is recognized by Arduino software as pin 3. The pin where the led is connected is recognized by Arduino software as pin 8. For this is useful to check the pinout of the Attiny 44a:</p>
-                          <p><img src="http://highlowtech.org/wp-content/uploads/2011/10/ATtiny44-84.png"></p>
-                          <p>Here is the code:</p>
-                          <p align="left">const int buttonPin = 3;     // the number of the pushbutton pin<br>
-                          const int ledPin =  8;      // the number of the LED pin</p>
-                          <p align="left">// variables will change:<br>
-                            int buttonState = 0;         // variable for reading the pushbutton status</p>
-                          <p align="left">void setup() {<br>
-                            // initialize the LED pin as an output:<br>
-                            pinMode(ledPin, OUTPUT);<br>
-                            // initialize the pushbutton pin as an input:<br>
-                            pinMode(buttonPin, INPUT);<br>
-                            }</p>
-                          <p align="left">void loop() {<br>
-                            // read the state of the pushbutton value:<br>
-                            buttonState = digitalRead(buttonPin);</p>
-                          <p align="left"> // check if the pushbutton is pressed.<br>
-                            // if it is, the buttonState is HIGH:<br>
-                            if (buttonState == HIGH) {<br>
-                            // turn LED on:<br>
-                            digitalWrite(ledPin, HIGH);<br>
-                            }<br>
-                            else {<br>
-                            // turn LED off:<br>
-                            digitalWrite(ledPin, LOW);<br>
-                            }<br>
-                            }</p>
+                          <p>After milling and soldering again the board I was able to program it using the Arduino IDE and the usbasp. The ArduinoIDEwas already configured as I already changed the boards.txt. At the beginning i burnt the bootloader using the Arduino IDE. However it doesn't really load the bootloader but just set the fuses. Then </p>
+                          <p>&nbsp;</p>
                           <p align="left">Here is a video of the working board:</p>
                           <iframe src="https://player.vimeo.com/video/124108374" width="500" height="889" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/124108374">Hello Board</a> from <a href="https://vimeo.com/user3066449">Massimiliano Dibitonto</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
                           <p align="left">&nbsp;</p>
                           <p align="left">&nbsp;</p>
-                          <header>
-							<h3>Using the FabISP as a programmer</h3>
-						  </header>
-                            <p>To use the FabISP i removed the two jumpers as reported in this very useful <a href="http://fabacademy.org/archives/2015/doc/programming_FabISP.html">tutorial</a> then I gave power to the Echo Board through the FTDI connector.
-Af first I tried to upload a sketch using the Arduino IDE (1.5.8)selecting the ATTIny board and UsbTiny as a programmer.But I received an error because the ArduinoIDE was not able to recognize the FabISP as an USBtiny.To make the Arduino IDE recognize the FabISP as programmer I put a programmer.txt file in the hardware folder inside the Arduino sketches folder putting the following parameters found on this <a href="http://forum.arduino.cc/index.php?topic=70841.0">forum</a></p>
-                            <p>fabisp.name=FabISP<br>
-                              fabisp.communication=usb<br>
-                              fabisp.protocol=usbtiny<br>
-                              fabisp.program.protocol=stk500v1<br>
-                            fabisp.program.tool=avrdude</p>
-                            <p> However while uploading the Arduino IDE says that the parameter 'program.params.verbose' is missing. I cannot find any suggestion on forums so I’ll keep trying changing the parameters in the programmers.txt file.</p>
-                            <p>After several attempts I decided to delete the programmers.txt file and try again to select USBTinyISP as programmer, I chose the command &quot;Upload with a programmer&quot; from the File menu and it worked fine:)  I found out that the problem was in the usb connector. Pressing it with my finger made the board work fine. So I resolder it to make it more stable. I used it to program the echoBoard with the button sketch as done above with the USBasp.</p>
+                            <p>&nbsp;</p>
+                            <header>
+                            <h3>Downloads</h3>
+                          </header>
+                             <ul>
+                                <li><a href="http://www.massimilianodibitonto.it/fablab/Button_hello.ino"><span class="icon fa-file-code-o">Arduino code</span></a></li><li><a href="http://www.massimilianodibitonto.it/fablab/hellomax2.brd"><span class="icon fa-cube">Eagle brd file</span></a></li>
+								
+                                <li><a href="http://www.massimilianodibitonto.it/fablab/hellomax2.sch"><span class="icon fa-cube">Eagle sch file</span></a></li>
+								</ul>
                          
 </div>
 						

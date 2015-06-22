@@ -58,6 +58,14 @@
 							<ul>
 								<li><a href="index.html" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Home</span></a></li>
 								</ul>
+                                <ul>
+								<li><a id="top-link" class="skel-layers-ignoreHref">Downloads for this week:</a></li>
+                                <li><a href="https://github.com/maxdbt/fabmax/tree/master/boards/sensor_board"><span class="icon fa-git">Repo for board files</span></a></li>
+                                <li><a href="http://www.massimilianodibitonto.it/fablab/sensor_board.brd"><span class="icon fa-cube">Eagle brd file</span></a></li>
+                                <li><a href="http://www.massimilianodibitonto.it/fablab/sensor_board.sch"><span class="icon fa-cube">Eagle sch file</span></a></li>
+          <li><a href="https://github.com/maxdbt/fabmax/tree/master/code/input"><span class="icon fa-git">Repo for code files</span></a></li>           <li><a href="http://www.massimilianodibitonto.it/fablab/Blink_fabkit.ino"><span class="icon fa-file-code-o">Blink code</span></a></li>     
+          <a href="http://www.massimilianodibitonto.it/fablab/analog_hello_serial_temp.ino"><span class="icon fa-file-code-o">Sensor read code</span></a></li>         
+                              </ul>
 						</nav>
 						
 				</div>
@@ -95,170 +103,105 @@
 							<header>
 								<h3>Intro </h3>
 							</header>
-							<p> The assignment of this week was to create some boards to read from input devices.</p>
-						<header>
-								<h3>Expanding the Hello Board</h3>
-					  </header>
-							<p>At first I decided to expand the Hello Board. Indeed, when not used for programming the pin of ICSP connector can be used for other purposes. For example the MISO pin has also an ADC converter, so it can be used to read from an analog sensor like a photoresistor. It corresponds to the Arduino analog pin 5 as you can see from the image below.</p>
-							<p><img src="http://fc04.deviantart.net/fs70/f/2013/038/3/7/attiny_web_by_pighixxx-d5u4aur.png" width="700"> </p>
-							<p>&nbsp;</p>
-                      <p>So, as I live far from the Fablab, I decided at first to make a prototype using jumpers. I used a photoresistor to read the light levels in the room. To read from it I had to make a voltage divider addign a 10k resistor. To read the values I printed them on the seria port. I programmed the board using the Arduino IDE and the SoftwareSerial library. I used an Arduino board without the microcontroller to have regulated +5V and to use the FTDI chip for the serial communication between the board and the computer.
-                            Here is the code:</p>
-                            <textarea style="width:80%; height:500px; font-size:16px">
-                    #include &lt;SoftwareSerial.h&gt;
-                    SoftwareSerial mySerial(0, 1); // RX, TX<br>
-                    // constants won't change. They're used here to<br>
-                    // set pin numbers:<br>
-                      const int ldrPin = 5;     // the number of the pushbutton pin<br>
-                      const int ledPin =  8;      // the number of the LED pin  
-                       
-                      void setup() {<br>
-                      // initialize the LED pin as an output:
-                      pinMode(ledPin, OUTPUT);
-                      mySerial.begin(4800);
-                      }                            
-                            
-                      void loop() {<br>
-                      <br>
-                      int val = analogRead(ldrPin);<br>
-                      mySerial.println(val);<br>
-                      delay(2);<br>
-                      }
-                      </textarea>
-                            <p>Moreover I decided to visualize it on a graph. So I used Processing that is very helpful to make fast data visualization.</p>
-                            <p><img src="images/input/ldr_graph.png" width="300" height="238"></p>
-                            <p>I started from <a href="http://arduino.cc/en/tutorial/graph">this example</a> then I customized it.As the message is a string I parsed it to an int. Then I mapped it to the dimension of the graph. You can find the code below:</p>
-                            <textarea style="width:80%; height:500px; font-size:16px">
- import processing.serial.*;
-boolean connesso = false;
-Serial myPort;        // The serial port
-int xPos = 1;         // horizontal position of the graph
-
-void setup () {
-// set the window size:
-size(400, 300); 
-stroke(255,255,0);
-for(int i=0;i<300;i=i+50){
-line(0,i,400,i);
-}
-
-// elenca le porte seriali
-for(int i=0; i &lt;Serial.list().length;i++){
-println("["+ i +"] " + Serial.list()[i]); 
-text("["+ i +"] " + Serial.list()[i], 15, 20*i +45); 
-}
-// set inital background:
-background(0);
-}
-void draw () {                             // everything happens in the serialEvent()
-                      }
-  
-                      void serialEvent (Serial myPort) {
-                      stroke(255,255,255);
-                      for(int i=0;i<;300;i=i+50){
-                      line(0,i,400,i);
-                      }
-                      // get the ASCII string:
-                      String inString = myPort.readStringUntil('\n');
-  
-                      if (inString != null) {
-                      // trim off any whitespace:
-                      inString = trim(inString);
-                      // convert to an int and map to the screen height:
-                      int ldr = int(inString); 
-                      print(ldr);
-                      println(" - ");
-                      float ldrRel = map(ldr, 0, 1023, 0, height);
-                      println(ldrRel);
-  
-                      // draw the line:
-                      stroke(127,34,255);
-                      //line(xPos, height, xPos, height - inByte);
-                      point(xPos, height - ldrRel);
-  
-                      // at the edge of the screen, go back to the beginning:
-                      if (xPos >= width) {
-                      xPos = 0;
-                      background(0); 
-                      } 
-                      else {
-                      // increment the horizontal position:
-                      xPos++;
-                      }
-                      }
-                      }
-  
-                      void keyPressed() {
-                      int k = key - 48;
-                      println(k);
-                      println("apro seriale" + Serial.list()[k]);
-                      myPort = new Serial(this, Serial.list()[k], 4800);
-                      myPort.bufferUntil('\n');
-                      connesso= true;
-                      }
-                      </textarea>
-                            <p>I decided also to read the temperature using th LM35 sensor.</p>
-                            <p><img src="http://www.learningaboutelectronics.com/images/LM35-temperature-sensor-pinout.png"></p>
-                            <p>However using a float for the temperature value made the skech too big fot the ATTiny (4986Kb). So I used an int type and made other calculations in Processing. </p>
-                            <p>To find the right temperature in Centigrades you have to use the formula temp = (5.0 * analogRead(tempPin) * 100.0) / 1024; or multiply the sensor value for 0.48828125.                    </p>
+							<p> The assignment of this week was to create some boards to read from input devices. Indeed microcontrollers are able to operate upon information the need input devices to get data from the environment or from the user. </p>
 					
                     <header>
-								<h3>The Fabkit Board</h3>
+					  <h3>The Fabkit Board</h3>
 					  </header>
-                      <p>I decided to realize a board with multiple pins and more power and a shield (or daughterboard) to plug on it to connect input/output devices. I started from the <a href="http://fabacademy.org/archives/2015/doc/fabkit-0.4.html">Fabkit board</a> , it has a ATMega 328P that is the same microcontroller used in the Arduino boards, with the advantage of having more pins and more memory. I milled the board and I programmed it using the FabISP and the Arduino IDE. To do this, looking at the datasheet and at the ICSP pinout, I connected the MISO, MOSI, RESET, SCK, GND and VCC (app pin in the lower side of the board) to the ICSP connector of the FabISP. As the FabISP doesn't provide power on the VCC pin I used the pin on the FTDI connector to power the board. I used an Arduino board without the microcontroller to have regulated +5V and to use the FTDI chip for the serial communication between the Fabkit board and the computer.
+                      <p>I decided to make a board with a microcontroller, able to do generic purpose elaboration, and a shield (or daughterboard) to plug on it to connect input/output devices. I started from the <a href="http://fabacademy.org/archives/2015/doc/projects/fabkit-0.4.html">Fabkit board</a>, it has a ATMega 328P that is the same microcontroller used in the Arduino boards, with the advantage of having more pins and more memory that the Hello board that we already realized. You can find the design files and the BOM in the link provided. I milled the board on a FR-1 plate with the Roland SRM-20 with the procedure already described in the previous assignments.However as I want a faster board I used a 20MHz resonator instead of the 8 MHz one that is in the original design. Looking at the datasheet and at the ICSP pinout, I connected the MISO, MOSI, RESET, SCK, GND and VCC (app pin in the lower side of the board) of the board to the ICSP connector of the FabISP. As the FabISP doesn't provide power on the VCC pin I used the pin on the FTDI connector to power the board. I used an Arduino board without the microcontroller to have regulated +5V and to use the FTDI chip for the serial communication between the Fabkit board and the computer.
                       
-                      I didn't follow the tutorial as it uses the 8MHz internal clock even if the board has a 20MHz resonator. I looked at a mapping of microcontroller pins to Arduino pins (figure below) and I made the led mounted on pin PB5 - PIN13 blink (Arduino blink example).
+                      I didn't follow the tutorial as it uses the 8MHz internal clock even if the board has a 20MHz resonator. To burn the bootloader and program the board I had to modify the boards.txt in the Arduino IDE. This file tell to the Arduino software the characteristics of the boards that you are going to program. So I changed the line 
+                      <p>atmega168.build.f_cpu=16000000 to atmega168.build.f_cpu=20000000                    
+                      <p>in the definition of the Arduino Pro 5v.                 So I could burn the bootloader successfully. To test the board I wrote a little sketch to make the on-board led blink. I looked at a mapping of microcontroller pins to Arduino pins (figure below) and I made the led mounted on pin PB5 - PIN13 blink.
                       <p><img src="http://1.bp.blogspot.com/-CoYms1FRXt8/Ue61oKNsqQI/AAAAAAAAAIM/377wUC_bAMs/s1600/atmega328_qtfp_web-600x424.png">
                         
-                      <p>I had some problems with the serial communication that I wasn't able to solve. I receive strange characters. I tested different command as write and print with the same result.I checked also for short circuits but I had no result. Then I discovered that I put a wrong resonator on the board. So i had to modify the boards.txt file in the Arduino IDE changing the value of the microcontroller frequency. And then it worked fine.</p>
-                      <p><img src="images/input/sb_connected.JPG" width="300" height="400"></p>
-                      <p><img src="images/input/sb_connected2.jpg" width="300" height="400"></p>
+                      <p>The sketch:</p>
+                      <textarea style="width:80%; height:300px; font-size:16px">
+int ledPin = 13;
+// the setup function runs once when you press reset or power the board
+void setup() {
+  // initialize digital pin 13 as an output.
+  pinMode(ledPin, OUTPUT);
+}
+
+// the loop function runs over and over again forever
+void loop() {
+  digitalWrite(ledPin, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(1000);              // wait for a second
+  digitalWrite(ledPin, LOW);    // turn the LED off by making the voltage LOW
+  delay(1000);              // wait for a second
+}
+                       </textarea>
+                      <p>&nbsp;</p>
                     
                      <header>
-					   <h3>Designing the shield</h3>
+					   <h3>Designing the input board</h3>
 					  </header>
                       <p>I decided to design a shield that could snap on the Fabkit board (using headers) to do this I started from the pin on the Fabkit. As I wanted to connect a light sensor and a temperature sensor (both analog) I looked for pins with ADC (analog digital converter) The ADC can turn analog values to discrete values (from 0 to 1023). On the right side of the Fabkit we have this pins (Arduino names): VCC, GND, A5, A4, A3, A2,A1 and A0.
-                      To connect the two sensor I need VCC, GND and two pins with ADC. So I decided to make a shiel that connects to adiacent pins (VCC,GND,A5 and A4). To connect the LDR i added a 10k resistor to create a voltage divider. The LDR is connected to the VCC and the resistor to ground so I have a "natural" behaviour as the number will increase with the light.
-                      For the temperature I used an LM35 (that I described above). It doesn't require any other components. So I designed the board with Eagle. However I did not find in the library the components I wanted to use. So I used other components with the same pinout: a phototransistor (2 pins) and a transistor (3 pins). 
-                      <p><img src="images/input/sensorb.png" width="185" height="364">                                                                  
-                    <p>You can download the <a href="http://www.massimilianodibitonto.it/fablab/sensor_board.brd">board</a> and the <a href="http://www.massimilianodibitonto.it/fablab/sensor_board.sch">schematic</a>.
-                    <p>I had some problems because the holes exported by Eagle (even if the resolution was 2400 dpi) were too small (77px) to be recognized by the fabmodules. So I had to manually change the holes making it bigger (93px).	The	result	was	good:                                        
+                      To connect the two sensor I need VCC, GND and two pins with ADC. So I decided to make a shiel that connects to adiacent pins (VCC,GND,A5 and A4). The LDR is a resistance that changes its values according to the quantity of light that goes on its surface. Even if it is not accurate as a phototransistor it is cheap and useful for a quick and dirty light measurement. To connect the LDR i added a 10k resistor to create a voltage divider. The LDR is connected to the VCC and the resistor to ground so I have a "natural" behaviour as the number will increase with the light.                      
+                      <p>I decided  to read the temperature using th LM35 sensor.                      
+                      <p><img src="http://www.learningaboutelectronics.com/images/LM35-temperature-sensor-pinout.png" alt=""></p>
+                      <p>However using a float for the temperature value made the skech too big fot the ATTiny (4986Kb). So I used an int type and made other calculations in Processing. </p>
+                      <p>To find the right temperature in Centigrades you have to use the formula temp = (5.0 * analogRead(tempPin) * 100.0) / 1024; or multiply the sensor value for 0.48828125. </p>
+                      <p> It doesn't require any other components. So I designed the board with Eagle. However I did not find in the library the components I wanted to use. So I used other components with the same pinout: a phoresistor (2 pins) and a transistor (3 pins). 
+                      <p><img src="images/input/sensorb.png" width="185" height="364">                      
+                      <p>I had some problems because the holes exported by Eagle (even if the resolution was 2400 dpi) were too small (77px) to be recognized by the fabmodules. So I had to manually change the holes making it bigger (93px).	The	result	was	good:                                        
                     <p><img src="images/input/sensb_adone.jpg" width="96" height="173">                                        
                     <p><img src="images/input/sb_soldered.JPG" width="88" height="194">                                        
                     </p>
-                     As at the moment I didn't have female headers to put on the board I used a breadboard only for connections. I uploaded this sketch:    <textarea style="width:80%; height: 300px; font-size:16px;"  >             		  float temp;<br>
-                      const int tempPin = A5;<br>
-                      const int ldrPin = A4;<br>
-                      int light;                    void setup()<br>
-                      {<br>
-                      pinMode(13, OUTPUT);<br>
-                      Serial.begin(9600);<br>
-                      digitalWrite(13,HIGH); <br>
-                      }                    void loop()<br>
-                      {<br>
-                      temp = analogRead(tempPin);<br>
-                      temp = temp * 0.48828125; // the constant to obtain the temperature<br>
-                      light = analogRead(ldrPin);<br>
-                      <br>
-                      Serial.print("TEMPERATURE = ");<br>
-                      Serial.print(temp);<br>
-                      Serial.print("*C");<br>
-                      Serial.println();<br>
-                      Serial.print("LIGHT = ");<br>
-                      Serial.print(light);<br>
-                      Serial.println();<br>
-  <br>
-                      delay(1000);<br>
-                      }
-                      </textarea>
-<p>Then, I connected the shield to the Fabkit and added a conditional statement to make the led on the board lights up at a certain threshold. I added the following code:</p>                    <textarea style="width:80%; height: 100px; font-size:16px;"  > if(light > 400){<br>
+                     As at the moment I didn't have female headers to put on the board I used a breadboard only for connections. I uploaded this sketch:    <textarea style="width:80%; height: 300px; font-size:16px;"  >const int ldrPin = 4;  
+const int tempPin = 1;
+const int ledPin =  13;      // the number of the LED pin
+
+void setup() {
+  // initialize the LED pin as an output:
+  pinMode(ledPin, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+int light = analogRead(ldrPin);
+int temp = analogRead(tempPin);
+float t  = temp * 0.48828125; // LM35 vuole una costante
+//temp = temp * 0.137;
+Serial.print(light);
+Serial.print("/");  
+Serial.println(temp);
+delay(50);
+}
+                     </textarea>
+<p>Then, I connected the shield to the Fabkit and added a conditional statement to make the led on the board lights up at a certain threshold. I added the following code:</p>                    
+<p>
+  <textarea style="width:80%; height: 100px; font-size:16px;"  > if(light > 400){<br>
 digitalWrite(13,HIGH); <br>
 }else{<br>
 digitalWrite(13,LOW); <br>
 }</textarea>
-                    <p align="center">
-                    <p>                    					
-                    </section>
+</p>
+<p>The code also write the values on the serial port. I used an Arduino board without the microcontroller to have regulated +5V and to use the FTDI chip for the serial communication between the board and the computer. </p>
+<p>The shield connected to the board:</p>
+<p><img src="images/input/sb_connected.JPG" alt="" width="300" height="400"></p>
+<p><img src="images/input/sb_connected2.jpg" alt="" width="300" height="400"></p>
+<p>&nbsp;</p>
+<p align="center">
+<p>       <header>
+<h3>
+Downloads</h3>
+</header>
+
+<ul>
+								
+                                <li><a href="https://github.com/maxdbt/fabmax/tree/master/boards/sensor_board"><span class="icon fa-git">Repo for board files</span></a></li>
+                                <li><a href="http://www.massimilianodibitonto.it/fablab/sensor_board.brd"><span class="icon fa-cube">Eagle brd file</span></a></li>
+                                <li><a href="http://www.massimilianodibitonto.it/fablab/sensor_board.sch"><span class="icon fa-cube">Eagle sch file</span></a></li>
+          <li><a href="https://github.com/maxdbt/fabmax/tree/master/code/input"><span class="icon fa-git">Repo for code files</span></a></li>           <li><a href="http://www.massimilianodibitonto.it/fablab/Blink_fabkit.ino"><span class="icon fa-file-code-o">Blink code</span></a></li>     
+      <a href="http://www.massimilianodibitonto.it/fablab/analog_hello_serial_temp.ino"><span class="icon fa-file-code-o">Sensor read code</span></a></li>         
+          
+								
+                      </ul>
+
+             					
+              </section>
 				
 		
 			
