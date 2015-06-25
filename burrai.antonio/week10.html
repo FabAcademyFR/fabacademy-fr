@@ -123,26 +123,60 @@
                     <h3 class="section-subheading text-muted"><strong>BURNING THE BOOTLOADER</strong>. So, once connected the FabKit to the FabKit, using the Arduino IDE, I've changed the boards list in the Arduino folder and <strong>the operation went good at first time</strong>! Remember to choose on Tools > Board > Arduino Pro or Pro mini (3.3V, 8). I’m very proud of my FabKit. </h3> 
 
                  <img src="img/w10/w10_10.jpg " width="600" height="450" class="img-responsive">
-                    <h3 class="section-subheading text-muted"> <strong>THE INPUT DEVICE.</strong> Despite of my final project it’s a fish, I’ve used a light sensor, considering that sun light is RELATED TO THE THE DEPTH of the water at which the fish is swimming. The deeper you go, the darker it is. </h3> 
+                    <h3 class="section-subheading text-muted"> <strong>THE INPUT DEVICE.</strong> Despite of my final project it’s a fish, I’ve used a light sensor, considering that sun light is RELATED TO THE DEPTH of the water at which the fish is swimming. <strong>The deeper you go, the darker it is.</strong></h3> 
 
                  <img src="img/w10/w10_11.jpg " width="600" height="450" class="img-responsive">
-                    <h3 class="section-subheading text-muted"> As weel as a submarine, if the depth is excessive and the pressure is too high, several damages can occur to the hull. So the purpose of the input device is to send a constant signal to the processor in order to measure indirectly the depth of water.</h3> 
+                    <h3 class="section-subheading text-muted"> As weel as a submarine, if the depth is excessive and the pressure is too high, several damages can occur to the hull. So the purpose of the input device is to send a constant signal to the processor in order to <strong>measure indirectly the depth of water.</strong></h3> 
 
                  <img src="img/w10/w10_12.jpg " width="600" height="450" class="img-responsive">
-                    <h3 class="section-subheading text-muted"><strong>The sensor, what it does, what I learned. </strong> STEP RESPONSE AS INPUT DEVICE - Photoresistor CDS LDR 
-As my final porject I want to make a wall that respond to humidity, light and sound sensors. So I decided to set as input of this board a Photoresistor.
-
-Components: 
-- Resistors 10K 
-- Header 3 Pin 
-- Photoresistor CDS – LDR GL5537-1.
-This is the folder of my input device milling files: PNG and RML files.</h3> 
+                    <h3 class="section-subheading text-muted"><strong>The sensor, what it does, what I learned. </strong> I've chosen a photoresistor <strong>CDS – LDR GL5537-1</strong>. Detailed information about the sensor could be find at <a href="https://www.kth.se/social/files/54ef17dbf27654753f437c56/GL5537.pdf">https://www.kth.se/social/files/54ef17dbf27654753f437c56/GL5537.pdf</a> . The other components: 
+- Resistors 10K - Header 3 Pin. Some details of the mentioned document have been reported in the following figures. </h3> <hr>
+ <img src="img/w10/w10_12a.jpg " width="600" height="450" class="img-responsive"> Detail 1/3<hr>
+  <img src="img/w10/w10_12b.jpg " width="600" height="450" class="img-responsive">Detail 2/3<hr>
+   <img src="img/w10/w10_12c.jpg " width="600" height="450" class="img-responsive">Detail 3/3<hr>
 
                  <img src="img/w10/w10_13.jpg " width="600" height="450" class="img-responsive">
-                    <h3 class="section-subheading text-muted"> At the end of the soldering I burn the resistor and destroy also a portion of the traces (blue arrow zone) !!! I didn’t have the time to go back to the FabLab, so, just because it was an emergency I place one of the header connector in an unused part of the traces (green arrow) and I’ve also used a classic resistor . It works ! Using the SERIAL MONITOR command of the Arduino IDE,<strong>FabKit receives a signal from A0 pin.</strong></h3> 
+                    <h3 class="section-subheading text-muted"> At the end of the soldering <strong>I burn</strong> the resistor <strong>and destroy</strong> also a portion of the traces (blue arrow zone) !!! I didn’t have the time to go back to the FabLab, so, just because it was an emergency I place one of the header connector in an unused part of the traces (green arrow) and I’ve also used a classic resistor . It works ! Using the SERIAL MONITOR command of the Arduino IDE,<strong> FabKit receives a signal from A0 pin.</strong> The following video detail the procedure. The code is also following.<img src="img/w10/w10_15.jpg " width="600" height="450" class="img-responsive"></h3><hr>
+                    <h3 class="section-subheading text-muted">The video.</h3><hr>
 
                  <img src="img/w10/w10_14.jpg " width="600" height="450" class="img-responsive">
-                    <h3 class="section-subheading text-muted"> This is an artistic picture of my digital snail ! </h3> 
+                    <h3 class="section-subheading text-muted"> This is an artistic picture of my digital snail ! </h3>
+                    
+                    <h3 class="section-subheading text-muted">
+<strong> Download area </strong> <hr> The following files are downloadable:
+<table width="700" border="1">
+  <tr>
+    <td>Type of file</td>
+    <td>Description</td>
+    <td>Link (Type of file)</td>
+  </tr>
+  <tr>
+    <td>Input device - Eagle file</td>
+    <td>Board file</td>
+    <td>(<a href="https://www.dropbox.com/s/vkswtofg5zdchov/molding%20and%20casting.3dm?dl=0">BRD</a>)</td>
+</tr>
+    <td>Input device - Eagle file</td>
+    <td>Schematic file</td>
+    <td>(<a href="https://www.dropbox.com/s/9vzz9a8c3vzwrfg/INPUT%20DEVICE.sch?dl=0">SCH</a>)</td></tr>
+    
+        <td> Input device (edge cut)</td>
+    <td>Image file</td>
+    <td>(<a href="https://www.dropbox.com/s/wxpztsiq94eq05u/INPUT%20DEVICE_CUT%2032.png?dl=0">PNG</a>)</td></tr>
+   
+           <td> Input device (drill)</td>
+    <td>Image file</td>
+    <td>(<a href="https://www.dropbox.com/s/udoqnhtppvhcy4z/INPUT%20DEVICE_HOLES%2032.png?dl=0 ">PNG</a>)</td> </tr>
+    
+            <td> Input device (traces)</td>
+    <td>Image file</td>
+    <td>(<a href="https://www.dropbox.com/s/2s5roqfulatjkg2/INPUT%20DEVICE_TRACES%2064.png?dl=0 ">PNG</a>)</td> </tr>   
+
+            <td> Working Arduino Code</td>
+    <td>Code file</td>
+    <td>(<a href="https://www.dropbox.com/s/2s5roqfulatjkg2/INPUT%20DEVICE_TRACES%2064.png?dl=0 ">INO</a>)</td> </tr>    
+    
+</table>
+</h3>
 
 
 

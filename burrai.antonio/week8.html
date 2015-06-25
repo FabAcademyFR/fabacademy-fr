@@ -91,49 +91,81 @@
                      
                      
                   <img src="img/w8/w8_1.jpg " width="600" height="450" class="img-responsive">
-                    <h3 class="section-subheading text-muted"> I really like wood ! So in this assignment I’ll give the best ! Hammer and Rhinoceros ! I’m going to design a “balance bike”, a small bike made only of wood, intended to learn children to balance themselves ! The more complex part will be the design of the wheel joints. Considering that I can not use mechanical steel parts, the handlebars  will be fixed. I’m going to design the bike by mean of “slices” connected by several transversal wood bolts. It’s a press-to-fit kit, so no glue, no spikes, no bolts…nothing: just wood ! </h3> 
+                    <h3 class="section-subheading text-muted"> I really like wood ! So in this assignment I’ll give the best ! Hammer and Rhinoceros ! I’m going to design a “balance bike” (<a href="https://en.wikipedia.org/wiki/Balance_bicycle">https://en.wikipedia.org/wiki/Balance_bicycle</a>), a small bike made only of wood, intended to learn children to balance themselves ! The more complex part will be the design of the wheel joints. Considering that I can not use mechanical steel parts, the handlebars  will be fixed. I’m going to design the bike by mean of “slices” connected by several transversal wood bolts. It’s a press-to-fit kit, so no glue, no spikes, no bolts…nothing: just wood ! </h3> 
                     
                     <img src="img/w8/w8_2.jpg " width="600" height="450" class="img-responsive">
                     <h3 class="section-subheading text-muted"> The starting point was a sketch… imagination is powerfull, but I’ve to consider lot of things: clash detection between parts, thicknesses of transversal wood bolts. </h3> 
                     
                     <img src="img/w8/w8_3.jpg " width="600" height="450" class="img-responsive">
-                    <h3 class="section-subheading text-muted"> This will be my final result ! The bike will be designed in Rhinoceros and then rendered with Keyshot. </h3> 
+                    <h3 class="section-subheading text-muted"> This will be my final result ! The bike will be designed in Rhinoceros and then rendered with Keyshot (<a href="https://www.keyshot.com/">https://www.keyshot.com/</a>). </h3> 
                 
                 <img src="img/w8/w8_4.jpg " width="600" height="450" class="img-responsive">
                     <h3 class="section-subheading text-muted"> I really to design realistic object, so I start to study the dimension of the wheels and the dimension of a child ! It’s very complex to build an ergonomic object. Another important limitation was that all the components must fit in a well defined dimension piace of wood.  </h3> 
                     
                  <img src="img/w8/w8_5.jpg " width="600" height="450" class="img-responsive">
-                    <h3 class="section-subheading text-muted">  After a great introduction of the most common mistakes of CNC works by one of our tutor, I start updating my (full of errors) DXF file, and this is the results. Please note that the design was completely tridimensional, so all the curves reported in the DXF file have been derived from the Rhino model. The 3d model has been used in order to check interferencies between parts. All the different layers have been defined: drilling (to take the wood in place), internal and external cut. </h3> 
+                    <h3 class="section-subheading text-muted">  After a great introduction of the most common mistakes of CNC works by one of our tutor, I start updating my (full of errors) DXF file, and this is the results. Please note that the design was completely tridimensional, <strong>so all the curves reported in the DXF file have been derived from the Rhino model</strong>. The 3d model has been used in order to check interferencies between parts. All the different layers have been defined: drilling (to take the wood in place), internal and external cut. </h3> 
 
                  <img src="img/w8/w8_6.jpg " width="600" height="450" class="img-responsive">
-                    <h3 class="section-subheading text-muted">  The complete 3d model. </h3> 
+                    <h3 class="section-subheading text-muted">  The complete 3d model (Rhinoceros). </h3> 
                     
-                  <img src="img/w8/w8_6a.jpg " width="600" height="450" class="img-responsive"> <h3 class="section-subheading text-muted"><strong> TECHNICAL DATA SUMMARY</strong> Prior to start cutting, I'm gonna resume the main technical data used to make something big. The OSB (oriented strand board <a href="https://en.wikipedia.org/wiki/Oriented_strand_board">https://en.wikipedia.org/wiki/Oriented_strand_board</a>) size were <strong>2100x1100x19 mm</strong>. The attached DXF file containing all the parts have been imported to ArtCAM contains THREE layers: EXTERNAL CUT, INTERNAL CUT and DRILL. External cut means that the tool is moving outside the considered shape (this is the third and last cut). Internal cut means that the tool is moving inside the considered shape (this is the second cut). Drill means that the tool will pass through the board (this is the first cut, holes are needed to fix the board using screws).</h3>  
+                  <img src="img/w8/w8_6a.jpg " width="600" height="450" class="img-responsive"> <h3 class="section-subheading text-muted"><strong> TECHNICAL DATA SUMMARY</strong> Prior to start cutting, I'm gonna resume the main technical data used to make something big. The OSB (oriented strand board <a href="https://en.wikipedia.org/wiki/Oriented_strand_board">https://en.wikipedia.org/wiki/Oriented_strand_board</a>) size were <strong>2100x1100x19 mm</strong>. The attached DXF file containing all the parts have been imported to ArtCAM contains THREE layers: <strong>EXTERNAL CUT, INTERNAL CUT and DRILL</strong>. External cut means that the tool is moving outside the considered shape (this is the third and last cut). Internal cut means that the tool is moving inside the considered shape (this is the second cut). Drill means that the tool will pass through the board (this is the first cut, holes are needed to fix the board using screws) The tool used is: END MILLING TOOL (<strong>diameter: 6 mm</strong>), the software utilized is ArtCAM (<a href="http://www.artcam.com/">http://www.artcam.com/</a>) and the machine is:  Macchinecnc Enterprise (<a href="http://www.macchinecnc.com/enterprise.html">http://www.macchinecnc.com/enterprise.html</a>).</h3>  
                   
-                  <img src="img/w8/w8_6a.jpg " width="600" height="450" class="img-responsive"> <h3 class="section-subheading text-muted"><strong>Tooling, feeds & speeds and materials used.</strong></h3>                  
+              <hr> <h3 class="section-subheading text-muted"><strong>Tooling, feeds & speeds <hr>  <img src="img/w8/w8_6a.jpg " width="600" height="450" class="img-responsive"> </strong> And then we start cutting ! Machine is very cool, but the procedure to position and place the wood board is very long and boring (drill and bolts). The software package ArtCAM has been used in order to generate the G-CODE and after that to launch the machine. As introduced before three paths have been generated. The following general parameters have been set: <strong>FEED RATE 76 mm/s, PLUNGE 50 mm/s, SPINDLE 15000 rpm</strong>. "Bridges" between the board and the pieces have been added to avoid pieces to fall or to move without control once cutted. </h3>                 
+<h3 class="section-subheading text-muted"><img src="img/w8/w8_15.jpg " width="600" height="450" class="img-responsive"> ArtCAM screenshot 1/2 </h3>
 
-                 <img src="img/w8/w8_7.jpg " width="600" height="450" class="img-responsive"> <h3 class="section-subheading text-muted"><strong> FILE CUTTING.</strong> And then we start cutting ! Machine is very cool, but the procedure to position and place the wood board is very long and boring (drill and bolts). The software package ArtCAM has been used in order to generate the G-CODE and after that to launch the machine. </h3> 
+<h3 class="section-subheading text-muted"> <img src="img/w8/w8_16.jpg " width="600" height="450" class="img-responsive"> ArtCAM screenshot 2/2 </h3>
+
+                 <img src="img/w8/w8_7.jpg " width="600" height="450" class="img-responsive"> <h3 class="section-subheading text-muted"><strong> FILE CUTTING.</strong> And then we start cutting !  </h3> 
 
                  <img src="img/w8/w8_8.jpg " width="600" height="450" class="img-responsive">
-                    <h3 class="section-subheading text-muted">  Security measure are very important ! During the first cut (internal cut G-CODE) a man who works there crossed the security check and the machine stop cutting ! I was very angry and I had to call back my tutor to restart the procedure. Thanks God we did not need to change the wood. </h3> 
+                    <h3 class="section-subheading text-muted">  <strong>Security measure are very important </strong>! During the first cut (internal cut G-CODE) a man who works in the FabLab crossed the security check and the machine stop cutting ! I was very angry and I had to call back my tutor to restart the procedure. Thanks God we did not need to change the wood. </h3> 
 
 <img src="img/w8/w8_9.jpg " width="600" height="450" class="img-responsive">
-                    <h3 class="section-subheading text-muted">  The cut went good !!! I clean with the hoover all the dust (lot of dust !) and then I start to extract all the components from the main board. The secondary procedure require to arrange all the pieces. Considering the low quality of the wood, a lot of splinters have been detected as a result of the work. </h3> 
+                    <h3 class="section-subheading text-muted">  <strong>The cut went good !!!</strong> I clean with the hoover all the dust (lot of dust !) and then I start to extract all the components from the main board. The secondary procedure require to arrange all the pieces. Considering the low quality of the wood, a lot of splinters have been detected as a result of the work. </h3> 
 
 <img src="img/w8/w8_10.jpg " width="600" height="450" class="img-responsive">
                     <h3 class="section-subheading text-muted">  The bike starts taking its shape ! It’s wonderful ! No problem for the connection I designed, but the tutor suggestion to take into account a wood thickness of 19mm was too cautelative. The handlebars is not perfectly fixed to the structures. </h3> 
 	
 <img src="img/w8/w8_11.jpg " width="600" height="450" class="img-responsive">
-                    <h3 class="section-subheading text-muted">  After I mount the 75% of the bike I had a problem of clash between two parts of the bike ! I decompose the bike and I had to cut by hand the exceeding part of the highlighted component (blu dotted line  hand cut), because it hit the back wheel. The bike is now perfectly efficient. </h3> 
+                    <h3 class="section-subheading text-muted">  After I mount the 75% of the bike I had a problem of clash between two parts of the bike ! I decompose the bike and I had to cut by hand the exceeding part of the highlighted component (blu dotted line: hand cut), because it hit the back wheel. <strong>The bike is now perfectly efficient.</strong></h3> 
 
 <img src="img/w8/w8_12.jpg " width="600" height="450" class="img-responsive">
-                    <h3 class="section-subheading text-muted">  We try the balance bike with the tutor !  </h3> 
+                    <h3 class="section-subheading text-muted">  We have also tried the balance bike!  </h3> 
 
 <img src="img/w8/w8_13.jpg " width="600" height="450" class="img-responsive">
                     <h3 class="section-subheading text-muted">  The final result (Part 1 of 2) !  </h3> 
 
 <img src="img/w8/w8_14.jpg " width="600" height="450" class="img-responsive">
                     <h3 class="section-subheading text-muted">  The final result (Part 2 of 2) !  </h3> 
+                    
+                    <h3 class="section-subheading text-muted">
+<strong> Download area </strong> <hr> The following files are downloadable:
+<table width="700" border="1">
+  <tr>
+    <td>Type of file</td>
+    <td>Description</td>
+    <td>Link (Type of file)</td>
+  </tr>
+  <tr>
+    <td>Fabrication files: vectors(s) / 3D model(s)</td>
+    <td>Rhinoceros file</td>
+    <td>(<a href="https://www.dropbox.com/s/xk4urms0vxlov0z/balance%20bike.3dm?dl=0">3DM</a>)</td>
+  </tr>
+  <tr>
+    <td>Fabrication files: vectors(s) / 3D model(s)</td>
+    <td>ArtCAM file</td>
+    <td>(<a href="https://www.dropbox.com/s/5z1d89hit05qyiz/balance%20bike.art?dl=0">ART</a>)</td>
+  </tr>
+  <tr>
+      <td>Fabrication files: vectors(s) / 3D model(s)</td>
+    <td>AutoCAD file</td>
+    <td>(<a href="https://www.dropbox.com/s/l5ck3im4fgb397t/balance%20bike.dxf?dl=0">DXF</a>)</td>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+   
+</table></h3>
 
             </div>
             </div>

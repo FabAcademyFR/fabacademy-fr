@@ -85,20 +85,62 @@
                     <h2 class="section-heading">Output devices</h2>
                                          
                     <h3 class="section-subheading text-muted">.</h3>
-                    <img src="img/w11/w11_1.jpg " width="600" height="450" class="img-responsive">
-                    <h3 class="section-subheading text-muted"> I’ve designed a double output device composed of a visual alarm (a triple led:red, yellow and green) and two servos (that move the lateral fins of the fish). When the depth became excessive, the signal from the input devices (separated into 3 different range of values: 0-500, 500-800 and >800) a led corresponding to the mentioned range lights up. More specifically: 0-500 GREEN LED is HIGH and the others LOW (Arduino code); 500-800 YELLOW LED is HIGH and the others LOW (Arduino code); >800 RED LED is HIGH and the others LOW (Arduino code). RED LIGHT MEANS A VERY DANGEROUS SITUATION FOR THE FISH (excessive pressure – poor sun light). At this point the emergency system move the servos and the rotation of the fins determines the return of the fish to a more comfortable depth. Please note that the fish body is moved by a small DC motor with autonomous functionality. </h3> 
+                    
+                    <hr><h3 class="section-subheading text-muted"> <strong>The weekly assignment focuses on fabrication of an output device and how to control it using the board we've designed in the previous sections.</strong><hr></h3>
+                    
+                    
+                  <img src="img/w11/w11_1.jpg " width="600" height="450" class="img-responsive">
+                    <h3 class="section-subheading text-muted"> I’ve designed a <strong>double output device </strong>composed of a visual alarm (a triple led:red, yellow and green) and two servos (that move the lateral fins of the fish). When the depth became excessive, the signal from the input devices (separated into 3 different range of values: 0-500, 500-800 and >800) a led corresponding to the mentioned range lights up. More specifically: 0-500 GREEN LED is HIGH and the others LOW (Arduino code); 500-800 YELLOW LED is HIGH and the others LOW (Arduino code); >800 RED LED is HIGH and the others LOW (Arduino code). RED LIGHT MEANS A VERY DANGEROUS SITUATION FOR THE FISH (<strong>excessive pressure – poor sun light</strong>). At this point the emergency system move the servos and the rotation of the fins determines the return of the fish to a more comfortable depth. Please note that the fish body is moved by a small <strong>DC motor</strong> with autonomous functionality (not controlled by the FabKit).<strong> Thus, depending on the mentioned light value, servos move.This is the main purpose of the output device.</strong></h3> 
                     
                     <img src=" img/w11/w11_2.jpg " width="600" height="450" class="img-responsive">
-                    <h3 class="section-subheading text-muted"> This is the folder of my input device milling files: PNG and RML files.</</h3> 
+                    <h3 class="section-subheading text-muted"> The board have been milled using the attached design files and using the Fab Modules and the Roland SRM-20. The procedure is now well understand. The output device are: <strong>LED</strong> (i.e. <a href="http://www.digikey.com/catalog/en/partgroup/3mm-round-with-domed-top-led-lamps/34235">http://www.digikey.com/catalog/en/partgroup/3mm-round-with-domed-top-led-lamps/34235</a>) and <strong>5 GR SERVO</strong> (i.e. <a href="http://hobby-part.blogspot.it/2012/07/item-name-servo-hxt-5gr-price-rp.html">http://hobby-part.blogspot.it/2012/07/item-name-servo-hxt-5gr-price-rp.html</a>). </</h3> 
                     
                     <img src=" img/w11/w11_3.jpg " width="600" height="450" class="img-responsive">
-                    <h3 class="section-subheading text-muted">  This is the milled board (after the three tasks). Please note the presence of small problem in the zone in which O (zero) ohm resistor are needed. </h3> 
+                    <h3 class="section-subheading text-muted">  This is the milled board (after the three tasks). Please note the presence of <strong>small problem</strong> in the zone in which O (zero) ohm resistor are needed. Traces are not correctly divided, so I've correct them using a small cutter.</h3> 
                 
                 <img src="img/w11/w11_4.jpg " width="600" height="450" class="img-responsive">
-                    <h3 class="section-subheading text-muted"> Even in this case I destroy (too much time soldering the components) the SMD LED. This was a great problem, but I consider that I can not use SMD components, because I want the small lights visible as points in the exterior skin of the fish. Thus I’ve used the classical LED. </h3> 
+                    <h3 class="section-subheading text-muted"> Even in this case I destroy (too much time soldering the components) the <strong>SMD LED</strong>. This was a great problem, but I consider that I can not use SMD components, because <strong>I want the small lights visible as points in the exterior skin of the fish. </strong>Thus I’ve used the classical LED. </h3> 
                     
                  <img src="img/w11/w11_5.jpg " width="600" height="450" class="img-responsive">
-                    <h3 class="section-subheading text-muted"> This is the final shot of all the boards I proudly (for first time in my life) designed and milled. The system correctly works. I just need to place all this stuff inside of the fish.  </h3> 
+                    <h3 class="section-subheading text-muted"> This is the final shot of all the boards I proudly (for first time in my life) designed and milled. The system correctly works. <strong>I just need to place all this stuff inside of the fish. </strong></h3> 
+                    
+                  <h3 class="section-subheading text-muted">  The following video detail how the output details works. The code is also following.Please note that, <strong>more specifically</strong>: the pin 9-10-11-12-13 (and +5V and GND) have been used to control the output device. <img src="img/w10/w10_15.jpg " width="600" height="450" class="img-responsive"></h3><hr>
+                    The video.</h3><hr>
+                    
+<h3 class="section-subheading text-muted">
+<strong> Download area </strong> <hr> The following files are downloadable:
+<table width="700" border="1">
+  <tr>
+    <td>Type of file</td>
+    <td>Description</td>
+    <td>Link (Type of file)</td>
+  </tr>
+  <tr>
+    <td>Output device - Eagle file</td>
+    <td>Board file</td>
+    <td>(<a href="https://www.dropbox.com/s/58gzzmekspx5lsg/OUTPUT%20DEVICE.brd?dl=0">BRD</a>)</td>
+</tr>
+    <td>Output device - Eagle file</td>
+    <td>Schematic file</td>
+    <td>(<a href="https://www.dropbox.com/s/z63i24slcrdk28l/OUTPUT%20DEVICE.sch?dl=0">SCH</a>)</td></tr>
+    
+        <td> Output device (edge cut)</td>
+    <td>Image file</td>
+    <td>(<a href="https://www.dropbox.com/s/qz0ddyexmrd1tic/OUTPUT%20DEVICE_CUT%2032.png?dl=0">PNG</a>)</td></tr>
+   
+           <td> Output device (drill)</td>
+    <td>Image file</td>
+    <td>(<a href="https://www.dropbox.com/s/pg23paq611od1i0/OUTPUT%20DEVICE_HOLES%2032.png?dl=0">PNG</a>)</td> </tr>
+    
+            <td> Output device (traces)</td>
+    <td>Image file</td>
+    <td>(<a href=" ">PNG</a>)</td> </tr>   
+
+            <td> Working Arduino Code</td>
+    <td>Code file</td>
+    <td>(<a href="https://www.dropbox.com/s/iparsyib30f0gqh/OUTPUT%20DEVICE_TRACES%2064.png?dl=0">INO</a>)</td> </tr>    
+    
+</table>
 
             </div>
             </div>
