@@ -58,23 +58,29 @@
             <h3 class="heading">make the FabISP in-circuit programmer</h3> <br>
             <p class="lead">CLASS WEB PAGE: <a href="http://academy.cba.mit.edu/classes/electronics_production/index.html" target="_blank">http://academy.cba.mit.edu/classes/electronics_production/index.html</a><br>
           <p class="lead">DOWNLOAD FILES:<br>
-          	<a href="https://github.com/elenapapetti/FabAcademy2015files/tree/master/Week12">ISP</a>
+          	<a href="https://github.com/elenapapetti/FabAcademy2015files/tree/master/Week12">FABIsp png</a>
           </p>
-           <p class="lead">This week we start to play with electronics. The assignment was to make the FabISP that
-				we will use trough out the rest of the program and apply the components on it.
+          <h2 class="featurette-heading">First phase: Making the FABIsp.</h2>
+           <p class="lead">This week I start to play with electronics. The assignment was to make the FabISP, a PCB, that
+				I will use trough out the rest of the program and apply the components on it.
 				The FabISP is an in-system programmer for AVR microcontrollers, designed for production within a FabLab.
 				It allows you to program the microcontrollers on other boards you make.
-				I made the ISP with the Roland SRM-20 milling machine. To use it, we have to upload the file on the terminal using the VPanel.
-				Once we are in the Roland software we select the image png starting from the traces.
-				To do the traces we change the tool of 1/64 size. Once the traces are done we can change the tool to the 1/32 in order to cut the board.
-                <br> <a href="http://academy.cba.mit.edu/classes/computer_design/index.html"> http://academy.cba.mit.edu/classes/computer_design/index.html</a>
-               </p>
-
-                <img class="featurette-img-responsive pull-up" width="100%" src="img/WEEK4/1.jpg">
+				I made the ISP from a copper plate using the <a href="http://www.rolanddg.it/it/prodotti/modellatori-3d/monofab-srm-20" target="_blank">ROLAND SRM-20</a> milling machine.<br>After I opened the PNG files in the <a href="http://fabmodules.org/" target="_blank">FAB MODULES</a>  making the settings to generate the RML files to send in the Roland Machine.<br> A very important thing to do is to set the milling coordinates in the Vpanel software on the terminal: first the XY axes then the Z one. The machine starts to mill from the traces file using a tip of 1/64 size; once the traces are done I changed the tool with a tip of 1/32 in order to cut the board.<br></br>
+				After finishing the milling process I had to solder the components on the board.<br> It was the first time I had contact with this kind of operation so after some disasters such as placing components at the wrong position or even wrong ones, I managed to finish my board! 
+			</p>
+			<h1> </h1>
+			<img class="featurette-img-responsive pull-up" width="48%" src="img/WEEK4/1.jpg">
+            <img class="featurette-img-responsive pull-up" width="48%" src="img/WEEK4/2.jpg" >
                <h1> </h1>
-               <img class="featurette-img-responsive pull-up" width="100%" src="img/WEEK4/2.jpg" >
+               <img class="featurette-img-responsive pull-up" width="48%" src="img/WEEK4/2b.jpg">
+            <img class="featurette-img-responsive pull-up" width="48%" src="img/WEEK4/2c.jpg" >
                <h1> </h1>
-                <iframe src="https://player.vimeo.com/video/131597187" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/131597187">fabisp</a></p>
+               <img class="featurette-img-responsive pull-up" width="48%" src="img/WEEK4/3.jpg">
+            <img class="featurette-img-responsive pull-up" width="48%" src="img/WEEK4/4.jpg" >
+               <h1> </h1>
+               <h2 class="featurette-heading">Second phase: Programming the FABIsp.</h2>
+               <p class="lead">I program the ISP following this <a href="http://fabacademy.org/archives/2015/doc/programming_FabISP.html#ubuntu" target="_blank">tutorial.</a><br>The programming procedure went good, but unfortunately my personal computer (Windows operating system) do no recognize the ISP.<br> After various tests and checks I concluded having to make another board. After repeating the entire production process to made the board I tried again the programming of  my new FabIsp and this time was a success! The operation was confirmed by my computer recognizing my board as a USB input!</p>
+                <iframe src="https://player.vimeo.com/video/131597187" width="100%" height="600" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/131597187">fabisp</a></p>
 
 	 <footer>
 		 <div class="container">
