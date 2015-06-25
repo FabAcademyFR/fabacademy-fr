@@ -85,13 +85,13 @@
                     <h2 class="section-heading">"Piske", a robotic fish </h2>
                                          
                     <h3 class="section-subheading text-muted">.</h3><p>
-                    <hr> <strong> Section 1: The "idea"</strong> <hr> I've always been attracted by underwater life. This is the main reason because I've decided to design "Piske". "Piske" means fish in Sardinian dialect. For its characteristic shape, a monkfish (<a href="http://en.wikipedia.org/wiki/Lophius">http://en.wikipedia.org/wiki/Lophius</a>) has been chosen as a starting shape for design. When the “Piske” project will be complete, groups of low-cost “sensing” fishes will be free to move in oceans, lakes and ponds, directly recording a huge amount of climatic data. </h3> <img src="img/w_final/wf_1.jpg" width="600" height="450" class="img-responsive"></p> <hr><h3 class="section-subheading text-muted"> 
-     <h3 class="section-subheading text-muted"> Piske will be a mix of all the disciplines/assignments included in the Academy.
+                    <hr>        <h3 class="section-subheading text-muted"> <strong> Section 1: The "idea"</strong> <hr> I've always been attracted by underwater life. This is the main reason because I've decided to design "Piske". "Piske" means fish in Sardinian dialect. For its characteristic shape, a monkfish (<a href="http://en.wikipedia.org/wiki/Lophius">http://en.wikipedia.org/wiki/Lophius</a>) has been chosen as a starting shape for design. When the “Piske” project will be complete, groups of low-cost “sensing” fishes will be free to move in oceans, lakes and ponds, directly recording a huge amount of climatic data. </h3> <img src="img/w_final/wf_1.png" width="600" height="450" class="img-responsive"></p> <hr>
+                   <h3 class="section-subheading text-muted"> Piske will be a mix of all the disciplines/assignments included in the Academy.
 Every discipline/assignment is strictly related to the functionality of different parts of the fish, as detailed in the following figure. I.e. the input device represent the connection with the external world, the brain represent the processor (Fab Kit), the directional engines are servo motors (output devices) and so on.
 </h3>  <img src="img/w_final/wf_2.png" width="600" height="450" class="img-responsive">
                 <hr>
                     
-                 <strong>Section 2: 3D model and mechanical aspect</strong>  <hr>
+                      <h3 class="section-subheading text-muted">  <strong>Section 2: 3D model and mechanical aspect</strong>  <hr>
                  The shell of Piske is composed of 5 differents parts.Four are represented in the above picture.
 The fifth part (pectoral fins, propeller, servos and DC motor) have been detailed in the following.
 The TOP part: it’s the container of the input device (light sensor), the first output device (LED emergency system), the second output device (Servos).
@@ -112,65 +112,51 @@ All the printing test have been performed using a Zortrax M200 (<a href="https:/
 <img src="img/w_final/wf_8.png" width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted"><hr>
 Lots of them have been destroyed or damaged too much by successive drilling or cutting in order to fit all the components.
 <img src="img/w_final/wf_9.png" width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted"><hr>
-Please note that the first test (central picture) is very “full” of material, whilst at the end, the prototype is almost completely perforated.
-See, with reference to the debugging stages, the following picture of the bottom part. 
-<img src="img/w_final/wf_10.png" width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted"><hr>
+Please note that the first test (central picture) is <strong>very “full” of material</strong>, whilst at the end, the prototype is almost <strong>completely perforated</strong>.
+See, with reference to the debugging stages, the following picture of the bottom part. <img src="img/w_final/wf_10.png" width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted"><hr>
 Last but not least, the propulsion system.
 <img src="img/w_final/wf_11.png" width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted"><hr>
 And the pectoral fins.
 <img src="img/w_final/wf_12.png" width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted"><hr>
          <strong>Section 3: Control board</strong>  <hr>The control board is a Fab Kit, with its ATMEGA328 processor.
-Which parts of the FabKit I need for my project? 
-I need:
+         <strong>Which parts of the FabKit I need for my project? </strong> I need:
 Two pins for the power supply (from a 4.5V battery using the VCC, GND from the FTDI connection)
 Two pins for the power supply of the: servos, light sensor and LEDs (VCC, GND)
-Two pins for the servo control, namely the 9 and 10 
-Three pins for the LEDs control, namely the 11, 12 and 13 
-One pin for the light sensor control, namely the A0 
-One of the most USEFUL commands of Eagle is the following:
-</h3> <img src="img/w_final/wf_13.png" width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted">
+Two pins for the servo control, namely the 9 and 10. Three pins for the LEDs control, namely the 11, 12 and 13. One pin for the light sensor control, namely the A0.One of the most USEFUL commands of Eagle is the following: </h3> <img src="img/w_final/wf_13.png" width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted">
 <hr>
 Just use the EYE to enlighten the trace you need. Using the processor pinout you can easily discover at which header connect your cable.
-In order not to check traces every five minutes, I’ve prepared a sketch useful for fast controls.
-<img src="img/w_final/wf_14.png" width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted">
+<strong>In order not to check traces every five minutes</strong>, I’ve prepared a sketch useful for fast controls. <img src="img/w_final/wf_14.png" width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted">
 <hr>
-One of the most annoying part has been the change of cables every time I needed to send a different code to the board.
+One of the most annoying part has been the <strong>change of cables</strong> every time I needed to send a different code to the board: connect to Arduino IDE, upload sketch, connect to devices and power and so on...
 One of the future improvements will be the positioning of a double FTDI connection.
-I’ve soldered the header vertically. As it will be explained in the following sections, this will be a great mistake, in terms of occupied space.  Just as a preview, the ultra-small available space is showed in the following picture.
-This is not the final version, just an in progress version prior to the clash detection.
-<img src="img/w_final/wf_15.png" width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted">
+I’ve soldered the header vertically. As it will be explained in the following sections, this will be a great mistake, in terms of occupied space.  Just as a preview, <strong>the ultra-small available space</strong> is showed in the following picture.
+This is not the final version, just an in progress version prior to the clash detection. <img src="img/w_final/wf_15.png" width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted">
 <hr>
  <strong>Section 4: Input device</strong> <hr>As described at the beginning, the design depth of swimming is related to the quantity of light that a light sensor placed in the top of the head of the monkfish can receive.
-On the basis of the “kind of water” in which “Piske” is swimming, several light penetration curves can be defined and implemented.
-</h3> <img src="img/w_final/wf_16.png" width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted">
+On the basis of the <strong>“kind of water” </strong>in which “Piske” is swimming, several light penetration curves can be defined and implemented. </h3> <img src="img/w_final/wf_16.png" width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted">
 <hr>
-Please note that the light sensor can provide an input value ranging between 0 and 1023.
-For our purposes 1023 is the water surface (100% of sun light, no water interference) and 0% is the deep water darkness (0% of sun light, full water interference).
+Please note that the light sensor can provide an input value <strong>ranging between 0 and 1023.</strong> For our purposes 1023 is the water surface (<strong>100% of sun light, no water interference</strong>) and 0% is the deep water darkness (<strong>0% of sun light, full water interference</strong>).
 In this specific case, the following curves have been defined.
-The design swimming depth is defined if 600≤H≤800 (green zone)
-The alert zones are defined if 800<H≤1023 and if 500<H<600 (yellow zones)
-The danger zone is defined if H≤500 (red zone)
+The design swimming depth is defined if 600<=H<=800 (green zone)
+The alert zones are defined if 800<H<=1023 and if 500<H<600 (yellow zones)
+The danger zone is defined if H<=500 (red zone).
 </h3> <img src="img/w_final/wf_17.png" width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted">
 <hr>
-<strong>Section 5: Output device</strong> <hr>On the basis of the light data, a visual reply is returned from the system: red, green or yellow light blink depending of the zone in which “Piske” is swimming.
-The board containing the connections between output devices has been entirely designed starting from the following sketch (see also Output device page for further details).
-Please note the presence of  0 (zero) ohm resistors.
-</h3> <img src="img/w_final/wf_18.png" width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted">
+<strong>Section 5: Output device</strong> <hr>On the basis of the light data, <strong>a visual reply is returned from the system</strong>: red, green or yellow light blink depending of the zone in which “Piske” is swimming.
+The board containing the connections between output devices has been entirely designed starting from the following sketch (see also "<strong>Output device</strong>" page for further details).
+Please note the presence of  0 (zero) ohm resistors. </h3> <img src="img/w_final/wf_18.png" width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted">
 <hr>
-Note also that servos are positioned symmetrically, so even the rotation data must be set symmetrical (with respect to the 0°-180° range).
+Note also that <strong>servos are positioned symmetrically</strong>, so even the rotation data must be set symmetrical (with respect to the 0°-180° range).
 Those are the rotation scheme: <img src="img/w_final/wf_19.png" width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted">
 <hr>
 One particular aspect is that used servos are very cheap, so they are not so precise. I.e. please note that the degree of rotation of the green (safe) position is not the same: this is related to the not identical behavior of the servos.
 Design data (as reported in the following code) are:
 <img src="img/w_final/wf_20.png" width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted">
 <hr>
-<strong>Section 6: Code description</strong> <hr> The final code is here attached (download link is following). <em><strong>IN PROGRESS</strong></em>
-<hr>
+<strong>Section 6: Code description</strong> <hr> The final code  has been attached (download link is following). <hr>
 <strong>Section 7: License </strong> <hr> For further details about License please refer to the following link : <a href="http://fabacademy.org/archives/2015/eu/students/burrai.antonio/week17.html">http://fabacademy.org/archives/2015/eu/students/burrai.antonio/week17.html</a> 
 <hr>
-<strong>Section 8: An overview of the project (pictures</strong> <hr><em><strong>IN PROGRESS</strong></em>
-<hr>
-<strong>Section 9: Design files </strong> <hr> The following files are downloadable:
+<strong>Section 8: Download area</strong> <hr> The following files are downloadable:
 <table width="700" border="1">
   <tr>
     <td>Type of file</td>
@@ -179,68 +165,17 @@ Design data (as reported in the following code) are:
   </tr>
   <tr>
     <td>Fabrication files: vectors(s) / 3D model(s)</td>
-    <td>&nbsp;</td>
-    <td>(ZIP)</td>
+    <td>Complete 3D model (Rhinoceros)</td>
+    <td>(<a href="https://www.dropbox.com/s/vcdunb27m89404a/piske%20full%203d%20model.3dm?dl=0">3DM</a>)</td>
   </tr>
   <tr>
-    <td>Fabrication files: vectors(s) / 3D model(s)</td>
-    <td>&nbsp;</td>
-    <td>(ZIP)</td>
-  </tr>
-  <tr>
-    <td>Fabrication files: vectors(s) / 3D model(s)</td>
-    <td>&nbsp;</td>
-    <td>(ZIP)</td>
-  </tr>
-  <tr>
-    <td>Fabrication files: vectors(s) / 3D model(s)</td>
-    <td>&nbsp;</td>
-    <td>(ZIP)</td>
-  </tr>
-  <tr>
-    <td>Fabrication files: vectors(s) / 3D model(s)</td>
-    <td>&nbsp;</td>
-    <td>(ZIP)</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
+    <td>(Working) Arduino Code</td>
+    <td>"Piske" complete sketch</td>
+    <td>(<a href="https://www.dropbox.com/s/a3jflj2l34a3qxv/piske_full_code.zip?dl=0">ZIPPED INO</a>)</td>
 </table>
- <em><strong>IN PROGRESS</strong></em>
+ <em><strong>Please note that all the electronics-related file are available at the Input/Output device page (they have been used in the final project).</strong></em>
 <hr>
-<strong>Section 10: Final Video </strong> <hr> An overview of the complete project is following.
+<strong>Section 9: Final Video </strong> <hr> An overview of the complete project is following.
 <iframe src="https://player.vimeo.com/video/130056871" width="1000" height="750" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/130056871">Piske - Final Project</a> from <a href="https://vimeo.com/user9088004">antonio burrai</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 <hr>
 
