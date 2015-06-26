@@ -91,59 +91,86 @@
         <div class="featured" id="about">
            
             <div><h2 class="featured-heading">ECHO HELLO</h2></div>
-            
+    <a href="http://academy.cba.mit.edu/classes/electronics_design/index.html"> electronics_design/index.html</a>         
             <p class="lead">Assignment:
-   <br/>- Redraw the echo hello-world board,
-      <br/>- Add (at least) a button and LED (with current-limiting resistor)
-      <br/>- Check the design rules, and make it
-      <br/>
-      <br/>To redesign the weekly assignment, we have downloaded the software Eagle, and his components library.
+   <br>- Redraw the echo hello-world board,
+      <br>- Add (at least) a button and LED (with current-limiting resistor)
+      <br>- Check the design rules, and make it.
+      <br>
+      <br>To redesign the board, we have downloaded the software Eagle, and his components library.
       </p>
-         
-            <p class="lead">DESIGN THE CIRQUIT
+          <br>     
+            <div><h3 class="featured-heading">DESIGN THE CIRQUIT</h3></div>
 
-<br/>I used Eagle to redesign the hello board. 
- 		<p class="lead">I followed the tutorials http://academy.cba.mit.edu/content/tutorials/akf/electronics_design_eagle.html to design my circuit. Select all the components that you need from the libraries and do the schematic connecting them with "net".</p>
+<p class="lead">I used Eagle to redesign the hello board.</p>
+    <a href="http://www.cadsoftusa.com/download-eagle/"> Download-Eagle</a> 
+    <br></br>
+    <p class="lead">CadSoft EAGLE is a software widely used by companies and by amateurs too to draw PCB. </p> 
+ 		<p class="lead">I followed the Providence tutorial <a href="http://academy.cba.mit.edu/content/tutorials/akf/electronics_design_eagle.html"> electronics_design_eagle.html</a>  to design my circuit. I selected all the components that I needed from the libraries and I make the schematic connecting with "net".</p>
  </p>
-<p class="lead">In the board view distribute the components in that way that they create easy connections. Draw the routes in my board i have used one button and one LED.</p>
+<p class="lead">In the board view I distributed the components in that way that they create easy connections. I drew the routes in my board, I used one button and one LED.</p>
 <img class="featured-image  img-responsive pull-center" src="img/week6/EAGLE.jpg">
+</p></br>
+ <h4 class="section-subheading text-muted">CREATING THE FILES</h4>
+<p class="lead">I hid all layers except from the top layer. I went to file> export> image, I chose 500 dpi resolution and I checked the button Monochrome. This is the "traces.png" file. Then i edited it in Photoshop and I created a border by changing the canvas size, expanding it 20px for each side of the area and I painted it black. Then I painted the rest of the area white .This is the "interior.png" file.</p>
+<br>
+ <h4 class="section-subheading text-muted">Tools:</h4> 
+<a href="http://www.rolanddg.it/it/prodotti/modellatori-3d/monofab-srm-20"><h5>- Roland MonoFab SRM20 </h5></a>
+<p class="lead">Table size (LxP): 232.2 x 156.6 mm 
+   <br>Distance from collet tip to table: 232.2 x 156.6 mm</p>
+<a href="http://www.carbidedepot.com/detail.aspx?ID=180142"> - DIA 0.0156" DIA 2FL SE AlTiN 1/64(engraving) </a> 
+   <br><a href="http://www.carbidedepot.com/detail.aspx?ID=180143">- 0.0312" DIA 2FL SE AlTiN 1/32(milling)</a> 
+            <br></br>
+            <h4 class="section-subheading text-muted">SETTING MACHINE:</h4> 
+<p class="lead">- Open <a href="http://fabmodules.org/">fabmodules.org</a>
+<br>-  Push on Imput Format;
+<br>-  Choose Image(.png) and Upload Image;
+<br>-  Push on Output Format and choose the machine (Roland Mill (.rml));
+<br>- Setting machine;
+<br> machine SRM-20: Speed 4; Jog 1; Xmin 0; Ymin 0;
+<br>- Push on Process and choose (PCB traces(1/64)) or (PCB outline(1/32);
+<br>- Change offset 5 (the offset is a personal setting);
+<br>- Push on Calculate;
+<br>- Save.
 </p>
-<p class="lead">CREATING THE MILLING FILES
-		<br/>Hide all layers except from the top layer. Go to file> export> image, choose 500 dpi resolution and check the button Monochrome. This is the "traces.png" file. After created the png traces file edit it in Photoshop and create a border by changing the canvas size expanding it 20px for each side of the area and paint it black. Paint the rest of the area white.This is the "outside.png" file. </p>
-<br/>
 		<img class="featured-image  img-responsive pull-center" src="img/week6/fabmodules.jpg">
-		<br/>
-<p class="lead">MILLING
-	<br/>- Roland SRM-20
-	<br/>- copper plate
-	<br/>- mill out the traces of a circuit board(1/64th n-mill)
-	<br/>- cut out the board(1/32 bit) </p>
+		<br>
 	<img class="featured-image  img-responsive pull-center" src="img/week6/milling.jpg">
     </p>
-            <br/>
-<p class="lead">SOLDERING
-    <p class="lead">I was involved in a domestic accident, i had a burn of II degree. In the picture you can see my left hand bandaged.</p>
-            <br/>
+            <br>
+ <h4 class="section-subheading text-muted">SOLDERING</h4>
+    <p class="lead">I was involved in a domestic accident, i had a burn of II degree on my left hand. In the picture you can see it bandaged.</p>
+        <p class="lead">When you observe objects so small for so long, you realize the real size of everything else, it's a strange sensation.</p>
+            <br>
             <img class="featured-image  img-responsive pull-center" src="img/week6/SEAM.jpg">
-            <br/>
+            <br>
 	<p class="lead">COMPONENTS
-	<br/>- 1 Capacitor 1Uf
-	<br/>- 2 Resistors 10K
-	<br/>- 1 Resistor 150
-	<br/>- 1 Resonator(C = Q/V, I = C dV/dt) 
-	<br/>- 1 Microcontroller(attiny44) 
-	<br/>- 1 Resonator 20MHZ(C = Q/V, I = C dV/dt) 
-	<br/>- 1 Button
-	<br/>- 1 Led white 3,2V
+	<br>- 1 Capacitor 1Uf
+	<br>- 2 Resistors 10K
+	<br>- 1 Resistor 150
+	<br>- 1 Resonator(C = Q/V, I = C dV/dt) 
+	<br>- 1 Microcontroller(attiny44) 
+	<br>- 1 Resonator 20MHZ(C = Q/V, I = C dV/dt) 
+	<br>- 1 Button
+	<br>- 1 Led white 3,2V
 	
 	
 	</p>
 	<p><img class="featured-image  img-responsive pull-center" src="img/week6/PCB.jpg"></p>
-            <br/>
-          </div>
-          </div>
-          <br/>
-         
+            <br>
+            <h4 class="section-subheading text-muted">Download the files:</h4> 
+    		<a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week6/helloEcho.brd">helloEcho.brd</a>   
+             <br>
+            <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week6/helloEcho.sch">helloEcho.sch</a>    
+            <br>
+            <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week6/miky-helloEcho.brd">miky-helloEcho.brd</a>   
+            <br>
+            <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week6/miky-helloEcho.sch">miky-helloEcho.sch</a>  
+            <br>
+            <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week6/piste%20esterne.png">miky-interior.png</a>  
+            <br>
+            <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week6/piste%20interne.png">miky-traces.png</a>  
+
       </p>
            
         <hr class="featured-divider">

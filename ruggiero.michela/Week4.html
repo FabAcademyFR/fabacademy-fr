@@ -92,103 +92,95 @@
            
             <div><h2 class="featured-heading">CIRCUITS</h2></div>
 <p class="lead">ASSIGNMENT:make the FabISP in-circuit programmer</p>
-<a href="http://academy.cba.mit.edu/classes/electronics_production/index.html"> Assignment:Electronics Production </a> 
+<a href="http://academy.cba.mit.edu/classes/electronics_production/index.html"> electronics_production/index.html</a> 
 <br></br> 
             <h4 class="section-subheading text-muted">PCB fabrication</h4> 
-            <p class="lead">This assignment is about to make the FabISP in-circuit programmer. The FabISP is an in-system programmer for AVR microcontrollers. That allows you to program the microcontrollers on other boards using a USB cable and 6-pin IDC to 6-pin IDC cable. We will be using these programmers through the semester to program the other boards we create.</p>
-<a href="http://academy.cba.mit.edu/classes/electronics_production/index.html"> hello.ISP.44.cad board components traces interior </a>   <br></br>  
+            <p class="lead">This assignment is about to make the FabISP in-circuit programmer. The FabISP is an in-system programmer for AVR microcontrollers, that allows you to program the microcontrollers on other boards using a USB cable and 6-pin IDC to 6-pin IDC cable. We will be using these programmers through the semester to program the other boards we create.</p>
+<a href="http://academy.cba.mit.edu/classes/electronics_production/index.html"> hello.ISP.44.cad board components traces interior </a>   
+<br></br>  
+
 <h4 class="section-subheading text-muted">Tools:</h4> 
-<p class="lead">Roland MonoFab SRM20 
-<a href="http://www.rolanddg.it/it/prodotti/modellatori-3d/monofab-srm-20"><h5>Roland MonoFab SRM20 </h5></a> </p>   <br></br>  
-<p class="lead">1/64 "(engraving) </p> <div>
-<a href="http://www.carbidedepot.com/detail.aspx?ID=180142"> DIA 0.0156" DIA 2FL SE AlTiN 1/64</a>    <br></br>  
-<p class="lead">1/32" (milling), and copper plate.</p> 
-<a href="http://www.carbidedepot.com/detail.aspx?ID=180143">0.0312" DIA 2FL SE AlTiN 1/32</a> 
+<a href="http://www.rolanddg.it/it/prodotti/modellatori-3d/monofab-srm-20"><h4>- Roland MonoFab SRM20 </h4></a>
+<p class="lead">Table size(LxP): 232.2 x 156.6 mm
+   <br>Distance from collet tip to table: 232.2 x 156.6 mm</p>
+<a href="http://www.carbidedepot.com/detail.aspx?ID=180142"> - DIA 0.0156" DIA 2FL SE AlTiN 1/64(engraving) </a> 
+   <br><a href="http://www.carbidedepot.com/detail.aspx?ID=180143">- 0.0312" DIA 2FL SE AlTiN 1/32(milling)</a> 
+               </p>
+               <br>
+    <p class="lead">SETTING MACHINE:
+<br>- Open <a href="http://fabmodules.org/">fabmodules.org</a>
+<br>-  Push on Input Format;
+<br>-  Choose Image(.png) and Upload Image;
+<br>-  Push on Output Format and choose the machine (Roland Mill (.rml));
+<br>- Setting machine: machine SRM-20; Xmin 0; Ymin 0; 
+<br>- Push on Process and choose (PCB traces(1/64)) or (PCB outline(1/32);
+<br>- Change offset 5 (the offset is a personal setting);
+<br>- Push on Calculate;
+<br>- Save.
+</p>
    <br></br>   
 <h4 class="section-subheading text-muted">1° Steps: Milling the board </h4> 
-<p class="lead">For milling the board we used the Roland MonoFab SRM20 and the Fab Modules, we placed a sacrifical level before starting work, and I glued the board in the milling machine with double sided tape to keep the model from moving in the milling machine.</p>
+<p class="lead">In order to mill the board we used the Roland MonoFab SRM20 and the Fab Modules. We placed a sacrifical worktop before starting. I secured the board in the milling machine with double sided tape to keep the model from moving in the milling machine and loosing the 0,0 point.</p>
             <img class="featured-image  img-responsive pull-center" src="img/week4/engraving.jpg">
-            <!-- < img src="i1.jpg" style="margin-bottom: 5px" /><br/> 
-< img src="i2.jpg" /> -->
-            <br/>
+            <br>
     <p class="lead">Instructions:
-<br/>- We turned on the machine for the heating, at least for 20 minutes
-<br/>- We set the 1/64"  tip in the machine, we set X /Y axesas  0.0 and then Z.
-<br/>- When the machine was ready, we opened Fab Modules on terminal and on the new window we selected the endmill settings as 1/64". We clicked on the “load button” and we selected my file (miky.ISP.44.traces.png) and we set the machine type as SRM20. We sent.
-<br/>- To cut the board we usually need 1/32th n-mill, we changed the drill tool to the 1/32" on the Mondela, and selected the endmill settings as 1/32", We set the z origin, loosen the set screw and pushed the bit all the way onto the copper. Tighten the screw.
-<br/>- We clicked on the “load button” and we selected my file (miky.ISP.44.interior.png)  and we set the machine type as SRM20. We sent</p>
-            <br/>
+<br>- Turn on the machine for the heating, at least for 20 minutes
+<br>- Set the 1/64"  tip in the machine, the X /Y axes as  0.0 and then the Z.
+<br>- When the machine is ready, open the Fab Modules on a browser and select the endmill settings as 1/64". Click on the “load" button and select the traces png file and set the machine type as SRM20. Hit sent.
+<br>- In order to cut the board a 1/32th n-mill as needed, change the drill tool to the 1/32" on the Modela, and select the endmill settings as 1/32", set the z origin, loosen the set screw and push the bit all the way onto the copper. Tighten the screw.
+<br>- Click on the “load button” and select the file (miky.ISP.44.interior.png) and set the machine type as SRM20. Start.</p>
+            <br>
 <h4 class="section-subheading text-muted">2° Steps: Soldering the board </h4> 
             <p><img class="featured-image  img-responsive pull-center" src="img/week4/soldering.jpg"></p>
-            <br/>
+            <br>
 <p class="lead">Components:
-<br/>. 1 ATTiny 44 microcontroller
-<br/>. 1 Capacitor 1uF
-<br/>. 2 Capacitor 10 pF 
-<br/>. 2 Resistor 100 ohm
-<br/>. 1 Resistor 499 ohm
-<br/>. 1 Resistor 1K ohm
-<br/>. 1 Resistor 10K
-<br/>. one 6 pin header
-<br/>. 1 USB connector
-<br/>. 2 jumpers - 0 ohm resistors
-<br/>. 1 Cystal 20MHz
-<br/>. two Zener Diode 3.3 V
-<br/>. one usb mini cable
-<br/>. one ribbon cable
-<br/>. two 6 pin connectors</p>
+<br>. 1 ATTiny 44 microcontroller
+<br>. 1 Capacitor 1uF
+<br>. 2 Capacitor 10 pF 
+<br>. 2 Resistor 100 ohm
+<br>. 1 Resistor 499 ohm
+<br>. 1 Resistor 1K ohm
+<br>. 1 Resistor 10K
+<br>. one 6 pin header
+<br>. 1 USB connector
+<br>. 2 jumpers - 0 ohm resistors
+<br>. 1 Cystal 20MHz
+<br>. two Zener Diode 3.3 V
+<br>. one usb mini cable
+<br>. one ribbon cable
+<br>. two 6 pin connectors</p>
 
-	<p class="lead">- We downloaded the FabISP labeled board diagram, so we could see where to place the components on the board, and we we soldered the components to the board using a soldering iron and solder.</p>
+	<p class="lead">- We downloaded the FabISP labeled board diagram, in order to understand where to place the components on the board, and so soldered the components on the board.</p>
 	
-	<p class="lead">-The first day of soldering I had problems, because my solder did not work. On the second attempt I managed to finish the PCB.</p>
+	<p class="lead">-The first day, I had some problems, because my welding torch did not work. On the second attempt I managed to finish the PCB.</p>
     
     <p class="lead">-  We checked the connections with the multimeter to make sure that power and ground were not connected and there was not a short on the power line.
-I did the "smoke test". Plug the FabISP into your computer via the mini USB cable. Install the necessary software for AVR programming, the ATtiny44</p>
-            <br/>
+I did the "smoke test". We plugged the FabISP into my computer via the mini USB cable. Then we installed the necessary software for AVR programming, the ATTiny44</p>
+            <br>
 <h4 class="section-subheading text-muted">3° Steps: Programming </h4> 
 
-<p class="lead">Programming I could run with my computer (MAC), but I had to use the computer of one of the students, with linux I did.</p>
+<p class="lead">Once verified the operating of my board, I tried and tried to program my board with my Mac, but I failed. I asked Ermanno, a guy of FabLab Frosinone, to use his computer, and I did it, using Linux.</p>
 
     <p><img class="featured-image  img-responsive pull-center" src="img/week4/programming.jpg"></p>
-            <br/>
+            <br>
 <iframe width="1140" height="640" src="https://www.youtube.com/embed/LoJ-vP4X518" frameborder="0" allowfullscreen></iframe>
 			<br></br>   
 <h4 class="section-subheading text-muted">TIPS:</h4> 
-             <p class="lead">I advise to settle first the USB and microcontroller and then the rest. Soldered these two elements, you can say that you job is finished.
-<br/>Carefully check the direction of the microcontroller, and the polarity of the diodes.
-Copper is an excellent tool to remove tin in excess.</p>
+             <p class="lead">Solder first the USB and microcontroller and then the rest.  Once soldered these two elements, you can say that you job is done. 
+<br/>Carefully check the microcontroller direction, and the polarity of the diodes. Copper is an excellent tool to remove tin in excess. </p>
           </div>
-                 <br/>
+                 <br>
 <h4 class="section-subheading text-muted">Download the files:</h4> 
             <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week4/max.ISP.44.interior.png">max.ISP.44.interior.png</a>   
-             <br/>
-            <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week4/max.ISP.44.traces.png">max.ISP.44.traces.png</a>   
+             <br>
+            <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week4/max.ISP.44.traces.png">max.ISP.44.traces.png</a>  
+            <br> 
+<a href="http://academy.cba.mit.edu/classes/electronics_production/index.html"> hello.ISP.44.cad board components traces interior </a>
       </p>
            
         <hr class="featured-divider">
         <div class="featured" id="about">
-             <!--
-             <img class="featured-image  img-responsive pull-right" src="img/week2/concept.png">
-             -->
-        				<!--
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/cbpAnimatedHeader.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/agency.js"></script>
 
 </body>
 
