@@ -60,7 +60,8 @@
             <h3 class="heading">Design a 3D mold, machine it, and cast parts from it.</h3> <br>
             <p class="lead">CLASS WEB PAGE: <br><a href="http://academy.cba.mit.edu/classes/molding_casting/index.html" target="_blank">http://academy.cba.mit.edu/classes/molding_casting/index.html </a><br>
           <p class="lead">DOWNLOAD FILES:<br>
-            <a href="https://github.com/elenapapetti/FabAcademy2015files/tree/master/Week12">model</a>
+            <a href="https://github.com/elenapapetti/FabAcademy2015files/blob/master/Week9/3D%20puzzle%20mold.3dm">3D MOLD</a><br>
+                        <a href="https://github.com/elenapapetti/FabAcademy2015files/blob/master/Week9/3D%20puzzle%20mold.stl"> MOLD MACHINED</a>
           </p>
           <p class="lead">This week the exercise was to design a 3D model that we could replicate by making its mold. Taking ispiration from a wooden brain teaser, my idea was to realize a puzzle 3d consisting of three parts that fit together.
              </p> <br> <br/> 
@@ -82,15 +83,11 @@
                             <h4>All joint components makes a pyramid </h4>
                         </div>
                     </div>
+                    <h2 class="featurette-heading">First Phase: Object Modeling.</h2>
+                    <p class="lead">I started working with the design of 3D Model in Rhino. I drew three pieces of a puzzle 3d which are based on a module of 1,5 mm. In the middle the connecting part is the same for all three. To join them is sufficient which are rotated between them.</p> 
+                </div>
 
-<h2 class="featurette-heading">First Phase: Modeling.
-            </h2>
-             <p class="lead">    </p> 
-<p class="lead">I started working with the design of 3D Model in Rhino. I drew three pieces of a puzzle 3d which are based on a module of 1,5 mm. In the middle the connecting part is the same for all three. To join them is sufficient which are rotated between them.   <p> </p> 
-               </div>
-                <div class="row">
-
-    <div class="col-sm-6 portfolio-item">
+                <div class="col-sm-6 portfolio-item">
             <img src="img/WEEK9/xyz.jpg" class="img-responsive" alt="">
                         </a>
                         <div class="portfolio-caption">
@@ -104,44 +101,19 @@
                             <h4>The three pieces joined together in the middle part of them.</h4>
                         </div>
                     </div>
+                   
+                   <h3 class="featurette-heading">Second Phase: Object &amp; Mold  Modeling.</h3>
+               
+  <p class="lead">Once designed 3D object, we have to draw the hard mold. This operation requires some precautions which are really important to mill the wax block.</p><br> 
 
-                    <h2 class="featurette-heading">Second Phase: .
-            </h2>
-             <p class="lead">    </p> 
-  <p class="lead">Once designed 3D object, we have to draw the hard mold. This operation requires some precautions which are really important to mill the wax block.<br> <br/> 
+            <p class="lead">First thing to do: the “Hard Mold” For this process we need to use the roland modela machine and for that is import to consideres the types (dimensions) of mill we are going to use:<br>  
+               
+                    -1/8 end mill = 3.175 mm.<br> 
+                   -1/16 end mill = 1.5875 mm.<br> 
+                   -1/32 end mill = 0.79375 mm.<br> 
+                  -1/64 end mill = 0.396875 mm.
+                     </p> 
 
-            <p class="lead">First thing to do: the “Hard Mold” For this process we need to use the roland modela machine and for that is import to consideres the types (dimensions) of mill we are going to use: 
-                <ol style=" padding-left: 1.8em;"> <!-- consigliavano 1.3 oppure 1.8em -->
-                    <li class="lead">1/8 end mill = 3.175 mm. </li>
-                    <li class="lead">1/16 end mill = 1.5875 mm. </li>
-                    <li class="lead">1/32 end mill = 0.79375 mm. </li>
-                    <li class="lead">1/64 end mill = 0.396875 mm.</li>
-                </ol>   </p> 
-<p class="lead">Folowwing those guides is time to make the 3D model for the Counter Mold, in my case im want to use Rhino. When the 3d model is done is time to export it as a STL (mesh) and after that is time to open the file into Fab Modules.<br> <br/> 
-Fab Modules: 
- <ol style=" padding-left: 1.8em;"> <!-- consigliavano 1.3 oppure 1.8em -->
-                    <li class="lead">Open Fab Modules on Terminal</li>
-                    <li class="lead">Choose Modela .stl </li>
-                    <li class="lead">Select 3D stl file</li>
-                    <li class="lead">Select Molding step: Roughing (1/8)</li>
-                    <li class="lead">Click Make Path</li>
-                    <li class="lead">Set 0,0 point at the top-bottom-left corner</li>
-                    <li class="lead">Click on make rml</li>
-                    <li class="lead">Send the job to Modela Machine </li>
-                </ol>    
-We need to repeat the process twice, for the roughing part we will use the  1/32 mill and for the finishing the 1/64 end mill tool. Something important.
-</p>
-</div>
-
-                <div class="row">
-
-    <div class="col-sm-6 portfolio-item">
-            <img src="img/WEEK9/schema2.jpg" class="img-responsive" alt="">
-                        </a>
-                        <div class="portfolio-caption">
-                            <h4>The three shifted pieces on the x,y,z direction </h4>
-                        </div>
-                    </div>
                     <div class="col-sm-6 portfolio-item">
                             <img src="img/WEEK9/model-wax.jpg" class="img-responsive" alt="">
                         <!--/a -->
@@ -149,59 +121,237 @@ We need to repeat the process twice, for the roughing part we will use the  1/32
                             <h4>The three pieces joined together in the middle part of them.</h4>
                         </div>
                     </div>
-                    <br> <br/>
-                </p>
+                       <div class="col-sm-6 portfolio-item">
+                            <img src="img/WEEK9/schema2.jpg" class="img-responsive" alt="">
+                        <!--/a -->
+                        <div class="portfolio-caption">
+                            <h4>The three shifted pieces on the x,y,z direction.</h4>
+                        </div>
+                    </div>
+                    <p class="lead">Following those guides is time to make the 3D model for the Counter Mold, in my case I  used Rhinoceros. When the 3d model was done I exported it as a STL (mesh) and after that I opened the file into  I opened the .stl file into Modela player 4.</p>
 
-					</div>
-                <div class="row">
+                    <h3 class="featurette-heading">Fab Modules:</h3>
+                     <!-- consigliavano 1.3 oppure 1.8em -->
+                     <p class="lead">-Open Fab Modules on Terminal<br>
+                    -Choose Modela .stl<br>
+                    -Select 3D stl file<br>
+                    -Select Molding step: Roughing (1/8)<br>
+                    -Click Make Path<br>
+                    -Set 0,0 point at the top-bottom-left corner<br>
+                    -Click on make rml<br>
+                    -Send the job to Modela Machine</p>
+                
+                <h3 class="featurette-heading">TOOLS:</h3>
+               <p class="lead"> -Roughing Tool Type: Ball Tip 3 mm.<br>
+                -Finishing Tool Type: Flat Tip 1mm.</p>
+               
+               <h3 class="featurette-heading">SETTINGS:</h3>
+               <p class="lead">-XY speed: 30 (mm/sec)<br>
+                -Z speed:  30 (mm/sec)<br>
+                -Speedle: 7000 (rpm) </p>
+                    <p class="lead">One of my collegue who used the machine for first took a very long time to mill the mold so I decided to mill a smaller part of the wax.  </p>
 
+
+                    <div class="col-sm-6 portfolio-item">
+                            <img src="img/WEEK9/cutting-area.jpg" class="img-responsive" alt="">
+                        <!--/a -->
+                        <div class="portfolio-caption">
+                            <h4>define the milling area.</h4>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 portfolio-item">
+                            <img src="img/WEEK9/tool-1mm.jpg" class="img-responsive" alt="">
+                        <!--/a -->
+                        <div class="portfolio-caption">
+                            <h4>tool 1 mm.</h4>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 portfolio-item">
+                            <img src="img/WEEK9/tool-3mm.jpg" class="img-responsive" alt="">
+                        <!--/a -->
+                        <div class="portfolio-caption">
+                            <h4>tool 3 mm.</h4>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 portfolio-item">
+                            <img src="img/WEEK9/cutting-process.jpg" class="img-responsive" alt="">
+                        <!--/a -->
+                        <div class="portfolio-caption">
+                            <h4>set up the milling process.</h4>
+                        </div>
+                    </div>
+
+     <div class="col-sm-6 portfolio-item">
+                            <img src="img/WEEK9/punta-tonda.jpg" class="img-responsive" alt="">
+                        <!--/a -->
+                        <div class="portfolio-caption">
+                            <h4>Starting with a ball tip.</h4>
+                        </div>
+                    </div>
     <div class="col-sm-6 portfolio-item">
             <img src="img/WEEK9/1.jpg" class="img-responsive" alt="">
-                        </a>
+
                         <div class="portfolio-caption">
                             <h4>Roughing Process  </h4>
+                        </div>
+                    </div>
+                     <div class="col-sm-6 portfolio-item">
+                            <img src="img/WEEK9/after-roughing.jpg" class="img-responsive" alt="">
+                        <!--/a -->
+                        <div class="portfolio-caption">
+                            <h4>The mold after the Roughing.</h4>
                         </div>
                     </div>
                     <div class="col-sm-6 portfolio-item">
                             <img src="img/WEEK9/2.jpg" class="img-responsive" alt="">
                         <!--/a -->
                         <div class="portfolio-caption">
-                            <h4>Change tip for Finishing process.</h4>
+                            <h4>Change tip with a flat one.</h4>
                         </div>
                     </div>
-                    <br> <br/>
-                </p>
-
-                <div class="row">
+                       
+                    <div class="col-sm-6 portfolio-item">
+                            <img src="img/WEEK9/finishing.jpg" class="img-responsive" alt="">
+                        <!--/a -->
+                        <div class="portfolio-caption">
+                            <h4>Finishing process.</h4>
+                        </div>
+                    </div>
 
     <div class="col-sm-6 portfolio-item">
-            <img src="img/WEEK9/3.jpg" class="img-responsive" alt="">
-                        </a>
+            <img src="img/WEEK9/milled-mold.jpg" class="img-responsive" alt="">
                         <div class="portfolio-caption">
-                            <h4>hard mold and soft mold</h4>
+                            <h4>The milled mold</h4>
+                        </div>
+                    </div>
+                    <h3 class="featurette-heading">Third Phase: Soft Mold.</h3>
+                  <p class="lead">Once the counter mold is ready the next step is the preparation of the silicon mixture for the soft mold. <br>The procedure is quite long:<br>
+               - Preparation of all material that I used to make the soft mold, also safety gloves and glasses;<br>
+               - Applying a Release Agent and let it dry for 30 minutes;<br>
+               - With a gram scale, dispense required amounts of parts A and B (ratio 10:1) and mix for 3 minutes.<br>
+               - After mixing parts A and B, vacuum degassing is recommended to eliminate any entrapped air. I tried to degass the soft mold slamming it against the desk for 5/10 minutes;<br>
+             - Allow rubber to cure as prescribed at room temperature (73°F/23°C) before demolding for 24 hours. Do not cure rubber where temperature is less than 65°F/18°C;<br>
+               - Then expose the rubber to 176°F/80°C for 2 hours and 212°F/100°C for one hour. Allow mold to cool to room temperature before using;<br>
+               - Wash it and it's ready to use. </p>
+            
+            <div class="col-sm-6 portfolio-item">
+            <img src="img/WEEK9/product.jpg" class="img-responsive" alt="">
+
+                        <div class="portfolio-caption">
+                            <h4>Agent Realese &amp; Smooth Part A + B  </h4>
+                        </div>
+                    </div>
+                     <div class="col-sm-6 portfolio-item">
+                            <img src="img/WEEK9/distaccante.jpg" class="img-responsive" alt="">
+                        <!--/a -->
+                        <div class="portfolio-caption">
+                            <h4>Applying Agent Realese</h4>
                         </div>
                     </div>
                     <div class="col-sm-6 portfolio-item">
-                            <img src="img/WEEK9/4.jpg" class="img-responsive" alt="">
+                            <img src="img/WEEK9/mixture.jpg" class="img-responsive" alt="">
                         <!--/a -->
                         <div class="portfolio-caption">
-                            <h4>Chocolate in the soft mold</h4>
+                            <h4>Mixturing A + B</h4>
                         </div>
                     </div>
-                    <br> <br/>
-                </p>
+                       
+                    <div class="col-sm-6 portfolio-item">
+                            <img src="img/WEEK9/colatura.jpg" class="img-responsive" alt="">
+                        <!--/a -->
+                        <div class="portfolio-caption">
+                            <h4>Mixture in the Hard Mold</h4>
+                        </div>
+                    </div>
+                       <div class="col-sm-6 portfolio-item">
+                            <img src="img/WEEK9/24-h.jpg" class="img-responsive" alt="">
+                        <!--/a -->
+                        <div class="portfolio-caption">
+                            <h4>Waiting 24 H</h4>
+                        </div>
+                    </div>
+                       
+                    <div class="col-sm-6 portfolio-item">
+                            <img src="img/WEEK9/3.jpg" class="img-responsive" alt="">
+                        <!--/a -->
+                        <div class="portfolio-caption">
+                            <h4>Soft Mold is ready</h4>
+                        </div>
+                    </div>
 
-</div>
-<p class="lead">A SHORT VIDEO OF MILLING PROCESS:</p>
-    <iframe src="https://player.vimeo.com/video/124327427" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/124327427">20150328 170204</a> from <a href="https://vimeo.com/user37965595">Elena Papetti</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
-             </p><br> <br/>
-
-  <p class="lead">MACHINE REFERENCE:
-           
-http://www.rolanddga.com/products/3d/srm20/<br> <br/>
-
-</p>
-					</div>
+                    <h3 class="featurette-heading">Fourth Phase: Making Chocolates.</h3>
+                  <p class="lead">Being the soft mold for food use some of us students of Frosinone Fab Lab decided to do the casting with chocolate. We ask to an important local pastry and chocolate factory “Dolcemascolo” to cooperate with us.So they invited us to their laboratories where an expert pastry making chocolate for us.<br><p>
+                              <div class="col-sm-6 portfolio-item">
+                            <img src="img/WEEK9/chocolates2.jpg" class="img-responsive" alt="">
+          
+                        <div class="portfolio-caption">
+                            <h4></h4>
+                        </div>
+                    </div>
+                       
+                    <div class="col-sm-6 portfolio-item">
+                            <img src="img/WEEK9/look.jpg" class="img-responsive" alt="">
+                
+                        <div class="portfolio-caption">
+                            <h4></h4>
+                        </div>
+                    </div>
+                              <div class="col-sm-6 portfolio-item">
+                            <img src="img/WEEK9/pastry.jpg" class="img-responsive" alt="">
+                  
+                        <div class="portfolio-caption">
+                            <h4></h4>
+                        </div>
+                    </div>
+                       
+                    <div class="col-sm-6 portfolio-item">
+                            <img src="img/WEEK9/chocolates.jpg" class="img-responsive" alt="">
+                        
+                        <div class="portfolio-caption">
+                            <h4></h4>
+                        </div>
+                    </div>
+            
+             <h3 class="featurette-heading">Fifth Phase: Making 3D Puzzle.</h3>
+                  <p class="lead">After the chocolate, I want to try my soft mold with a resin to obtain my pieces of a 3D Puzzle. To do it I used the resin available in the Fab Lab. For my mold it's sufficient a minimum quantity of product!
+                   It must drain quickly the resin because it is fast settings. The waiting time is about 15/20 minutes. <br><p>
+                              <div class="col-sm-6 portfolio-item">
+                            <img src="img/WEEK9/resina1.jpg" class="img-responsive" alt="">
+          
+                        <div class="portfolio-caption">
+                            <h4>All the necessary</h4>
+                        </div>
+                    </div>
+                       
+                    <div class="col-sm-6 portfolio-item">
+                            <img src="img/WEEK9/resina.jpg" class="img-responsive" alt="">
+                
+                        <div class="portfolio-caption">
+                            <h4>Waiting for 15 minutes</h4>
+                        </div>
+                    </div>
+                              <div class="col-sm-6 portfolio-item">
+                            <img src="img/WEEK9/resina2.jpg" class="img-responsive" alt="">
+                  
+                        <div class="portfolio-caption">
+                            <h4>The 3 elements to join</h4>
+                        </div>
+                    </div>
+                       
+                    <div class="col-sm-6 portfolio-item">
+                            <img src="img/WEEK9/join.jpg" class="img-responsive" alt="">
+                        
+                        <div class="portfolio-caption">
+                            <h4>done!!</h4>
+                        </div>
+                    </div>
+            
+             <br> <br/>
+             <p class="lead">REFERENCES: <br>
+             <a href="http://www.rolanddga.com/products/3d/srm20/">ROLAND MACHINE</a><br>
+             <a href="http://www.rolanddga.com/products/3d/srm20/">SMOOTH-SIL 940</a>
+          </p>
+				
 					<footer>
 						<div class="container">
 							<div class="row">
