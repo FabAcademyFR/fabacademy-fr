@@ -117,12 +117,12 @@
                           <p><img src="images/gui/in.jpg" width="250" height="333"></p>
                           <p>and the output board that has a: </p>
                           <ul class="default">
-                            <li>TSOP1730 IR receiver</li>
-                            <li>IR LED</li>
+                            <li><a href="http://eu.mouser.com/Search/ProductDetail.aspx?R=TSOP32438SS1Vvirtualkey61370000virtualkey782-TSOP32438SS1V">TSOP32438 IR receiver</a></li>
+                            <li><a href="http://www.adafruit.com/datasheets/IR333_A_datasheet.pdf">IR LED</a></li>
                         </ul>
                             
                             <p><img src="images/gui/out.JPG" width="250" height="188">
-                          <p><img src="images/gui/inout.JPG" width="250" height="188">                                                                                                                
+                        <p><img src="images/gui/inout.JPG" width="250" height="188">                                                                                                                
                         <p>The system should allow the used to set a simple rule: if the temperature gety major or minor a certain value that turn on or off the air conditioning.
                             So the user should set:
                             <ul class="default">
@@ -146,18 +146,9 @@
                             <li>I have to program Processing to let the user sets some parameters that have to be examinated to send a proper command to the Fabkit</li>
                             <li>Make the Fabkit send a command to the air conditioner. To do this I have a subtask related to find the right IR code for the air conditioner</li>
                             </ul>
+                            <p>You can find an explanation of IR communication on the <a href="10-input.html" class="image fit">Output assignment page </a></p>
                             </p>
-                            <h4>A note about IR communication</h4>
-                            <p>I found very useful the documentation of this <a href="http://www.righto.com/2009/08/multi-protocol-infrared-remote-library.html">IR remote library </a>for Arduino: 
-                        <blockquote style="font-style:italic">An IR remote works by turning the LED on and off in a particular pattern. However, to prevent inteference from IR sources such as sunlight or lights, the LED is not turned on steadily, but is turned on and off at a modulation frequency (typically 36, 38, or 40KHz). The time when a modulated signal is being sent will be called a mark, and when the LED is off will be called a space.
-Each key on the remote has a particular code (typically 12 to 32 bits) associated with it, and broadcasts this code when the key is pressed. If the key is held down, the remote usually repeatedly broadcasts the key code. For an NEC remote, a special repeat code is sent as the key is held down, rather than repeatedly sending the code. For Philips RC5 or RC6 remotes, a bit in the code is toggled each time a key is pressed; the receiver uses this toggle bit to determine when a key is pressed down a second time.</blockquote></p>
-<p>I saw that is possible to decode (and copy for re -sending) the code with the IRremote library but also using an oscilloscope.
-
-                         
-
-
-I did this with the library with thr IR Record example an I obtained the following code (testing with my tv and my air conditioner):</p>
-<p><img src="images/gui/irdump.png" width="1050"></p><p> Pressing the button on my board made the sketch send back the command. I noticed that with my tv worked while eith the conditioner doesn't. So I made other researches and I found that Mitsubishi give several issues with this library and I found this useful <a href="https://github.com/r45635/HVAC-IR-Control">project</a> with a modified version of the library to work well with Mitsubishi.  </p>
+                            <h4>&nbsp;</h4>
 
 <h4>Sending the sensor values to Processing</h4>
 <p>To send the sensor value to Processing from the Fabkit I used serial communication. As I want to send two values I separated the values with a / so it's easy to parse it from Processing. Even if the light is not used now i want to send it for future implementation. I used the Arduino IDE to make the code:</p>
