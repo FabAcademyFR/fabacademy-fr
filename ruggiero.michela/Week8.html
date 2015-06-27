@@ -92,117 +92,121 @@
            
             <div><h2 class="featured-heading">Furnishing</h2></div>
             
-            <p class="lead">Assignment: Make something big.
-      <br/>-  For this assignment, I decided to design a chair for my new home.
-      <br/>
-      </p>
-         <p class="lead">DESIGN
-		<br/>- I did the design in Rhino. I kept the joints simple. Press fit parts require filleted slots on inside corners. We did a test to see how the joints work and the tolerance of the machine.  </p>
- </p>
-	<p class="lead"> MATERIALS:
-		<br/>- Obs wood, 2.10m x 1.10m and thickness 18 mm. 
-		</p>
-	<p class="lead"> TOOLS:
+            <p class="lead">Assignment: Make something big.</p>
+                        <a href="http://academy.cba.mit.edu/classes/computer_machining/index.html"> computer_machining/index.html</a>  
+                        <br> </br>
+       <p class="lead">For this assignment, I decided to make a chair for my new home.      </p>
+      <br>
+
+<h4 class="section-subheading text-muted">DESIGN</h4> 
+		<p class="lead">- I design my chair with Rhino. I drew very easy joints. Press fit parts require filleted slots on inside corners. We did a test to see if the joints work and the tolerance of the machine.</p>
+ <br>
+	<h4 class="section-subheading text-muted"> MATERIALS:</h4>
+		<p class="lead">- Obs wood, 2.10m x 1.10m and thickness 18 mm. 
+<br></br>
+
+<h4 class="section-subheading text-muted">Machine features:</h4> 
+<p class="lead"> <a href="http://www.macchinecnc.com/"> Macchine CNC Enterprise</a>  
+<br> Work area (XxY): 2100 x 1100 mm; 
+<br> Materials: wood, plexiglass,  acrylic, foams, wax, clay, polystyrene;</p>
+</br>
+	<h4 class="section-subheading text-muted"> TOOLS:</h4>
 	<img class="featured-image  img-responsive pull-center" src="img/week8/tools.jpg">
-		<br/>-Milling machine "Enterprise"
-	<br/>-End mill 6mm
-	<br/>-Mask
-	<br/>-Screws
-	<br/>-Glasses
-	<br/>-Screwdriver
-	<br/>-Gloves
-	<br/>-Headphones
-	<br/>-Vacuum cleaner
-	<br/>-Motion sensors
-	
-<p class="lead"> MODELING:
+		<br>
+		<p class="lead">-Milling machine "Enterprise"
+	<br>-End mill 6mm
+	<br>-Mask
+	<br>-Screws
+	<br>-Glasses
+	<br>-Screwdriver
+	<br>-Gloves
+	<br>-Headphones
+	<br>-Vacuum cleaner
+	<br>-Motion sensors</p>
+	<br>
+<h4 class="section-subheading text-muted">MODELING:</h4> 
 	<img class="featured-image  img-responsive pull-center" src="img/week8/modeling.jpg">
-	<br/>I modeled my chair with Rhinoceros.
-	<br/>Position of the points in the free areas of the drawing. Serve to block the cutting table
-	<br/>Then I exported the selection in dxf.
-	
-<p class="lead"> CUTTING:
-	<br/>I open the program Art Cam 2013
+	<br>
+	<p class="lead">I modeled my chair with Rhinoceros.
+	<br>I drew some points in the work area, outside of the areas involved in the main drawing. In this way it was possible to fix the table in the machine on the  sacrificial worktop. In this way the board has been stationary while being milled.
+	<br>Then I exported the selection in dxf.</p>
+		<img class="featured-image  img-responsive pull-center" src="img/week8/LOCKING-POINTS.jpg">
+	<br>
+<h4 class="section-subheading text-muted">SETTING-CUTTING:</h4> 
+	<p class="lead">I started Art Cam 2013 software
 	<img class="featured-image  img-responsive pull-center" src="img/week8/artcam.jpg">
-	<br/>Amount the dxf file, and the program does not recognize the layers.
-	<br/>With Art Cam tell the machine which tool I'm going to use, the type of material that I have to cut and features.
-	<br/>With Art Cam I created the file machine control.
-	<br/>The first thing to do is to select the points to be drilled, to use them to block the cutting table.
-	<br/>Do the tool type (wood-6mm)
-	<br/>I tell the program to drill and how (4mm)
-	<br/>I give the file a name (drill)
-	<br/>Calculate now
-<p class="lead"> DRILLING:
-	<br/>I open the program Iso.Master Interface.
+	<br>I imported the DXF file in ArtCam, and the software recognized the layers;
+	<br>I told Art Cam which tool I was going to use, the material I had to cut and the features of the machine.;
+	<br>After that, i selected the points that had to be drilled, in order to create the holes in which to place the screws to secure the board;
+	<br>I chose the tool to use (wood-6mm); 
+	<br>I told the software where and how to drill (4mm) , feed rate: 76 mm/s, plunge: 50 mm/s, spindle: 15000 rpm;
+	<br>I named the file(drill);
+	<br>Calculate now</p>
+	<br>
+<h4 class="section-subheading text-muted">DRILLING:</h4> 
+	<p class="lead">I started Iso.Master Interface software.
 	<img class="featured-image  img-responsive pull-center" src="img/week8/drill.jpg">
-	<br/>-I load my file "drill.ISO"
-	<br/>-I place the sacrificial level on the milling machine
-	<br/>-I position my work plan
-	<br/>-Calculating the X-Y-Z
-	<br/>-Checking the computer work path preview
-	<br/>-Start drilling
+	
+	<br>-I loaded my file "drill.ISO";
+	<br>-I placed the sacrificial worktop in the milling machine to preserve the machine and the tool;
+	<br>-I positioned my work plan;
+	<br>-I calculated the X-Y-Z;
+	<br>-I checked the work path preview;
+	<br>-The machine started to drill.</p>
 	<img class="featured-image  img-responsive pull-center" src="img/week8/drill1.jpg">
-	<br/>-I fixed the screws with the drill to lock the cutting plane.
-	<br/>
-<p class="lead"> MILLING:
-	<br/>I repeat the same process as I did before, but this time is to cut and not to drill, so the values will change.
+	<p class="lead">I used a  screwdriver in order to fix the screws and to lock the board.</p>
+	<br>
+<h4 class="section-subheading text-muted">MILLING:</h4> 
+	<p class="lead">I repeated the same process, but in this case in order to cut and not to drill, so the values changed.</p>
 	<img class="featured-image  img-responsive pull-center" src="img/week8/drill2.jpg">
-	<p class="lead">I open the program Art Cam 2013
-	<br/>-I select the internal lines to be cut
-	<br/>-Inside toolpath
-	<br/>-Start Depth 0
-	<br/>-Finish Depth 19mm
-	<br/>-Tool 6mm wood
-	<br/>-bridge
-	<br/>-Name (cuttinginside)
-	<br/>-Calculate now
-	<br/>-Save
-<br/>
-<br/>-I do the same thing to the external lines, but I select Outside toolpath.
-<br/>I open the program Iso.Master Interface.
-<br/>-I load my file "cuttinginside.ISO and cuttingoutside.ISO"
-<br/>-I reset the X-Y-Z
-<br/>-And start again
-
-<p class="lead"> CLEANING:
+	<br>
+	<p class="lead">-I started Art Cam 2013 software;
+	<br>-I selected the internal lines to be cut;
+	<br>-Inside toolpath
+	<br>-Start Depth 0
+	<br>-Finish Depth 19mm
+	<br>-Tool 6mm wood
+	<br>-Bridges
+	<br>-Name (cuttinginside)
+	<br>-Calculate now
+	<br>-Save.
+	</p>
+<p class="lead">-I did the same for the external lines, but I selected Outside toolpath. 
+<br>-I started Iso.Master Interface software;
+<br>-I loaded my file "cuttinginside.ISO and cuttingoutside.ISO";
+<br>-X-Y-Z remained the same;
+<br>-I started again.</p>
+<br>
+<h4 class="section-subheading text-muted">CLEANING:</h4> 
 <img class="featured-image  img-responsive pull-center" src="img/week8/cleaning.jpg">
-
-<p class="lead"> GRIND:
+<br>
+<h4 class="section-subheading text-muted">GRIND:</h4>
 <img class="featured-image  img-responsive pull-center" src="img/week8/grind.jpg">
-
-<p class="lead"> ASSEMBLY:
+<br>
+<h4 class="section-subheading text-muted">ASSEMBLY:</h4> 
 <img class="featured-image  img-responsive pull-center" src="img/week8/assembly.jpg">
-
-<p class="lead">The masterpiece, with some damage, is over.
+<br>
 <img class="featured-image  img-responsive pull-center" src="img/week8/masterpiece.jpg">
 
-<p class="lead"> All this work I described, it may seem easy and mechanic, but the truth is that everything always happens.
-<br/>For example .: for our safety near the CNC were put motion sensors, so we can not pass the yellow line at work milling.
-<br/>After much difficulty I was able to mill my chair, and half the work my colleague has sneezed and work stopped abruptly halfway there.
-<br/>I had to start all over, from the axis positioning.
-	
-             <!--
-             <img class="featured-image  img-responsive pull-right" src="img/week2/concept.png">
-             -->
-        				<!--
+<p class="lead"> The work I have described may seem simple and repetitive. Actually, at any moment something can happen.
+<br>An example: to prevent accidents, near the CNC machine were placed motion sensors, for our safety, we can not pass the yellow line during the milling. 
+<br>After much difficulty, I was able to mill my chair, but in the middle of the work, a mate has passed the yellow line and the machine turned off. 
+<br>I had to start all over again, from the axis positioning.</p>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/cbpAnimatedHeader.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/agency.js"></script>
+<p class="lead"> I was the first among my mates to perform this exercise. So, with my chair, I  tested the problems of a new machine (CNC), that FabLab Frosinone had never used before. 
+<br>Before milling, we did some tests, but apparently they were not sufficient. Even with a apparently correct G-code, with precise joints, the offset was either too loose or too tight.
+<br>I used pieces of wood as shims, and the chair has not swung anymore.</p>
+            </br>
+<h4 class="section-subheading text-muted">Download:</h4> 
+            <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week8/sedia.3dm"> chair.3dm </a>
+    </br>
+   <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week8/sedia.dxf"> chair.dxf</a>
+    </br>
+<a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week8/sedia%20accessori.dxf"> accessories chair.dxf</a>
+    </br>
+</p>  
+        <hr class="featured-divider">
+        <div class="featured" id="about">
 
 </body>
 

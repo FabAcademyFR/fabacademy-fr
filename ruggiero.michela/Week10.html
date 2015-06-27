@@ -90,89 +90,153 @@
 	<!-- First Featured -->
         <div class="featured" id="about">
            
-            <div><h2 class="featured-heading">INPUT DEVICES - lIGHT</h2></div>
+     <div><h2 class="featured-heading">INPUT DEVICES - lIGHT (PHOTORESISTOR)</h2></div>
             
-            <p class="lead">Measure something: add a sensor to a microcontroller board that you've designed and read it.
-      <br/>
-      </p>
-         <p class="lead">For this assignment, I tried to design a card that could be useful for my final project.</p>
- </p>
- <p class="lead"> FABKIT:
+            <p class="lead">Assignment: Measure something - add a sensor to a microcontroller board that you've designed and read it.</p>
+                                   <a href="http://academy.cba.mit.edu/classes/input_devices/index.html"> input_devices/index.html</a>  </p>
+      <br>
+         <p class="lead">For this assignment, I tried to design a shield that could be useful for my final project.</p>
+    </br>  
+<h4 class="section-subheading text-muted">Tools:</h4> 
+<a href="http://www.rolanddg.it/it/prodotti/modellatori-3d/monofab-srm-20"><h5>- Roland MonoFab SRM20 </h5></a>
+<p class="lead">Table Size (LxP): 232.2 x 156.6 mm
+   <br>Distanza del colletto (dal piano di lavoro): 232.2 x 156.6 mm</p>
+<a href="http://www.carbidedepot.com/detail.aspx?ID=180142"> - DIA 0.0156" DIA 2FL SE AlTiN 1/64(engraving) </a> 
+   <br><a href="http://www.carbidedepot.com/detail.aspx?ID=180143">- 0.0312" DIA 2FL SE AlTiN 1/32(milling)</a> 
+   <br></br> 
+   <h4 class="section-subheading text-muted">Tutorial:</h4> 
+<a href="http://academy.cba.mit.edu/content/tutorials/akf/input_device_examples_C.html"><h5>input_device_examples_C.html</h5></a> 
+ </p><br>
+    <div><h3 class="featured-heading">MIKYFABKIT: microcontroller board</h3></div>
+  	<p class="lead"> I choose to use the FABKIT to read the sensor for this assignment and move the actuator for the upcoming output device's one.</p>
 	<img class="featured-image  img-responsive pull-center" src="img/week10/fabkit.jpg">
+	<br>
 	<p class="lead"> Components: 
-	<br/>- ATmega 328P-AU
-	<br/>- 1 Resistors 10K
-	<br/>- 2 Resistors 499
-	<br/>- Yellow Led 1206 SMD
-	<br/>- Switch Button
-	<br/>- 2 Capacitors 0.1 UF
-	<br/>- 1 Capacitors 1 UF
-	<br/>- 1 Capacitors 10 UF
-	<br/>- Header 6 Pin
-	<br/>- Resonator 8MHZ
+	<br>- ATmega 328P-AU
+	<br>- 1 Resistors 10K
+	<br>- 2 Resistors 499
+	<br>- Yellow Led 1206 SMD
+	<br>- Switch Button
+	<br>- 2 Capacitors 0.1 UF
+	<br>- 1 Capacitors 1 UF
+	<br>- 1 Capacitors 10 UF
+	<br>- Header 6 Pin
+	<br>- Resonator 8MHZ
 	</p>
 	<img class="featured-image  img-responsive pull-center" src="img/week10/ATMEGA.jpg">
-	<br/>
-<p class="lead"> STEP RESPONSE AS INPUT DEVICE - Photoresistor CDS LDR 
-	<br/>As my final porject  I want to make a wall that respond to humidity, light and sound sensors. So I decided to set as input of this board a Photoresistor.  
-	<p class="lead"> Components: 
-	<br/>- Resistors 10K
-	<br/>- Header 3 Pin
-	<br/>- Photoresistor CDS – LDR GL5537-1
-
-<p class="lead"> EAGLE:
-<br/>
+	<br>
+   <div><h3 class="featured-heading">INPUT: Photoresistor CDS LDR</h3></div> 
+	<p class="lead"> As my final project is a wall that respond to humidity, light and sound I decided to experiment Photoresistors as input devices. </p> 
+  <p class="lead"> Photoresistors (also know as light-dependent resistor) are a particular kind of variable resistors capable of change their resistance proportionally to the incident light intensity</p> 
+  
+</p>
+<br>
+<h4 class="section-subheading text-muted">EAGLE:</h4>
+	<p class="lead"> Eagle, produced by Cadsoft, is one of the most simple and powerful software for the design of electrical diagrams and PCB.</p>
+	<a href="http://www.cadsoftusa.com/">EAGLE downloading</a>
+	<br></br>
 	<img class="featured-image  img-responsive pull-center" src="img/week10/EAGLE.jpg">
 	</p>
-	<br/>
-	<p class="lead"> PHOTOSHOP:
-	<br/>
+		<p class="lead"> Components: 
+	<br>- Photoresistor
+  <br>- Resistors 10K ohm
+	<br>- Header 3 Pin
+	<br>- <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week10/Photoresistor%20scheda.pdf">Photoresistor CDS – LDR GL5537-1</a> 
+	</p>
+	<br>
+<h4 class="section-subheading text-muted">PHOTOSHOP:</h4>
 	<img class="featured-image  img-responsive pull-center" src="img/week10/inputs.jpg">
 	</p>
-	<br/>
-<p class="lead"> MONOFAB SRM-20:
-	<br/>
+	<br>
+  	<h4 class="section-subheading text-muted">MILLING - MONOFAB SRM-20:</h4>
+           <h4 class="section-subheading text-muted">SETTING MACHINE:</h4> 
+<p class="lead">- Open <a href="http://fabmodules.org/">fabmodules.org</a>
+<br>- Click on Input Format;
+<br>- Choose Image(.png) and Upload Image;
+<br>- Click on Output Format and choose "Roland Mill (.rml)";
+<br>- Machine Settings;
+<br>- Machine: SRM-20; Speed: 4; Jog: 1; Xmin: 0; Ymin: 0;
+<br>- CLick on Process and choose "PCB traces(1/64)" or "PCB outline(1/32)";
+<br>- Change offset to 5 (this is a personal setting);
+<br>- Hit Calculate;
+<br>- Save.
+</p>
+
+    <p class="lead">Instructions:
+<br>- Turn on the machine for the heating, at least for 20 minutes.
+<br>- Open the Fab Modules on a browser (fabmodules.org) and on the new window selected the endmill settings as 1/64".
+<br>- Click on the “load" button and selected the file (mine was simply INPUT1.png) and then set the machine type as SRM20. Press calculate. Fabmodules generates .rml file.
+<br>- When the machine is ready, open Roland Vpanel. Load the .rml file.
+<br>- Set the X,Y,Z axes. 
+<br>- Now you can mill.
+<br>- To cut the board a 1/32th n-mill is needed, change the drill tool to the 1/32" on the Fabmodules.org, and repeat the process.
+<br>- Open again Roland Vpanel. Load the new .rml file.
+<br>- set only Z origin.
+<br>- Repeat the same operation for every file.</p>
 	<img class="featured-image  img-responsive pull-center" src="img/week10/MILLING.jpg">
 </p>
-	<p class="lead">WELDING:
-	<br/>
+<h4 class="section-subheading text-muted">SOLDERING:</h4>
 	<img class="featured-image  img-responsive pull-center" src="img/week10/WELDING.jpg">
 	</p>
-	<br/>
-<p class="lead"> PROGRAMMING:
-<br/>IDE Arduino Sketch to program the microcontroller.
+	<br>
+<h4 class="section-subheading text-muted">PROGRAMMING:</h4>
+	<p class="lead"> Arduino Sketch to program the microcontroller.
+	<br>Sketch-Photosensor
+	<br>int sensorValue = A0;
+ <br>
+<br>void setup() {
+  <br>pinMode(13,OUTPUT);
+  <br>Serial.begin(9600);
+  <br>Serial.print("sensor = " );
+  <br>//pinMode(6, INPUT);
+<br>}
+ 
+<br>void loop() {
+  <br>digitalWrite(13,HIGH);
+  <br>sensorValue = analogRead(A0);            
+ 
+  <br>Serial.print("sensor = " );
+  <br>Serial.println(sensorValue);      
+ 
+  <br>delay(1000);
+  <br>}</p>
+  
 	<img class="featured-image  img-responsive pull-center" src="img/week10/PROGRAMMING.jpg">
+	<br>
+	<p class="lead"> The programming of my board was successful, the data on the serial monitor did change accordingly with the light sensor.
 	</p>
-	<br/>
-	<p class="lead"> The programming of my card has been successful, the light sensor did change the data.
-	</p>
-	<br/>
+	<br>
 	<iframe width="1140" height="640" src="https://www.youtube.com/embed/IMjtouHPJmE" frameborder="0" allowfullscreen></iframe>
-		<br/>
+		<br>
 </p>
-	
-             <!--
-             <img class="featured-image  img-responsive pull-right" src="img/week2/concept.png">
-             -->
-        				<!--
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/cbpAnimatedHeader.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/agency.js"></script>
+            </br>
+<h4 class="section-subheading text-muted">Download the files:</h4> 
+            <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week10/fabkit02.brd"> fabkit02.brd </a>
+    </br>
+   <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week10/fabkit02.sch"> fabkit02.sch </a>
+       </br>
+<a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week10/1.png"> MIKYfabkit1.png</a>
+    </br>
+<a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week10/2.png"> MIKYfabkit2.png</a>
+    </br>
+<a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week10/3.png"> MIKYfabkit3.png</a>
+    </br>
+<a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week10/Untitled%20copia.brd"> INPUT.brd</a>
+	</br>
+            <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week10/Untitled%20copia.sch"> INPUT.sch </a>
+    </br>
+   <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week10/INPUT1.png"> INPUT1.png</a>
+    </br>
+<a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week10/INPUT2.png"> INPUT2.png</a>
+    </br>
+<a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week10/INPUT3.png"> INPUT3.png</a>
+    </br>
+<a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week10/PHOTOSENSORE/PHOTOSENSORE.ino"> sketch photosensor.ino</a>
+    </br>
+    
+      </p>  
+        <hr class="featured-divider">
+        <div class="featured" id="about">
 
 </body>
 

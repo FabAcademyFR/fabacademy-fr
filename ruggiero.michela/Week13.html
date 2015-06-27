@@ -92,81 +92,93 @@
            
             <div><h2 class="featured-heading">NETWORK CONNECTING</h2></div>
             
-            <p class="lead">Assignment: Design and build a wired &/or wireless network connecting at least two processors
-      <br/>
-<p class="lead">For this assignment I used 1 Hello.bus.45.bridge and 2 hello.bus.45.node.
+            <p class="lead">Assignment: Design and build a wired and/or wireless network connecting at least two processors</p>
+            <a href="http://academy.cba.mit.edu/classes/networking_communications/index.html"> networking_communications/index.html</a> 
+            <br></br> 
+        <p class="lead">OBIETTIVO: la missione in questo esercizio è di creare una rete tra il computer e le board, utilizzando l'esempio of serial bus, come indicato nel <a href="http://academy.cba.mit.edu/content/tutorials/akf/networking_serial_bus.html"> tutorial</a> </p>
+      <br>
+<p class="lead">For this assignment I used <a href="http://academy.cba.mit.edu/classes/networking_communications/index.html">  1 Hello.bus.45.bridge and 2 hello.bus.45.node.</a>
          </p>
  <p class="lead"> BRIDGE: Hello.bus.45.bridge
 	<img class="featured-image  img-responsive pull-center" src="img/week13/bridge.jpg">
 	         </p>
-	          <p class="lead">The bridge board has a FTDI header for the serial communication with the computer and a 4 pin header to communicate with the nodes.
-      <br/>
+	          <p class="lead">First, I downloaded the .png files for milling 2 nodes and 1 bridge. The only difference between the boards is that the bridge has 6 extra pins for connecting to the FTDI cable, while the nodes have only a 4 pin header to communicate. This is also the node that will power the rest.</p>
+      <br>
  <p class="lead"> NODES: hello.bus.45.node
 	<img class="featured-image  img-responsive pull-center" src="img/week13/node.jpg">	
 	<p class="lead"> Components: 
-	<br/>- Resistors 10K
-	<br/>- Resistors 1K
-	<br/>- Capacitor 1uf
-	<br/>- Microcontroller Attiny45
-	<br/>- 3 Leds
-	<br/>- FTDI header
-	<br/>- Header 6 Pin
-	<br/>- Header 4 Pin
+	<br>- Resistors 10K
+	<br>- Resistors 1K
+	<br>- Capacitor 1uf
+	<br>- Microcontroller Attiny45
+	<br>- 3 Leds
+	<br>- FTDI header
+	<br>- Header 6 Pin
+	<br>- Header 4 Pin
 	</p>
-	<br/>
-	<p class="lead"> MILLING - WELDING:
-	<br/>
+	<br>
+<h4 class="section-subheading text-muted">MILLING - WELDING:</h4> 
+	<p class="lead"> Tools:<a href="http://www.rolanddg.it/it/prodotti/modellatori-3d/monofab-srm-20"> Roland MonoFab SRM20 </a></p>
+<p class="lead">Table size (LxP): 232.2 x 156.6 mm 
+   <br>Distance from collet tip to table: 232.2 x 156.6 mm</p>
+<a href="http://www.carbidedepot.com/detail.aspx?ID=180142"> <h5>- DIA 0.0156" DIA 2FL SE AlTiN 1/64(engraving) </h5></a> 
+   <a href="http://www.carbidedepot.com/detail.aspx?ID=180143"><h5>- 0.0312" DIA 2FL SE AlTiN 1/32(milling)</h5></a> 
+	<br>
 	<img class="featured-image  img-responsive pull-center" src="img/week13/milling.jpg">
 	</p>
-	<br/>
-<p class="lead"> PROGRAMMING:
+	<br>
+<h4 class="section-subheading text-muted">PROGRAMMING:</h4>  </p>
+
 <img class="featured-image  img-responsive pull-center" src="img/week13/programming.jpg">
 	</p>
 	<p class="lead">Each board needs a different node id.
-      	  <p class="lead">For the bridge board I used as node id the number 0. I connected the bridge board to the FabISP and typed "sudo make -f hello.bus.45.make program-usbtiny". The LED should flash.
+      	  <p class="lead">For the bridge board I used as node id the number 0. I connected the bridge board to the FabISP and typed "sudo make -f hello.bus.45.make program-usbtiny" to compile the software and upload it to the board. The LED should flash.
       	  <p class="lead">You have to repeat the same thing for the rest of the nodes.
-	<br/>
-<p class="lead"> COMUNICATIONS:
-<img class="featured-image  img-responsive pull-center" src="img/week13/communications.jpg">
+	<br/><br>
+	
+<h4 class="section-subheading text-muted">COMUNICATIONS:</h4>  </p>
+	
+<img class="featured-image  img-responsive pull-center" src="img/week13/communications.jpg"></p>
 	<p class="lead"> NODE 1: define node_id '1' and save the file. Connect the board to the FabISP and type "sudo make -f hello.bus.45.make program-usbtiny". The LED should flash.
 	</p>
 	<p class="lead"> NODE 2: define node_id '2' and save the file. Connect the board to the FabISP and type "sudo make -f hello.bus.45.make program-usbtiny". The LED should flash.
 	</p>
 	<p class="lead"> Now connect the boards and plug the bridge board to the computer with a FTDI cable. Connect them to Tx and Rx and flash the first node board as node 1.(type in terminal: sudo make -f hello.bus.45.make program-usbtiny). You have to repeat the same thing for the second node board as node 2
 	<p class="lead"> Open the Arduino IDE and go to Tools>Serial Monitor to open the serial monitor. Into the serial port enter the number of a node and "send" it. After all the LEDs light up once, the board that corresponds to the number that is entered into the serial port, should light up again.
-	<br/>
+	<br>
 <iframe width="1140" height="640" src="https://www.youtube.com/embed/Pi2GNSwzzuQ" frameborder="0" allowfullscreen></iframe>
-		<br/>	
+		<br>	
 		<p class="lead"> The programming was a success.
 <p class="lead"> Notes:
-	<br/>- Make sure the baud rate is set to 9600;
-	<br/>- Each board needs to have a different node id;
-	<br/>- Problems with noise of nodes. Using the Arduino serial monitor the nodes name showed was unusual. I checked the solders, I changed the connectors and rolled the wires. The result was just to reduce the noise.
-<br/>	
+	<br>- Make sure the baud rate is set to 9600;
+	<br>- Each board needs to have a different node id;
+	<br>- Problems with noise of nodes. Using the Arduino serial monitor the nodes name showed was unusual. I checked the solder points, changed the connectors and rolled the wires. This way i was able to have a cleaner output.
+<br>	
 </p>
-	
-             <!--
-             <img class="featured-image  img-responsive pull-right" src="img/week2/concept.png">
-             -->
-        				<!--
+                 <br>
+<h4 class="section-subheading text-muted">Download:</h4> 
+            <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week13/Hellobus%2045/hello.bus.45.bridge.interior.png">hello.bus.45.bridge.interior.png</a>   
+             <br>
+            <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week13/Hellobus%2045/hello.bus.45.bridge.interior.rml">hello.bus.45.bridge.interior.rml</a>  
+            <br> 
+<a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week13/Hellobus%2045/hello.bus.45.bridge.png">hello.bus.45.bridge.png</a>
+      </p>
+                  <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week13/Hellobus%2045/hello.bus.45.bridge.traces.png">hello.bus.45.bridge.traces.png</a>   
+             <br>
+            <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week13/Hellobus%2045/hello.bus.45.bridge.traces.rml">hello.bus.45.bridge.traces.rml</a>  
+            <br> 
+<a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week13/Hellobus%2045/hello.bus.45.c"> hello.bus.45.c</a>
+      </p>            
+      <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week13/Hellobus%2045/hello.bus.45.node.interior.png">hello.bus.45.node.interior.png</a>   
+             <br>
+            <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week13/Hellobus%2045/hello.bus.45.node.png">hello.bus.45.node.png</a>  
+            <br> 
+<a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week13/Hellobus%2045/hello.bus.45.node.traces.png">hello.bus.45.node.traces.png</a>
+      </p>
+           
+        <hr class="featured-divider">
+        <div class="featured" id="about">
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/cbpAnimatedHeader.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/agency.js"></script>
 
 </body>
 

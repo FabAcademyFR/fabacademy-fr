@@ -92,115 +92,154 @@
            
             <div><h2 class="featured-heading">COMPOSITES MATERIALS</h2></div>
             
-            <p class="lead">Assignment: Design and make a 3D mold (~ft2), and produce a fiber composite part in it.
-      <br/>For this exercise, I decided to create a clutch.
-      <br/>
+            <p class="lead">Assignment: Design and make a 3D mold, and produce a fiber composite part in it.</p>
+                        <a href="http://academy.cba.mit.edu/classes/composites/index.html"> composites/index.html</a>  
       </p>
-         <p class="lead">DESIGN
-		<br/>- To design the 3D object I used Rhino.</p>
- </p>
- <p class="lead"> 3D MODEL:
-	<img class="featured-image  img-responsive pull-center" src="img/week12/3DMODEL.jpg">
-	<p class="lead"> Rhino: Make sure it is in the box -x + y axis with the origin point 0.0. Export the model as Stl.
-		</p>
-	<p class="lead"> MILLING:
-		<br/>- Enterprise
-	<br/>
+      <br>
 <p class="lead"> MATERIALS:
-		<br/>- Polyurethane. 
+		<br>- Polyurethane (60x80x10cm). 
+		<br>- Epoxy Resin Part A (Super Sap)
+		<br>- Hardener Part B (Super Sap)
+		<br>- Mold Release (High-Temp)
+		<br>- Gelcoat GC 253 PA 253 PA White SZ for epox (Resintex)
+		<br>- Linen fabric
+		<br>- Peel ply
+		<br>- Bleeder (Perforated plastic red)
+		<br>- Felt.
 	</p>
+	<br>
 <p class="lead"> TOOLS:	
-	<br/>-Endmill 8 mm 
-	<br/>-Ballmill 3.2 mm 
-	<br/>-Mask 
-	<br/>-Screws 
-	<br/>-Glasses 
-	<br/>-Screwdriver 
-	<br/>-Gloves 
-	<br/>-Headphones 
-	<br/>-Vacuum cleaner 
-	<br/>-Motion sensors
+		<br><a href="http://www.macchinecnc.com/"> -Macchine CNC Enterprise</a>  
+Work Area (XxY): 2100 x 1100 mm;
+	<br>-Endmill 8 mm 
+	<br>-Ballmill 3.2 mm 
+	<br>-Mask 
+	<br>-Screws 
+	<br>-Glasses 
+	<br>-Screwdriver 
+	<br>-Gloves 
+	<br>-Headphones 
+	<br>-Vacuum cleaner 
+	<br>-Motion sensors
 	</p>
 	<img class="featured-image  img-responsive pull-center" src="img/week12/tools.jpg">
 	</p>
-	<br/>
-<p class="lead"> ROUGHING:
-	<br/>- For roughing i used endmill = 8 mm
-	</p>
+	<br>
+<div><h3 class="featured-heading"> 3D MODEL:</h3></div>
+  	<p class="lead">Even for this modeling activity I chose to use Rhinoceros, I did not have much time to experiment with other programs.
+	<br>After drawing 3D model, I exported the file in Stl.
+		</p>
+	<img class="featured-image  img-responsive pull-center" src="img/week12/3DMODEL.jpg">
+	<p class="lead">P.S.: Make sure it is in the box -x + y axis with the origin point 0.0. Export the model as Stl. 
+	 <br> This precaution is not necessary for all the CNC machines, but exclusively for the one present in Fablab Frosinone, because, due to lack of space, the machine was assembled with reversed axes.</p>
+	<br>
+	<p class="lead">After you export the file in Stl, import it with MeshCAM software that will generate the G-code.</p>
+<br>		
+<p class="lead">The first phase is the construction and the preparation of the mold.
+<br> We used a block of polyurethane 60x80x10cm, however we chose to draw a pattern of smaller dimensions (50x70x6), to avoid technical problems later.</p>
+<br>
+		<p class="lead">Caution:  
+		<br>- Do not create negative angles,  you must be able to remove the "piece" from the mol; 
+<br>- Do not draw too vertical inside edges: you need to consider the size of the mandrel and its armor. If the surface to be milled is very deep, the angle must be wider.</p>
+<br>	
+<div><h3 class="featured-heading">ROUGHING:</h3>
+	<p class="lead">- MeshCAM will generate the G-code. 
+	<br>- endmill = 8 mm
+	<br>- feed rate : 1100 
+<br>- plunge: 500 
+<br>- spindle speed: 12000
+<br>-depth per pass: 4 mm
+</p>
+	<p class="lead">Roughing is a fundamental process, because it removes unnecessary parts from raw material . This operation is used to prepare the material for processing and finishing.
+</p>
 	<img class="featured-image  img-responsive pull-center" src="img/week12/ISOroughing.jpg">
 	</p>
-	<iframe width="1140" height="640" src="https://www.youtube.com/embed/hQysx-djA2A" frameborder="0" allowfullscreen></iframe>
+		<img class="featured-image  img-responsive pull-center" src="img/week12/ROUGHINGcnc.jpg">
+<br>
+<div><h3 class="featured-heading">FINISHING:</h3>
+	<p class="lead">- MeshCAM will generate the G-code. 
+	<br>- ballmill = 3.2 mm
+<br>- feedrate: 1100 mm
+<br>- plunge: 500 mm
+<br>- spindle speed: 12000 rpm
+<br>- depth per pass 1 mm
 	</p>
-	</p>
-<p class="lead"> FINISHING:
-	<br/>- For finishing i used ballmill = 3.2 mm
-	</p>
+	<p class="lead">The finishing phase allows to eliminate the last imperfections still present on the milled object.</p>
 	<img class="featured-image  img-responsive pull-center" src="img/week12/ISOfinishing.jpg">
 	</p>
+			<img class="featured-image  img-responsive pull-center" src="img/week12/FINISHINGcnc.jpg">
+				</p>
+		<br>
+				<p class="lead">Roughing took 3 hours of processing, the finishing took 2 hours and a half.
 </p>
-	<br/>
-<p class="lead"> CLEANING:
-	<br/>Apply the release agent to assist the removal of the silicone.
+		<br>
+	<h4 class="section-subheading text-muted">Enterprise Machine</h4> 
+		<iframe width="1140" height="640" src="https://www.youtube.com/embed/hQysx-djA2A" frameborder="0" allowfullscreen></iframe>
+</p>
+	<br>
+		<h4 class="section-subheading text-muted">CLEANING:</h4> 
+ 
+	<p class="lead">I aspirated the waste material coming from the milling.</p>
 	<img class="featured-image  img-responsive pull-center" src="img/week12/cleaning.jpg">
-	<br/>
-<p class="lead"> SMOOTHING:
-	<br/>Calibrate the container and does the right quantities of the two components.
-	Silicone Part-A, white color, and Silicon Part-B, red color. Parts A & B are mixed 100A:3B by weight. Pot life is 40 minutes and cure time is 24 hours.
+	<br>
+		<h4 class="section-subheading text-muted">SMOOTHING:</h4> 
+	<p class="lead">After milling, I had to smooth the mold with sandpaper to eliminate remaining impurities.
 	</p>
 	<img class="featured-image  img-responsive pull-center" src="img/week12/Smoothing.jpg">
 	</p>
-	<br/>
-<p class="lead"> WATERPROOFING:
-	<br/>Mix thoroughly until the material is not homogeneous.
-	<br/>
+	<br>
+		<div><h3 class="featured-heading">PREPARATION MOLD:</h3>
+<p class="lead">1) I solidified surface with a mixture (2: 1 ratio) EpoxiResina Part A - Hardener Part B (CATALYST), to prepare the surface to lamination.</p>
 	<img class="featured-image  img-responsive pull-center" src="img/week12/waterproofing.jpg">
 	</p>
-	<p class="lead">During the pouring of the silicone into the mold, proceed very gently.
-	<br/>We must ensure, to distribute silicone everywhere, trying not to create air bubbles.
-	<br/>
-<p class="lead"> WAXING:
-	<br/>After 24 hours
-	<br/>
+	<p class="lead">I had to make two layers, waiting time: 2 hours per layer</p>
+	</br>
+<p class="lead">2) I coated the releasing wax (Mold Release) 5 times every 30 minutes.</p>
 <img class="featured-image  img-responsive pull-center" src="img/week12/waxing.jpg">
-	<br/>
+	</br>
+	<p class="lead">3) I smeared gelcoat (Gel-hardener 2% by weight) over the mold, twice, without waiting for the first layer was dry.</p>
 <img class="featured-image  img-responsive pull-center" src="img/week12/distaccante.jpg">
-	<br/>
+	</br>
+		<p class="lead">4) I cut 6 layers of the same size: 3 linen fabric, 1 Peel ply, one bleeder, 1 felt.</p>
 <img class="featured-image  img-responsive pull-center" src="img/week12/materials.jpg">
-	<br/>
+	</br>
+	 <p class="lead">5) I prepared the resin to be spread over the three layers of linen fabric (300g / sqm ratio). </p>
 <img class="featured-image  img-responsive pull-center" src="img/week12/resining.jpg">
-	<br/>
-
-<p class="lead"> The work is in progress because processing time is long. The object needs  12 hours of vacuum. Tomorrow we will discard the package.
+	</br>
+	 <p class="lead">6) I placed the resin on the three layers of fabric, then I covered the fabric with Peel ply Bleeder (Perforated plastic red) and Felt.</p>
+	 <p class="lead">7) I Put the Mold with all fabric layers in the Vacuum Bag.</p>
 </p>
-<p class="lead"> UNPACKING:
-	<br/>
+</p>
+	</br>
+			<h4 class="section-subheading text-muted">UNPACKING:</h4> 
+<p class="lead">8) After 4 hours under pressure, and 24h in the Vacuum Bag, I could remove the model from the mold</p>
+</p>
 <img class="featured-image  img-responsive pull-center" src="img/week12/unpack.jpg">
-	<br/>
-	
-             <!--
-             <img class="featured-image  img-responsive pull-right" src="img/week2/concept.png">
-             -->
-        				<!--
+	<br></br>
+	<p class="lead">9) The mold has not come out at best, for which it was necessary to sandpaper it again.</p>
+<img class="featured-image  img-responsive pull-center" src="img/week12/roughing.jpg">
+	</br>
+	<img class="featured-image  img-responsive pull-center" src="img/week12/mold.jpg">
+	</br>
+		<p class="lead">I did not like this exercise. There were too many dead times and a lot of waste material.</p>
+				<p class="lead">The outcome is a decorative panel.</p>
+            </br>
+<h4 class="section-subheading text-muted">Download:</h4> 
+            <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/Week12/composit.3dm"> composit.3dm</a>
+    </br>
+   <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/Week12/composit.stl"> composit.stl</a>
+    </br>
+<a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/Week12/composit_F.iso"> composit_F.iso</a>
+    </br>
+<a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/Week12/composit_R.iso"> composit_R.iso</a>
+    </br>
+</p>  
+        <hr class="featured-divider">
+        <div class="featured" id="about">
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/cbpAnimatedHeader.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/agency.js"></script>
 
 </body>
 
 </html>
+
 

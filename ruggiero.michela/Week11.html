@@ -92,12 +92,21 @@
            
             <div><h2 class="featured-heading">OUTPUT DEVICES - MICRO SERVO SG90</h2></div>
             
-            <p class="lead">Assignment: Add an output device to a microcontroller board you've designed and program it to do something
-      <br/>
+            <p class="lead">Assignment: Add an output device to a microcontroller board you've designed and program it to do something</p>
+    <a href="http://academy.cba.mit.edu/classes/output_devices/index.html"> output_devices/index.html</a> 
+      <br>
       </p>
-         <p class="lead">I tried to design a shield that could be useful for my final project.
-         </p>
- <p class="lead"> FABKIT: microcontroller board
+         <p class="lead">Once again I tried to design a shield that could be useful for my final project.</p>
+         <br>
+         <h4 class="section-subheading text-muted">Tools:</h4> 
+<a href="http://www.rolanddg.it/it/prodotti/modellatori-3d/monofab-srm-20"><h5>- Roland MonoFab SRM20 </h5></a>
+<p class="lead">Table size (LxP): 232.2 x 156.6 mm 
+   <br>Distance from collet tip to table: 232.2 x 156.6 mm</p>
+<a href="http://www.carbidedepot.com/detail.aspx?ID=180142"> - DIA 0.0156" DIA 2FL SE AlTiN 1/64(engraving) </a> 
+   <br><a href="http://www.carbidedepot.com/detail.aspx?ID=180143">- 0.0312" DIA 2FL SE AlTiN 1/32(milling)</a> </p>
+   <br></br>  
+ 
+ 	<div><h3 class="featured-heading">MIKYFABKIT: microcontroller board</h3></div>
 	<img class="featured-image  img-responsive pull-center" src="img/week10/fabkit.jpg">
 	<p class="lead"> Components: 
 	<br/>- 1 Resistors 10K
@@ -111,63 +120,85 @@
 	</p>
 	<br/>
 	<br/>
-<p class="lead"> OUTPUT: SERVO MOTOR
-    <p class="lead">I have chosen the Servomotore because I would like to apply this output device in my final project. I want to create a mechanical movement based on that. My intention is to move a surface according to inputs such as light, sound and humidity.
+        <div><h3 class="featured-heading">OUTPUT: SERVO MOTOR</h3></div>
+         <a href="http://www.servodatabase.com/servo/towerpro/sg90">servo/towerpro/sg90</a>
+    <p class="lead">I have chosen the Servo motor because I would like to apply this output device in my final project. I want to create a mechanical movement based on that. My intention is to move a surface according to inputs such as light, sound and humidity.
  </p>
  	<p class="lead"> Components: 
  	<br/>- Micro servo SG90 9G TOWERPRO
 	<br/>- Trimpot 10K with Knob
 	<br/>- Header 4 Pin
-<p class="lead"> EAGLE:
+         <h4 class="section-subheading text-muted"> EAGLE:</h4>
 <br/>
 	<img class="featured-image  img-responsive pull-center" src="img/week11/EAGLE.jpg">
 	</p>
-	<br/>
-	<p class="lead"> PHOTOSHOP:
+	<br>
+         <h4 class="section-subheading text-muted">PHOTOSHOP:</h4>
 	<br/>
 	<img class="featured-image  img-responsive pull-center" src="img/week11/photoshop.jpg">
 	</p>
-	<br/>
-<p class="lead"> MONOFAB SRM-20:
-	<br/>
+	<br>
+  	<h4 class="section-subheading text-muted">MILLING - MONOFAB SRM-20:</h4>
+  	    <p class="lead">SETTING MACHINE:
+<br>- Open <a href="http://fabmodules.org/">fabmodules.org</a>
+<br>- Click on Input Format;
+<br>- Choose Image(.png) and Upload Image;
+<br>- Click on Output Format and choose "Roland Mill (.rml)";
+<br>- Machine Settings;
+<br>- Machine: SRM-20; Speed: 4; Jog: 1; Xmin: 0; Ymin: 0;
+<br>- CLick on Process and choose "PCB traces(1/64)" or "PCB outline(1/32)";
+<br>- Change offset to 5 (this is a personal setting);
+<br>- Hit Calculate;
+<br>- Save.
+</p>
 	<img class="featured-image  img-responsive pull-center" src="img/week11/MILLING.jpg">
 </p>
-	<br/>
-<p class="lead"> PROGRAMMING:
-<img class="featured-image  img-responsive pull-center" src="img/week11/sketch.jpg">
-	<img class="featured-image  img-responsive pull-center" src="img/week11/PROGRAMMING.jpg">
+    <p class="lead">Instructions:
+<br>- Turn on the machine for the heating, at least for 20 minutes.
+<br>- Open the Fab Modules on a browser (fabmodules.org) and on the new window selected the endmill settings as 1/64".
+<br>- Click on the “load" button and selected the file (mine was simply OUTPUT1.png) and then set the machine type as SRM20. Press calculate. Fabmodules generates .rml file.
+<br>- When the machine is ready, open Roland Vpanel. Load the .rml file.
+<br>- Set the X,Y,Z axes. 
+<br>- Now you can mill.
+<br>- To cut the board a 1/32th n-mill is needed, change the drill tool to the 1/32" on the Fabmodules.org, and repeat the process.
+<br>- Open again Roland Vpanel. Load the new .rml file.
+<br>- set only Z origin.
+<br>- Repeat the same operation for every file.</p>
+	<br>
+         <h4 class="section-subheading text-muted">PROGRAMMING:</h4>
+<img class="featured-image  img-responsive pull-center" src="img/week11/PROGRAMMING.jpg">
+<br>
+	<p class="lead">Arduino Sketch to program the microcontroller.</p>
+	<img class="featured-image  img-responsive pull-center" src="img/week11/sketch.jpg">
+
 	</p>
-	<br/>
+	<br>
 	<p class="lead"> As you can see, I added a potentiometer in the output card, even if it was not included in the project of this week. It was an exercise.
-	<p class="lead"> The output was a success.
+	<p class="lead"> The output board worked as expected.
 	</p>
-	<br/>
+	<br>
 	<iframe width="1140" height="640" src="https://www.youtube.com/embed/2texQeg8vJw" frameborder="0" allowfullscreen></iframe></iframe>
-		<br/>
+		<br>
 </p>
 	
-             <!--
-             <img class="featured-image  img-responsive pull-right" src="img/week2/concept.png">
-             -->
-        				<!--
+                 <br>
+<h4 class="section-subheading text-muted">Download the files:</h4> 
+            <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week11/output.brd"> OUTPUT.brd </a>
+    </br>
+   <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week11/output.sch"> OUTPUT.sch </a>
+       </br>
+<a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week11/output%20bis1.png">  OUTPUT1.png</a>
+    </br>
+<a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week11/output%20bis2.png">  OUTPUT2.png</a>
+    </br>
+<a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week11/output%20bis3.png"> OUTPUT3.png</a>
+    </br>
+<a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week11/OUTPUT_SERVO/OUTPUT_SERVO.ino"> OUTPUT_SERVO.ino/a>
+      </p>
+           
+        <hr class="featured-divider">
+        <div class="featured" id="about">
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/cbpAnimatedHeader.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/agency.js"></script>
 
 </body>
 

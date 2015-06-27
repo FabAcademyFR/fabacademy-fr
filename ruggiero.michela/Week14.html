@@ -92,49 +92,40 @@
            
     <div><h2 class="featured-heading">Interface and Application Programming</h2></div>
             
-            <p class="lead">Assignment: write an application that interfaces with an input &/or output device.
-      <br/>
-         </p>
-<p class="lead"> I chose to use my output: SERVO MOTOR
-<p class="lead"> For this assignment my goal was to visualize the rotation of the servo motor. I used my output project, and I am going to use it in my final project.
-<p class="lead"> Firstly I downloaded Python, from the webpage Python.org. I don't have much experience with processing, so i made something simple. I made a rectangular root interface in processing, divided by Cartesian axes and the components were positioned according to the Cartesian coordinates. Left and right inputs rotate according to the rotation angle of a servo motor that I am controling through FabMiky. The first step for programming the interface, was to use an Arduino code in my board that would send information to Processing.The degree (angle) location of the servo motor are the data that FabMiky send to the personal computer and Python reads through the serial port.
-      <br/>
-         </p>
+            <p class="lead">Assignment: write an application that interfaces with an input &/or output device.</p>
+                     <a href="http://academy.cba.mit.edu/classes/interface_application_programming/index.html"> interface_application_programming/index.html</a> 
+   <br>  </br>                
+<p class="lead"> I chose to use my output: SERVO MOTOR</p>
+<p class="lead"> To develop my interface I decided to use Python, because FabLab Frosinone during this week organized a class about it. I take this opportunity to thank them.</p>
+
+<p class="lead">Python is a very powerfull programming language. It has a very simple grammar, so is very intuitive to use to develop even complex application. For this exercise I attend a python class in wich i learnt how to use pyserial to comunicate via serial port to the fabkit, and Tkinker to build a gui. Design a graphical user interface with Tkinker is an easy job: every element (labels, buttons, etc.) is a widget, and it is positioned in the main window according to Cartesian coordinates. </p>
+
+<p class="lead"> For this assignment my goal was to visualize the rotation of the servo motor. I used my output project for the hardware part, as I am going to use it in my final project. </p>
+<p class="lead"> Firstly I downloaded Python, from the webpage <a href="https://www.python.org/">Python.org</a>. I do not have much experience with this language, so I made a basic gui application wich have two bottuns (left and right). Clicking on the buttons results in a certain number to be sent via serial to the fabkit (thanks to the FTDI adapter). The Arduino code on the FabMiky read the number and move the servo motor accordingly.</p>
+
+<p class="lead"> The degree (angle) location of the servo motor are sent from FabMiky to the computer, so Python can read them through the serial port.</p>
+      <br>
+         
  <p class="lead"> PROGRAM: 
- 	<br/>- Python-IDLE
- 	<br/>- Arduino
- 	<br/>- Photoshop
- 	   <br/>
+ 	<br>- Python-IDLE
+ 	<br>- Arduino
+ 	<br>- Photoshop
+ 	   <br>
          </p>
 	<img class="featured-image  img-responsive pull-center" src="img/week14/interface1.jpg">
-	<br/>
-<iframe width="1140" height="640" src="https://www.youtube.com/embed/byyzqvRJ9tk" frameborder="0" allowfullscreen></iframe>
-		<br/>
-	<br/>
-</p>
 	
-             <!--
-             <img class="featured-image  img-responsive pull-right" src="img/week2/concept.png">
-             -->
-        				<!--
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/cbpAnimatedHeader.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/agency.js"></script>
+                 <br>
+<h4 class="section-subheading text-muted">Download:</h4> 
+            <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week14/Servo-Arduino/servo/servo.ino">servo.ino</a>   
+             <br>
+            <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week14/Servo-Python/MikyIDLE%202.py">MikyIDLE 2.py</a>  
+            <br> 
+      </p>
+           
+        <hr class="featured-divider">
+        <div class="featured" id="about">
+        	<br>
+</p>
 
 </body>
 

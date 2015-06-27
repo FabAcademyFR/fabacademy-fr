@@ -97,22 +97,22 @@
       <br>- Add (at least) a button and LED (with current-limiting resistor)
       <br>- Check the design rules, and make it.
       <br>
-      <br>To redesign the board, we have downloaded the software Eagle, and his components library.
+      <br>To redesign the board, we have downloaded the software Eagle, and some components library.
       </p>
           <br>     
-            <div><h3 class="featured-heading">DESIGN THE CIRQUIT</h3></div>
+            <div><h3 class="featured-heading">DESIGN THE CIRCUIT</h3></div>
 
 <p class="lead">I used Eagle to redesign the hello board.</p>
     <a href="http://www.cadsoftusa.com/download-eagle/"> Download-Eagle</a> 
     <br></br>
-    <p class="lead">CadSoft EAGLE is a software widely used by companies and by amateurs too to draw PCB. </p> 
- 		<p class="lead">I followed the Providence tutorial <a href="http://academy.cba.mit.edu/content/tutorials/akf/electronics_design_eagle.html"> electronics_design_eagle.html</a>  to design my circuit. I selected all the components that I needed from the libraries and I make the schematic connecting with "net".</p>
+    <p class="lead">CadSoft EAGLE is a software widely used by companies and by amateurs to draw PCB. </p> 
+ 		<p class="lead">I followed the Providence tutorial <a href="http://academy.cba.mit.edu/content/tutorials/akf/electronics_design_eagle.html"> electronics_design_eagle.html</a>  to design my circuit. I selected all the components that I needed from the libraries and I make the schematic connecting using the "net" tool.</p>
  </p>
-<p class="lead">In the board view I distributed the components in that way that they create easy connections. I drew the routes in my board, I used one button and one LED.</p>
+<p class="lead">I added one button and one LED to my hello board. In the board view I distributed the components attemping to create easier connections, and so drew the elettrical routes between them.</p>
 <img class="featured-image  img-responsive pull-center" src="img/week6/EAGLE.jpg">
 </p></br>
  <h4 class="section-subheading text-muted">CREATING THE FILES</h4>
-<p class="lead">I hid all layers except from the top layer. I went to file> export> image, I chose 500 dpi resolution and I checked the button Monochrome. This is the "traces.png" file. Then i edited it in Photoshop and I created a border by changing the canvas size, expanding it 20px for each side of the area and I painted it black. Then I painted the rest of the area white .This is the "interior.png" file.</p>
+<p class="lead">I hid all layers except the top one, and selected file> export> image. In the export image window I chose 500 dpi resolution and I checked the button Monochrome, creating the "traces.png" file. Then i edited it in Photoshop and I created a border by changing the canvas size, expanding it by 20px for each side and painting it black. Then I painted the rest of the image white. In this way i made the "interior.png" file.</p>
 <br>
  <h4 class="section-subheading text-muted">Tools:</h4> 
 <a href="http://www.rolanddg.it/it/prodotti/modellatori-3d/monofab-srm-20"><h5>- Roland MonoFab SRM20 </h5></a>
@@ -123,14 +123,14 @@
             <br></br>
             <h4 class="section-subheading text-muted">SETTING MACHINE:</h4> 
 <p class="lead">- Open <a href="http://fabmodules.org/">fabmodules.org</a>
-<br>-  Push on Imput Format;
-<br>-  Choose Image(.png) and Upload Image;
-<br>-  Push on Output Format and choose the machine (Roland Mill (.rml));
-<br>- Setting machine;
-<br> machine SRM-20: Speed 4; Jog 1; Xmin 0; Ymin 0;
-<br>- Push on Process and choose (PCB traces(1/64)) or (PCB outline(1/32);
-<br>- Change offset 5 (the offset is a personal setting);
-<br>- Push on Calculate;
+<br>- Click on Input Format;
+<br>- Choose Image(.png) and Upload Image;
+<br>- Click on Output Format and choose "Roland Mill (.rml)";
+<br>- Machine Settings;
+<br>- Machine: SRM-20; Speed: 4; Jog: 1; Xmin: 0; Ymin: 0;
+<br>- CLick on Process and choose "PCB traces(1/64)" or "PCB outline(1/32)";
+<br>- Change offset to 5 (this is a personal setting);
+<br>- Hit Calculate;
 <br>- Save.
 </p>
 		<img class="featured-image  img-responsive pull-center" src="img/week6/fabmodules.jpg">
@@ -139,7 +139,7 @@
     </p>
             <br>
  <h4 class="section-subheading text-muted">SOLDERING</h4>
-    <p class="lead">I was involved in a domestic accident, i had a burn of II degree on my left hand. In the picture you can see it bandaged.</p>
+    <p class="lead">I was involved in a domestic accident and i had a burn of II degree on my left hand. In the picture you can see it bandaged, so putting the components in place was quite an adventure.</p>
         <p class="lead">When you observe objects so small for so long, you realize the real size of everything else, it's a strange sensation.</p>
             <br>
             <img class="featured-image  img-responsive pull-center" src="img/week6/SEAM.jpg">

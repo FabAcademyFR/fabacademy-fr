@@ -95,7 +95,7 @@
 <a href="http://academy.cba.mit.edu/classes/electronics_production/index.html"> electronics_production/index.html</a> 
 <br></br> 
             <h4 class="section-subheading text-muted">PCB fabrication</h4> 
-            <p class="lead">This assignment is about to make the FabISP in-circuit programmer. The FabISP is an in-system programmer for AVR microcontrollers, that allows you to program the microcontrollers on other boards using a USB cable and 6-pin IDC to 6-pin IDC cable. We will be using these programmers through the semester to program the other boards we create.</p>
+            <p class="lead">This assignment is about to make the FabISP in-circuit programmer. The FabISP is an in-system programmer for AVR microcontrollers, that allows to program the microcontrollers on other boards using a USB cable and 6-pin IDC to 6-pin IDC cable. We will be using these programmers through the semester to program the other boards we create.</p>
 <a href="http://academy.cba.mit.edu/classes/electronics_production/index.html"> hello.ISP.44.cad board components traces interior </a>   
 <br></br>  
 
@@ -109,13 +109,13 @@
                <br>
     <p class="lead">SETTING MACHINE:
 <br>- Open <a href="http://fabmodules.org/">fabmodules.org</a>
-<br>-  Push on Input Format;
-<br>-  Choose Image(.png) and Upload Image;
-<br>-  Push on Output Format and choose the machine (Roland Mill (.rml));
+<br>- Click on Input Format;
+<br>- Choose Image(.png) and Upload Image;
+<br>- Click on Output Format and choose the machine (Roland Mill (.rml));
 <br>- Setting machine: machine SRM-20; Xmin 0; Ymin 0; 
-<br>- Push on Process and choose (PCB traces(1/64)) or (PCB outline(1/32);
-<br>- Change offset 5 (the offset is a personal setting);
-<br>- Push on Calculate;
+<br>- Click on Process and choose (PCB traces(1/64)) or (PCB outline(1/32);
+<br>- Change offset to 5 (this is a personal setting);
+<br>- Click on Calculate;
 <br>- Save.
 </p>
    <br></br>   
@@ -125,10 +125,10 @@
             <br>
     <p class="lead">Instructions:
 <br>- Turn on the machine for the heating, at least for 20 minutes
-<br>- Set the 1/64"  tip in the machine, the X /Y axes as  0.0 and then the Z.
-<br>- When the machine is ready, open the Fab Modules on a browser and select the endmill settings as 1/64". Click on the “load" button and select the traces png file and set the machine type as SRM20. Hit sent.
-<br>- In order to cut the board a 1/32th n-mill as needed, change the drill tool to the 1/32" on the Modela, and select the endmill settings as 1/32", set the z origin, loosen the set screw and push the bit all the way onto the copper. Tighten the screw.
-<br>- Click on the “load button” and select the file (miky.ISP.44.interior.png) and set the machine type as SRM20. Start.</p>
+<br>- Set the 1/64" tip in the machine, the X/Y axes as  0.0 and then the Z.
+<br>- When the machine is ready, open the Fab Modules on a browser and select the endmill settings as 1/64". Click on the “load" button, select the traces png file and set the machine type as SRM20. Hit sent.
+<br>- In order to cut the board a 1/32th n-mill as needed, change the drill tool to the 1/32" on the machine, and select the endmill settings as 1/32", set the z origin, loosen the set screw and push the bit all the way onto the copper. Tighten the screw.
+<br>- Click on the “load button”, select the "interior" file and set the machine type as SRM20. Start.</p>
             <br>
 <h4 class="section-subheading text-muted">2° Steps: Soldering the board </h4> 
             <p><img class="featured-image  img-responsive pull-center" src="img/week4/soldering.jpg"></p>
@@ -150,23 +150,23 @@
 <br>. one ribbon cable
 <br>. two 6 pin connectors</p>
 
-	<p class="lead">- We downloaded the FabISP labeled board diagram, in order to understand where to place the components on the board, and so soldered the components on the board.</p>
+	<p class="lead">- I used the FabISP labeled board diagram to understand where to place the components on the board, and so soldered the components on the board.</p>
 	
-	<p class="lead">-The first day, I had some problems, because my welding torch did not work. On the second attempt I managed to finish the PCB.</p>
+	<p class="lead">-The first day I had some problems because my soldering iron did not work properly. On the second attempt I managed to finish the PCB.</p>
     
     <p class="lead">-  We checked the connections with the multimeter to make sure that power and ground were not connected and there was not a short on the power line.
-I did the "smoke test". We plugged the FabISP into my computer via the mini USB cable. Then we installed the necessary software for AVR programming, the ATTiny44</p>
+I did the "smoke test". We plugged the FabISP into my computer via the mini USB cable. Then installed the necessary software for AVR programming.</p>
             <br>
 <h4 class="section-subheading text-muted">3° Steps: Programming </h4> 
 
-<p class="lead">Once verified the operating of my board, I tried and tried to program my board with my Mac, but I failed. I asked Ermanno, a guy of FabLab Frosinone, to use his computer, and I did it, using Linux.</p>
+<p class="lead">Once verified the operating of my board, I tried and tried to program my board with my Mac, but I failed. I asked Ermanno, a guy of FabLab Frosinone, to use his computer, and I manage to dit it using Linux.</p>
 
     <p><img class="featured-image  img-responsive pull-center" src="img/week4/programming.jpg"></p>
             <br>
 <iframe width="1140" height="640" src="https://www.youtube.com/embed/LoJ-vP4X518" frameborder="0" allowfullscreen></iframe>
 			<br></br>   
 <h4 class="section-subheading text-muted">TIPS:</h4> 
-             <p class="lead">Solder first the USB and microcontroller and then the rest.  Once soldered these two elements, you can say that you job is done. 
+             <p class="lead">Solder first the USB and microcontroller and then the rest.  Once soldered these two elements, you can say that the job is done. 
 <br/>Carefully check the microcontroller direction, and the polarity of the diodes. Copper is an excellent tool to remove tin in excess. </p>
           </div>
                  <br>

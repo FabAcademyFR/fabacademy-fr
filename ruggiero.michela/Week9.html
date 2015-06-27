@@ -92,118 +92,135 @@
            
             <div><h2 class="featured-heading">TEXTURE</h2></div>
             
-            <p class="lead">Assignment: Design a 3D mold, machine it, and cast parts from it.
-      <br/>-  For this exercise, I decided to design a texture inspired by Escher.
-      <br/>
-      </p>
-         <p class="lead">DESIGN
-		<br/>- To design the 3D object I used Rhino.</p>
- </p>
- <p class="lead"> 3D MODEL:
+    <p class="lead">Assignment: Design a 3D mold, machine it, and cast parts from it.</p>
+                        <a href="http://academy.cba.mit.edu/classes/molding_casting/index.html"> molding_casting/index.html</a>  </p>
+	<br>                
+      <p class="lead">For this exercise, I decided to design a texture inspired by Maurits Cornelis Escher' works.</p>
+      <br>
+          <h4 class="section-subheading text-muted">MATERIALS:</h4>
+<p class="lead"> <a href="http://www.ebay.com/itm/MATT-CARVING-WAX-BLOCK-1-Lb-BLUE-NEW-IN-BOX-/281582737068">- Machinable Wax (MATT-CARVING)</a>
+<br>- <a href="http://www.smooth-on.com/tb/files/SMOOTH-SIL_SERIES_TB.pdf">Smooth-Sil 940</a></p>
+<br>
+<h4 class="section-subheading text-muted">Software:</h4> 
+<p class="lead"> Fab Modules
+<br> Rhinoceros
+<br> Photoshop
+</p>
+	<br>
+<h4 class="section-subheading text-muted">TOOLS:</h4>
+<p class="lead">-<a href="http://www.rolanddg.it/it/prodotti/modellatori-3d/monofab-srm-20">Roland MonoFab SRM20</a>
+		<br>- Tool (Square 3mm)
+		<br>- Tool (Square 1,5mm)
+		<br>- Mask
+		<br>- Glasses
+		<br>- Screwdriver
+		<br>- Gloves</p>
+		<br>
+            <div><h3 class="featured-heading">DESIGN</h3></div>
+		<p class="lead">- To design the 3D object I used Rhino.</p>
 	<img class="featured-image  img-responsive pull-center" src="img/week9/3DMODEL.jpg">
-	<p class="lead"> Rhino: Export your model as Stl. Be sure that is on and under the 0.0.0 origin point of the axes
+	<p class="lead">I exported my model as Stl. I assured that is on and under the 0.0.0 origin point of the axes.
 	</p>
-	<br/>
-<p class="lead"> MATERIALS:
-		<br/>- Machinable Wax. 
-	</p>
-		<p class="lead">Software: Fab Modules
-	</p>
-	<p class="lead"> TOOLS:
-		<br/>- 1/8" end mill = 3.175 mm
-		<br/>- 1/32" end mill = 0.79375
-		<br/>- Mask
-		<br/>- Glasses
-		<br/>- Screwdriver
-		<br/>- Gloves
-		<br/>- Vacuum cleaner
-	</p>
-	<p class="lead"> MILLING:
-		<br/>- Monofab SRM-20
-	</p>
-<p class="lead"> ROUGHING:
-	<br/>- For Roughing i used the 1/8" end mill = 3.175 mm
-	</p>
+	<br>
+		<div><h3 class="featured-heading">HARD MOLD</h3></div>
+<h4 class="section-subheading text-muted">ROUGHING:</h4>
+<p class="lead">Roughing is a fundamental process, because it removes unnecessary parts from raw material . This operation is used to prepare the material for processing and finishing.</p>
+<h4 class="section-subheading text-muted">SETTING MACHINE:</h4>
+<p class="lead">- Open <a href="http://fabmodules.org/">fabmodules.org</a>
+<br>- Material:Modeling Wax
+<br>- Tool 3mm Square
+<br>-XY speed: 24 (mm/sec)
+<br>-Z speed: 10 (mm/sec)
+<br>-Speedle: 7000 (rpm)
+<br>-cutting-in amount 0.6 mm
+<br>-path interval 1.8 mm
+<br>-finish margin 0.2 mm</p>
+
+		<img class="featured-image  img-responsive pull-center" src="img/week9/RoughingSetting.jpg">
+		<br>
+<p class="lead">- For Roughing i used Tool: Square 3 mm.</p>
+
 	<img class="featured-image  img-responsive pull-center" src="img/week9/ROUGHINGPHASE.jpg">
 	</p>
-	<br/>
-	<p class="lead"> STEPS: Open Fab Modules on terminal: sudo fab, choose MonofabSRM20.stl, select your 3D STL file, select your molding step: Roughing (1/8"), Click Make Path, set your 0,0 point at the top-bottom-left corner, click on make rml, send the job to MonoFab SRM20.
+	<br>
+	<h4 class="section-subheading text-muted">PROCESS: </h4>
+	<p class="lead">Open Fab Modules on terminal: sudo fab, choose MonofabSRM20.stl, select your 3D STL file, select your molding step: Roughing (Square 3mm), Click Make Path, set your 0,0 point at the top-bottom-left corner, click on make rml, send the job to MonoFab SRM20.
 	</p>
-	<br/>
+	<br>
 	<img class="featured-image  img-responsive pull-center" src="img/week9/ROUGHING.jpg">
 	</p>
-	<br/>
-<p class="lead"> FINISHING:
-	<br/>For Finishing 1/32" i used the end mill = 1.5875 mm .Because of the details of my model i needed the tool to be the smallest possible for more precision
-	<br/>
+	<br>
+<h4 class="section-subheading text-muted">FINISHING:</h4>
+	<p class="lead">The finishing phase allows to remove last imperfections still present from the milled object.
+	</p>
+	<h4 class="section-subheading text-muted">SETTING MACHINE:</h4>
+<p class="lead">- Open <a href="http://fabmodules.org/">fabmodules.org</a>
+<br>-XY and Z speed: 16,8 (mm/sec)
+<br>-Speedle: 7000 (rpm)
+<br>-cutting-in amount 0.2 mm
+<br>-path interval 0.2 mm
+<br>-finish margin 0 mm.</p>
+		<img class="featured-image  img-responsive pull-center" src="img/week9/FinishingSetting.jpg">
+	<p class="lead">Due to the small details of my model, I needed the smallest tool for greater precision. I had  to use the Tool: Square 1,5mm. 
+	</p>
 	<img class="featured-image  img-responsive pull-center" src="img/week9/FINISHINGPHASE.jpg">
 </p>
-	<p class="lead">For the finishing we have to change the tool to 1/32". Repeat the same process as roughing process but remember to change the diameter of the tool manualy,Material-Machinable Wax.
-</p>
-	<p class="lead"> STEPS: Open Fab Modules (terminal> sudo fab), choose MonofabSRM20.stl, select the STL file, select your tool (for Roughing or Finishing), make Path, set the 0,0 point, make rml, send the job, begin Milling.
+		<br>
+	<p class="lead">Repeat the process you did with roughing process but remember to change manually the diameter of the tool. Material: Machinable Wax.</p>
+	<br>
+	<h4 class="section-subheading text-muted">PROCESS: </h4>
+	<p class="lead"> Open Fab Modules (terminal> sudo fab), choose MonofabSRM20.stl, select the STL file, select your tool (for Finishing - 1/32”), make Path, set Z axes, make rml, send the job, begin Milling.
 	</p>
-	<br/>
 	<img class="featured-image  img-responsive pull-center" src="img/week9/FINISHING.jpg">
 	</p>
-	<br/>
-<p class="lead"> RELEASE:
-	<br/>Apply the release agent to assist the removal of the silicone.
+	<br>
+		<div><h3 class="featured-heading">SOFT MOLD</h3></div>
+<p class="lead"> Apply the release agent to assist the removal of the silicone.</p>
 	<img class="featured-image  img-responsive pull-center" src="img/week9/RELEASE.jpg">
-	<br/>
-<p class="lead"> DOSE:
-	<br/>Calibrate the container and does the right quantities of the two components.
-	Silicone Part-A, white color, and Silicon Part-B, red color. Parts A & B are mixed 100A:3B by weight. Pot life is 40 minutes and cure time is 24 hours.
+	<br>
+	<h4 class="section-subheading text-muted">DOSE:</h4>
+	<p class="lead"> Calibrate the container and does the right quantities of the two components. Silicone Part-A, white color, and Silicon Part-B, red color (10:1). Pot life is 40 minutes and cure time is 24 hours.</p>
 	</p>
 	<img class="featured-image  img-responsive pull-center" src="img/week9/SILICON.jpg">
 	</p>
-	<br/>
-<p class="lead"> MIX:
-	<br/>Mix thoroughly until the material is not homogeneous.
-	<br/>
+	<br>
+ 	<h4 class="section-subheading text-muted">MIX:</h4>
+	<p class="lead">Mix thoroughly until the material is not homogeneous.</p>
+	
 	<img class="featured-image  img-responsive pull-center" src="img/week9/MIX.jpg">
 	</p>
 	<p class="lead">During the pouring of the silicone into the mold, proceed very gently.
-	<br/>We must ensure, to distribute silicone everywhere, trying not to create air bubbles.
-	<br/>
-	<br/>P.s.: It is very important, especially if you have lots of details on your mold, to degass the silicone prior to using making the mold. The degassing removes air bubbles when the silicone is still liquid. If you do not degass, the air bubbles will cause imperfections in the mold and will then show up in the part.
-	<br/>
-	 <br/>Pot life is 40 minutes and cure time is 24 hours.
-	<br/>For food uses the mold must go into the oven for 2 hours at 80 and 1 hour to 100
+	<br>Ensure to distribute silicone everywhere, trying not to create air bubbles. 
+	<br>
+	<br>P.s.: It is very important, especially if you have lots of details on your mold, to degass the silicone before making the mold. The degassing removes air bubbles when the silicone is still liquid. If you do not degass, the air bubbles will cause imperfections in the mold and will then show up in the part. 
+	<br>
+	 <br>Pot life is 40 minutes and cure time is 24 hours.
+	<br>For food uses the mold must go into the oven for 2 hours at 80 and 1 hour to 100
 </p>
-	<br/>
-<p class="lead"> CHOCOLATE MOLD:
-	<br/>After 24 hours
-	<br/>
-<img class="featured-image  img-responsive pull-center" src="img/week9/CHOCOLATEMOLD.jpg">
-
-<p class="lead"> To make sweet chocolate we get help from a homemade pastry of Frosinone "Dolce Mascolo," that they were delighted to help, and their chocolate was delicious.
-</p>
-<p class="lead"> The next step I want to do is try out the mold with marble powder recycled, the topic of my project "Marble Eco Design".
-<br/>I'll let you know.
-</p>
+	<br>
+ 	<h4 class="section-subheading text-muted">CHOCOLATE MOLD:</h4>
+	<p class="lead">After 24 hours</p>
 	
-             <!--
-             <img class="featured-image  img-responsive pull-right" src="img/week2/concept.png">
-             -->
-        				<!--
+<img class="featured-image  img-responsive pull-center" src="img/week9/CHOCOLATEMOLD.jpg">
+</p>
+<p class="lead">We decided to use the chocolate for our casting. An important local pastry and chocolate factory “Dolcemascolo” offered us his collaboration. They invited us to their laboratories, and they used our molds to make chocolate bars. A great experience!
+</p>
+<p class="lead"> The next step: I want to do is try out the mold with marble powder recycled, the topic of my project "Marble Eco Design".
+<br>I'll let you know.
+</p>
+            </br>
+<h4 class="section-subheading text-muted">Download the files:</h4> 
+            <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week9/pattern%20joints.3dm"> pattern joints.3dm </a>
+    </br>
+   <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week9/joints.3dm"> pattern.3dm </a>
+    </br>
+<a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week9/MICHELA.mpj"> MICHELA.mpj</a>
+    </br>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+      </p>  
+        <hr class="featured-divider">
+        <div class="featured" id="about">
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/cbpAnimatedHeader.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/agency.js"></script>
 
 </body>
 
