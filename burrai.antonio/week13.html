@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Agency - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/agency.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                     
+                    <li>
+                        <a class="page-scroll" href="#portfolio">Fab Academy 2015</a>
+                    </li>
+                      
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header> 
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">Antonio Burrai</div>
+                <div class="intro-heading">[WEEK 13]</div>
+                 
+            </div>
+        </div>
+    </header>
+
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Networking and communications</h2>
+                                         
+                    <h3 class="section-subheading text-muted">.</h3>
+                    <hr><h3 class="section-subheading text-muted"> <strong>The weekly assignment focuses on fabrication/programming of networking example board(s).Serial bus will be used to connect computer and boards.</strong><hr></h3>                  
+<img src="img/w13/w13_1.png " width="600" height="450" class="img-responsive">
+                    <h3 class="section-subheading text-muted"> <strong>BOARDS FABRICATION.</strong> With reference to the following link (<a href="http://academy.cba.mit.edu/classes/networking_communications/index.html">http://academy.cba.mit.edu/classes/networking_communications/index.html</a>) I've decided to use one <strong>hello.bus.45.bridge</strong> (left side) and two <strong>hello.bus.45.node (right side)</strong>. The components for the <strong>bridge</strong> are: 1 Attiny 45
+1 Header 6 pins
+1 Header 4 pins
+1 Header Ftdy 6 pins
+1 Red Led
+1 Resistor 1 K
+1 Resistor 10 K
+1 Capacitor 1 uf.
+ The components for the <strong>one node</strong> are:
+ 1 Attiny 45
+1 Header 6 pins
+1 Header 4 pins
+1 Red Led
+1 Yellow Led
+1 Resistor 1 K
+1 Resistor 10 K
+1 Capacitor 1 uf. </h3> 
+
+                    <img src="img/w13/w13_2.png " width="600" height="450" class="img-responsive">
+                    <h3 class="section-subheading text-muted"> <strong>PROGRAMMING</strong>. The <strong>hello.bus.45.c </strong>code has been downloaded and modified three times. The first one to flash the bridge board, the second and third time to flash the node boards. This is due to the fact that each node needs to have a different node ID number (0, 1, 2, 3, etc). In this case the bridge is 0, the nodes 1,2,3 and so on.</h3> 
+                    
+ <img src="img/w13/w13_3.png " width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted"> <strong>FLASHING THE BRIDGE.</strong> I've connected the bridge board to computer using the FTDI header and the USB programmer, then I flashed the bridge board as node 0: sudo make -f hello.bus.45.make program-usb.</h3> 
+
+<img src="img/w13/w13_4.png " width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted"> <strong>FLASHING THE NODE(S).</strong> I've connected the node board to computer using the FTDI header,the USB programmer and the bridge itself, then I flashed the bridge board as node 1/2: sudo make -f hello.bus.45.make program-usb.</h3> 
+
+<img src="img/w13/w13_5.png " width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted"> <strong>CONNECTING THE BOARDS.</strong> I've connected the three boards to computer using the FTDI header. They are connected by themselves using a 4 pin connector. I've opened the Arduino IDE and set the baud rate to 9600. I've opened the serial monitor.</h3>
+
+<iframe src="https://player.vimeo.com/video/131933508" width="1000" height="562" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/131933508">Networking assignment</a> from <a href="https://vimeo.com/user9088004">antonio burrai</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<h3 class="section-subheading text-muted"> <strong>TALKING TO THE BOARDS.</strong> To talk to the board you just have to enter 0/1/2 into serial monitor and press the "send" button. In the video, I've send the entered the values: 0,1 and 2. As you can see, after the "sending", the three leds (one for each board) blink, and then blink the led of the board identified by the sent number. There's a problem with node 2, common to all the student: a lot of noise, so the returned value is not clear. This problem has not completely resolved.</h3><hr>
+<img src="img/w13/w13_6.png " width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted"> The mentioned "noise".</h3>
+                                        
+                    
+<h3 class="section-subheading text-muted">
+<strong> Download area </strong> <hr> Plese note that all the files are downloadable at <a href="http://academy.cba.mit.edu/classes/networking_communications/index.html">http://academy.cba.mit.edu/classes/networking_communications/index.html</a> by selecting the files listed at "serial asynchronous" (make file,c file, board, traces and interior)</h3>
+
+
+
+
+ 
+
+            </div>
+            </div>
+             
+
+    <!-- Clients Aside -->
+    
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/agency.js"></script>
+
+</body>
+
+</html>
