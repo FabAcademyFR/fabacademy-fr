@@ -96,22 +96,27 @@
             
         <div class="featurette" id="about">
             
-            
+            <img class="featurette-image img-responsive pull-right" src="img/week7/skt7.jpg">
             <img class="featurette-image img-responsive pull-right" src="img/week7/skt5.jpg">
-            
-            
+            <img class="featurette-image img-responsive pull-right" src="img/week7/skt6.jpg">
+            <p class="featurette-image img-responsive pull-right"> <iframe width="574" height="450" src="https://www.youtube.com/embed/pDk0TH_pGAM" frameborder="0" allowfullscreen></iframe></p>
 
             
             <div>
-              <h2 class="featurette-heading">Programming</h2></div>
+              <h2 class="featurette-heading">Datasheet and Programming</h2></div>
             <p class="lead">The assignment for this week was to read a microcontroller <a class="page-scroll" href="http://academy.cba.mit.edu/classes/embedded_programming/doc8183.pdf">data sheet</a>,
 program my <a class="page-scroll" href="file:///C:/Users/marco/Desktop/MS%20-FAB_2/week6.html">re-designed "Hello board"</a> to do something, with as many different programming languages and programming environments as possible.   </p>
-            
+                <div class="text-muted">
+                  <h3>reading the datasheet</h3></div>
+            <p class="lead">It was the first time I read a datasheet completely. It contains many information about the characteristics of the components, especially the power requirements (helpful to don't damage the component) and the pinout (useful to correctly connect the component).</p>
+            <p class="lead">I admit that I have understood only some parts, for this reason I focused on looking for what I could be really helpful to my needs:</p>
+            <p class="lead">Pinout, power requirement, clock system and frequencies. Very important to me were the diagrams and schematics to better understand the functioning of the component especially to use it on the board according to my necessity.</p>
+            <p class="lead"> Another very important thing was understood the role of the fuses and to know how big could be the program that I can upload into it because sometimes is necessary to optimize the code, in my case, I used Arduino IDE, i had a bigger program perchè it imports libraries (and the bootloader)</p>
                 <div class="text-muted">
                   <h3>Before Programming</h3></div>
             
-            <p class="lead">I used <a class="page-scroll" href="http://www.fischl.de/usbasp/">USBasp - USB programmer for Atmel AVR controllers</a> to program the microcontroller ATtiny44A, the 2 leds and the buttom of my re-designed "hello board" using the <a class="page-scroll" href="http://arduino.cc/en/pmwiki.php?n=main/software">Arduino IDE</a>.</p>  
-            <p class="lead">To start I need to have all Softwares and Drivers installed:</p>
+            <p class="lead">I used <a class="page-scroll" href="http://www.fischl.de/usbasp/">USBasp - USB programmer for Atmel AVR controllers</a> to program the microcontroller ATtiny44A because I had trouble to program the FabISP, but in the end I was able to make it work, the 2 leds and the buttom of my re-designed "hello board" using the <a class="page-scroll" href="http://arduino.cc/en/pmwiki.php?n=main/software">Arduino IDE</a>.</p>   
+            <p class="lead">To start I need to have all Softwares and Drivers installed (in this case I reported the process using USBasp, using instead the FabISP you don't have to install drivers) :</p>
             <p class="lead">- <a class="page-scroll" href="http://arduino.cc/en/pmwiki.php?n=main/software">Arduino IDE Software</a></p>
             <p class="lead">- <a class="page-scroll" href="https://github.com/damellis/attiny/archive/master.zip">Arduino ATtiny hardware Library</a></p>
             <p class="lead">- <a class="page-scroll" href="http://www.fischl.de/usbasp/">USBasp Drivers</a></p>
@@ -127,7 +132,7 @@ program my <a class="page-scroll" href="file:///C:/Users/marco/Desktop/MS%20-FAB
             
             <p class="lead"> - After loading the Arduino ATtiny hardware library and opening the Arduino IDE Software I set the "Programmer","Board", "Processor", "Clock" and "Serial Port" in "Tools" menu of IDE Software.</p> 
             <p class="lead"> In my case:</p>
-            <p class="lead"> "Programmer" -> USBasp</p>
+            <p class="lead"> "Programmer" -> USBasp (or FabISP, in the end I was able to used it)</p>
             <p class="lead"> "Board" -> ATtiny</p>
             <p class="lead"> "Processor" -> ATtiny44</p>
             <p class="lead"> "Clock" -> 20 MHz (external) to program and 1 MHz (internal) to write bootloader</p>
@@ -143,8 +148,13 @@ program my <a class="page-scroll" href="file:///C:/Users/marco/Desktop/MS%20-FAB
 
             <p class="lead">Established the operation of the board,  I played with <a class="page-scroll" href="http://arduino.cc/en/Reference/Random">random()</a> and <a class="page-scroll" href="http://arduino.cc/en/Reference/RandomSeed">randomSeed()</a> to have a random system controlling the LEDs.</p>
             <p class="lead">I tried one last program to understand how to solve the problem of <a class="page-scroll" href="http://arduino.cc/en/Tutorial/Debounce">Debouncing</a> of the button.</p>
-            
-            
+            <div>
+            <h2 class="featurette-heading">Download Files</h2></div>
+              <p class="lead">Arduino IDE:</p>
+              <p class="lead"><a href="https://www.dropbox.com/sh/ltfv9or001f0cyt/AACdVapaodO583QteAGbC9VKa?dl=0">- _2_Led_pulsation.ino</a></p>
+              <p class="lead"><a href="https://www.dropbox.com/sh/u9ollxa5xhgoo30/AAAOIxj06nRSun6KrmQUZy41a?dl=0">- button_turn_on_turn_off.ino</a></p>
+              <p class="lead"><a href="https://www.dropbox.com/sh/g4hpkqs3i1egxoh/AAC0OtcEBX7a5PceTENmITEFa?dl=0">- My_Blink.ino</a></p>
+              <p class="lead"><a href="https://www.dropbox.com/sh/lbdsgpil5pgq6rf/AAA1kl3t-91_vLzkcusVkfAJa?dl=0">- random.ino</a></p>
                   
             
                   
