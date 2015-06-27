@@ -1,0 +1,265 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>How to make [almost] everything</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Massimiliano Dibitonto, Fablab 2015 project and assignments portfolio" />
+		<meta name="keywords" content="fablab, makers, fabacademy" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.scrolly.min.js"></script>
+		<script src="js/jquery.scrollzer.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<div id="header" class="skel-layers-fixed">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar48"><img src="images/profilo.jpg" alt="" /></span>
+							<h1 id="title">Massimiliano</h1>
+							<h1 id="title">Dibitonto</h1>
+							<p>How to make [almost] everything</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<!--
+							
+								Prologue's nav expects links in one of two formats:
+								
+								1. Hash link (scrolls to a different section within the page)
+								
+								   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
+
+								2. Standard link (sends the user to another page/site)
+
+								   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
+							
+							-->
+							<ul>
+								<li><a href="index.html" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Home</span></a></li>
+								</ul>
+                                  <ul>
+                       <li><a href="http://www.massimilianodibitonto.it/fablab/networking.zip"><span class="icon fa-file-code-o">Code for all the boards
+                       </a>
+                       </li></ul>
+						</nav>
+						
+				</div>
+				
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<li><a href="mailto:max.dbt@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+				
+				</div>
+			
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="one dark cover" >
+						<div class="container">
+
+							<header>
+								<h2> <strong> 17 - Mechanical design - machine design </strong> </h2>
+							
+							</header>
+							
+
+						</div>
+					</section>
+							
+					<section id="about" class="two">
+						<div class="container">
+						
+							<header>
+								<h3>Intro </h3>
+							</header>
+							<p> The goal for this assignment was to made a machine that makes something using the Gestalt framework. Making a CNC machine is a complex work made by many parts. For this reason this was a group assignment and you can see the final result on the <a href="http://fabacademy.org/archives/2015/eu/labs/frosinone/mechanical.html">Frosinone Fablab page</a>. In the division of the task I decided to program the Gestalt framework to make the machine work as I wanted to practice with Python and I want to learn how to use stepper motors.</p>
+	 <header>
+					   <h3>The hardware</h3>
+					  </header>
+<p>Our kit included these elements:    
+-4 stages = stepper + rod bar
+-8 guide bars
+-4 gestalt circuit boards
+-misc materials as nylon bearings
+-RS485 connecting cable
+-4 resistor 
+-plugs
+
+Moreover we milled the fabnet, a board used to connect the pc to the gestalt nodes. </p>
+<p> The nodes are connected each others in a chain (daisychain) with a ribbon cable and then, through the fabnet and the RS485, to the pc</p>
+<p>In group we decided to make a foamcutter machine similar to the one described <a href="http://mtm.cba.mit.edu/machines/stages/">here</a> . However we simplyfied it making the two z axes working together. So the result was a 3 axis machine (with two motors moving the Z axis). We used the power supply of our lab.
+<header>
+					   <h3>Programming with the Gestalt framework</h3>
+					  </header>
+                      
+                        <p>
+I started downloading the <a href="https://github.com/nadya/pygestalt">framework</a> and reading this <a href="http://monograph.io/james/m-mtm">documentation</a> and this <a href="http://fabacademy.org/archives/2015/doc/MachineMakingNotes.html">tutorial</a> . I alse red the work of <a href="http://www.pygestalt.org/VMC_IEM.pdf">Ellison Moyer</a>. The architecture of the Gestalt framework is very interesting. Each node is networked and is represented inside a virtual machine. In this way it is very easy to configure a new machine.
+I didn’t find an extensive documentation of methods and properties of the gestalt library so I did a bit of reverse engineering using the examples and the comments in the code. A very useful file is functions.py that is well commented and helps understanding the main methods of the library.
+Moreover I studied also the remote procedure call routines using also the page <a href="http://tq.mit.edu">http://tq.mit.edu</a> .
+
+</p>
+                        <p>To make the machine work you need to install the gestalt library
+                          
+                          with <strong>python setup.py install</strong> </p>
+                        <p>If not installed, install <a href="http://pyserial.sourceforge.net/">pyserial</a>. Indeed pygestalt need pyserial for serial communication with the nodes.
+                          It is important to do not hot plug the boards. So the correct procedure is connecting the boards together and to the Fabnet, connect them to the pc and then to the power supply.
+                          To connect the boards together you can use a ribbon cable. Pay attention to the two connectors on the board. One for in and one for out. Always check the polarity when plugging the cable. Moreover the power supply should be setted up to provide 12 V and (I discovered while using the nodes) up to 2 A.</p>
+                        <p>From a software point of view if you want to create new machine you have to import the Gestalt library
+  <textarea style="width:80%; height:250px; font-size:16px">
+from pygestalt import nodes
+from pygestalt import interfaces
+from pygestalt import machines
+from pygestalt import functions
+from pygestalt.machines import elements
+from pygestalt.machines import kinematics
+from pygestalt.machines import state
+from pygestalt.utilities import notice
+from pygestalt.publish import rpc	#remote procedure call dispatcher
+import time
+import io
+</textarea>
+<p>then you define the virtual machine class that is a set of functions and parameters that defines the machine (i.e. number of axis, kinematics etc)</p>
+                          <textarea style="width:80%; height:120px; font-size:16px">
+class virtualMachine(machines.virtualMachine):
+</textarea>
+                          
+                         <p> then you tell to gestalt how to connect with the nodes. Here is important to change the name of the serial port used:</p>
+                          <textarea style="width:80%; height:400px; font-size:16px">
+def initInterfaces(self):
+		if self.providedInterface: self.fabnet = self.providedInterface		#providedInterface is defined in the virtualMachine class.
+		else: self.fabnet = interfaces.gestaltInterface('FABNET', interfaces.serialInterface(baudRate = 115200, interfaceType = 'ftdi', portName = '/dev/tty.usbserial-FTXW9L60'))
+        </textarea>
+                          
+                         <p> a very important part is the definition of the axis. Here you can define how many axis will have your machine. In the definition there is also the python file that describes the virtual node class, with important parameters and routines of the nodes. We have 4 nodes of the same type but you can have  different type of nodes together.
+                          The last line defines the compound nodes. It is useful as you can treat the nodes as one. Sending a command to a compound node affects all the nodes that are listed in it.In our case we have two axis (z and k) that make the same moves</p>
+                          <textarea style="width:80%; height:400px; font-size:16px">
+def initControllers(self):
+		self.xAxisNode = nodes.networkedGestaltNode('X Axis', self.fabnet, filename = '086-005a.py', persistence = self.persistence)
+		self.yAxisNode = nodes.networkedGestaltNode('Y Axis', self.fabnet, filename = '086-005a.py', persistence = self.persistence)
+		self.zAxisNode = nodes.networkedGestaltNode('Z Axis', self.fabnet, filename = '086-005a.py', persistence = self.persistence)
+		self.kAxisNode = nodes.networkedGestaltNode('Z Axis', self.fabnet, filename = '086-005a.py', persistence = self.persistence)
+		self.xyzkNode = nodes.compoundNode(self.xAxisNode, self.yAxisNode, self.zAxisNode,self.zAxisNode,self.kAxisNode)
+		self.zkNode = nodes.compoundNode(self.xAxisNode, selfkAxisNode)
+        </textarea><p>
+                          
+                          Another important point is where you can set the kinematics properties of the nodes. They depends on the physical characteristics of the nodes used (step, microstep, pulleys etc). It is very important to correctly set up the parameters or it will result in an incorrect movement of the node especially regarding the correspondence between the machine coordinates and real world coordinates.</p>
+                          
+                          <textarea style="width:80%; height:400px; font-size:16px">def initKinematics(self):
+                          self.xAxis = elements.elementChain.forward([elements.microstep.forward(4), elements.stepper.forward(0.9), elements.pulley.forward(11.6), elements.invert.forward(True)])
+                          self.yAxis = elements.elementChain.forward([elements.microstep.forward(4), elements.stepper.forward(0.9), elements.pulley.forward(11.6), elements.invert.forward(True)])
+                          self.zAxis = elements.elementChain.forward([elements.microstep.forward(4), elements.stepper.forward(0.9), elements.pulley.forward(11.6), elements.invert.forward(True)])
+                          self.kAxis = elements.elementChain.forward([elements.microstep.forward(4), elements.stepper.forward(0.9), elements.pulley.forward(11.6), elements.invert.forward(True)])
+                          
+                          self.stageKinematics = kinematics.direct(4)	#direct drive on all four axes
+                          </textarea>
+                          
+                          <p>The you can initialize the functions for moving the machine. You can see the corresponding class in the functions.py file. Here we initialize the map and the job command. As we have a compound node (z and k) we set it as the third argument that will be sent to the machine. However I had problems making the machine work with a compound node. Even if I checked the code a number of times I wasn't able to solve it so I continued sending commands separately to the two axis used for Z (z and k in the code).</p><p>
+                          
+                          
+                          When you create an instance of the machine with this line
+                          instancename = virtualMachine(persistenceFile = “filename.vmp")
+                          you create a “persistence file” that stores the machine configuration. Indeed when you first run your code the nodes will start flashing and a message will ask you to identify the axis. You have to press a button on the the gestalt board to tell to the system the correct axis sequence. If you want to reconfigure that you just have to delete the .vmp file. 
+                          
+                          Then you can choose the way you want to control the machine. You can include the virtual machine into a python program, you can put the commands directly into the code or you can use the RPC to remotely call the functions of the gestalt. We used the last one. You can expose functions with this command
+                          <textarea style="width:80%; height:400px; font-size:16px">
+rpcDispatch.addFunctions(('move',desktopFactory.move),
+				('position',  virtualmachine.getPosition),
+				('jog', virtualmachine.jog),
+				('disableMotors', virtualmachine.xyzkNode.disableMotorsRequest),
+				('loadRemote', fileReader.loadFromURL),
+				('loadLocal', fileReader.loadFromFile),
+				('runFile', fileReader.runFile),
+				('setPosition', virtualmachine.setPosition))
+                          </textarea>
+                            </p>
+                          <p>Using RPC is very useful as I can make any kind of interface using a webpage (with Javascript) or another programming language without touching anymore the server written in Python. This make the system very flexible. As I didn’t find a complete documentation to better understand how to call the remote procedures I analyzed the calls made by the site <a href="http://tq.mit.edu">http://tq.mit.edu</a>. 
+                            We created a command to load a local files or a remote file containing a path that the machine will follow. Inside the file we put commands that are mapped into another RPC function:
+                            fileReader.addFunctions(('move',virtualmachine.move), ('jog', virtualmachine.jog))
+                          </p>
+                          <p>Indeed reading from a file is better than send commands from a website as HTTP protocol is stateless and there is a risk of a delay due to network issues.
+                            
+                            Here you can see the coordinates (and the RPC commands) to make a simple square:
+                            <textarea style="width:80%; height:400px; font-size:16px">
+                       
+/move?position=[None,None,-2,-2]&velocity=1
+/move?position=[None,80,None,None]&velocity=1
+/move?position=[80,None,None,None]&velocity=1
+/move?position=[None,0,None,None]&velocity=1
+/move?position=[0,None,None,None]&velocity=1
+/move?position=[None,None,10,10]&velocity=1
+                            </textarea>
+                            
+                          </p>
+                          <p>I made a first interface prototype visible at <a href="http://www.my-id.org/utilities/test_interface_5.html">http://www.my-id.org/utilities/test_interface_5.html</a> that sends commands to the machine using ajax calls.
+                            We planned the following workflow:</p>
+                            <ul class="default">
+                            <li>jog the machine to reach an home position</li>
+                            <li>set the home position (set position 0 on every axis)</li>
+                            <li>load a file</li>
+                            <li>run the file</li>
+                            
+                            <p>Using the machine I encountered some problems that I wasn’t able to solve. </p>
+                           <ul class="default">
+                           <li> 1. Sometimes the machine stops to react to the commands even if the software continues to send (the debug messages say {'writePosition': 0, 'stepsRemaining': 255, 'readPosition': 1, 'currentKey': 0, 'statusCode': 0}). However the two led in the usb plug start blinking very fast.  Probably is some buffer overflow in the serial communication. Supporting this theory is the fact if the codes restarts sometimes the machine executes the last command sent.</li>
+                            <li>2. Sometimes The last node of the physical chain sometimes doesn’t react to the commands. But it is maybe because there is not enough current available. Giving more current from the power supply (up to 3A) it doesn't happen<./li>
+                            </ul>
+                            
+                           <p> Moreover I see that using several axis together draws a lot of current (up to 3 Amps) and the boards can become really hot. To avoid damages, when this occurred I sent the "disable motors" RPC command. </p>                       
+                        
+                      <header>
+                      <h3>Downloads</h3>
+                      </header>
+                      
+                      <ul>
+                      <li><a href="https://github.com/maxdbt/fabmax/tree/master/boards/sensor_board"><span class="icon fa-git">Repo for code</span></a></li>
+                       <li><a href="http://www.massimilianodibitonto.it/fablab/networking.zip"><span class="icon fa-file-code-o">Code for all the boards
+                       </a>
+                       </li></ul>
+		              </div>            					
+              </section>
+				
+		
+			
+				
+			
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+				
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy;  <img src="images/license.png" alt="" /> Attribution, non-commercial, share alike.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				
+			</div>
+
+	</body>
+</html>

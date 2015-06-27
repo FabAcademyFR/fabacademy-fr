@@ -58,6 +58,12 @@
 							<ul>
 								<li><a href="index.html" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Home</span></a></li>
 								</ul>
+                                  <ul>
+                                  <li><a id="top-link" class="skel-layers-ignoreHref">Downloads for this week:</a></li>
+                      <li><a href="https://github.com/maxdbt/fabmax/tree/master/boards/sensor_board"><span class="icon fa-git">Repo for code</span></a></li>
+                       <li><a href="http://www.massimilianodibitonto.it/fablab/networking.zip"><span class="icon fa-file-code-o">Code for all the boards
+                       </a>
+                       </li></ul>
 						</nav>
 						
 				</div>
@@ -95,18 +101,20 @@
 							<header>
 								<h3>Intro </h3>
 							</header>
-							<p> For this assignment I decided to experiment the I2C protocol. It is a very useful wired protocol as it uses only two wires. The SCL (for the clock) and SDA (for the data). There is a master that can have multiple slaves, each one with a specific address. The master can send messages to the slaves and scan request messages from them.</p>
+							<p> The goal for this assignment was to made two or more microcontroller communicate. It is important becuse sometime you could need to connect two or more boards working together. As in the previous assignment I used the serial protocol to communicate between the board and my pc I decided to experiment the I2C protocol. </p>
 	
                      <header>
 					   <h3>Making and connecting the boards</h3>
 					  </header>
-                      <p> I milled two boards taking the design from the FabAcademy page. I made a Hello I2C bridge and a Hello I2C node (that has also a led, very useful for testing).</p>
-                      <p>I used the Arduino IDE. I already installed the definition for ATTiny 45 in a previous assignment. </p>
-                      <p>However the Arduino’s Wire library didn’t compile for the ATTiny so I had to use<a href="http://playground.arduino.cc/Code/USIi2c"> http://playground.arduino.cc/Code/USIi2c</a>. for the FabKit I used the Wire library included in the Arduino IDE.</p>
-                      <p>Then I started just sending a number (one byte) from the master (the FabKit) to the slave (hello 45 node) and then checking for an answer (the echo of the number sent).<br>
-                      <img src="http://academy.cba.mit.edu/classes/networking_communications/I2C/hello.I2C.45.node.png" width="317"><br>
-                      <img src="http://academy.cba.mit.edu/classes/networking_communications/I2C/hello.I2C.45.bridge.png" width="405"><br>
-                        The FabKit has the SCL and SDA pins on PC5 and PC4 (A05 and A04 in the Arduino IDE).</p>
+                      <p> The I2C is a very useful wired protocol as it uses only two wires: the SCL (for the clock) and SDA (for the data) (look at the images below). There is a master that can have multiple slaves, each one with a specific address. The master can send messages to the slaves and scans request messages from them. For this reason I milled two boards taking the design from the <a href="http://academy.cba.mit.edu/classes/networking_communications/index.html">FabAcademy page</a>. I made a <a href="http://academy.cba.mit.edu/classes/networking_communications/I2C/hello.I2C.45.bridge.png">Hello I2C bridge</a> and a <a href="http://academy.cba.mit.edu/classes/networking_communications/I2C/hello.I2C.45.node.png">Hello I2C node</a> (that has also a led, very useful for testing). I used also a Fabkit (made in a previous assignment) as a master.</p>
+                      <p>(the node)<br>
+                        <img src="http://academy.cba.mit.edu/classes/networking_communications/I2C/hello.I2C.45.node.png" width="317"></p>
+                      <p>(the bridge)<br>
+                        <img src="http://academy.cba.mit.edu/classes/networking_communications/I2C/hello.I2C.45.bridge.png" width="405"></p>
+                      <p>As first test  I started  sending just a number (one byte) from the master (the FabKit) to the slave (hello 45 node) and then checking for an answer (the echo of the number sent).<br>
+To connect the bords you can see the image above (SDA,SCL pins). The FabKit has the SCL and SDA pins on PC5 and PC4 (A05 and A04 in the Arduino IDE). I powered the Fabkit (the master) wuth an FTDI cable. The other boards are poweverd by the master, connecting the vcc and the gnd. I used a ribbon cable taken from an old pc for all these connections.</p>
+                      <p>I used the Arduino IDE to program the boards. I already installed the definition for ATTiny 45 in a previous assignment. </p>
+                      <p>In the Arduino IDE I tried to use the Wire library However it doesn’t compile for the ATTiny so I had to use<a href="http://playground.arduino.cc/Code/USIi2c"> http://playground.arduino.cc/Code/USIi2c</a>. For the FabKit I used the Wire library included in the Arduino IDE.                      </p>
                       <p>The master sends one byte representing an integer between 0 and 255</p>
                       <p align="left">byte x = 7;<br>
                         Wire.beginTransmission(SLAVE1_ADDR); // transmit to a slave device<br>
@@ -114,179 +122,184 @@
                         Wire.endTransmission();    // stop transmitting</p>
                       <p>I put a delay of 400 milliseconds to allow the slave receive the command and then ask back for a feedback<br>
                         <samp><code>Wire.requestFrom(ADDR, 1);</code></samp></p>
-                      <p>In the meantime the slave receive the command, send it back to the master and blinks for the number of times corresponding to the integer transmitted.</p>
+                      <p>In the meantime the slave receives the command, sends it back to the master and blinks for the number of times corresponding to the integer transmitted.</p>
                       <p align="left"> byte byteRcvd = 0;<br>
                         if (TinyWireS.available()){           // got I2C input!<br>
                         byteRcvd = TinyWireS.receive();     // get the byte from master<br>
                         TinyWireS.send(byteRcvd);           // send it back to master<br>
                         Blink(LED1_PIN,byteRcvd);           // blink</p>
-                      <p><img src="images/networking/3boards.jpg" width="300" height="400"></p>
-                      <p><img src="images/networking/bridge_hello.jpg" width="300" height="400"></p>
-                      <p>To make a more interesting test i decided to connect simultaneously the Hello node, the Hello bridge and the Hello board.  <br>
-                        To connect the 3 boards I used a ribbon cable taken from an old pc.<br> 
-                        As the bridge board doesn't have any led on it, to physically show the result of the communication, I used the serial communication between the bridge and the Hello board to turn on the led of the Hello board. The bridge receives an integer from the master thorugh I2C communication, then takes the number and sends it to the Hello board with the serial. The number is used to decide how many times the led has to blink.</p>
+                      <p>&nbsp;</p>
+                      <p>&nbsp;</p>
+                      <p>To make a more interesting test I decided to connect simultaneously the Hello node, the Hello bridge and the Hello board (made in a previous assignment).  <br>
+                        To connect the 3 boards I used a ribbon cable taken from an old pc.I used two jumpers between the Bridge and the Hello board. In the images below you can see at left: Fabkit -&gt; Hello Node -&gt; Hello Bridge -&gt; Hello Board. At right a detail of the Bridge with the Hello Board.</p>
+                      <p><img src="images/networking/3boards.jpg" alt="" width="300" height="400"> <img src="images/networking/bridge_hello.jpg" alt="" width="300" height="400"><br> 
+                        As the bridge board doesn't have any led on it, to physically show the result of the communication, I used the serial communication between the bridge and the Hello board to turn on the led of the Hello board. The bridge receives an integer from the master thorugh I2C communication, then takes the number and sends it to the Hello board with the serial. The serial communication of the Hello Board is made with the software serial library. The number is used to decide how many times the led has to blink.</p>
                       <p>Then I used serial communication between the Fabkit and my laptop to have debug messages.</p>
                       <p><img src="images/networking/serial_communication.png" width="300" height="326"></p>
                       <p>Here you can see a video showing the different boards working together.</p>
                       <iframe src="https://player.vimeo.com/video/127523147" width="500" height="889" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/127523147">Networking using I2C and serial communication</a> from <a href="https://vimeo.com/user3066449">Massimiliano Dibitonto</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
                       <p>Moreover
                        you can see here the complete code of the master:</p>
-                      <p align="left">#include &lt;Wire.h&gt;<br>
-                      </p>
-                      <p align="left">byte addr1 = 1;<br>
-                        byte addr2 = 2;<br>
-                        void setup()<br>
-                        {<br>
-                        Serial.begin(9600);<br>
-  <br>
-                        pinMode(13,OUTPUT);<br>
-                        Wire.begin(); // join i2c bus (address optional for master)<br>
-                        }</p>
-                      <p align="left">&nbsp;</p>
-                      <p align="left">void loop()<br>
-                        {<br>
-                        <br>
-                        digitalWrite(13,LOW);</p>
-                      <p align="left"> byte x= 1;<br>
-                        Serial.print(&quot;send to &quot;);<br>
-                        Serial.println(addr1);<br>
-                        digitalWrite(13,HIGH);<br>
-                        Wire.beginTransmission(addr1); // transmit to device #1<br>
-                        Wire.write(x);              // sends one byte<br>
-                        Wire.endTransmission();    // stop transmitting<br>
-                        delay(400);<br>
-                        Wire.requestFrom(addr1, 1);    // request 6 bytes from slave device #2</p>
-                      <p align="left">while (Wire.available())   // slave may send less than requested<br>
-                        {<br>
-                        byte c = Wire.read(); // receive a byte as character<br>
-                        Serial.print(&quot;receive from &quot;);<br>
-                        Serial.print(addr1);<br>
-                        Serial.print(&quot; - &quot;);<br>
-                        Serial.println(c);         // print the character<br>
-                        }<br>
-                        digitalWrite(13,LOW);<br>
-                        delay(2000);<br>
-                      </p>
-                      <p align="left">Serial.print(&quot;send to &quot;);<br>
-                        Serial.println(addr2);<br>
-                        digitalWrite(13,HIGH);<br>
-                        Wire.beginTransmission(addr2); // transmit to device #2<br>
-                        Wire.write(x);              // sends one byte<br>
-                        Wire.endTransmission();    // stop transmitting<br>
-                        digitalWrite(13,LOW);<br>
-                        delay(400);<br>
-                        Wire.requestFrom(addr2, 1);    // request 6 bytes from slave device #2<br>
-                        //<br>
-                        while (Wire.available())   // slave may send less than requested<br>
-                        { <br>
-                        byte c = Wire.read(); // receive a byte as character<br>
-                        Serial.print(&quot;receive from &quot;);<br>
-                        Serial.print(addr2);<br>
-                        Serial.print(&quot; - &quot;);<br>
-                        Serial.println(c);         // print the character<br>
-                        }<br>
-                        delay(2000);<br>
-                        } </p>
+                       <textarea style="width:80%; height:400px; font-size:16px">
+                       	#include &lt;Wire.h&gt;
+                      	byte addr1 = 1;
+                        byte addr2 = 2;
+                        void setup()
+                        {
+                        Serial.begin(9600);
+  
+                        pinMode(13,OUTPUT);
+                        Wire.begin(); // join i2c bus (address optional for master)
+                        }                      void loop()
+                        {
+                        
+                        digitalWrite(13,LOW);                       
+                        byte x= 1;
+                        Serial.print(&quot;send to &quot;);
+                        Serial.println(addr1);
+                        digitalWrite(13,HIGH);
+                        Wire.beginTransmission(addr1); // transmit to device #1
+                        Wire.write(x);              // sends one byte
+                        Wire.endTransmission();    // stop transmitting
+                        delay(400);
+                        Wire.requestFrom(addr1, 1);    // request 6 bytes from slave device #2                      
+                        while (Wire.available())   // slave may send less than requested
+                        {
+                        byte c = Wire.read(); // receive a byte as character
+                        Serial.print(&quot;receive from &quot;);
+                        Serial.print(addr1);
+                        Serial.print(&quot; - &quot;);
+                        Serial.println(c);         // print the character
+                        }
+                        digitalWrite(13,LOW);
+                        delay(2000);
+                      	Serial.print(&quot;send to &quot;);
+                        Serial.println(addr2);
+                        digitalWrite(13,HIGH);
+                        Wire.beginTransmission(addr2); // transmit to device #2
+                        Wire.write(x);              // sends one byte
+                        Wire.endTransmission();    // stop transmitting
+                        digitalWrite(13,LOW);
+                        delay(400);
+                        Wire.requestFrom(addr2, 1);    // request 6 bytes from slave device #2
+                        //
+                        while (Wire.available())   // slave may send less than requested
+                        { 
+                        byte c = Wire.read(); // receive a byte as character
+                        Serial.print(&quot;receive from &quot;);
+                        Serial.print(addr2);
+                        Serial.print(&quot; - &quot;);
+                        Serial.println(c);         // print the character
+                        }
+                        delay(2000);
+                        } 
+                        </textarea>
                       <p>And the code for the node:</p>
-                      <p align="left">#include &quot;TinyWireS.h&quot;                  // wrapper class for I2C slave routines</p>
-                      <p align="left">#define I2C_SLAVE_ADDR  1           // i2c slave address <br>
-                        #define LED1_PIN        4              // ATtiny Pin 4<br>
-                      </p>
-                      <p align="left">void setup(){<br>
-                        pinMode(LED1_PIN,OUTPUT);             // <br>
-                        Blink(LED1_PIN,3);                    // show it's alive<br>
-                        TinyWireS.begin(I2C_SLAVE_ADDR);      // init I2C Slave mode<br>
-                        }<br>
-                      </p>
-                      <p align="left">void loop(){<br>
-                        byte byteRcvd = 0;<br>
-                        if (TinyWireS.available()){           // got I2C input!<br>
-                        byteRcvd = TinyWireS.receive();     // get the byte from master<br>
-                        Blink(LED1_PIN,byteRcvd); <br>
-                        TinyWireS.send(byteRcvd);           // send it back to master <br>
-                        }<br>
-                        }<br>
-                      </p>
-                      <p align="left">void Blink(byte led, byte times){ // poor man's display<br>
-                        for (byte i=0; i&lt; times; i++){<br>
-                        digitalWrite(led,HIGH);<br>
-                        delay (250);<br>
-                        digitalWrite(led,LOW);<br>
-                        delay (175);<br>
-                        }<br>
-                        }</p>
-                      <p>For the bridge:</p>
-                      <p align="left">#include &quot;TinyWireS.h&quot;                  // wrapper class for I2C slave routines</p>
-                      <p align="left">#define I2C_SLAVE_ADDR  2           // i2c slave address <br>
-                        //#define LED1_PIN        4              // ATtiny Pin 4<br>
-                        #include &lt;SoftwareSerial.h&gt;</p>
-                      <p align="left">SoftwareSerial mySerial(3, 4); // RX, TX</p>
-                      <p align="left">void setup(){<br>
-                        //pinMode(LED1_PIN,OUTPUT);             // <br>
-                        // Blink(LED1_PIN,2);                    // show it's alive<br>
-                        TinyWireS.begin(I2C_SLAVE_ADDR);      // init I2C Slave mode<br>
-                        mySerial.begin(9600);<br>
-                        }<br>
-                      </p>
-                      <p align="left">void loop(){<br>
-                        byte byteRcvd = 0;<br>
-                        if (TinyWireS.available()){           // got I2C input!<br>
-                        byteRcvd = TinyWireS.receive();     // get the byte from master<br>
-                        // Blink(LED1_PIN,byteRcvd); <br>
-  <br>
-                        TinyWireS.send(byteRcvd);           // send it back to master <br>
-                        mySerial.println(byteRcvd); <br>
-                        }<br>
-                        }<br>
-                      </p>
-                      <p align="left">void Blink(byte led, byte times){ // poor man's display<br>
-                        for (byte i=0; i&lt; times; i++){<br>
-                        digitalWrite(led,HIGH);<br>
-                        delay (250);<br>
-                        digitalWrite(led,LOW);<br>
-                        delay (175);<br>
-                        }<br>
-                        }</p>
-                      <p>And for the Hello board:</p>
-                      <p align="left">#include &lt;SoftwareSerial.h&gt;</p>
-                      <p align="left">SoftwareSerial mySerial(0, 1); // RX, TX<br>
-                        int ledPin = 8;</p>
-                      <p align="left">void setup()<br>
-                        {<br>
-                        pinMode(ledPin, OUTPUT);<br>
-                        // set the data rate for the SoftwareSerial port<br>
-                        mySerial.begin(9600);</p>
-                      <p align="left">}</p>
-                      <p align="left">void loop() // run over and over<br>
-                        {<br>
-                        //    mySerial.println(&quot;Hello, world?&quot;);<br>
-                        //    delay(500);<br>
-                        mySerial.listen();<br>
-  <br>
-                        // while there is data coming in, read it and send back</p>
-                      <p align="left"> while (mySerial.available() &gt; 0) {<br>
-                        int blk = mySerial.read();<br>
-                        mySerial.print(&quot;echo &quot;);<br>
-                        blk = blk -48;<br>
-                        mySerial.println(blk);<br>
-                        if(blk &lt; 10){ // avoid too many blinks<br>
-                        myBlink(blk);<br>
-                        }<br>
-                        }<br>
-  <br>
-                        }</p>
-                      <p align="left">void myBlink(int rpt){<br>
-                        for(int i= 0; i&lt;rpt; i++){<br>
-                        digitalWrite(ledPin, HIGH);   // turn the LED on (HIGH is the voltage level)<br>
-                        delay(150);              // wait for a second<br>
-                        digitalWrite(ledPin, LOW);    // turn the LED off by making the voltage LOW<br>
-                        delay(150);              // wait for a second <br>
-                        }<br>
-  <br>
-                        }</p>
-                      <p><br>
-                      </p>
-                      </p>
+                       <textarea style="width:80%; height:400px; font-size:16px">
+                       	#include &quot;TinyWireS.h&quot;                  // wrapper class for I2C slave routines                      
+                        #define I2C_SLAVE_ADDR  1           // i2c slave address 
+                        #define LED1_PIN        4              // ATtiny Pin 4                      
+                        void setup(){
+                        pinMode(LED1_PIN,OUTPUT);             // 
+                        Blink(LED1_PIN,3);                    // show it's alive
+                        TinyWireS.begin(I2C_SLAVE_ADDR);      // init I2C Slave mode
+                        }                      
+                        void loop(){
+                        byte byteRcvd = 0;
+                        if (TinyWireS.available()){           // got I2C input!
+                        byteRcvd = TinyWireS.receive();     // get the byte from master
+                        Blink(LED1_PIN,byteRcvd); 
+                        TinyWireS.send(byteRcvd);           // send it back to master 
+                        }
+                        }                      
+                        
+                        void Blink(byte led, byte times){ // poor man's display
+                        for (byte i=0; i&lt; times; i++){
+                        digitalWrite(led,HIGH);
+                        delay (250);
+                        digitalWrite(led,LOW);
+                        delay (175);
+                        }
+                        }
+                        </textarea>
+                        
+<p>For the bridge:</p>                       <textarea style="width:80%; height:400px; font-size:16px">
+						#include &quot;TinyWireS.h&quot;    // wrapper class for I2C slave routines                      
+                        #define I2C_SLAVE_ADDR  2           // i2c slave address 
+                        //#define LED1_PIN        4        	// ATtiny Pin 4
+                        #include &lt;SoftwareSerial.h&gt;                      
+                        SoftwareSerial mySerial(3, 4); // RX, TX                      
+                        void setup(){
+                        //pinMode(LED1_PIN,OUTPUT);             // 
+                        // Blink(LED1_PIN,2);                  // show it's alive
+                        TinyWireS.begin(I2C_SLAVE_ADDR);      // init I2C Slave mode
+                        mySerial.begin(9600);
+                        }                     
+                        void loop(){
+                        byte byteRcvd = 0;
+                        if (TinyWireS.available()){           // got I2C input!
+                        byteRcvd = TinyWireS.receive();     // get the byte from master
+                        // Blink(LED1_PIN,byteRcvd); 
+  
+                        TinyWireS.send(byteRcvd);           // send it back to master 
+                        mySerial.println(byteRcvd); 
+                        }
+                        }                      
+                        void Blink(byte led, byte times){ // poor man's display
+                        for (byte i=0; i&lt; times; i++){
+                        digitalWrite(led,HIGH);
+                        delay (250);
+                        digitalWrite(led,LOW);
+                        delay (175);
+                        }
+                        }
+                        </textarea>                      
+                        
+                        <p>And for the Hello board:</p>                       <textarea style="width:80%; height:400px; font-size:16px">
+                        #include &lt;SoftwareSerial.h&gt;                      
+                        SoftwareSerial mySerial(0, 1); // RX, TX
+                        int ledPin = 8;                      
+                        void setup()
+                        {
+                        pinMode(ledPin, OUTPUT);
+                        // set the data rate for the SoftwareSerial port
+                        mySerial.begin(9600);                      }                      
+                        void loop() // run over and over
+                        {
+                        //    mySerial.println(&quot;Hello, world?&quot;);
+                        //    delay(500);
+                        mySerial.listen();
+  
+                        // while there is data coming in, read it and send back                      
+                        while (mySerial.available() &gt; 0) {
+                        int blk = mySerial.read();
+                        mySerial.print(&quot;echo &quot;);
+                        blk = blk -48;
+                        mySerial.println(blk);
+                        if(blk &lt; 10){ // avoid too many blinks
+                        myBlink(blk);
+                        }
+                        }
+  
+                        }                      
+                        void myBlink(int rpt){
+                        for(int i= 0; i&lt;rpt; i++){
+                        digitalWrite(ledPin, HIGH);   // turn the LED on (HIGH is the voltage level)
+                        delay(150);              // wait for a second
+                        digitalWrite(ledPin, LOW);    // turn the LED off by making the voltage LOW
+                        delay(150);              // wait for a second 
+                        }
+  
+                        }</textarea>
+                      <header>
+                      <h3>Downloads</h3>
+                      </header>
+                      
+                      <ul>
+                      <li><a href="https://github.com/maxdbt/fabmax/tree/master/boards/sensor_board"><span class="icon fa-git">Repo for code</span></a></li>
+                       <li><a href="http://www.massimilianodibitonto.it/fablab/networking.zip"><span class="icon fa-file-code-o">Code for all the boards
+                       </a>
+                       </li></ul>
 		              </div>            					
               </section>
 				
