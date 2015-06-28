@@ -58,10 +58,17 @@
 							<ul>
 								<li><a href="index.html" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Home</span></a></li>
 								</ul>
-                                  <ul>
-                       <li><a href="http://www.massimilianodibitonto.it/fablab/networking.zip"><span class="icon fa-file-code-o">Code for all the boards
-                       </a>
-                       </li></ul>
+                          <ul>
+                                   <li><a id="top-link" class="skel-layers-ignoreHref">Downloads for this week:</a></li>
+                      <li><a href="https://github.com/maxdbt/fabmax/tree/master/code/machine"><span class="icon fa-git">Repo for code</span></a></li>
+                       <li><a href="http://www.massimilianodibitonto.it/fablab/4axis_rpc_machine.py"><span class="icon fa-file-code-o">Python server
+                       </a></li>
+                       <li><a href="http://www.massimilianodibitonto.it/fablab/test_interface_5.html"><span class="icon fa-file-code-o">Web interface
+                       </a></li>
+                       <li><a href="http://www.massimilianodibitonto.it/fablab/square.txt"><span class="icon fa-file-text">Coordinates to draw a square
+                       </a></li>
+                       
+                       </ul>
 						</nav>
 						
 				</div>
@@ -102,22 +109,24 @@
 							<p> The goal for this assignment was to made a machine that makes something using the Gestalt framework. Making a CNC machine is a complex work made by many parts. For this reason this was a group assignment and you can see the final result on the <a href="http://fabacademy.org/archives/2015/eu/labs/frosinone/mechanical.html">Frosinone Fablab page</a>. In the division of the task I decided to program the Gestalt framework to make the machine work as I wanted to practice with Python and I want to learn how to use stepper motors.</p>
 	 <header>
 					   <h3>The hardware</h3>
-					  </header>
-<p>Our kit included these elements:    
--4 stages = stepper + rod bar
--8 guide bars
--4 gestalt circuit boards
--misc materials as nylon bearings
--RS485 connecting cable
--4 resistor 
--plugs
+    </header>
+<p>Our kit included these elements:
+<ul class="default">    
+<li>4 stages = stepper + rod bar</li>
+<li>8 guide bars</li>
+<li>4 gestalt circuit boards</li>
+<li>misc materials as nylon bearings</li>
+<li>RS485 connecting cable</li>
+<li>4 resistor </li>
+<li>plugs</li>
+</ul>
 
 Moreover we milled the fabnet, a board used to connect the pc to the gestalt nodes. </p>
 <p> The nodes are connected each others in a chain (daisychain) with a ribbon cable and then, through the fabnet and the RS485, to the pc</p>
 <p>In group we decided to make a foamcutter machine similar to the one described <a href="http://mtm.cba.mit.edu/machines/stages/">here</a> . However we simplyfied it making the two z axes working together. So the result was a 3 axis machine (with two motors moving the Z axis). We used the power supply of our lab.
 <header>
 					   <h3>Programming with the Gestalt framework</h3>
-					  </header>
+    </header>
                       
                         <p>
 I started downloading the <a href="https://github.com/nadya/pygestalt">framework</a> and reading this <a href="http://monograph.io/james/m-mtm">documentation</a> and this <a href="http://fabacademy.org/archives/2015/doc/MachineMakingNotes.html">tutorial</a> . I alse red the work of <a href="http://www.pygestalt.org/VMC_IEM.pdf">Ellison Moyer</a>. The architecture of the Gestalt framework is very interesting. Each node is networked and is represented inside a virtual machine. In this way it is very easy to configure a new machine.
@@ -180,15 +189,19 @@ def initControllers(self):
                           self.stageKinematics = kinematics.direct(4)	#direct drive on all four axes
                           </textarea>
                           
-                          <p>The you can initialize the functions for moving the machine. You can see the corresponding class in the functions.py file. Here we initialize the map and the job command. As we have a compound node (z and k) we set it as the third argument that will be sent to the machine. However I had problems making the machine work with a compound node. Even if I checked the code a number of times I wasn't able to solve it so I continued sending commands separately to the two axis used for Z (z and k in the code).</p><p>
+                          <p>The you can initialize the functions for moving the machine. You can see the corresponding class in the functions.py file. Here we initialize the map and the job command. As we have a compound node (z and k) we set it as the third argument that will be sent to the machine. However I had problems making the machine work with a compound node. Even if I checked the code a number of times I wasn't able to solve it so I continued sending commands separately to the two axis used for Z (z and k in the code).</p>
+                          <p>
                           
                           
                           When you create an instance of the machine with this line
                           instancename = virtualMachine(persistenceFile = “filename.vmp")
-                          you create a “persistence file” that stores the machine configuration. Indeed when you first run your code the nodes will start flashing and a message will ask you to identify the axis. You have to press a button on the the gestalt board to tell to the system the correct axis sequence. If you want to reconfigure that you just have to delete the .vmp file. 
+                          you create a “persistence file” that stores the machine configuration. Indeed when you first run your code the nodes will start flashing and a message will ask you to identify the axis. You have to press a button on the the gestalt board to tell to the system the correct axis sequence. I started making two nodes working using the xy_plotter.py example. You can see in the video above the procedure to identify the axis:</p>
+                          <iframe src="https://player.vimeo.com/video/128912169" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                          <p>&nbsp;</p>
+                          <p>If you want to reconfigure that you just have to delete the .vmp file. 
                           
-                          Then you can choose the way you want to control the machine. You can include the virtual machine into a python program, you can put the commands directly into the code or you can use the RPC to remotely call the functions of the gestalt. We used the last one. You can expose functions with this command
-                          <textarea style="width:80%; height:400px; font-size:16px">
+                          Then you can choose the way you want to control the machine. You can include the virtual machine into a python program, you can put the commands directly into the code or you can use the RPC to remotely call the functions of the gestalt. I used the last one as I think it is the more flexible. You can expose functions with this command
+<textarea style="width:80%; height:400px; font-size:16px">
 rpcDispatch.addFunctions(('move',desktopFactory.move),
 				('position',  virtualmachine.getPosition),
 				('jog', virtualmachine.jog),
@@ -198,12 +211,22 @@ rpcDispatch.addFunctions(('move',desktopFactory.move),
 				('runFile', fileReader.runFile),
 				('setPosition', virtualmachine.setPosition))
                           </textarea>
-                            </p>
-                          <p>Using RPC is very useful as I can make any kind of interface using a webpage (with Javascript) or another programming language without touching anymore the server written in Python. This make the system very flexible. As I didn’t find a complete documentation to better understand how to call the remote procedures I analyzed the calls made by the site <a href="http://tq.mit.edu">http://tq.mit.edu</a>. 
-                            We created a command to load a local files or a remote file containing a path that the machine will follow. Inside the file we put commands that are mapped into another RPC function:
+                          </p>
+                          <p>Using RPC is very useful as I can make any kind of interface using a webpage (with Javascript) or another programming language without touching anymore the server written in Python. This makes the system very flexible. As I didn’t find a complete documentation to better understand how to call the remote procedures I analyzed the calls made by the site <a href="http://tq.mit.edu">http://tq.mit.edu</a>. 
+                          In the video above you can see the stepper moving using the tq.mit.edu interface:</p>
+                          <iframe src="https://player.vimeo.com/video/131077732" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                          <p>I made a first interface prototype visible at <a href="http://www.my-id.org/utilities/test_interface_5.html">http://www.my-id.org/utilities/test_interface_5.html</a> that sends commands to the machine using ajax calls.
+                            I planned the following workflow:</p>
+                            <ul class="default">
+                            <li>jog the machine to reach an home position</li>
+                            <li>set the home position (set position 0 on every axis)</li>
+    <li>load a file</li>
+                            <li>run the file</li>
+                            </ul>
+                             <p>  I created a command to load a local files or a remote file containing a path that the machine will follow. Inside the file I put commands that are mapped into another RPC function:
                             fileReader.addFunctions(('move',virtualmachine.move), ('jog', virtualmachine.jog))
                           </p>
-                          <p>Indeed reading from a file is better than send commands from a website as HTTP protocol is stateless and there is a risk of a delay due to network issues.
+                          <p>Indeed reading from a file is better than send a series of commands directly from a website (Javascript) as HTTP protocol is stateless and there is a risk of a delay due to network issues.
                             
                             Here you can see the coordinates (and the RPC commands) to make a simple square:
                             <textarea style="width:80%; height:400px; font-size:16px">
@@ -217,31 +240,36 @@ rpcDispatch.addFunctions(('move',desktopFactory.move),
                             </textarea>
                             
                           </p>
-                          <p>I made a first interface prototype visible at <a href="http://www.my-id.org/utilities/test_interface_5.html">http://www.my-id.org/utilities/test_interface_5.html</a> that sends commands to the machine using ajax calls.
-                            We planned the following workflow:</p>
-                            <ul class="default">
-                            <li>jog the machine to reach an home position</li>
-                            <li>set the home position (set position 0 on every axis)</li>
-                            <li>load a file</li>
-                            <li>run the file</li>
+                          <p>In the videos above you can see a test of the machine drawing the cube with the hot-end tool (hot-end unmounted) and with a pen.</p>
+                          <iframe src="https://player.vimeo.com/video/131112863" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe><iframe src="https://player.vimeo.com/video/131089161" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                          
+                          
+                         
                             
                             <p>Using the machine I encountered some problems that I wasn’t able to solve. </p>
-                           <ul class="default">
-                           <li> 1. Sometimes the machine stops to react to the commands even if the software continues to send (the debug messages say {'writePosition': 0, 'stepsRemaining': 255, 'readPosition': 1, 'currentKey': 0, 'statusCode': 0}). However the two led in the usb plug start blinking very fast.  Probably is some buffer overflow in the serial communication. Supporting this theory is the fact if the codes restarts sometimes the machine executes the last command sent.</li>
-                            <li>2. Sometimes The last node of the physical chain sometimes doesn’t react to the commands. But it is maybe because there is not enough current available. Giving more current from the power supply (up to 3A) it doesn't happen<./li>
-                            </ul>
+                           <ul class="num">
+                           <li> Sometimes the machine stops to react to the commands even if the software continues to send (the debug messages say {'writePosition': 0, 'stepsRemaining': 255, 'readPosition': 1, 'currentKey': 0, 'statusCode': 0}). However the two led in the usb plug start blinking very fast.  Probably is some buffer overflow in the serial communication. Supporting this theory is the fact if the codes restarts sometimes the machine executes the last command sent.</li>
+                           <li>I wasn't able to make the compound node work (axis z and k) as described before</li>
+                            <li>Sometimes The last node of the physical chain sometimes doesn’t react to the commands. But it is maybe because there is not enough current available. Giving more current from the power supply (up to 3A) it doesn't happen.</li>
+    
                             
-                           <p> Moreover I see that using several axis together draws a lot of current (up to 3 Amps) and the boards can become really hot. To avoid damages, when this occurred I sent the "disable motors" RPC command. </p>                       
+                           <li>Moreover I see that using several axis together draws a lot of current (up to 3 Amps) and the boards can become really hot. To avoid damages, when this occurred I sent the "disable motors" RPC command. </li>
+                           </ul>                     
                         
                       <header>
                       <h3>Downloads</h3>
                       </header>
                       
                       <ul>
-                      <li><a href="https://github.com/maxdbt/fabmax/tree/master/boards/sensor_board"><span class="icon fa-git">Repo for code</span></a></li>
-                       <li><a href="http://www.massimilianodibitonto.it/fablab/networking.zip"><span class="icon fa-file-code-o">Code for all the boards
-                       </a>
-                       </li></ul>
+                      <li><a href="https://github.com/maxdbt/fabmax/tree/master/code/machine"><span class="icon fa-git">Repo for code</span></a></li>
+                       <li><a href="http://www.massimilianodibitonto.it/fablab/4axis_rpc_machine.py"><span class="icon fa-file-code-o">Python server
+                       </a></li>
+                       <li><a href="http://www.massimilianodibitonto.it/fablab/test_interface_5.html"><span class="icon fa-file-code-o">Web interface
+                       </a></li>
+                       <li><a href="http://www.massimilianodibitonto.it/fablab/square.txt"><span class="icon fa-file-text">Coordinates to draw a square
+                       </a></li>
+                       
+    </ul>
 		              </div>            					
               </section>
 				
