@@ -86,6 +86,7 @@
                     <div>
                       <h2 class="section-subheading text-muted">Electronics Production</h2></div><br/>
                     
+                    <img width="1140" src="img/week4/cover4.jpg">
                     
                     <div></div>
                 </div>
@@ -95,15 +96,128 @@
             
         <div class="featurette" id="about">
             
-            
-            
+            <img class="featurette-image img-responsive pull-right" src="img/week4/a1.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week4/a2.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week4/a4.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week4/a6.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week4/a3.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week4/a5.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week4/a7.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week4/a8.jpg">
             
 
             
             <div>
-              <h2 class="featurette-heading">coming really soon!</h2></div>
+              <h2 class="featurette-heading">PCB Fabrication</h2></div>
+            <p class="lead">The assignment for this week was to make the <a href="http://academy.cba.mit.edu/classes/electronics_production/index.htmle">FabISP</a> (In-system programming). The FabISP is an in-system programmer for AVR microcontrollers, that allows you to program the microcontrollers on other boards using a USB cable and 6-pin IDC to 6-pin IDC cable. We will be using these programmers through the semester to program the other boards we create.</p>
+                
+                <div class="text-muted">
+                 <h3>Making the FABIsp</h3></div>
+                 
+            <p class="lead">It was the first time I "touched" concretely the argument "electronic".I was a bit scared, but it's over when I started to work.</p>
+            <p class="lead">I made the ISP from a copper plate using the <a href="http://www.rolanddg.it/it/prodotti/modellatori-3d/monofab-srm-20">Roland monoFab SRM-20 milling machine.</a></p>
+            <p class="lead">Procedure:</p>
+            <p class="lead"> - Download the Board Files; <a href="http://academy.cba.mit.edu/classes/embedded_programming/hello.ISP.44.traces.png">hello.ISP.44.traces.png</a> and <a href="http://academy.cba.mit.edu/classes/embedded_programming/hello.ISP.44.interior.png">hello.ISP.44.interior.png</a>;</p>
+            <p class="lead"> - I generated the gcode .rml files (this is the format that Roland monoFab SRM-20 milling machine reads) using the <a href="http://fabmodules.org/">FABModules</a> an online software create by <a href="http://fabacademy.org/archives/2014/students/basile.fiore/classes/15_programming.html">Fiore Basile in Fab Academy 2014</a>;</p>
+             <p class="lead">- Open fabmodules.org;</p> 
+             <p class="lead">- Push on Input Format;</p> 
+             <p class="lead">- Choose Image(.png) and Upload Image;</p> 
+             <p class="lead">- Push on Output Format and choose the machine (Roland Mill (.rml));</p> 
+             <p class="lead">- Setting machine: machine SRM-20; Xmin 0; Ymin 0;</p> 
+             <p class="lead">- Push on Process and choose (PCB traces(1/64) or (PCB outline(1/32);</p> 
+             <p class="lead">- Change offset 5 (the offset is a personal setting);</p> 
+             <p class="lead">- Push on Calculate;</p> 
+             <p class="lead">- Save; </p>   
+             <p class="lead">- If the machine is turn off for a long time, turn on the machine for the heating, at least for 15/20 minutes; </p>  
+             <p class="lead">- When the machine is ready, mount the tool on the machine and setting the milling coordinates in the Vpanel software on the terminal: first the XY axes then the Z one.; </p>  
+             <p class="lead">-start to mill the hello.ISP.44.traces.rml file using the tool 1/64 size;</p>
+             <p class="lead">-change the tool with a tool 1/32 size in order to cut the hello.ISP.44.interior.rml;</p>
+             <p class="lead"> After finishing the milling process I had to solder the components on the board.</p>
+<p class="lead">Components:</p>
+<p class="lead">- 1 ATTiny 44 microcontroller</p>
+<p class="lead">- 1 Capacitor 1uF</p>
+<p class="lead">- 2 Capacitor 10 pF</p>
+<p class="lead">- 2 Resistor 100 ohm</p>
+<p class="lead">- 1 Resistor 499 ohm</p>
+<p class="lead">- 1 Resistor 1K ohm</p>
+<p class="lead">- 1 Resistor 10K</p>
+<p class="lead">- one 6 pin header</p>
+<p class="lead">- 1 USB connector</p>
+<p class="lead">- 2 jumpers - 0 ohm resistors</p>
+<p class="lead">- 1 Cystal 20MHz</p>
+<p class="lead">- two Zener Diode 3.3 V</p>
+<p class="lead">- one usb mini cable</p>
+<p class="lead">- one ribbon cable</p>
+<p class="lead">- two 6 pin connectors</p>
+<p class="lead">It was the first time I try to solder. After this experience I realized that I need a lot of training, but in the end I did it: I soldered my first PBC.</p>
+<p class="lead">Very important thing to do is to always test each component and trace, using the tester to avoid that there are contacts or short circuits.</p>
+             
+                           
+                
+                <div class="text-muted">
+                  <h3>Before Programming</h3></div>
             
+            <p class="lead">I used <a class="page-scroll" href="http://www.fischl.de/usbasp/">USBasp - USB programmer for Atmel AVR controllers</a> to program the microcontroller ATtiny44A of FabISP.</p>  
+            <p class="lead">For this reason I had to change a line in the Makefile to tell to the system to use usbasp: AVRDUDE = avrdude -c usbasp -p $(DEVICE) # edit this line for your programmer.</p>
+            <p class="lead">To start I need to have Softwares dependencies and Firmware installed (in my case I used Operating Sysem Ubuntu):</p>
             
+<p class="lead">- Open Terminal and type: <i>sudo apt-get install flex byacc bison gcc libusb-dev avrdude</i>  </p> 
+
+ <p class="lead">- Then type: <i>sudo apt-get install gcc-avr</i> </p>
+
+<p class="lead">- Type "y" when asked to do so by your system</i></p>
+
+<p class="lead">- Then type: <i>sudo apt-get install avr-libc</i> </p>
+
+<p class="lead">-Then type (may already be installed): <i>sudo apt-get install libc6-dev</i></p>
+
+<p class="lead">-Move to the desktop: <i>cd ~/Desktop</i></p>         
+
+<p class="lead">-Download the firmware from the Fab Academy Electronics Production page: <i>wget http://academy.cba.mit.edu/classes/embedded_programming/firmware.zip</i> </p>
+
+<p class="lead">-Unzip the firmware: <i>unzip firmware.zip</i> </p>
+
+                   
+                        
+            <div class="text-muted">
+                  <h3>Programming FabISP</h3></div>
+                  
+            <p class="lead"> To program the ISP I followed this  <a href="http://fabacademy.org/archives/2015/doc/programming_FabISP.html">Tutorial</a></p>
+            
+            <p class="lead"> I programmed FabISP as shown in the tutorial, but I had a lot of problems: the computer did not recognize the programmer. I tried again a few times and I realized that the computer occasionally receiving a signal. The usb mini had a problem of contact, could not keep constantly the connection. I stuck the usb mini with a little hot glue and I added a USB adapter. In this way I solved the problem.
+            
+            <p class="lead">Steps to programming the microcontroller of Fab ISP:</p>
+            
+            <p class="lead">- Type: <i>cd Scrivania/firmware</i>; </p>
+            <p class="lead">- Compiling the firmware. Type: <i> make clean </i>; </p>
+            <p class="lead">- Then type: <i> make hex </i>; </p>
+            <p class="lead">- Setting the fuses. Type: <i> make fuse </i>; </p>
+            <p class="lead">- Programming the board. Then type: <i> make program </i>; </p>
+            
+            <div class="text-muted">
+                  <h3>After Programming</h3></div>
+            <p class="lead">Remove the 0 ohm resistor and solder bridge to use the programmer</p>
+            
+            <h2 class="featurette-heading">Download Files</h2></div>
+              <p class="lead">PNG FabISP:</p>
+              <p class="lead"><a href="http://academy.cba.mit.edu/classes/embedded_programming/hello.ISP.44.traces.png">hello.ISP.44.traces.png</a></p>
+              <p class="lead"><a href="http://academy.cba.mit.edu/classes/embedded_programming/hello.ISP.44.interior.png">hello.ISP.44.interior.png</a></p>
+              
+                  
+            
+                  
+
+
+<p class="lead">Programs: CS Eagle, Photoshop.</p> 
+<p class="lead">Machinery: Roland SRM-20.</p>
+
+
+            
+
+
+   
+
+         
                         
                                    
               

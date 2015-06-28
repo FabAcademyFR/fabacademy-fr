@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Week_18</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/agency.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="index.html"> 
+                <strong>FA15 | MS<strong></a>
+                
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a class="page-scroll" href="index.html">FA15|MS</a>
+                    </li>
+                     
+                   
+                    <li>
+                        <a href="http://www.fabacademy.org/" target="_blank">FAB ACADEMY</a>
+                    </li>
+                    <li>
+                        <a href="http://officinegiardino.org/" target="_blank">FAB LAB Fr</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+  
+ 
+        <!-- /.row -->
+
+            
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div><h2 class="section-heading">Week 18</h2></div>
+                    <div>
+                      <h2 class="section-subheading text-muted">Project Development</h2></div><br/>
+                    
+                    <img width="1140" src="img/week18/cover18.jpg">
+                    
+                    
+                    
+                    <div></div>
+                </div>
+            </div>
+            <hr class="featurette-divider">
+            <!-- First Featurette -->
+            
+        <div class="featurette" id="about">
+            
+            
+                       
+
+            
+            <div>
+              <h2 class="featurette-heading">assignment purpose</h2></div>
+      <p class="lead">The weekly assignment focuses on the tracking the progress and 
+development of my final project during the this six months of class and laboratory of Fab Academy 2015.</p>        
+           
+      <div class="text-muted"><h3>What tasks have been completed, and what tasks remain?</h3></div> 
+      
+      <p class="lead"> Mechanical - I managed to reduce the cost of the mechanical part without lowering the level of the robot: I optimized and printed the mechanical components using half of the material that I had previously planned, I reduced the size of the wheels and the supports for the board are smaller. You will be able to use the wheels in a track system, this will be possible by adding belts. I preferred, for now, to limit the movement of the robot on wheels. the mechanical system and the support of the boards is complete in all its parts, however, must be installed on the shell that I made during the assignment of the composite. Also the tower is ready to be positioned and calibrated.</p>
+      <p class="lead"> Electronics - Main board and a Shield are ready and working. I have to wire up the whole system adequately, right now I have too many "flying" wire.  I decided to buy the Raspberry Pi 2 to be able to easily use the camera the connection to the route to control the robot online. I'm waiting for the arrival of logic converted (I could do it myself, but it was not economically advantageous and I would have lost the time to dedicate to the project). </p>
+      <p class="lead"> Programming - I'm ready with Python script GUI and Arduino IDE. I installed the operating system (Raspbian)on the raspbarry Pi SD Card, I did an basic HTML page for the interface and I found many forums that will help me to completion of the programming process.</p>
+      
+      <div class="text-muted"><h3>what has worked? what hasn't?</h3></div> 
+      
+      <p class="lead"> Mechanical - Wheels and turret are ready and working. The shell is deformed, I have to find a way to level it, otherwise I have not traction wheel.</p>
+      
+      <p class="lead"> Electronics - The main board has two pins that don't work adequately, I tried to solder again, but don't function. I will have to use two jumpers to resolve the situation. Everything else works adequately</p>
+      <p class="lead"> Programming - Fully functional, I did many tests for checking.</p>
+      
+      <div class="text-muted"><h3>what questions need to be resolved?</h3></div> 
+      
+       <p class="lead">How do I synchronize the two dc motors, it is really necessary for a robot must be able to make small movements?</p>
+      
+      <p class="lead">How do I synchronize the latencies between the video transmission and controls for a better user experience?</p>
+
+      <p class="lead">If I will use an html page to send the video streaming and another page html (with a "form" that uses "post" method) to send at python script the robots commands, how can I integrate the two on a single page html?</p>
+            
+      <div class="text-muted"><h3>what will happen when?</h3></div> 
+      
+      
+      
+      <div class="text-muted"><h3>what have you learned?</h3></div> 
+      
+             <p class="lead">I learned many things: I am an architect and until now I had never designed something similar, studying both the part of the design and mechanical, but especially the part of electronic and programming; I have acquired the necessary knowledge to control and do what I want and when I want it, I learned to understand circuits, processor, and design and realize my own boards, program it and make it works; probably for an experienced person this is normal, but for me it means to open a new world of possibilities. I want to continue to deepen these studies to improve myself.</p>
+      
+      <div class="text-muted"><h3>documentation during development</h3></div> 
+      
+      <p class="lead">The documentation has been fully detailed on the Final Project page. 
+      
+      <div class="text-muted"><h3>demand- vs supply-side time management</h3></div> 
+      
+      
+      
+      <div class="text-muted"><h3>spiral development</h3></div> 
+      
+      
+      
+      <div class="text-muted"><h3>Final project slide and the video</h3></div> 
+        
+        <p class="lead"><a href="presentation.png">SLIDE</a></p>
+         <p class="lead"><a href="presentation.mp4">VIDE0</a></p>     
+              
+             
+
+
+
+
+
+
+
+   
+
+
+            
+                        
+                                   
+              
+
+              
+                  
+           </section>
+           
+        
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; 2015, Marco Sanalitro</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="https://twitter.com/SanalitroMarco"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="https://www.facebook.com/marco.sanalitro.9"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li>arch.marco.sanalitro@gmail.com
+                        </li>
+                        
+                    </ul>
+                </div>
+             </div>
+        </div>
+    </footer>
+
+    
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/agency.js"></script>
+
+</body>
+
+</html>
