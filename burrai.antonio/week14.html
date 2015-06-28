@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Agency - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/agency.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                     
+                    <li>
+                        <a class="page-scroll" href="#portfolio">Fab Academy 2015</a>
+                    </li>
+                      
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header> 
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">Antonio Burrai</div>
+                <div class="intro-heading">[WEEK 14]</div>
+                 
+            </div>
+        </div>
+    </header>
+
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Interface and application programming</h2>
+                                         
+                    <h3 class="section-subheading text-muted">.</h3>
+                    <hr><h3 class="section-subheading text-muted"> <strong>The weekly assignment focuses on write or modify an application that interfaces with an input and/or output device.</strong><hr></h3>          
+                    
+                            
+<img src="img/w14/w14_1.png " width="600" height="450" class="img-responsive">
+                    <h3 class="section-subheading text-muted"> <strong>APPLICATION: PROCESSING.</strong> The chosen application is "Processing" (<a href="https://processing.org/">https://processing.org/</a>). I've never used it, but my tutors suggest me to start with it because it's very similar, in terms of GUI and code, with the Arduino IDE. I've started to study several tutorials in order to undestand the main functionality. At this link <a href="https://processing.org/tutorials/">https://processing.org/tutorials/</a> a lot of useful example are available. </h3> 
+
+                    <img src="img/w14/w14_2.png " width="600" height="450" class="img-responsive">
+                    <h3 class="section-subheading text-muted"> <strong>THE BEGINNING</strong>. As introduced before, I'm a beginner in programming, so I will try to find some example and deeply understand it. My tool box will be: my FabKit, my output device (a 5gr servo, used to move the fish fins) and a very useful tutorial that I've find at <a href="http://web.ics.purdue.edu/~fwinkler/AD32600_F14/Processing_motor_control.pdf">http://web.ics.purdue.edu/~fwinkler/AD32600_F14/Processing_motor_control.pdf</a>. </h3> 
+                    
+ <img src="img/w14/w14_2a.png " width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted"> <strong>WHAT IS PROCESSING.</strong> Processing is a programming language and development environment and more specifically is an open source programming language and integrated development environment (IDE) built for the electronic arts, new media art, and visual design communities with the purpose of teaching the fundamentals of computer programming <strong>IN A VISUAL CONTEXT</strong>, and to serve as the foundation for electronic sketchbooks. I've designed a visual application that can interact with an output device (through the FabKit) using a specific <strong>LIBRARY</strong> of Processing. </h3> 
+
+<img src="img/w14/w14_3.png " width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted"> <strong>PROCESSING LIBRARY: CONTROLIP5.</strong> I've used the Processing controlP5 library to create a simple GUI (graphical user interface). This GUI is basically composed of two sliders that can rotate the servo motor connected to the pectoral fins. The slider is basically a graphical selector of numbers, ranging from a minimum to a maximum. <strong>In this specific case the range is 0 degress to 180 degrees (remember that servo does not allow a continuous rotation.</strong></h3> 
+
+
+<img src="img/w14/w14_4.png " width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted"> <strong>PROGRAMMING THE SLIDER.</strong> I've imported the mentioned library and defined the starting value (60) in the defined range of values (0-180). <strong>The name of first slider is "SERVO #1".</strong> Slider dimension (container) are 300 pixels per 50 pixels, while the slider dimension (data) are 300 pixels per 25 pixels. The two "0" in the string are the reference coordinates of container and data (black arrow indicates the origin). They means there's no shift between container origin and slider origin.</h3>
+
+<img src="img/w14/w14_5.png " width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted"> <strong>CODE (ARDUINO IDE).</strong> I've used FIRMATA (<a href="http://firmata.org/wiki/Download">http://firmata.org/wiki/Download</a>) for the communication between Processing and the board uploading the sketch. <strong>What is FIRMATA?</strong> Firmata is a generic protocol for communicating with microcontrollers from software on a host computer. It is intended to work with any host computer software package. </h3>
+
+<img src="img/w14/w14_7.png " width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted"> <strong>CODE (PROCESSING).</strong> I've started from this basic example, trying to undestand the code. At the beginning, very similar to Arduino CODE, there's a list of the mentioned libraries. As you can see, you should import several libraries, but the main important surely is the "import processing.serial" <a href="https://processing.org/reference/libraries/serial/Serial.html">https://processing.org/reference/libraries/serial/Serial.html</a> that basically <strong>it's a class for sending and receiving data using the serial communication protocol.</strong> </h3>
+
+
+<img src="img/w14/w14_8.png " width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted"> <strong>CODE MODIFICATION - Introduction (PROCESSING).</strong> I've tried several modification (trial and error method) in order to achieve my result: control two servo, thus control two pectoral fins. The following assignment has been applied to the final project, so I've reported one of the picture just to remind you the position/function of the fins. </h3>
+
+<img src="img/w14/w14_8a.png " width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted"> <strong>CODE MODIFICATION - Part 2 (PROCESSING).</strong> What's the meaning of the code ? (1) <strong>println(Serial.list()); </strong> means to list all the available serial ports. You should note, trying the code, the "COM7" (the used port) appear in the bottom part of the Processing IDE (2) <strong>myPort = new Serial(this, Serial.list()[0], 9600);</strong> means that you're opening the port you are using at the rate you want (57600 baud in this case) (3) <strong>myPort.write(65)</strong> means that you're sending a message through out the serial port. IN this specific case we're sending the following instructions: <strong>arduino.analogWrite(9, servoAngle);</strong>. It means that we're sending through the PWM port numer 9 the rotation in degress of one of the servo. </h3>
+
+<img src="img/w14/w14_9.png " width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted"> <strong>CODE MODIFICATION - Part 3 (PROCESSING).</strong> I need now two servos, so I try the following modification, highlighted by the black arrows. I've basically defined a new set of information which "create" a second servo control, setting its dimensions (<strong>controlP5.addSlider("servoAngle2",0,180,servoAngle2,20,10,180,20);</strong>) and let it communicate through PWM port 10 (<strong>arduino.analogWrite(10, servoAngle2)</strong>;). Please note that the yellow arrow refers to the above mentioned list of available ports. At the beginning I forget about the internal sistem of coordinates and set the same value for x and y coordinates (cyan arrows). After pressing the button PLAY, just one servo appear !!! </h3>
+
+<img src="img/w14/w14_10.png " width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted"> <strong>CODE MODIFICATION - Part 4 (PROCESSING).</strong> The problem is due to the superposition of the sliders, having both the same coordinates. So, I've shifted of 30 pixels the y-coordinate. Both slider are now visible.</h3>
+
+<img src="img/w14/w14_10.png " width="600" height="450" class="img-responsive"><h3 class="section-subheading text-muted"> <strong> MOVING THE PECTORAL FINS.</strong> At the end of the modification, both codes have been sent to the respective recipients: the Firmata code to the Arduino IDE and the modified Processing code to the Processing IDE. The following video shows how the system works. Please note that the plastic body showed in the video is the upper part of the final project. For further details please refer to <a href="http://fabacademy.org/archives/2015/eu/students/burrai.antonio/final_project.html ">http://fabacademy.org/archives/2015/eu/students/burrai.antonio/final_project.html </a>.</h3>
+
+<iframe src="https://player.vimeo.com/video/131987496" width="500" height="889" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/131987496">20150628 001608</a> from <a href="https://vimeo.com/user9088004">antonio burrai</a> on <a href="https://vimeo.com">Vimeo</a>.</p></h3> 
+                                       
+                    
+ <h3 class="section-subheading text-muted"> <strong> Download area </strong> <hr> The following files are downloadable:
+<table width="700" border="1">
+  <tr>
+    <td>Type of file</td>
+    <td>Description</td>
+    <td>Link (Type of file)</td>
+  </tr>
+  <tr>
+    <td>Code file</td>
+    <td>Zipped Arduino Code (Firmata)</td>
+    <td>(<a href="https://www.dropbox.com/s/p2a19skcx7q99zo/ServoFirmata.zip?dl=0">ZIP</a>)</td>
+  </tr>
+  <tr>
+    <td>Code file</td>
+    <td>Zipped Processing Code (Original example)</td>
+    <td>(<a href="https://www.dropbox.com/s/mkfu39fl71lmeff/processing_file_original.zip?dl=0">ZIP</a>)</td>
+  </tr>
+  <tr>
+      <td>Code file</td>
+    <td>Zipped Processing Code (Updated example)</td>
+    <td>(<a href="https://www.dropbox.com/s/szy5ky1ge1hr9fr/processing_file_modified.zip?dl=0">ZIP</a>)</td>
+  </tr>
+  <tr>
+</table>
+ <hr></h3> 
+
+
+
+
+ 
+
+            </div>
+            </div>
+             
+
+    <!-- Clients Aside -->
+    
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/agency.js"></script>
+
+</body>
+
+</html>
