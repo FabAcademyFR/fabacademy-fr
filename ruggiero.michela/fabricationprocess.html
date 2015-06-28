@@ -94,59 +94,102 @@
 	<!-- First Featured -->
         <div class="featured" id="about">
            
-    <div><h2 class="featured-heading">Final project: Interactive panel</h2></div>
+    <div><h2 class="featured-heading">IRIS PANEL</h2></div>
          </p>
- <p class="lead">My final project is an interactive panel. I have chosen this project because I often work with museum exhibitions.
-  <br/>I decided that the panel had to respond to two inputs: changes of temperature and light, because they are the most important variables in the protection of a work of art.
-  <br/>The goal is to open and close parts of the panel. Since we are talking about light.
- 	   </p>
+ <p class="lead">An interactive panel to protect all that you love.  It opens and closes responding to inputs derived from environmental conditions, creating an artistic and functional effect.</p>
  	   <br>
+<iframe width="1140" height="640" src="https://www.youtube.com/embed/hIoo9Mnc-uQ" frameborder="0" allowfullscreen></iframe>
 
- 	   
- <p class="lead">Activities to do for the development of this project:
-
-  <br>-3D modeling;
-  <br>-Laser cutting;
-  <br>-3D printing;
-  <br>-Electronic Design;
-  <br>-milling;
-  <br>-welding;
-  <br>-programming;
-  <br>-Assembly.
+    <p class="lead">ACTIVITIES:
+<br>1) Designing;
+<br>2) 3D modeling;
+<br>3) Laser cutting;
+<br>4) 3D printing; 
+<br>5) Electronic Design; 
+<br>6) Programming; 
+<br>7) Assembly.
  	            </p>
-   <p class="lead">	My prototype of my project is a modular 1x1 panel.
+ <br>	            
+ 	   <div><h3 class="featured-heading">DESIGNING</h3></div>
+   <p class="lead">	Software: to simulate the movement of gears, I have modeled them with            <a href="http://www.solidworks.it/launch/overview.htm"> Solidworks</a>. SolidWorks is a 3D mechanical CAD (computer-aided design) program that runs on Microsoft Windows and is being developed by Dassault Systèmes SolidWorks Corp., a subsidiary of Dassault Systèmes, S. A. Having to use Microsoft Windows, I worked with Nader Alkhatib's computer. I thank him.</p>
+
+   <p class="lead">Gears features:
+<br>2 gears: diameter 12 cm – 12 tooth
+<br>2-gears: diameter 18 cm – 16 tooth
+<br>1 servo gear: diameter 5cm - 10 tooth
+<br>
+<br>Pressure angle: 20</p>
 <img class="featured-image  img-responsive pull-center" src="img/finalproject/SOLIDWORKS.jpg">
  	   </p>
  	   <br>
 <iframe width="1140" height="640" src="https://www.youtube.com/embed/aa9sJ-NS-qw" frameborder="0" allowfullscreen></iframe>
        	   </p>
  	   <br>
-  <p class="lead">AAAAAAAAAAAA:    
-<p class="lead">Aaaaaaaaa:
-  <br>-aaaaaaaa
+ 	   <div><h3 class="featured-heading">3D MODELING</h3></div> 
+<p class="lead">After simulating the movement of the gears with Solidwork, I redesigned them with Rhinocheros. I imported the file solidoworks / assem1.IGS, then I reworked their shape to make them stronger.
   </p>
 <img class="featured-image  img-responsive pull-center" src="img/finalproject/MODELLING.jpg">
       <br>
-         </p>
+<p class="lead">Later, with Rhino, I designed a cover for the photoresistor. The goal is to limit the direct light and diffuse it more homogeneously.
+  </p>
+<img class="featured-image  img-responsive pull-center" src="img/finalproject/coverphotoresistor.jpg">
+      <br>
+<img class="featured-image  img-responsive pull-center" src="img/finalproject/coverphotoresistore.jpg">
+      <br>
+       	   <div><h3 class="featured-heading">LASER CUTTING</h3></div> 
+<p class="lead">Materials chosen for the three layers of the panelt: transparent plexiglass, black Multiexel and plywood.
+<br>I exported the 3d model of the gears in .dxf; 
+<br>I opened the project with PhCad and I set the parameters of speed (mm / s) and power (%) of the individual layers:
+<br>
+<br>Transparent plexiglass  500x1000x4mm  - speed (20mm/s) - work power (40%) - corner power (30%)
+<br>Black Multiexel 500x1000x3mm  - speed (40mm/s) - work power (40%) - corner power (30%)
+<br>Plywood: 500x1000x8mm - speed (60mm/s) - work power (50%) - corner power (40%)
+  </p>       	   
+      <br>
 <img class="featured-image  img-responsive pull-center" src="img/finalproject/TAGLIOLASER.jpg">
-         </p>
-          <p class="lead">aaaaaaaaaaa
+         <br>  
+        <div><h3 class="featured-heading">3D PRINTING</h3></div>     
+<p class="lead">I printed the cover for the photoresistor.
+  </p>
+         <iframe width="1140" height="640" src="https://www.youtube.com/embed/j60NX-AWwZ8" frameborder="0" allowfullscreen></iframe>
+         <br>  
+         </br>  
+        <div><h3 class="featured-heading">ELECTRONIC DESIGN AND PROGRAMMING</h3></div>     
+<p class="lead">Software:
+<br>- Arduino </p>
+
+<p class="lead">Electronic Components:
+<br>- FabKit Miky
+<br>- 1 photoresistor
+<br>- 1 broken servomotor
+<br>- Power module
+<br>- 1 H-bridge</p>
+<br>
+<iframe width="1140" height="640" src="https://www.youtube.com/embed/y4t_CrhFkeI" frameborder="0" allowfullscreen></iframe>
+<br></br>  
+<p class="lead">POWER MODULE
+<br>The power module comes from an old 5v-self phone.</p>
+<br>
+<p class="lead">BROKEN SERVOMOTOR, H-BRIDGE
+<br>In my first prototype, I choose Wiper motor to move the mechanism, but it was too massive and too powerful. Therefore I chose a servomotor, which is perfect for my needs.
+<br>
+<br>Hobby servomotors can withstand a maximum 6V except exceptional circumstances. It happens in a FabLab to find servomotors with electronics unusable or damaged, but with motor and gears fully functional. In fact, by getting rid of old electronics, and by fueling the engine with desired voltage, gears will turn. However, lacking the electronics, the positioning control will be also missing, this task was in fact performed by the potentiometer. For this reason, you can remove the potentiometer and replacing it with a rotary encoder (the mouse scroll),  and you can check the servo position with Arduino. If you want to make more turns to the main gear, you can also remove the physical end stop that is usually found over gears or on the shell. To allow the servo to turn in both directions, I connected an H-bridge to the system. Through the software i modulated the opening of the H-bridge depending on the desired position. The cool fact about this “servo-tuning” is that we are no more bounded to the 6v factory max power, but we can overfeed our servo. Of course the motor will be much more stressed so I do not recommend to go over 12v.
+<br>
+<br>I added the smoothing sketch i found on the arduino playground. The smoothing sketch takes a fixed amount of data and gives the average as output. This way i managed to get a smooth and stable data from the sensor without peaks and other signal-waste.
+</p>
+<br>  
+         <div><h3 class="featured-heading">ASSEMBLY</h3></div>        
            </p>
-           </p>
-         <img class="featured-image  img-responsive pull-center" src="img/finalproject/ASSEMBLAGGIO.jpg">
+         <img class="featured-image  img-responsive pull-center" src="img/finalproject/ASSEMBLAGGIO1.jpg">
       <br>
-       <p class="lead">Aaaaaaaaaaaaa.
-           </p>
+
       <img class="featured-image  img-responsive pull-center" src="img/finalproject/ASSEMBLAGGIO2.jpg">
-      <br>
-       <p class="lead">aaaaaaaaaaaaaaaaa
- <br>
-           </p>
-<iframe width="1140" height="640" src="https://www.youtube.com/embed/iA4wGomA6Ls" frameborder="0" allowfullscreen></iframe>
-            <br>
-    <p class="lead">When everything is ready, the gear motor will move all together.
-           </p>
-                   </br>
+ <br>  </br> 
+ <iframe width="1140" height="640" src="https://www.youtube.com/embed/cs99olj11dU" frameborder="0" allowfullscreen></iframe> 
+ <br>  </br> 
+       <iframe width="1140" height="640" src="https://www.youtube.com/embed/-WmJiOSq08Y" frameborder="0" allowfullscreen></iframe>
+         <br>   </br>
+                  <br>   </br>
 <h4 class="section-subheading text-muted">Download:</h4> 
 </br>
      <p class="lead">Cover sensor-3D Printing
@@ -166,6 +209,10 @@
     <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/final%20project/Progetto_Finale_Michela_Lighting_programfin-DEFIN/Progetto_Finale_Michela_Lighting_programfin-DEFIN.ino">Sketch.ino>
     </br>
     <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/final%20project/Progetto_Finale_Michela_Lighting_programfin-DEFIN/smooth.ino"> smooth.ino</a>
+        </br>
+    <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/final%20project/L298%20ponte%20H.pdf">L298 ponte H.pdf</a>
+        </br>
+    <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/final%20project/Photoresistor%20scheda.pdf">Photoresistor scheda.pdf</a>
 <br></br>
          <p class="lead">Laser Cut
            </p>       
@@ -194,8 +241,6 @@
     </br>
         <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/final%20project/solid%20works/Assem1.SLDPRT">solidworks/Assem1.SLDPRT</a>
     </br>
-
-
       </p>  
         <hr class="featured-divider">
         <div class="featured" id="about">    

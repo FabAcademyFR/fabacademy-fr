@@ -95,26 +95,38 @@
             <p class="lead">Assignment: Design and build a wired and/or wireless network connecting at least two processors</p>
             <a href="http://academy.cba.mit.edu/classes/networking_communications/index.html"> networking_communications/index.html</a> 
             <br></br> 
-        <p class="lead">OBIETTIVO: la missione in questo esercizio è di creare una rete tra il computer e le board, utilizzando l'esempio of serial bus, come indicato nel <a href="http://academy.cba.mit.edu/content/tutorials/akf/networking_serial_bus.html"> tutorial</a> </p>
+        <p class="lead">Goal: The aim of this assignement is to network several boards together in the form of a serial bus. The bridge board is connected to a computer with a FTDI cable, the two node boards are connected to the bridge board.</p>
+        <a href="http://academy.cba.mit.edu/content/tutorials/akf/networking_serial_bus.html"> TUTORIAL</a> </p>
       <br>
-<p class="lead">For this assignment I used <a href="http://academy.cba.mit.edu/classes/networking_communications/index.html">  1 Hello.bus.45.bridge and 2 hello.bus.45.node.</a>
+<p class="lead">I used: <a href="http://academy.cba.mit.edu/classes/networking_communications/index.html">  1 Hello.bus.45.bridge and 2 hello.bus.45.node.</a>
          </p>
+         	<p class="lead">At the beginning, I downloaded the .png files for milling 2 nodes and 1 bridge. The only difference between the boards is that the bridge has 6 extra pins for connecting to the FTDI cable, while the nodes have only a 4 pin header to communicate. This is also the node that will power the rest.</p>
+         	</p>
  <p class="lead"> BRIDGE: Hello.bus.45.bridge
 	<img class="featured-image  img-responsive pull-center" src="img/week13/bridge.jpg">
 	         </p>
-	          <p class="lead">First, I downloaded the .png files for milling 2 nodes and 1 bridge. The only difference between the boards is that the bridge has 6 extra pins for connecting to the FTDI cable, while the nodes have only a 4 pin header to communicate. This is also the node that will power the rest.</p>
+<p class="lead">COMPONENTS:
+<br>- 1 Attiny 45
+<br>- 1 Header 6 pins
+<br>- 1 Header 4 pins
+<br>- 1 Header FTDI 6 pins
+<br>- 1 Red Led
+<br>- 1 Resistor 1 K
+<br>- 1 Resistor 10 K
+<br>- 1 Capacitor 1 uf</p>
+
       <br>
  <p class="lead"> NODES: hello.bus.45.node
 	<img class="featured-image  img-responsive pull-center" src="img/week13/node.jpg">	
-	<p class="lead"> Components: 
-	<br>- Resistors 10K
-	<br>- Resistors 1K
-	<br>- Capacitor 1uf
-	<br>- Microcontroller Attiny45
-	<br>- 3 Leds
-	<br>- FTDI header
-	<br>- Header 6 Pin
-	<br>- Header 4 Pin
+	<p class="lead">COMPONENTS:
+<br>- 1 Attiny 45
+<br>- 1 Header 6 pins
+<br>- 1 Header 4 pins
+<br>- 1 Red Led
+<br>- 1 Yellow Led
+<br>- 1 Resistor 1 K
+<br>- 1 Resistor 10 K
+<br>- 1 Capacitor 1 uf
 	</p>
 	<br>
 <h4 class="section-subheading text-muted">MILLING - WELDING:</h4> 
@@ -129,26 +141,22 @@
 	<br>
 <h4 class="section-subheading text-muted">PROGRAMMING:</h4>  </p>
 
-<img class="featured-image  img-responsive pull-center" src="img/week13/programming.jpg">
-	</p>
-	<p class="lead">Each board needs a different node id.
-      	  <p class="lead">For the bridge board I used as node id the number 0. I connected the bridge board to the FabISP and typed "sudo make -f hello.bus.45.make program-usbtiny" to compile the software and upload it to the board. The LED should flash.
-      	  <p class="lead">You have to repeat the same thing for the rest of the nodes.
-	<br/><br>
-	
+<p class="lead">Use the hello.bus.45.c code  and makefile reported  in the Fab Academy website. Every single board has to be programmed singly. You have to program the C code for each board, Each node, in fact, needs a different node id number. 
+<br>- In the C code, define node_id '0' and save the file. Then connect the bridge board to computer with the FTDI header and program it using the FabISP, flash the bridge board as node 0: sudo make -f hello.bus.45.make program-usbtiny.
+<br>- Modify the C code, define node_id '1' and save the file. The bridge board to power node boards and connect them to TX and RX. Then flash the node board as node 1: sudo make -f hello.bus.45.make program-usbtiny.
+<br>- In the the C code, define node_id '2', and repeat the process.</p>
+<br>
 <h4 class="section-subheading text-muted">COMUNICATIONS:</h4>  </p>
-	
+<br>	
 <img class="featured-image  img-responsive pull-center" src="img/week13/communications.jpg"></p>
-	<p class="lead"> NODE 1: define node_id '1' and save the file. Connect the board to the FabISP and type "sudo make -f hello.bus.45.make program-usbtiny". The LED should flash.
-	</p>
-	<p class="lead"> NODE 2: define node_id '2' and save the file. Connect the board to the FabISP and type "sudo make -f hello.bus.45.make program-usbtiny". The LED should flash.
-	</p>
-	<p class="lead"> Now connect the boards and plug the bridge board to the computer with a FTDI cable. Connect them to Tx and Rx and flash the first node board as node 1.(type in terminal: sudo make -f hello.bus.45.make program-usbtiny). You have to repeat the same thing for the second node board as node 2
-	<p class="lead"> Open the Arduino IDE and go to Tools>Serial Monitor to open the serial monitor. Into the serial port enter the number of a node and "send" it. After all the LEDs light up once, the board that corresponds to the number that is entered into the serial port, should light up again.
+		<br>	
+	<p class="lead">- Connect the boards and plug the bridge board to the computer with a FTDI cable.
+<br>- Connect them to Tx and Rx and flash the first node board as node 1.(type in terminal: sudo make -f hello.bus.45.make program-usbtiny).
+<br>- Repeat the same thing for the second node board as node 2.
+<br>- Open the Arduino IDE and go to Tools>Serial Monitor to open the serial monitor. Into the serial port enter the number of a node and "send" it. After all the LEDs light up once, the board that corresponds to the number that is entered into the serial port, should light up again. </p>
 	<br>
 <iframe width="1140" height="640" src="https://www.youtube.com/embed/Pi2GNSwzzuQ" frameborder="0" allowfullscreen></iframe>
-		<br>	
-		<p class="lead"> The programming was a success.
+		<br>	</br>
 <p class="lead"> Notes:
 	<br>- Make sure the baud rate is set to 9600;
 	<br>- Each board needs to have a different node id;
@@ -166,14 +174,17 @@
                   <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week13/Hellobus%2045/hello.bus.45.bridge.traces.png">hello.bus.45.bridge.traces.png</a>   
              <br>
             <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week13/Hellobus%2045/hello.bus.45.bridge.traces.rml">hello.bus.45.bridge.traces.rml</a>  
-            <br> 
-<a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week13/Hellobus%2045/hello.bus.45.c"> hello.bus.45.c</a>
-      </p>            
+            <br>           
       <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week13/Hellobus%2045/hello.bus.45.node.interior.png">hello.bus.45.node.interior.png</a>   
              <br>
             <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week13/Hellobus%2045/hello.bus.45.node.png">hello.bus.45.node.png</a>  
             <br> 
 <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week13/Hellobus%2045/hello.bus.45.node.traces.png">hello.bus.45.node.traces.png</a>
+			<br> 
+<a href="http://academy.cba.mit.edu/classes/networking_communications/bus/hello.bus.45.c">hello.bus.45.c</a>  
+            <br> 
+<a href="http://academy.cba.mit.edu/classes/networking_communications/bus/hello.bus.45.make">hello.bus.45.make</a>  
+            <br> 
       </p>
            
         <hr class="featured-divider">
