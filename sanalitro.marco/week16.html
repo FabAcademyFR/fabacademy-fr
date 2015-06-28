@@ -99,12 +99,12 @@
         <div class="featurette" id="about">
             
             
-            <img class="featurette-image img-responsive pull-right" src="img/week16/f1.jpg">
-            <img class="featurette-image img-responsive pull-right" src="img/week16/f2.jpg">
-            <img class="featurette-image img-responsive pull-right" src="img/week16/f3.jpg">
-            <img class="featurette-image img-responsive pull-right" src="img/week16/f5.jpg">
-            <img class="featurette-image img-responsive pull-right" src="img/week16/f6.jpg">
-            <img class="featurette-image img-responsive pull-right" src="img/week16/f4.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week16/c8.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week16/c4.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week16/c7.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week16/c6.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week16/c5.jpg">
+            
            <p class="featurette-image img-responsive pull-right"> <iframe width="574" height="450" src="https://www.youtube.com/embed/esTmOP2ojtY" frameborder="0" allowfullscreen></iframe></p>
            <p class="featurette-image img-responsive pull-right"> <iframe width="574" height="450" src="https://www.youtube.com/embed/WawwOhqMVzs" frameborder="0" allowfullscreen></iframe></p>
             
@@ -118,35 +118,40 @@
 <p class="lead">I chose to focus my attention on the coding of coordinates to use in the web interface, I coordinated and assisted the production of the design of the structure and I also fixed and built the machine.</p>
 
             
-                <div class="text-muted"><h3>Hardware</h3></div>
+                <div class="text-muted"><h3>coding the coordinates</h3></div>
 
-<p class="lead">The hardware part of this assignment I used:: </p> 
+<p class="lead">To use the machine more easily, I wanted to develop a system that allowed us to mill 2D and 3D shapes using curves and surfaces drawn with any CAD.
+To do this I used the plug-in for Rhino, Grasshopper, implementing it using Python scripts.
+Importing the initial files into Rhino, selecting the curve or surface, assigning the size of the tool and the precision of the step, it will automatically generate a list of the coordinates of the route of the cut. </p> 
 
-<p class="lead">- 2 dc motors 12 V (Recovered from a broken printer); </p>
-<p class="lead">- <a href="http://fabacademy.org/archives/2015/eu/students/sanalitro.marco/week10.html">Fabkit</a>; </p>
-<p class="lead">- FTDI wire connector (to connect the Fabkit to computer)</p>
-<p class="lead">- 2 <a href="http://fabacademy.org/archives/2015/eu/students/sanalitro.marco/week11.html">shield H bridge</a></p>
-<p class="lead">- Connector / wire</p>
-<p class="lead">- Power supply (replaced with a Battery 12 V)</p>
+<p class="lead">To optimize the work, I studied the programming made by my colleague. I spoke with him in order to understand the system and improve data communication.</p>
 
-<p class="lead">I built a simple structure to connect the two dc motors and give more stability; I connected the H bridge shields to Fabkit, dc motors and power source. For consignments problem, I could not use the wi-fi shield for this assignment, for this reason I used the FTDI connector to receive from the computer the “serial command”.</p>
+<p class="lead">Coordinates 2d:</p> 
 
-<div class="text-muted"><h3>ARDUINO IDE and PYTHON GUI (Tkinter)</h3></div>
+<p class="lead">- Open Rhino file and GH file;</p>
+<p class="lead">- I bounded working space of the machine in CAD (200x200 mm) using a grid;</p>
+<p class="lead">- You can use any 2D curve having less size than the space machine;</p>
+<p class="lead">- Select the curve and attach them to the node "curve" by pressing the right mouse button and selecting "select curve";</p>
+<p class="lead">- The code identifies the lines and vertices of route;</p>
+<p class="lead">- Then it creates a list of point and them order, starting from the closest to the coordinates 0,0,0 ;</p>
+<p class="lead">- The code duplicates the Z values because we use two Z axis: in the web interface we must add the list of coordinate using 4 values (I add too the written part required for the functioning of the script);</p>
 
-<p class="lead">First I downloaded <a href="https://www.python.org/downloads/">Python 2.7</a> (I chose this version to start because have more forum and tutorial) and I added the <a href="https://docs.python.org/2/library/tkinter.html"> Tkinter</a> library interface at the basic library.</p>
+<p class="lead">Coordinates 3d:</p> 
 
-<p class="lead">Using Arduino IDE I wrote the C code; I programmed the microcontroller to read (using the serial port) the signals coming from the interface:</p><p class="lead"><i>if (Serial.available()) {  command = Serial.read();  }</i></p>
-
-<p class="lead">and I imposed on each individual signal a basic command:</p>
-<p class="lead">(Forward command example) <i>if (command == 'A'){</i></p>
-  <p class="lead"><i>analogWrite(hbridge_in1,150);</i> //input1 dc motor n°1</p>
-  <p class="lead"><i>analogWrite(hbridge_in2,0);</i>  //input2 dc motor n°1</p>
-  <p class="lead"><i>analogWrite(hbridge_in3,150);</i> //input1 dc motor n°2</p>
-  <p class="lead"><i>analogWrite(hbridge_in4,0);</i> //input2 dc motor n°2</p>
-<p class="lead"><i>}
-</i></p>
-
-
+<p class="lead">- Open Rhino file and GH file;</p>
+<p class="lead">- I bounded working space of the machine in CAD (200x200X200 mm) using a doble grid;</p>
+<p class="lead">- You can use any 3D surface having less size than the space machine;</p>
+<p class="lead">- Select the surface and attach them to the node "surface" by pressing the right mouse button and selecting "select surface";</p>
+<p class="lead">- Select the dimention of tool and the cut precision(layer height);</p>
+<p class="lead">- The code recognizes and cuts the milling area in horizontal layer(depending by layer height) and creates too a vertical grid to create vertical layer(depending by tool dimention);</p>
+<p class="lead">- The intersection between these layers generates routes;</p>
+<p class="lead">- Using python script i had "clean" list of point and line: in the first case I needed to clear the list of values z repeated; in the second case I had to find which lines have the same x and z, to use them to close the route CAM;</p>
+<p class="lead">- When a route is interrupted (two lines with the same X and Z), the code creates a connecting "bridge" between the closest points of the two lines, passing through a route Z higher than the top of the machine;</p>
+<p class="lead">- To connect all these individual routes, the code recognizes the point of start and end of the individual curves that describe the route and connects, alternately, this point;</p>
+<p class="lead">- To have a single route , the code reproduces vertically what he had previously done in horizontal, connectes all the courves;</p>
+<p class="lead">- The code identifies all the vertices of route;</p>
+<p class="lead">- Then it creates a list of point and them order, starting from the closest to the coordinates 0,0,0 ;</p>
+<p class="lead">- The code duplicate the Z values because we use two Z axis: in the web interface we must add the list of coordinate using 4 values (I add too the written part required for the functioning of the script);</p>
 
 
 

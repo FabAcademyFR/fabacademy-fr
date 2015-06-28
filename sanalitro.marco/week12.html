@@ -98,10 +98,14 @@
             <!-- First Featurette -->
             
         <div class="featurette" id="about">
+            <img class="featurette-image img-responsive pull-right" src="img/week12/5.jpg">
             <img class="featurette-image img-responsive pull-right" src="img/week12/1.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week12/4.jpg">
             <p class="featurette-image img-responsive pull-right"> <iframe width="574" height="450" src="https://www.youtube.com/embed/MzG2p3_AzRw" frameborder="0" allowfullscreen></iframe></p>
             <img class="featurette-image img-responsive pull-right" src="img/week12/2.jpg">
+            <img class="featurette-image img-responsive pull-right" src="img/week12/7.jpg">
             <p class="featurette-image img-responsive pull-right"> <iframe width="574" height="450" src="https://www.youtube.com/embed/2_a2Q1oTUvg" frameborder="0" allowfullscreen></iframe></p>
+            <img class="featurette-image img-responsive pull-right" src="img/week12/6.jpg">
             <img class="featurette-image img-responsive pull-right" src="img/week12/3.jpg">
             <p class="featurette-image img-responsive pull-right"> <iframe width="574" height="450" src="https://www.youtube.com/embed/E_b_vwRD0W4" frameborder="0" allowfullscreen></iframe></p>
              
@@ -113,7 +117,92 @@
             <div>
               <h2 class="featurette-heading">Composites</h2></div>
             <div class="text-muted">
-<h3>coming really soon!</h3></div>
+<div>
+              <h3 class="featurette-heading">Make something big</h3></div>
+            <p class="lead">This week assignment was to create a 3d mold using a CNC machine and produce a fiber composite part in it</p>
+            <p class="lead">I started drawing small object, but after seeing a video on youtube of how guys built a hull, I decided to make the "body" of my robot.</p>
+                <div class="text-muted">
+                  <h3>Modeling and Milling</h3></div>
+            
+            <p class="lead">The first step was revise and made a new 3D Model of my Robot Roll.e to make the mold on a polyurethan panel ( 600x800x100 mm of which profits 500x600x60 mm).</p>
+            
+           <p class="lead"> I split the body into two parts to facilitate the process of composite and I started to draw the mold: knowing the height of the tool (3,5 cm from the mandrel to final tool) I could draw some inclined walls, in this way the machinery does not come in contact with the model when milling (similar to the process of molding and casting assignment).</p>
+            
+
+<p class="lead">I Imported the .stl file in the Meshcam software and I set the two milling process which are the Roughing (tip 8 mm flat-head) and the Finishing (tip 3.2 round-head).</p>
+<p class="lead">Roughing Settings: </p>
+
+<p class="lead">- toolpath diameter: 8 mm endmill; </p>
+
+<p class="lead">- feed rate : 1100 mm; </p>
+<p class="lead">- plunge rate: 500; </p>
+<p class="lead">- spindle speed: 12000 rpm;</p>
+<p class="lead">- stepover: 5 mm.</p>
+<p class="lead">- depth per pass: 4 mm.</p>
+
+<p class="lead">Finishing Settings:</p>
+
+<p class="lead">- toolpath diameter: 3,2 mm ballmill; </p>
+
+<p class="lead">- feedrate: 1100 mm;</p>
+<p class="lead">- plunge rate: 500 mm;</p>
+<p class="lead">- spindle speed: 12000 rpm;</p>
+<p class="lead">- stepover: 1,2 mm.</p>
+<p class="lead">- depth per pass 1 mm.</p>
+
+<p class="lead">- After the software has calculated the cam, I have saved the two .iso files and have them imported into the milling software Isons.</p>
+<p class="lead">- I cleaned the CNC before to put and anchor the polyurethan block because every mm under the material may be a mistake during the process.</p>
+<p class="lead">- I set the X,Y (0,0) and the Z-axis home coordinates values and I modified the gcode to start the milling process.</p>
+<p class="lead">- After the Roughing and Finishing process i had lightly sanded to complete finishing.</p>
+
+<div class="text-muted">
+                  <h3>Wet Lay Up</h3></div>
+            
+            <p class="lead">Wet lay-up is a molding process that combines layers of reinforced fiber with liquid resin to create a high quality laminate. This process involves the positioning of reinforcement material into or against a mold in layers. These layers are then impregnated with a liquid resin system, either with a brush and roller, to ensure a good wet-out of the reinforcement material. The step is repeated until reinforcement thickness is achieved. Curing can be performed at room temperature or under heat, depending on the selection of the resin system. This can be accomplished with the use of a vacuum bagging process.</p>
+            
+<p class="lead">Equipment, Components and Material: </p>
+
+<p class="lead">- Peel Ply-Plastic Laminate; </p>
+<p class="lead">- Holes-Breather; </p>
+<p class="lead">- Bleeder;</p>
+<p class="lead">- Linen Fabric 200 g/sqm of Bcomp°; </p>
+<p class="lead">- Air-Vacuum Bag;</p>
+
+<p class="lead">- Epoxy resin and Hardener (2:1);</p>
+<p class="lead">- Release and Wax;</p>
+<p class="lead">- Gelcoat and Reagent (100:2);</p>
+<p class="lead">- Brush and Roller;</p>
+<p class="lead">- Protection: eye, mouth/nose and hands.</p>
+
+<p class="lead"> The ideal ratio between resin and fabric it's 30% resin and 70% fabric. In this specific case, considering the textile material (linen) the ratio considered is 50% resin and 50% linen. The specific weight of linen is 200 grams/square meter. The three layers total area is approximately 0.3 square meter. So, the linen weight is approximately 60 grams. 60 grams of resin are required and considering the ratio 2:1 (resin:hardener) the hardener weight is 60/2 grams equal to 30 grams.</p>
+
+<p class="lead">Proceedings:</p>
+
+<p class="lead">- I Lightly sanded the mold and clean; </p>
+<p class="lead">- I cut three pieces of linen of the size of the mold (1 with the texture of fabric at 45 ° to reinforce the composite); </p>
+<p class="lead">- I also cut Breather, Bleeder and Peel Ply of the size of the mold (the Breather 3 time the dimension of the mold) ;</p>
+<p class="lead">- I Put 2 Coats of Epoxy resiner and Hardener mixture (2:1 ratio) to completely cover the mold; </p>
+<p class="lead">- I put 4 Coats of Wax Mold Release each 30 min;</p>
+<p class="lead">- I put 3 Layer of Linen fabric and Epoxy resin mixture using brush and roller(quickly), making sure to evenly distribute and cover all parts of the mold( I used some small piece of linen to adjust empty areas);</p>
+
+<p class="lead">- Then I covered using Peel Ply, Bleeder and Breather (where there will be the valve of the air-vacuum I bent breather to have greater absorbing part)in this order;</p>
+<p class="lead">- At this point I put it all in the Air-Vacuum bag, I closed the valve anche the bag and I turned on the air pump to created the vacuum;</p>
+<p class="lead">- after a night the model was ready to be removed, but The release did not work very well and I had to break the mold;</p>
+
+
+<div class="text-muted"><h3>post production and PROBLEM FIXED</h3></div>
+
+<p class="lead">Unfortunately the model didn't come as I wanted, I think that during the process wet lay up, I used too little resin; Furthermore the release wax did not work very well, despite the many layers I used.</p>
+
+
+<p class="lead">For this reason I had to work a lot to fix the the model:</p>
+<p class="lead">- I cut the edges and sanded many times to reduce the imperfections; </p>
+<p class="lead">- When I got an acceptable and uniform result I put 2 coat of Gelcoat mixture; </p>
+<p class="lead">- I Lightly sanded the mold and clean and the end, I have the "body" or "shell" of my robot; </p>
+
+
+</p>
+
 
    
 
@@ -131,6 +220,8 @@
               <p class="lead"><a href="https://www.dropbox.com/s/0pmxv088nad0v1t/robot_shell.3dm?dl=0">- robot_shell.3dm</a></p>
               <p class="lead"><a href="https://www.dropbox.com/s/ty8myt4c3lu5teq/robot_shell.stl?dl=0">- robot_shell.stl</a></p>
 
+<p class="lead">Programs: Rhinoceros, Artcam, Meshcam.</p> 
+<p class="lead">Machinery: VREL CO2 ME-1300.</p>
               
                   
            </section>
