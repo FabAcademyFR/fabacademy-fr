@@ -72,13 +72,16 @@
 
 <h3 class="heading">Programming the ATtiny44 microcontroller</h3>
 <p class="lead"> 
+The data sheet of the Atmel Attiny 24, 44 and 84A processors is a 286 page document of technical details.Several pieces of important data are given right in the beginning of the document, among which: the pin configuration and pin functions such as ADC, PWM etc. In order to program the processor and blink a LED using the Arduino IDE, the correct pin number of that LED should be used<br><br/>
 After installing all the required software, drivers and libraries, I programmed the HELLOboard with Arduino IDE, for that I needed to follow severals steps.<br>
 -Steps to programming the micro controller with Arduino:<br>
 Connect the ISP programmer with the Hello board using my ISP connector cable.<br>
 With the USB cable conect ISP programmer to my computer and open  Arduino IDE.<br>
--Go to Tools > Board menu and select ATtiny44 (20 Mhz Clock)<br>
--Go to Tools > Programmer menu and select USBtinyISP<br>
--Go to Tools > Select Burn To Bootloader to execute the bootloader to the microcontroller<br> <br/>
+-Go to Tools > Board menu and select ATtiny44 (20 Mhz Clock).<br>
+-Go to Tools > Programmer menu and select USBtinyISP.<br>
+-Go to Tools > Select Burn To Bootloader to execute the bootloader to the microcontroller.<br>
+If the operation is succesfull it's possible read the message of Arduino IDE: DONE BURNING BOOTLOADER.<br>
+To complete the procedure, it's necessary sends an Exemple Sketch of IDE to the Echo Hello-World.<br> <br/>
 <img class="featurette-img-responsive pull-up" width="48%" src="img/WEEK7/1.jpg" >
 <img class="featurette-img-responsive pull-up" width="48%" src="img/WEEK7/2.jpg" >
 </p>
