@@ -68,17 +68,25 @@
             <p class="lead">DOWNLOAD FILES:<br>
           	<a href="https://github.com/elenapapetti/FabAcademy2015files/tree/master/Week14/Interface/ide%20input/serial">'Input'</a>
           	<br>
-          	<a href="https://github.com/elenapapetti/FabAcademy2015files/tree/master/Week14/Interface/processing%20output/sketch_150521c">'Output'</a>
+         <a href="https://github.com/elenapapetti/FabAcademy2015files/tree/master/Week14/Interface/processing%20output/sketch_150521c">'Output'</a>
           	</p>
-        
-                <span class="text-muted">  
-            </h2>
- <p class="lead">Sorry, The page is undercostruction!</p>
+        <p class="lead">For this week assignment I chose to use and learn <a href="https://www.processing.org/" target="_blank">Processing </a> an open source programming language and integrated development environment (IDE) built for the electronic arts, new media art, and visual design communities with the purpose of teaching the fundamentals of computer programming in a visual context, and to serve as the foundation for electronic sketchbooks. The language builds on the Java language, but uses a simplified syntax and graphics programming model.<br>
+        First thing I have to do was the free <a href="https://www.processing.org/" target="_blank">download </a> of the software. Then to start with it, I've done several resarches on the official website and internet because for me it's a new software to use. The approach with Processing wasn't difficult because it looks like Arduino IDE and the documentation is really wide. <br>
+        In the page <a href="http://www.learningprocessing.com/examples/" target="_blank">Learning Processing </a> I found a series of simple exercises and explanations to understand concept like serial port reading, variables etc..  </p>
+        <br>
+        <p class="lead">I decided to work more with sound taking inputs for my final project. This time, however, to improve the sound, instead of a buzzer, I put on my board a speaker of an old phone. <br></br>
+       For my Interface I wanted to create a screen with a Ball that runs at half the screen from left to right when starts the sound.
+       <br>To do it I repeat the tutorial in the following video. </p>
 
- 	<img class="featurette-img-responsive pull-up" width="100%" src="img/WEEK14/1.jpg">
-<iframe src="https://player.vimeo.com/video/131963447" width="500" height="500" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/131963447">Output</a> from <a href="https://vimeo.com/user37965595">Elena Papetti</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+     <iframe src="https://player.vimeo.com/video/131963447" width="50%" height="281" ></iframe>
+     <iframe src="https://www.youtube.com/embed/jLuMjfxgBpc" width="48%" height="281" ></iframe>
+         <br></br>    
+ 
+ <p class="lead"> Once whatched it I customized my interface changing in the sketch background color, size, position and velocity of the ball. Done that, I worked on the second step: the communication between Arduino IDE and Processing.<br> First I wrote the sketch with the IDE using a tone library. After I open my Processing sketch and I set the Serial Port "port = new Serial(this, Serial.list()[1], 9600);" to import from the IDE. So I runned the Sketch on arduino paying attention to closing the serial monitor on it (otherwise processing recognizes a busy port). Then I runned the sketch on Processing and it's possible hear the melody while the ball flowing!   </p>
+ <br></br>
 
-	 <footer>
+<img class="featurette-img-responsive pull-up" width="100%" src="img/WEEK14/1.jpg">
+ <footer>
 		 <div class="container">
 			 <div class="row">
 				 <div class="col-md-4">
