@@ -60,34 +60,31 @@
     <div class="intro-heading">
 
         <div id="services">
-            <h2 class="featurette-heading">Week13-Networking & Communication
-                <p class=" Design and make a 3D mold (~ft2), and produce a fiber composite part in it."</p>
-              <p>
-                     <strong="lead">CLASS WEB PAGE: </strong>
-                <a href="http://academy.cba.mit.edu/classes/networking_communications/index.html" target="_blank"> http://academy.cba.mit.edu/classes/networking_communications/index.html
-                </a>
-                <br>
-                   <strong="lead">REFERENCES: </strong>
-                <a href="http://academy.cba.mit.edu/content/tutorials/akf/networking_serial_bus.html" target="_blank"> hhttp://academy.cba.mit.edu/content/tutorials/akf/networking_serial_bus.html
-                </a>
-                <br>
-            </p>
+            <h2 class="featurette-heading">Week13 - Networking & Communication</h2>
+                 <h3 class="featurette-heading">Design and make a 3D mold (~ft2), and produce a fiber composite part in it </h3>
+                 <br></br>
+              
+                      <p class="lead">CLASS WEB PAGE:  <br>
+                <a href="http://academy.cba.mit.edu/classes/networking_communications/index.html" target="_blank"> http://academy.cba.mit.edu/classes/networking_communications/index.html</a>
+                <br></br>
+                   <strong="lead">REFERENCES: </strong><br>
+                <a href="http://academy.cba.mit.edu/content/tutorials/akf/networking_serial_bus.html" target="_blank"> hhttp://academy.cba.mit.edu/content/tutorials/akf/networking_serial_bus.html </a></p>
         </div>
-                <span class="text-muted">  
-            </h2>
+                
+            
  <p class="lead">This week the assignment was about networking and communication. The aim of the exercise was to design and build a wired &/or wireless network connecting at least two nodes. For this week assignment I made three boards and connect them with a 4th pins connector. I made one bridge for master and two nodes for slaves. The bridge board is connected to a computer via a FTDI cable. The two node boards are connected to the bridge board.
-  </p> <br> <br/> 
-     <p class="lead">DOWNLOAD: <a href="http://fabacademy.org/archives/2015/doc/fabkit-0.4.html">'File'</a> 
-            <br> <br/>
-            <h2 class="featurette-heading">First Phase: Milling & Soldering
-                <span class="text-muted">  
-            </h2>
+  </p> 
+     <p class="lead">DOWNLOAD FILES: <br>
+    <a href="https://github.com/elenapapetti/FabAcademy2015files/tree/master/Week13/hello.bus.45.bridge">hello.bus.45.bridge PNG</a> <br> 
+    <a href="https://github.com/elenapapetti/FabAcademy2015files/tree/master/Week13/hello.bus.45.node">hello.bus.45.node PNG</a>  <br>
+        <a href=" http://academy.cba.mit.edu/classes/networking_communications/bus/hello.bus.45.c">hello.bus.45.c</a>  <br>
+        <a href=" http://academy.cba.mit.edu/classes/networking_communications/bus/hello.bus.45.make">hello.bus.45.make</a>  <br>
+    
+            <h2 class="featurette-heading">First Phase: Milling & Soldering   </h2>
              <p class="lead">For my exercise I need to mill the Hello.bus.45 both for the Node that for the Bridge which I downloaded in the Serial Asynchronous of the Class page. As usual now I made the fabmodules files and I mill the board with the Roland Milling Machine always following the same procedure ( Tip 1/64 for Traces - Tip 1/32 for Interior). Once ready the cards I sat at the welding station and I put all the components.</p> 
              <div class="col-sm-6 portfolio-item">
                  </a>
-            <h2 class="lead">Components I need for one Bridge:
-                <span class="text-muted">  
-            </h2>
+            <h2 class="lead">Components I need for one Bridge:  </h2>
              <ol style=" padding-left: 4em;"> <!-- consigliavano 1.3 oppure 1.8em -->
                     <li class="lead">1 Attiny 45</li>
                     <li class="lead">1 Header 6 pins</li>
@@ -102,9 +99,7 @@
                     </div>
                      <div class="col-sm-6 portfolio-item">
                  </a>
-                 <h2 class="lead">Components I need for two Nodes:
-                <span class="text-muted">  
-            </h2>
+                 <h2 class="lead">Components I need for two Nodes:</h2>
              <ol style=" padding-left: 4em;"> <!-- consigliavano 1.3 oppure 1.8em -->
                     <li class="lead">1 Attiny 45</li>
                     <li class="lead">1 Header 6 pins</li>
@@ -147,24 +142,23 @@
                             <h4>Traces Node Board</h4>
                         </div>
                     </div>
-                      </p>
-                      <br> <br/>
- <h2 class="featurette-heading">Second Phase: Code & Flashing.
-                       <span class="text-muted">  
-                       </h2><br> <br/>
-                       <p class="lead">After I have done the following steps: </p>
+
+ <h2 class="featurette-heading">Second Phase: Code & Flashing.</h2>
+   <p class="lead">Each board must be programmed individually, so it's needful modify the C code for each board.  <br>
+    Each node needs to have a different node ID number (0, 1, 2, 3, etc). The "bridge" board is also a "node". </p>
+                        
+                       <br> <br/>
+                       <p class="lead">Then I have done the following steps: </p>
                  <ol style=" padding-left: 4em;"> <!-- consigliavano 1.3 oppure 1.8em -->
                     <li class="lead"> I downloaded and Copy on Ubuntu Desktop the "bus_fixed" folder from The Tutorial of Providence. page.</li>
-                    <li class="lead"> To programm the Bridge I opened the C code file and I put 0 on "#define node_id '#'.</li>
-                    <li class="lead"> I connected my ISP and the FTDI connector to the Bridge Board.</li>
-                    <li class="lead"> On the Ubuntu Konsole I got in the "bus_fixed" folder.</li>
-                    <li class="lead">In root modality I gave the command sudo make -f hello.bus.45.make program-usbtiny to start the programming.</li>
-                    <li class="lead">Made the programming I repeated the same steps for the two Nodes Board pay attention to define this time first 1 and after 2 in "#define node_id '#' </li>
+                    <li class="lead"> To programm the Bridge I opened the C code file and I put 0 on "#define node_id '#'".</li>
+                    <li class="lead"> I connected the bridge board to computer with the FTDI header and I programmed it using the FabISP and, in root modality, I flashed the bridge board as node 0: "sudo make -f hello.bus.45.make program-usbtiny".</li>
+                    <li class="lead">Then I modified the C code and changed the node ID to 1:#define node_id '1' and I saved the file.I repeated the same steps for the other Node. Be careful to define before 1 and after 2 for nodes in "#define node_id '#' </li>
+                    <li class="lead">I used the bridge board to power node boards and connect them to TX and RX. Then I flashed the node board as Node 1: "sudo make -f hello.bus.45.make program-usbtin".</li>
+                    <li class="lead">Same passages shoul be repeated for Node 2</li>
                 </ol>
-               <div id="portfolio">
-                <div class="row">
 
-    <div class="col-sm-6 portfolio-item">
+                <div class="col-sm-6 portfolio-item">
             <img src="img/WEEK13/5.jpg" class="img-responsive" alt="">
                         </a>
                         <div class="portfolio-caption">
@@ -177,13 +171,11 @@
                         <div class="portfolio-caption">
                             <h4>Make the Connection</h4>
                         </div>
-                    </div> </p>
-                     <br> <br/>  
-                     <h2 class="featurette-heading">Third Phase: Serial Communication
-                <span class="text-muted">  
-            </h2>
-             <p class="lead">To test my serial bus I connected the boards with a cable and then plugged the bridge into the computer. I opened the serial monitor in the Arduino Ide setting on 9600 baud in order to communicate all my boards.
-                Everytime I type a number between 0,1,2 and press enter, there is a general blink in all the boards'Led (is the proof of a first step of information). Then there is the blink of the Node I have chosen (in response to the number that I typed). Since the blink was fast I changed in the Code the delay from 100ms to 1000ms.  </p> 
+                    </div>
+                       
+                     <h2 class="featurette-heading">Third Phase: Serial Communication</h2>
+             <p class="lead">After flashing boards with nodes number (1,2,3) I connected the boards with FTDI cable to test my serial bus and then plugged the bridge into the computer.<br>I Connected the nodes with 4 pin header (Tx,Rx,Vcc,Gnd). <br>Then I opened the serial monitor in the Arduino Ide setting on 9600 baud in order to communicate all my boards.<br>
+                Everytime I type a number between 0,1,2 and press enter, there is a general blink in all the boards'Led (is the proof of a first step of information).<br> Then there is the blink of the Node I have chosen (in response to the number that I typed).The node name (node 0, node1, node2) also was displayed on the serial monitor.<br>Since the blink was fast I changed in the Code the delay from 100ms to 1000ms.  </p> 
 
                     <div class="col-sm-6 portfolio-item">
             <img src="img/WEEK13/8.jpg" class="img-responsive" alt="">
@@ -207,17 +199,13 @@
                         </div>
                     </div>
                     <div class="col-sm-6 portfolio-item">
-                           <iframe src="https://player.vimeo.com/video/126978759" width="600" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/126978759">20150504 175000</a> from <a href="https://vimeo.com/user37965595">Elena Papetti</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+                           <iframe src="https://player.vimeo.com/video/126978759" width="600" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                         <!--/a -->
                         <div class="portfolio-caption">
                             <h4>Verification of the serial Communication between the Boards</h4>
                         </div>
                     </div>
-                    <p class="lead">  <p> </p> 
-             <p class="lead">    </p>
-
-
-					<footer>
+                    <footer>
 						<div class="container">
 							<div class="row">
 								<div class="col-md-4">
