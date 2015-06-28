@@ -60,25 +60,27 @@
     <div class="intro-heading">
 
         <div id="services">
-            <h2 class="featurette-heading">Week11-Output Devices
-                <br> <br/>   Add an output device to a microcontroller board you've designed and program it to do something.
-                <br> <br/> 
-                <span class="text-muted">  
-            </h2>
- <p class="lead">On this week it was requested to add an output device to a microcontroller board we designed and program it to do something. I decided to use this assignment to test a sound output useful for my final project. The idea is to obtain a sound that origins from a motion through the stretching of a cloth. To generate my output it's enough to me an Audio Transducer (piezo) to which I add a Potentiometer to adjust the frequency. 
-                         </p> <br> <br/> 
-                         <p class="lead">CLASS WEB PAGE: <br> <br/>
+            <h2 class="featurette-heading">Week11 - Output Devices</h2>
+              <h3 class="featurette-heading">Add an output device to a microcontroller board you've designed and program it to do something.</h3>
+                <p class="lead">On this week it was requested to add an output device to a microcontroller board we designed and program it to do something. I decided to use this assignment to test a sound output useful for my final project. The idea is to obtain a sound that origins from a motion through the stretching of a cloth. To generate my output it's enough to me an Audio Transducer (piezo) to which I add a Potentiometer to adjust the frequency. </p>  
+                         <p class="lead">CLASS WEB PAGE: <br>
                 <a href="http://academy.cba.mit.edu/classes/output_devices/index.html" target="_blank"> http://academy.cba.mit.edu/classes/output_devices/index.html</a>
              </p><br> <br/>
 
+             <p class="lead">DOWNLOAD FILES:<br> 
+            <a href="https://github.com/elenapapetti/FabAcademy2015files/tree/master/Week11/EAGLE">EAGLE</a><br> 
+            <a href="https://github.com/elenapapetti/FabAcademy2015files/tree/master/Week11/PNG">PNG</a><br> 
+            <a href="https://github.com/elenapapetti/FabAcademy2015files/tree/master/Week11/IDE">IDE</a> 
+          </p>
+
              <p class="lead">REFERENCES:
-                <br> <br/>
-               Link :<a href="http://fabacademy.org/archives/2015/doc/fabkit-0.4.html">'Piezo'</a> 
-            <br> <br/>
-               Link :<a href="http://uk.farnell.com/vishay-spectrol/m63m103kb30t607/trimmer-10k/dp/9608230">'Potentiometer'</a> 
-           <br> <br/>
-                Link :<a href="http://uk.farnell.com/vishay-spectrol/m63m103kb30t607/trimmer-10k/dp/9608230">'Arduino Tone Tutorial'</a>  </P>
-                <br> <br/>
+                <br> 
+               <a href="http://www.jameco.com/webapp/wcs/stores/servlet/Product_10001_10001_1956784_-1">'Piezo'</a> 
+            <br> 
+            <a href="http://uk.farnell.com/vishay-spectrol/m63m103kb30t607/trimmer-10k/dp/9608230">'Potentiometer'</a> 
+           <br>
+            <a href="https://www.arduino.cc/en/Tutorial/Tone">'Arduino Tone Tutorial'</a>  </P>
+               
              
              
 <h2 class="featurette-heading">First Phase: Shield Design .
@@ -142,14 +144,14 @@
                             <h4>Soldering step was really quickly!</h4>
                         </div>
                     </div>
- <h2 class="featurette-heading">Third Phase: Sketch & Output.
-                <span class="text-muted">  
-            </h2>
-             <p class="lead">    </p> 
-            <p class="lead">Before programming the sound output on my shield, I needed to understand the working of my circuit with the help of Arduino Board. Searching an example with both the piezo and potentiometer I found several example that use the <a href="http://uk.farnell.com/vishay-spectrol/m63m103kb30t607/trimmer-10k/dp/9608230"> 'ARDUINO TONE LIBRARY'</a>. After doing a test with Arduino I used my Fabkit and Output Device to reproduce the same thing. On the pinout of <a href="http://www.atmel.com/devices/atmega328p.aspx"> 'Atmega 328'</a> I verified the correspondence of the pins to use. 
-                <div class="row">
+ <h2 class="featurette-heading">Third Phase: Sketch & Output.</H2>
 
-                    <div class="col-sm-6 portfolio-item">
+            <p class="lead">Before programming the sound output on my shield, I needed to understand the working of my circuit with the help of Arduino Board. Searching an example with both the piezo and potentiometerI found several example that use the <a href="https://www.arduino.cc/en/Reference/Tone"> 'ARDUINO TONE LIBRARY'</a>. After doing a test with Arduino I used my Fabkit and Output Device to reproduce the same thing. On the pinout of <a href="http://www.atmel.com/devices/atmega328p.aspx"> 'Atmega 328'</a> I verified the correspondence of the pins to use. 
+                <br> 
+                I programmed the microcontroller board with a simple sketch: a loop of alternate rotations in opposite directions and breaks. I controlled the speed using the PWM pin. IDE Arduino Sketch: </P>
+                
+                <div class="row">
+                  <div class="col-sm-6 portfolio-item">
             <img src="img/WEEK11/sketch arduino.jpg" class="img-responsive" alt="">
                         </a>
                         <div class="portfolio-caption">

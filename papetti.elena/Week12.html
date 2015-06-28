@@ -60,29 +60,28 @@
     <div class="intro-heading">
 
         <div id="services">
-            <h2 class="featurette-heading">Week12-Composites
-                <p class=" Design and make a 3D mold (~ft2), and produce a fiber composite part in it."</p>
-              <p>
-                     <strong="lead">CLASS WEB PAGE: </strong>
+            <h2 class="featurette-heading">Week12 - Composites</h2>
+            <h2 class="featurette-heading">Design and make a 3D mold (~ft2), and produce a fiber composite part in it</h2>
+                
+              <p class="lead">CLASS WEB PAGE:<br>
                 <a href="http://academy.cba.mit.edu/classes/composites/index.html" target="_blank"> http://academy.cba.mit.edu/classes/composites/index.html
                 </a>
-                <br>
+                
             </p>
         </div>
-                <span class="text-muted">  
-            </h2>
+                 
+            
  <p class="lead">For this week, the exercise was about composite; design and make a 3D mould and produce a fibre composite part in it, by using air-vacuum process. Since you can reuse the mould it allows you to make repetitive things fast. 
-  </p> <br> <br/> 
-     <p class="lead">DOWNLOAD: <a href="https://github.com/elenapapetti/FabAcademy2015files/tree/master/Week12">'File'</a> 
-            <br> <br/>
+  </p>  
+     <p class="lead">DOWNLOAD FILES: <br>
+        <a href="https://github.com/elenapapetti/FabAcademy2015files/tree/master/Week12/3DM">'MODEL'</a><br>
+        <a href="https://github.com/elenapapetti/FabAcademy2015files/tree/master/Week12/STL">'STL'</a><br>
+        <a href="https://github.com/elenapapetti/FabAcademy2015files/tree/master/Week12/ISO">'ISO'</a> <br>
+        
             <h2 class="featurette-heading">First Phase: Modeling & Milling.
                 <span class="text-muted">  
             </h2>
-             <p class="lead">The first step was made a 3D Model to make the Mould on a polyurethan panel ( 600x800x100 mm of which profits 500x600x60 mm) . Beginning my idea was to create a tray. Trough an exercise with Grasshopper I got my Mesh, after I opened it with Rhinoceros to work on it. I sized the model (300x300x28 mm) paying attention to the dimension of the machine spindle, because the maximum height that I could use was 30 mm. After I exported the .stl file and I downloaded and installed on my pc the trial version of Mesh Cam software. I had to set up the units in mm, determine the size of the area to mill and most importantly, in the Toolpath Parameters, I set the two milling process which are the Roughing (tip 8 mm flat-head) and the Finishing (tip 3.2 round-head). Did this I saved the two .iso file for the Isons Software where I set the X,Y (0,0) and the Z-axis home coordinates values and I modified the gcode to start the milling process.  </p> 
- </p> 
-             <p class="lead">    </p>
-             <div id="portfolio">
-                <div class="row">
+             <p class="lead">The first step was made a 3D Model to make the Mould on a Polyurethan Panel ( 600x800x100 mm of which profits 500x600x60 mm) . Beginning my idea was to create a tray. Trough an exercise with Grasshopper I got my Mesh, after I opened it with Rhinoceros to work on it. I sized the model (300x300x28 mm) paying attention to the dimension of the machine spindle, because the maximum height that I could use was 30 mm. After I exported the .stl file and I downloaded and installed on my pc the trial version of Mesh Cam software. I had to set up the units in mm, determine the size of the area to mill and most importantly, in the Toolpath Parameters, I set the two milling process which are the Roughing (tip 8 mm flat-head) and the Finishing (tip 3.2 round-head). Did this I saved the two .iso file for the Isons Software where I set the X,Y (0,0) and the Z-axis home coordinates values and I modified the gcode to start the milling process.  </p> 
 
     <div class="col-sm-6 portfolio-item">
             <img src="img/WEEK12/1.jpg" class="img-responsive" alt="">
@@ -113,10 +112,26 @@
                             <h4>Finishing Settings</h4>
                         </div>
                     </div>
-                      </p> <br> <br/> 
+                      </p> 
+                      <p class="lead"> Roughing Settings:<br>-tip 8 mm square-head<br>-feed rate: 1100 mm/s <br>-plunge: 500 mm/s <br>- spindle speed: 12000 rpm<br>-depth per pass: 4 mm. <br></br>Finishing Settings:<br>-tip 3 mm ball-head<br>-feedrate: 1100 mm/s<br>-plunge: 500 mm/s<br>-spindle speed: 12000 rpm<br>-depth per pass 1 mm. <br></br>We manually modified the GCODE to stop the machine after the roughing to change the tool. M5 to stop the spindle, G0 and x,y,z coordinates to move the axis.<br> A very important thing to remember before start CNC is to switch on the air compressor and the extractor! </p> 
 
-
- <div class="col-sm-6 portfolio-item">
+                      <div id="portfolio">
+                <div class="row">
+                    <div class="col-sm-6 portfolio-item">
+                            <img src="img/WEEK12/g.jpg" class="img-responsive" alt="">
+                        <!--/a -->
+                        <div class="portfolio-caption">
+                            <h4>Setting of the .stl File for the Milling Machine</h4>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 portfolio-item">
+                            <img src="img/WEEK12/d.jpg" class="img-responsive" alt="">
+                        <!--/a -->
+                        <div class="portfolio-caption">
+                            <h4>Setting of the .stl File for the Milling Machine</h4>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 portfolio-item">
             <img src="img/WEEK12/5.jpg" class="img-responsive" alt="">
                         </a>
                         <div class="portfolio-caption">
@@ -130,7 +145,8 @@
                             <h4>Time taken for Finishing: 1.30 h</h4>
                         </div>
                     </div>
-                      </p> <br> <br/> 
+                      </p>  
+
 
  <h2 class="featurette-heading">Second Phase: Wet Lay Up.
  <span class="text-muted">  
@@ -148,10 +164,34 @@
                <div id="portfolio">
                 <div class="row">
 
+                    <div class="col-sm-6 portfolio-item">
+            <img src="img/WEEK12/a.jpg" class="img-responsive" alt="">
+            <div class="portfolio-caption">
+                            <h4>Our Materials Book</h4>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 portfolio-item">
+            <img src="img/WEEK12/b.jpg" class="img-responsive" alt="">
+            <div class="portfolio-caption">
+                            <h4>Type Linen: Bcomp.</h4>
+                        </div>
+                    </div>
+                          <div class="col-sm-6 portfolio-item">
+            <img src="img/WEEK12/e.jpg" class="img-responsive" alt="">
+            <div class="portfolio-caption">
+                            <h4>Type Linen: Bcomp.</h4>
+                        </div>
+                    </div>
+
+      <div class="col-sm-6 portfolio-item">
+            <img src="img/WEEK12/f.jpg" class="img-responsive" alt="">
+            <div class="portfolio-caption">
+                            <h4>Type Linen: Bcomp.</h4>
+                        </div>
+                    </div>
     <div class="col-sm-6 portfolio-item">
             <img src="img/WEEK12/7.jpg" class="img-responsive" alt="">
-                        </a>
-                        <div class="portfolio-caption">
+            <div class="portfolio-caption">
                             <h4>Sanding the Mold.</h4>
                         </div>
                     </div>
@@ -162,6 +202,7 @@
                             <h4>What I need for the mixtures.</h4>
                         </div>
                     </div>
+                   <p class="lead"> The epoxy resin, gelcoat and other chemical products I used are toxic. So I worked using protective glasses, mask and gloves in a ventilated room. </p>
 
                     <div class="col-sm-6 portfolio-item">
             <img src="img/WEEK12/9.jpg" class="img-responsive" alt="">
@@ -177,7 +218,21 @@
                             <h4>Release Mold</h4>
                         </div>
                     </div>
+                    <div class="col-sm-6 portfolio-item">
+                            <img src="img/WEEK12/h.jpg" class="img-responsive" alt="">
+                        <!--/a -->
+                        <div class="portfolio-caption">
+                            <h4>Release Mold</h4>
+                        </div>
+                    </div>
 
+<div class="col-sm-6 portfolio-item">
+                            <img src="img/WEEK12/i.jpg" class="img-responsive" alt="">
+                        <!--/a -->
+                        <div class="portfolio-caption">
+                            <h4>Release Mold</h4>
+                        </div>
+                    </div>
  <div class="col-sm-6 portfolio-item">
             <img src="img/WEEK12/11.jpg" class="img-responsive" alt="">
                         </a>
@@ -192,11 +247,46 @@
                             <h4>Linen Fabric</h4>
                         </div>
                     </div>
+                     <div class="col-sm-6 portfolio-item">
+                            <img src="img/WEEK12/l.jpg" class="img-responsive" alt="">
+                        <!--/a -->
+                        <div class="portfolio-caption">
+                            <h4>Starting Wet Lay Up</h4>
+                        </div>
+                    </div>
+                     <div class="col-sm-6 portfolio-item">
+                            <img src="img/WEEK12/m.jpg" class="img-responsive" alt="">
+                        <!--/a -->
+                        <div class="portfolio-caption">
+                            <h4>Casting Resin between Linen Layers</h4>
+                        </div>
+                    </div>
                       <div class="col-sm-6 portfolio-item">
             <img src="img/WEEK12/13.jpg" class="img-responsive" alt="">
                         </a>
                         <div class="portfolio-caption">
                             <h4>3 Layer of Linen and Resin</h4>
+                        </div>
+                    </div>
+                               <div class="col-sm-6 portfolio-item">
+            <img src="img/WEEK12/n.jpg" class="img-responsive" alt="">
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Peel Ply Layer</h4>
+                        </div>
+                    </div>
+                               <div class="col-sm-6 portfolio-item">
+            <img src="img/WEEK12/o.jpg" class="img-responsive" alt="">
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Plastic Laminate with Holes (Bleeder)</h4>
+                        </div>
+                    </div>
+                                     <div class="col-sm-6 portfolio-item">
+            <img src="img/WEEK12/p.jpg" class="img-responsive" alt="">
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Cotton Fabric Layer (Breather)</h4>
                         </div>
                     </div>
                     <div class="col-sm-6 portfolio-item">
@@ -206,12 +296,35 @@
                             <h4>Put the Mold with all fabric layers in the Vacuum Bag</h4>
                         </div>
                     </div>
+                     <div class="col-sm-6 portfolio-item">
+                            <img src="img/WEEK12/q.jpg" class="img-responsive" alt="">
+                        <!--/a -->
+                        <div class="portfolio-caption">
+                            <h4>Put the Valve and Seal Up the Vacuum Bag</h4>
+                        </div>
+                    </div>
+
 
                          <div class="col-sm-6 portfolio-item">
             <img src="img/WEEK12/15.jpg" class="img-responsive" alt="">
                         </a>
                         <div class="portfolio-caption">
                             <h4>Doing the Vacuum</h4>
+                        </div>
+                    </div>
+
+                         <div class="col-sm-6 portfolio-item">
+            <img src="img/WEEK12/r.jpg" class="img-responsive" alt="">
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Extraction of the Package</h4>
+                        </div>
+                    </div>
+                                  <div class="col-sm-6 portfolio-item">
+            <img src="img/WEEK12/s.jpg" class="img-responsive" alt="">
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Hard Ways to free my Tray</h4>
                         </div>
                     </div>
                     <div class="col-sm-6 portfolio-item">
@@ -254,8 +367,12 @@
                     </div>
 
         
-<p class="lead">  <p> </p> 
-             <p class="lead">    </p>
+<p class="lead"> The extraction of the hull from the mold was very difficult in my case, so the only solution was to break up the mold with the help of my tutor Mauro. Once I released the object from the mold, the cleaning and smoothing operations were very long. My thought was to leave the tray with linen in sight, but it was too stained between resin and residues of polyurethan, so I decided to sand the tray and put the gelcoat on the surface to finish the object.
+</p> 
+
+
+         <iframe src="https://player.vimeo.com/video/132012887" width="48%" height="281" ></iframe>
+         <iframe src="https://player.vimeo.com/video/132010543" width="48%" height="281" ></iframe>   
 
 					<footer>
 						<div class="container">
