@@ -141,10 +141,10 @@
 	<br>
 <h4 class="section-subheading text-muted">PROGRAMMING:</h4>  </p>
 
-<p class="lead">Use the hello.bus.45.c code  and makefile reported  in the Fab Academy website. Every single board has to be programmed singly. You have to program the C code for each board, Each node, in fact, needs a different node id number. 
+<p class="lead">Use the hello.bus.45.c code  and makefile reported  in the Fab Academy website. Every single board has to be programmed singly. You have to program the C code for each board. Each node, in fact, needs a different node id number. 
 <br>- In the C code, define node_id '0' and save the file. Then connect the bridge board to computer with the FTDI header and program it using the FabISP, flash the bridge board as node 0: sudo make -f hello.bus.45.make program-usbtiny.
-<br>- Modify the C code, define node_id '1' and save the file. The bridge board to power node boards and connect them to TX and RX. Then flash the node board as node 1: sudo make -f hello.bus.45.make program-usbtiny.
-<br>- In the the C code, define node_id '2', and repeat the process.</p>
+<br>- Modify the C code, define node_id '1' and save the file. Use the bridge board "0" to power node boards and connect them to TX and RX. Then flash the node board as node "1": sudo make -f hello.bus.45.make program-usbtiny.
+<br>- In the C code, define node_id '2', and repeat the process.</p>
 <br>
 <h4 class="section-subheading text-muted">COMUNICATIONS:</h4>  </p>
 <br>	
@@ -160,7 +160,7 @@
 <p class="lead"> Notes:
 	<br>- Make sure the baud rate is set to 9600;
 	<br>- Each board needs to have a different node id;
-	<br>- Problems with noise of nodes. Using the Arduino serial monitor the nodes name showed was unusual. I checked the solder points, changed the connectors and rolled the wires. This way i was able to have a cleaner output.
+	<br>- Problems with noise of nodes. Using the Arduino serial monitor the nodes name showed was unusual. I checked the solder points, changed the connectors and rolled the wires. In this way i was able to have a cleaner output.
 <br>	
 </p>
                  <br>
@@ -170,7 +170,7 @@
             <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week13/Hellobus%2045/hello.bus.45.bridge.interior.rml">hello.bus.45.bridge.interior.rml</a>  
             <br> 
 <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week13/Hellobus%2045/hello.bus.45.bridge.png">hello.bus.45.bridge.png</a>
-      </p>
+      <br>
                   <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week13/Hellobus%2045/hello.bus.45.bridge.traces.png">hello.bus.45.bridge.traces.png</a>   
              <br>
             <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week13/Hellobus%2045/hello.bus.45.bridge.traces.rml">hello.bus.45.bridge.traces.rml</a>  
