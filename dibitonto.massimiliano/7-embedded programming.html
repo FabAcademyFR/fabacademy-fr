@@ -106,10 +106,8 @@
 							<h3>Reading the ATTiny 44/a datasheet</h3>
 						  </header>
                           <p>When you use an electronic component it is very useful to read the datasheet. It contains many information about the characteristics of the components, especially the power requirements (helpful to don't damage the component) and the pinout (useful to correctly connect the component). Moreover the datasheet tell us the behaviour of the component and, if necessary, the configuration parameters (that could be software or hardware). A microcontroller is a complex component so the datasheet is very rich of information. The ATTiny datasheet can be found <a href="http://www.atmel.com/images/doc8183.pdf">here</a>.</p>
-                          <p>The pinout scheme was very useful to design the circuit of the echoBoard to add the button and the led but also to check the connections and the alimentation. Moreover was also useful to understand the role of the fuses and to know how big could be the program that I can upload into it. Indeed using Arduino IDE means to have a bigger program as it imports libraries (and the bootloader), so sometimes is necessary to optimize the code or writing it in C.</p>
-						<header>
-								<h3>&nbsp;</h3>
-						</header>
+                          <p>The pinout scheme was very useful to design the circuit of the echoBoard to add the button and the led but also to check the connections and the alimentation. Moreover was also useful to understand the role of the fuses and to know how big could be the program that I can upload into it. Indeed using Arduino IDE means to have a bigger program as it imports libraries (and the bootloader), so sometimes is necessary to optimize the code or writing it in C. According to the datasheet the Attiny44/a has 4K of Flash Memory, 256 bytes of Program Memory and 256 bytes of EEPROM. Then in the datasheet there is a long explanation of all the characteristics of the pins (PORTs) as each pin could do many things (i.e the PA6 works as ADC as SDA and as MOSI, OC1A, PCINT6 (digital I/O with Pin Change Interrupt )). Moreovere are explained also the register to use and read the values of the pins as the Port data register (with the logical values of the pins) and the Data Direction register (to say if a pin is Input or Output) </p>
+						
 <header>
 		<h3>Programming the Echo Board</h3>
 						  </header>

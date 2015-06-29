@@ -58,11 +58,7 @@
 							<ul>
 								<li><a href="index.html" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Home</span></a></li>
 								</ul>
-                                <ul>
-                               <li><a id="top-link" class="skel-layers-ignoreHref">Downloads:</a></li>
-<li><a href="http://www.massimilianodibitonto.it/fablab/networking.zip"><span class="icon fa-file-text">GPL License for the code
-                       </a>
-                       </li></ul>
+                      
                                   
 						</nav>
 						
@@ -87,7 +83,7 @@
 						<div class="container">
 
 							<header>
-								<h2> <strong> 16- Invention, intellectual property and income </strong> </h2>
+								<h2> <strong> 18- Project development </strong> </h2>
 							
 							</header>
 							
@@ -97,89 +93,50 @@
 							
 					<section id="about" class="two">
 						<div class="container">
-						
+						<header>
+								<h3>Intro  </h3>
+							</header><p>This collects answers to some key questions about my final project. All the documentation about the final project could be found in the  <a href="final_project.html">final project page</a>. </p>
 							<header>
-								<h3>Intro </h3>
+								<h3>What tasks have been completed, and what tasks remain?  </h3>
 							</header>
-							<p> The goal for this assignment is to define a license, an eventual business plan and a dissemination plan for the project.</p>
-                            <p>When thinking to my final project I had in mind a specific scenario and several contexts of use. The project was conceived as a way to practice with digital fabrication techniques and developed for personal interest. However it could have a future and there is a lot of space for future developments.
-                                                                 
-One of the strengths of my project is that it has a specific purpose and has a good User Experience. Moreover it is also a base that could be expanded adding other features (i.e. other sensors, other outputs other functionalities).
-The FabDuck is a social robot, it means that it is not a simple tool but is something that you choose for the different kind of interaction you have with.
-At present there are many examples in the market (as described in applications and implications)  that shows that the success of a product could be related to the 
-	
-                     User Experience and even if it could be felt like an expensive gadget it could have many applications. For this reason I think that the best way is to left the project open and let the community help me to improve the project.
+                            <p>In the <a href="final_project.html">final project page</a> I'm keeping track of the completion of the tasks subdivided in 3 areas: making the case, making the electronics and programming. Each area has a progress bar that indicates the percentage of tasks done and you can find the description of all the problems and the troubleshooting.
+                            All the tasks were completed.</p>
+                            
+                            
+                            
+                            <header>
+								<h3>what has worked? what hasn't?</h3></header>
+                                <p> My biggest problem was with the case (the body of the duck). It is big and required many hours of print. To reduce the hours I reduced also the quality of the print but then it was not water resistant. So I had to test different settings (as described in the <a href="final_project.html">final project page</a>) and I used also epoxic resin. However this is one thing I have to work more studying also the hydrodynamic and maybe I'll add a keel to make it more stable.</p><p> The electronics worked fine and also the code. The only problem is that sometimes there is a timeout while downloading data from the web but this is not very significant as the info could be downloaded later.</p>
+                                
+      
+                            <header>
+								<h3>what questions need to be resolved?</h3>
+                                </header>
+                                <p>During the development of the project I have to solve different questions.The biggest problem is to make electronics safety work in a wet environment. Indeed the duck is meant to stay in a pool. Problems are related to insulation but also to interferences in the Wi-Fi communication as water can influence radio waves at 2.4 GHz. Another problem is related to power management. Electronics and code should be optimized to harvest energy to allow a longer duration of the battery. The most expensive part in terms of energy consumption is related to wireless communication. </p>
+      
+     <header>
+								<h3> what will happen when?</h3>
+                                </header>
+                                <p>I decide to keep the project simple in order to realize a first prototype and test and refine my idea. Beginning with too many functionalities could be dangerous for a correct project development. Moreover I learn a lot of things while making the prototype. The most important one was the problem with the water. Even with a good print I didn't had a waterproof case. I used epoxy resin but it partially solved the problem. So one of the future developments will be to find another way to make the case waterproof.</p>There are a couple of things that I want to develop in the future:</p>
+                          <ul class="default">
+                          <li> improve the interaction with the user adding more physical feedbacks</li>
+                          <li>make a distributed architecture that allows to expand the system adding sensors and actuators (maybe wireless connected)</li>
+                          <li>add a ph sensor</li>
+                          <li>add a chlorine dispenser</li>
+                          <li>add a solar panel for battery recharge</li>
+                          </ul>
                           
-<header>
-<h3>Licensing</h3>
-</header>
-<p>I think that the project should be left open source to allow people to improve it and to adapt it to their needs. I imagine it as a "platform" that can be expanded and used for different purposes, as an example:
-<ul class="default">
-<li>research about affective computing and social robots</li>
-<li>fun</li>
-<li>environmental monitoring</li>
-<li>gamification (moving people to do something)</li>
-</ul>
-
-<p>For all the documentation about how to make a Fabduck I want to use a <a href="http://creativecommons.org/licenses/?lang=en">Crative Commons licence with attribution, non-commercial and share alike</a>.</p>
-<h4>Software</h4>
-<p>For the software and the design models I will use the <a href="http://www.gnu.org/licenses/gpl-3.0.html">GPL v.3 license</a> . This license is one of the most used for the software distribution as it is based on the 4 essential freedoms written by Richard Stallman: </p>
-<ul class="default">
-  <li>The freedom to run the program as you wish, for any purpose (freedom 0).</li>
-  <li>The freedom to study how the program works, and change it so it does your computing as you wish (freedom 1). Access to the source code is a precondition for this.</li>
-  <li>The freedom to redistribute copies so you can help your neighbor (freedom 2).</li>
-  <li>The freedom to distribute copies of your modified versions to others (freedom 3). By doing this you can give the whole community a chance to benefit from your changes. Access to the source code is a precondition for this.</li>
-</ul>
-<p> Moreover as I'm using third parts services as Yahoo Weather I cannot use it for commercial purposes unless to pay a fee. </p>
-
-<textarea style="width:80%; height:400px; font-size:16px">
-    The Fabduck projects, including code, electronic boards and 3D models is meant to build a social robots designed to live inside a pool.
-    It reads some data from sensor mounted on an Arduino compatible board and shares the data on the web in different modalities. You can find a detailed description here http://fabacademy.org/archives/2015/eu/students/dibitonto.massimiliano/final_project.html 
-    Copyright (C) 2015 - Massimiliano Dibitonto max (dot) dbt (at) gmail (dot) com 
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-    
-     This program comes with ABSOLUTELY NO WARRANTY.
-    This is free software, and you are welcome to redistribute it
-    under certain conditions.
-
-</textarea>
-
-
-<header>
-					   <h3>Dissemination</h3>
-					  </header>
-                      <p> The project page on the Fabacademy website is a good starting point. Moreover all the code and the design files are on Github. To make people know my project I will bring it at the European Maker Faire in Rome in October 2015 inside the Frosinone FabLab booth. Moreover I want to contact magaers of public pools to know it they want to host one. Another strategy could be open a Kickstarted project to fund my project and look for design contests.
-<header>
-<h3>Business Model</h3>
-</header>
-<p>I think that, to face the market, the project should be improved addign features and options to customize it. However as I will leave the project open the revenues could come in 2 ways: selling the object and giving services.</p>
-<h4>Making, selling and customizing the Fabduck</h4>
-<p>Even if the project is open, indeed, maybe someone wants the Fabduck in its pool but he/she haven't the skills to make it. So I can sell the assembled product. The Fabduck costs to me 45€ so I could not charge it too much (maybe sell at 65 €). However if you have a look at the average price of this kind of high tech gadgets this is quite a normal price, that means it can be afforded by my target.
-  Moreover I can customize it according to the customer's needs. And the customization could also changing a little bit the scenario. Indeed I can imagine a sensor network to control pollution in the water (i.e rivers, lakes etc) made by Fabducks that shares data directly with the citizens. And maybe encourages them to have a more sustainable behaviour.</p> <p> I'm planning also to expand the system adding other elements, separated from the Fabduck but networked with it. So I can sell a chlorine dispenser that can erogate chlorine when the sernsor and the Fabduck say that it is necessary.
-<h4>Services</h4>
-<p>The system relies on some web services. Then I want to make a webpage from where the user could configure some behaviours of the Fabduck (I imagine something like <a href="https://ifttt.com/">IFTTT</a> ). Maybe I can sell "extra" features for a monthly fee. However this is still to be developed.
-</p>
-<header>
-<h3>Downloads</h3>
-</header>
-<ul>
-<li><a href="http://www.massimilianodibitonto.it/fablab/networking.zip"><span class="icon fa-file-text">GPL License for the code
-                       </a>
-                       </li></ul>
-
-
+      <header>
+								<h3>what have you learned?</h3>
+                                </header><p>I've learned a lot about electonics and especially how to make my own boards instead of using pre-fabricated ones. The main advantage is that i can customize my board just to fit my needs.  So they do only the things I need and can be smaller and cheaper than the pre fabricated ones. Moreover I learned how to make complex programs in Arduino and to program other microcontrollers. I learned a lot also about 3D modelling, I used different softwares and followed a lot of tutorials and for sure I'll continue studying it. 
+                                I learned how to use SVN and a better way to manage projects.I learned that I can make almost everything :)</p>
+                                
+                                
+    <header>
+								<h3>documentation during development</h3></header><p>
+                               I documented all the steps during the development in the  <a href="final_project.html">final project page</a>. </p>
+                                
+                                
  </div>            					
               </section>
 				
