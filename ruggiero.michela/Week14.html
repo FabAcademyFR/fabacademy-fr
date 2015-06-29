@@ -96,32 +96,54 @@
                      <a href="http://academy.cba.mit.edu/classes/interface_application_programming/index.html"> interface_application_programming/index.html</a> 
    <br>  </br>                
 <p class="lead"> I chose to use my output: SERVO MOTOR</p>
-<p class="lead"> To develop my interface I decided to use Python, because FabLab Frosinone during this week organized a class about it. I take this opportunity to thank them.</p>
+<p class="lead">To develop my interface I decided to use Processing and the Arduino IDE to program the Fabkit board.</p>
+ 
+ <p class="lead">Processing is a programming language. Initially created to serve as a software sketchbook and to teach computer programming fundamentals within a visual context, Processing evolved into a development tool for professionals. Today, there are tens of thousands of students, artists, designers, researchers, and hobbyists who use Processing for learning, prototyping, and production.</p>
+  
+<p class="lead">For this assignment my goal was to command the rotation of the servomotor from a graphical interface. It is the output for my final project. </p>
 
-<p class="lead">Python is a very powerfull programming language. It has a very simple grammar, so is very intuitive to use to develop even complex application. For this exercise I attend a python class in wich i learnt how to use pyserial to comunicate via serial port to the fabkit, and Tkinker to build a gui. Design a graphical user interface with Tkinker is an easy job: every element (labels, buttons, etc.) is a widget, and it is positioned in the main window according to Cartesian coordinates. </p>
+ <p class="lead">Firstly I downloaded Processing, from the webpage <a href="https://processing.org/">Processing.org</a>.</p>
 
-<p class="lead"> For this assignment my goal was to visualize the rotation of the servo motor. I used my output project for the hardware part, as I am going to use it in my final project. </p>
-<p class="lead"> Firstly I downloaded Python, from the webpage <a href="https://www.python.org/">Python.org</a>. I do not have much experience with this language, so I made a basic gui application wich have two bottuns (left and right). Clicking on the buttons results in a certain number to be sent via serial to the fabkit (thanks to the FTDI adapter). The Arduino code on the FabMiky read the number and move the servo motor accordingly.</p>
+<p class="lead">Then I started to create a graphical interface to communicate with the FabKit and then move the servomotor. The graphical interface takes the x coordinate of the mouse and uses it as the value of the angle at which the servomotor will be placed.</p>
 
-<p class="lead"> The degree (angle) location of the servo motor are sent from FabMiky to the computer, so Python can read them through the serial port.</p>
-      <br>
+ <p class="lead">Using processing, I opened the serial port to create a communication with Arduino. As the window of my interface was 360 pixels, I took the x coordinate of the mouse and I divide it by two. So I got a value between 0 and 180. This is important because the servomotor I'm using covers only 180°, so another value would result in an error.</p>
+
+<p class="lead">In Processing I also printed the value sent and I used  it to change the color of the background to have another visual feedback.</p>
+ 
+<p class="lead">After detecting the mouse position (x)  I added also the "\n" at the end of the string and  I sent it to Arduino with the myPort.write command. The "\n" is the new line character. In this way each message sent from Processing will be a new line. Easier for parsing. I had already loaded an Arduino sketch receiving the command on the serial port, and using it as a angle to move the servomotor.</p>
+   
+ <p class="lead">As the message received from Arduino trough the serial port is a string , while the angle that I need to move the servomotor is an integer number, I used the function point( ) (<a href="https://www.arduino.cc/en/Tutorial.StringToIntExample">Tutorial.StringToIntExample</a>) to convert the value from string to an integer number. Then, when a "\n" is received the program gets ready to receive another angle.</p>
+      <br> 
+ <p class="lead">Moreover Arduino send back and "echo" of the angle received. I used it inside Processing as a feedback to be sure that the command was received correctly.</p>
+      <br>  
          
  <p class="lead"> PROGRAM: 
- 	<br>- Python-IDLE
+ 	<br>- Processing
  	<br>- Arduino
- 	<br>- Photoshop
  	   <br>
          </p>
-	<img class="featured-image  img-responsive pull-center" src="img/week14/interface1.jpg">
+	<img class="featured-image  img-responsive pull-center" src="img/week14/INTERFACE1.jpg">
+	</p>
+	<br>
+		<img class="featured-image  img-responsive pull-center" src="img/week14/INTERFACE2.jpg">
+	</p>
+	<br>
+		<img class="featured-image  img-responsive pull-center" src="img/week14/INTERFACE3.jpg">
+	</p>
+	<br>
+	<iframe width="1140" height="640" src="https://www.youtube.com/embed/jOkySy0Jh3w" frameborder="0" allowfullscreen></iframe>
+	</p>
+	<br>
+	<iframe width="1140" height="640" src="https://www.youtube.com/embed/BeNRhktlLRg" frameborder="0" allowfullscreen></iframe>
 	
-                 <br>
+            <br><br>
 <h4 class="section-subheading text-muted">Download:</h4> 
-            <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week14/Servo-Arduino/servo/servo.ino">servo.ino</a>   
+            <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week14/arduino_servo_miky/arduino_servo_miky.ino">arduino_servo_miky.ino</a>   
              <br>
-            <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week14/Servo-Python/MikyIDLE%202.py">MikyIDLE 2.py</a>  
+            <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week14/arduino_servo_processing/arduino_servo_processing.pde">arduino_servo_processing.pde</a>  
             <br> 
-      </p>
-           
+          <br> 
+      <br>         
         <hr class="featured-divider">
         <div class="featured" id="about">
         	<br>
