@@ -88,7 +88,7 @@
                     <hr><h3 class="section-subheading text-muted"> <strong>The weekly assignment focuses on fabrication of a Fab Kit and an input sensor and, firts of all, understand how a microcontroller board and a sensor wors and how read and interpret the data. </strong><hr></h3>                  
                   
                   <img src="img/w10/w10_1a.jpg " width="600" height="450" class="img-responsive">
-                    <h3 class="section-subheading text-muted"> <strong>FABKIT FABRICATION.</strong> The first part of the weekly assignment is the design of a FabKit (based on this tutorial: <a href="http://fabacademy.org/archives/2015/doc/projects/fabkit-0.4.html">http://fabacademy.org/archives/2015/doc/projects/fabkit-0.4.html</a> ) and an input device. FabKit, who has been designed for first, has a lot of components, described in the BOM, so I need half an hour to collect them all using the method described by the previous picture.<strong>Components: </strong> - ATmega 328P-AU 
+                    <h3 class="section-subheading text-muted"> <strong>FABKIT FABRICATION.</strong> The first part of the weekly assignment is the design of a FabKit (based on this <a href="http://fabacademy.org/archives/2015/doc/projects/fabkit-0.4.html">tutorial</a>) and an input device. FabKit, who has been designed for first, has a lot of components, described in the BOM, so I need half an hour to collect them all using the method described by the previous picture.<strong>Components: </strong> - ATmega 328P-AU 
 - 1 Resistors 10K 
 - 2 Resistors 499 
 - Yellow Led 1206 SMD 
@@ -100,10 +100,10 @@
 - Resonator 8MHZ </h3> 
 
                     <img src="img/w10/w10_1b.jpg " width="600" height="450" class="img-responsive">
-                    <h3 class="section-subheading text-muted"> Apart from the components, I drilled the FabKit board using the Roland SRM-20 machine. The PNG files have been downloaded from <a href="http://academy.cba.mit.edu/classes/input_devices/index.html">http://academy.cba.mit.edu/classes/input_devices/index.html</a>. Three different tasks have been performed: traces (1/64), drill and cut (1/32). As usual, Fab Modules have been used for this task. </h3> 
+                    <h3 class="section-subheading text-muted"> Apart from the components, I drilled the FabKit board using the Roland SRM-20 machine. The PNG files have been downloaded from the assignment <a href="http://academy.cba.mit.edu/classes/input_devices/index.html">page</a>. Three different tasks have been performed: traces (1/64), drill and cut (1/32). As usual, Fab Modules have been used for this task. </h3> 
 
                     <img src="img/w10/w10_2.jpg " width="600" height="450" class="img-responsive">
-                    <h3 class="section-subheading text-muted"> The most complex component is surely the ATMEGA328, that is very small and very difficult to solder. The datasheet could be find at <a href="http://www.atmel.com/images/Atmel-8271-8-bit-AVR-Microcontroller-ATmega48A-48PA-88A-88PA-168A-168PA-328-328P_datasheet_Complete.pdf">http://www.atmel.com/images/Atmel-8271-8-bit-AVR-Microcontroller-ATmega48A-48PA-88A-88PA-168A-168PA-328-328P_datasheet_Complete.pdf</a>.  </h3> 
+                    <h3 class="section-subheading text-muted"> The most complex component is surely the ATMEGA328, that is very small and very difficult to solder. The datasheet could be find at the ATMEL <a href="http://www.atmel.com/images/Atmel-8271-8-bit-AVR-Microcontroller-ATmega48A-48PA-88A-88PA-168A-168PA-328-328P_datasheet_Complete.pdf">page</a>.  </h3> 
                     
                     <img src="img/w10/w10_3.jpg " width="600" height="450" class="img-responsive">
                     <h3 class="section-subheading text-muted">  As it can be seen, FabKit is really <strong>very very small</strong> !!!! </h3> 
@@ -129,14 +129,14 @@
                     <h3 class="section-subheading text-muted"> As weel as a submarine, if the depth is excessive and the pressure is too high, several damages can occur to the hull. So the purpose of the input device is to send a constant signal to the processor in order to <strong>measure indirectly the depth of water.</strong></h3> 
 
                  <img src="img/w10/w10_12.jpg " width="600" height="450" class="img-responsive">
-                    <h3 class="section-subheading text-muted"><strong>The sensor, what it does, what I learned. </strong> I've chosen a photoresistor <strong>CDS – LDR GL5537-1</strong>. Detailed information about the sensor could be find at <a href="https://www.kth.se/social/files/54ef17dbf27654753f437c56/GL5537.pdf">https://www.kth.se/social/files/54ef17dbf27654753f437c56/GL5537.pdf</a> . The other components: 
+                    <h3 class="section-subheading text-muted"><strong>The sensor, what it does, what I learned. </strong> I've chosen a photoresistor <strong>CDS – LDR GL5537-1</strong>. Detailed information about the sensor could be find i.e. at this <a href="https://www.kth.se/social/files/54ef17dbf27654753f437c56/GL5537.pdf">page</a>. The other components: 
 - Resistors 10K - Header 3 Pin. Some details of the mentioned document have been reported in the following figures. </h3> <hr>
  <img src="img/w10/w10_12a.jpg " width="600" height="450" class="img-responsive"> Detail 1/3<hr>
   <img src="img/w10/w10_12b.jpg " width="600" height="450" class="img-responsive">Detail 2/3<hr>
    <img src="img/w10/w10_12c.jpg " width="600" height="450" class="img-responsive">Detail 3/3<hr>
 
                  <img src="img/w10/w10_13.jpg " width="600" height="450" class="img-responsive">
-                    <h3 class="section-subheading text-muted"> At the end of the soldering <strong>I burn</strong> the resistor <strong>and destroy</strong> also a portion of the traces (blue arrow zone) !!! I didn’t have the time to go back to the FabLab, so, just because it was an emergency I place one of the header connector in an unused part of the traces (green arrow) and I’ve also used a classic resistor . It works ! Using the SERIAL MONITOR command of the Arduino IDE,<strong> FabKit receives a signal from A0 pin.</strong> For a better understanding of the functionality please refer also to the detailed description (and video) available at <a href="http://fabacademy.org/archives/2015/eu/students/burrai.antonio/final_project.html">http://fabacademy.org/archives/2015/eu/students/burrai.antonio/final_project.html</a><hr><img src="img/w10/w10_15.jpg " width="600" height="450" class="img-responsive"> Input device code (preview) </h3>
+                    <h3 class="section-subheading text-muted"> At the end of the soldering <strong>I burn</strong> the resistor <strong>and destroy</strong> also a portion of the traces (blue arrow zone) !!! I didn’t have the time to go back to the FabLab, so, just because it was an emergency I place one of the header connector in an unused part of the traces (green arrow) and I’ve also used a classic resistor . It works ! Using the SERIAL MONITOR command of the Arduino IDE,<strong> FabKit receives a signal from A0 pin.</strong> For a better understanding of the functionality please refer also to the detailed description (and video) available at the Final Project <a href="http://fabacademy.org/archives/2015/eu/students/burrai.antonio/final_project.html">page</a>. <hr><img src="img/w10/w10_15.jpg " width="600" height="450" class="img-responsive"> Input device code (preview) </h3>
                     
                  <img src="img/w10/w10_14.jpg " width="600" height="450" class="img-responsive">
                     <h3 class="section-subheading text-muted"> This is an artistic picture of my digital (input) snail ! </h3>
