@@ -63,18 +63,21 @@
             </div><br>
 
 <p class="lead">E_Motion<sup>1.0</sup> is a Blazer with a removable electronic circuit, in its inner part, consisting of 4 Flex Sensors placed along the sleeves of the blazer, up to the shoulders and the elbows. This Sensors generate sounds making movements with arms like raising a shoulder or bending an elbow.<br> 
- The project is made taking care about three important aspects: Mechanical, Electronics, Programming.<br><br/>  
-MECHANICAL: progress<br> 
-E_Motion<sup>1.0</sup> is made of a three layers fabric according to a sandwich stratification. The two outers layers, which form the coating, are of a thin NON WOVEN FABRIC which locally in Italy calls "telina sotto palma" and the layer in the middle is of a Hypoallergenic Polyester with a thickness about 3 mm for a total of about 5 mm. I wanted this thickness to give to the design a solid structure. I thought about it as 3D object so I used the Polyester fabric to make outer 5 cm wide bands on the blaze.   <br> <br/> 
-ELECTRONICS: progress<br> 
+ The project is made taking care about three important aspects: Mechanical, Electronics, Programming.<br><br/>
+
+<a href="#mechanical">MECHANICAL:</a><br> 
+E_Motion<sup>1.0</sup> is made of a three layers fabric according to a sandwich stratification. The two outers layers, which form the coating, are of a thin NON WOVEN FABRIC which locally in Italy calls "telina sotto palma" and the layer in the middle is of a Hypoallergenic Polyester with a thickness about 3 mm for a total of about 5 mm. I wanted this thickness to give to the design a solid structure. I thought about it as 3D object so I used the Polyester fabric to make outer 5 cm wide bands on the blaze.   <br> <br/>
+
+<a href="#electronics">ELECTRONICS:</a><br> 
 The electronics circuit consisting of several components.<br>  
 -The Fabkit by myself produced, which is the main board, with an Atmega328p as microcontroller.<br>  
 -An Input Shield, always produced by myself, to connect the sensor to the Board.<br> 
 -A commercial Bluetooth Device to send data from the Board to PC. <br>  
 -A 5V Battery assembled by myself for the power of the circuit.<br>  
 -4 Flex Sensors connected by wires to the Input Shield.<br> 
-All the circuit, except flex sensor are inserted in a protective case that I had designed and printed in the Fab Lab. The case and the sensor with wires are inserted trough slots in the interior of the blaze. <br> <br/> 
-PROGRAMMING: progress<br>
+All the circuit, except flex sensor are inserted in a protective case that I had designed and printed in the Fab Lab. The case and the sensor with wires are inserted trough slots in the interior of the blaze. <br> <br/>
+
+<a href="#programming">PROGRAMMING:</a><br>
 This is the heart of E_Motion<sup>1.0</sup>. It works thanx input and output codes required to complete the project as a basic prototype.<br>
 Flex Sensors are setted on a sketch I wrote with Arduino Ide. The data collected by the microcontroller are sent via Bluetooth to PC. To translate this data in a sound output I need a second sketch which I  wrote with Processing using the Beads Library. </p>       
 
@@ -135,8 +138,8 @@ Flex Sensors are setted on a sketch I wrote with Arduino Ide. The data collected
                       Done the time calendar I wanted subdivide my work into three sections to proceed cleraly. 
                   At the beginning my idea was to realize the project in Neoprene for the thickness(3/5 mm) and the elasticity of the fabric and more to confer a solid 3D structure to my project. I ordered online the product and it should have arrived in the 2nd week of the calendar but there was a shipping error and I deleted it. Here in Frosinone was difficult to looking for Neoprene so after a day of search I decided to find an alternative solution to made my project. I went in a local Matress Factory of and after explained the problem and my needs to realize in few time the project, I asked to proprietor if was possible made a quilt that I would cut in a second moment. The outcome was really succesfull! I obtained for free in one day the seam of a three-layer fabric of size 3x5 m (a quantity for at least 3 projects!). </p> 
 
-                       <h3 class="featurette-heading">MECHANICAL:<span class="text-muted"></h3>
-                       <h4 class="featurette-heading">
+                       <h3 id="mechanical" class="featurette-heading">MECHANICAL:<span class="text-muted"></h3>
+                       <h4  class="featurette-heading">
                         1-MAKING THE DRAW<br>
                         2-CUTTING MODEL PAPER<br>
                         3-FABRIC PRODUCTION<br>
@@ -169,7 +172,7 @@ Flex Sensors are setted on a sketch I wrote with Arduino Ide. The data collected
 </div>
 </div>
 <p class="lead">3. FABRIC PRODUCTION<br>
-  As explained before, the Fabric to made mechanical part of my project was produced in a local Matress Factory, <a href="http://www.dormiretrade.it/it/fabbrica-materassi-frosinone/" target="_blank">Dormire Trade</a>. The Fabric was sewn by a Multineedle Machine <a href="http://www.meca.it/target_ep.htm" target="_blank">Meca</a> Model, as a quilt size 5x3 meters. It is composed of three layers according to a sandwich stratification. The two outers layers, forming the coating, are of a thin NON WOVEN FABRIC which locally calls "telina sotto palma" and the layer in the middle is of a Hypoallergenic Polyester with a thickness about 3 mm for a total of about 5 mm. Time to quilt was about 30 minutes.</p>
+  As explained before, the Fabric to made mechanical part of my project was produced in a local Matress Factory, <a href="http://www.dormiretrade.it/it/fabbrica-materassi-frosinone/" target="_blank">DORMIRE TRADE</a>. The Fabric was sewn by a Multineedle Machine <a href="http://www.meca.it/target_ep.htm" target="_blank">Meca Targhet</a> model, as a quilt size 5x3 meters. It is composed of three layers according to a sandwich stratification. The two outers layers, forming the coating, are of a thin NON WOVEN FABRIC which locally calls "telina sotto palma" and the layer in the middle is of a Hypoallergenic Polyester with a thickness about 3 mm for a total of about 5 mm. Time to quilt was about 30 minutes.</p>
   <div id="portfolio">
                         <div class="row">
 <div class="col-sm-6 portfolio-item"><img src="img/project/quilt1.jpg" class="img-responsive" alt=""></div>
@@ -178,9 +181,11 @@ Flex Sensors are setted on a sketch I wrote with Arduino Ide. The data collected
 <div class="col-sm-6 portfolio-item"><img src="img/project/quilt4.jpg" class="img-responsive" alt=""></div>
 </div>
 </div>
-
-<p class="lead">3. CUTTING FABRIC<br>
-  As explained before, the Fabric to made mechanical part of my project was produced in a local Matress Factory, <a href="http://www.dormiretrade.it/it/fabbrica-materassi-frosinone/" target="_blank">Dormire Trade</a>. The Fabric was sewn by a Multineedle Machine <a href="http://www.meca.it/target_ep.htm" target="_blank">Meca</a> Model, as a quilt size 5x3 meters. It is composed of three layers according to a sandwich stratification. The two outers layers, forming the coating, are of a thin NON WOVEN FABRIC which locally calls "telina sotto palma" and the layer in the middle is of a Hypoallergenic Polyester with a thickness about 3 mm for a total of about 5 mm. Time to quilt was about 30 minutes.</p>
+<p class="lead">4. CUTTING FABRIC<br>
+  Once ready the quilt the next step was to cut the fabric using the shape of the model paper. Having three layers sewing together by warp, I felt was better cut the quilt with scissors rather than Laser Cutting. I used again the machine only to cut the bands to apply on the blazer. From a Polyester Fabric (4 meters of lenght) I cutted a series of rectangles sized according to the laser machine plane, to made the bands. So again I made a DXF file and I lasered the Polyester.
+  PARAMETERS TO CUT POLYESTER:<br>
+                       LASER CUTTER VREL CO2 ME-1300<br>
+                       CUT: 300(Speed); 10(Power %); 8(Power Corner %)</p>
   <div id="portfolio">
                         <div class="row">
 <div class="col-sm-6 portfolio-item"><img src="img/project/cutting1.jpg" class="img-responsive" alt=""></div>
@@ -191,9 +196,48 @@ Flex Sensors are setted on a sketch I wrote with Arduino Ide. The data collected
 <div class="col-sm-6 portfolio-item"><img src="img/project/cutting6.jpg" class="img-responsive" alt=""></div>
 </div>
 </div>
+<p class="lead">5. ASSEMBLY PIECES<br>
+  Once ready the quilt the next step was to cut the fabric using the shape of the model paper. Having three layers sewing together by warp, I felt was better cut the quilt with scissors rather than Laser Cutting. I used again the machine only to cut the bands to apply on the blazer. From a Polyester Fabric (4 meters of lenght) I cutted a series of rectangles sized according to the laser machine plane, to made the bands. So again I made a DXF file and I lasered the Polyester.</p>
+ 
+  <div id="portfolio">
+                        <div class="row">
+<div class="col-sm-6 portfolio-item"><img src="img/project/assembly1.jpg" class="img-responsive" alt=""></div>
+<div class="col-sm-6 portfolio-item"><img src="img/project/assembly2.jpg" class="img-responsive" alt=""></div>
+<div class="col-sm-6 portfolio-item"><img src="img/project/assembly3.jpg" class="img-responsive" alt=""></div>
+<div class="col-sm-6 portfolio-item"><img src="img/project/assembly4.jpg" class="img-responsive" alt=""></div>
+<div class="col-sm-6 portfolio-item"><img src="img/project/assembly5.jpg" class="img-responsive" alt=""></div>
+<div class="col-sm-6 portfolio-item"><img src="img/project/assembly6.jpg" class="img-responsive" alt=""></div>
+<div class="col-sm-6 portfolio-item"><img src="img/project/assembly7.jpg" class="img-responsive" alt=""></div>
+<div class="col-sm-6 portfolio-item"><img src="img/project/assembly8.jpg" class="img-responsive" alt=""></div>
+<div class="col-sm-6 portfolio-item"><img src="img/project/assembly10.jpg" class="img-responsive" alt=""></div>
+<div class="col-sm-6 portfolio-item"><img src="img/project/assembly9.jpg" class="img-responsive" alt=""></div>
+</div>
+</div>
+<p class="lead">6. DRAWING AND PRINTING ELECTRONICS CASE <br>
+  During the COMPUTER-AIDED DESIGN <a href="week2.html" target="_blank">WEEK 2</a> I modeled an electronics case that I decided to use for my project to gain time and save costs of total budget. I did only some dimension variations and I exported the STL Files to made Gcodes with <a href="https://ultimaker.com/en/products/software"> Cura Software</a> for the 3D Printing Machine. <br></br>
+  PARAMETERS TO PRINT THE CASE:<br>
+  DELTA WASP 60×100<br>
+  Print Speed: 120 (mm/s)<br>
+   Printing Temperature: 185 (C)<br>
+    Bed Temperature: 65 (C)<br>
+    Fill Density: 20 (%)<br>
+    Filament Diameter: 1.75 (mm)
+    Filament Material : GREY PLA
+</p>
+ 
+  <div id="portfolio">
+                        <div class="row">
+<div class="col-sm-6 portfolio-item"><img src="img/project/case1.jpg" class="img-responsive" alt=""></div>
+<div class="col-sm-6 portfolio-item"><img src="img/project/case2.jpg" class="img-responsive" alt=""></div>
+<div class="col-sm-6 portfolio-item"><img src="img/project/case3.jpg" class="img-responsive" alt=""></div>
+<div class="col-sm-6 portfolio-item"><img src="img/project/case4.jpg" class="img-responsive" alt=""></div>
+<div class="col-sm-6 portfolio-item"><img src="img/project/case5.jpg" class="img-responsive" alt=""></div>
+<div class="col-sm-6 portfolio-item"><img src="img/project/case6.jpg" class="img-responsive" alt=""></div>
+</div>
+</div>
 
 
-                       
+                   
                        
                     
 
@@ -206,9 +250,9 @@ Flex Sensors are setted on a sketch I wrote with Arduino Ide. The data collected
 
 
 
-                      <h3 class="featurette-heading">ELECTRONICS:<span class="text-muted"></h3>
+                      <h3 class="featurette-heading" id="electronics">ELECTRONICS:<span class="text-muted"></h3>
                       <p class="lead">  </p> 
-                      <h3 class="featurette-heading">PROGRAMMING:<span class="text-muted"></h3>
+                      <h3 class="featurette-heading" id="programming">PROGRAMMING:<span class="text-muted"></h3>
                       <p class="lead">  </p> 
                     
                <div id="portfolio">
