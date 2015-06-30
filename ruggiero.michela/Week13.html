@@ -141,7 +141,8 @@
 	<br>
 <h4 class="section-subheading text-muted">PROGRAMMING:</h4>  </p>
 
-<p class="lead">Use the <a href="http://academy.cba.mit.edu/classes/networking_communications/bus/hello.bus.45.c">hello.bus.45.c</a> code  and makefile reported  in the Fab Academy website. Every single board has to be programmed singly. You have to program the C code for each board. Each node, in fact, needs a different node id number. 
+<p class="lead">Use the <a href="http://academy.cba.mit.edu/classes/networking_communications/bus/hello.bus.45.c">hello.bus.45.c</a> code  and makefile reported  in the Fab Academy website. Every single board has to be programmed singly. You have to program the C code for each board. Each node, in fact, needs a different node id number. So, the hello.bus.45.c has to be downloaded and modified three times: one time to flash the bridge board, the second and third time to flash the node boards.
+
 <br>- In the C code, define node_id '0' and save the file. Then connect the bridge board to computer with the FTDI header and program it using the USB programmer, flash the bridge board as node 0: sudo make -f hello.bus.45.make program-usbtiny.
 <br>- Modify the C code, define node_id '1' and save the file. Use the bridge board "0" to power node boards and connect them to TX and RX. Then flash the node board as node "1": sudo make -f hello.bus.45.make program-usbtiny.
 <br>- In the C code, define node_id '2', and repeat the process.</p>
@@ -150,14 +151,16 @@
 <img class="featured-image  img-responsive pull-center" src="img/week13/programmingnode.jpg">
 <br>
 <br>
-<h4 class="section-subheading text-muted">COMUNICATIONS:</h4>  </p>
-<br>	
+<h4 class="section-subheading text-muted">COMMUNICATIONS:</h4>  </p>
+<p class="lead">To let boards to communicate, you have to connect them with the computer and among themselves, then you have to enter 0-1-2  into serial monitor and press the send button.
+</p>	
 <img class="featured-image  img-responsive pull-center" src="img/week13/communications.jpg"></p>
 		<br>	
 	<p class="lead">- Connect the boards and plug the bridge board to the computer with a FTDI cable.
 <br>- Connect them to Tx and Rx and flash the first node board as node 1.(type in terminal: sudo make -f hello.bus.45.make program-usbtiny).
 <br>- Repeat the same thing for the second node board as node 2.
-<br>- Open the Arduino IDE and go to Tools>Serial Monitor to open the serial monitor. Into the serial port enter the number of a node and "send" it. After all the LEDs light up once, the board that corresponds to the number that is entered into the serial port, should light up again. </p>
+<br>- Open the Arduino IDE and go to Tools>Serial Monitor to open the serial monitor. Into the serial port enter the number of a node and "send" it. After all the LEDs light up once, the board that corresponds to the number that is entered into the serial port, should light up again. 
+<br>-There's a problem with node 2, a lot of noise, so the returned value is not clear. </p>
 	<br>
 <iframe width="1140" height="640" src="https://www.youtube.com/embed/Pi2GNSwzzuQ" frameborder="0" allowfullscreen></iframe>
 		<br>	</br>

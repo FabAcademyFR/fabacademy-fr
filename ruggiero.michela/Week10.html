@@ -183,18 +183,15 @@ Inserting it in a resistive divider in the "high" art (the one toward the power 
 	<br>
 <h4 class="section-subheading text-muted">PROGRAMMING:</h4>
 	<p class="lead"> Arduino Sketch to program the microcontroller.
+	<br>The Sketch initializes the serial connection, reads the value of analog pin (A0), and saves it into sensorValue variable. Then it sends the string "sensor = " to the serial Monitor of Arduino, and then the value of sensorValue. After that it stops for one second and then restarts.
 	<br>Sketch-Photosensor
 	<br>int sensorValue = A0;
  <br>
 <br>void setup() {
-  <br>pinMode(13,OUTPUT);
   <br>Serial.begin(9600);
-  <br>Serial.print("sensor = " );
-  <br>//pinMode(6, INPUT);
 <br>}
  
 <br>void loop() {
-  <br>digitalWrite(13,HIGH);
   <br>sensorValue = analogRead(A0);            
  
   <br>Serial.print("sensor = " );

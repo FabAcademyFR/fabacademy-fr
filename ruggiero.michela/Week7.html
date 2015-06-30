@@ -113,21 +113,28 @@
 
 <img class="featured-image  img-responsive pull-center" src="img/week7/programming.jpg">
      <br>       
-  <p class="lead">ARDUINO SKETCH
-<br>
+<h4 class="section-subheading text-muted">ARDUINO SKETCH </h4>
+    
+    <p class="lead">I’ve started my trials sending to the board the sample sketch in the  <a href="http://academy.cba.mit.edu/content/tutorials/akf/embedded_programming_arduinoIDE.html">Tutorial</a></a>.
+ <br> 
 <br>const int buttonPin = 3;  
 <br>const int ledPin =  8;     
 <br>
 <br>// variables will change:
-<br>int buttonState = 0;         // variable 
+<br>int buttonState = 0;   
 <br>
+<br>//In the setup I said to the microcontroller that the button=3 is used as input and that the ledPin=8 is used as an output.
+<br>
+<br>SETUP
 <br>void setup() {
 <br>  // initialize the LED pin as an output:
  <br> pinMode(ledPin, OUTPUT);
 <br>  // initialize the pushbutton pin as an input:
  <br> pinMode(buttonPin, INPUT);
 <br>}
-
+<br>
+<br>//Then in the loop, I said to read the logic value of the pin 3 with the command digitalRead. The value is 0 when the button is notpressed or 1 when is pressed. The with an if statement I check the value and I turn on or off the led according to it using the digitalWrite command.
+<br>
 <br>void loop() {
  <br> // read the state of the pushbutton value:
  <br> buttonState = digitalRead(buttonPin);
@@ -145,6 +152,7 @@
 <br>}
 </p>
  <br> 
+    <br> 
             <h4 class="section-subheading text-muted">Download:</h4>  
             <a href="https://github.com/michelaruggiero/FILE-fabacademy/blob/master/week7/sketch_week_7/sketch_week_7.ino">sketch.ino</a>           
         <hr class="featured-divider">
