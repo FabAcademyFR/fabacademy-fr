@@ -83,7 +83,7 @@ Flex Sensors are setted on a sketch I wrote with Arduino Ide. The data collected
 
 <p class="lead">TOOLS:<br>
 -RHINOCEROS, ILLUSTRATOR, PHOTOSHOP<br>
--LASER CUTTING, 3D PRINTING, MULTINEEDLE MACHINE, SEWING MACHINE, CNC <br>
+-LASER CUTTING, 3D PRINTING, MULTINEEDLE MACHINE, SEWING MACHINE, MILLING MACHINE <br>
 -SCISSORS, NEEDLE, COTTON THREAD</p>   
         <p class="lead">DOWNLOAD FILES:<br> 
      MECHANICAL= 
@@ -145,7 +145,8 @@ Flex Sensors are setted on a sketch I wrote with Arduino Ide. The data collected
                         3-FABRIC PRODUCTION<br>
                         4-CUTTING FABRIC <br>
                         5-ASSEMBLY PIECES<br>
-                        6-DRAWING AND PRINTING ELECTRONICS CASE<span class="text-muted"></h4><br> 
+                        6-DRAWING AND PRINTING ELECTRONICS CASE<br>
+                        7-MILLING ELECTRONICS BOARD<span class="text-muted"></h4><br> 
                       <p class="lead">1. MAKING THE DRAW<br>
                         Starting from an handmade sketch I made a 2D draw on Rhinoceros to cut the model paper with the laser machine. I move from a Circle Technical to design the pieces for my blaze. With the help of a collegue I took my body measuraments which I have reported in the draw. The procedure to make the draw is very simple and doesn't have an absolute rule so it's possibile makes change as you want.</p> 
                       <div id="portfolio">
@@ -221,7 +222,7 @@ Flex Sensors are setted on a sketch I wrote with Arduino Ide. The data collected
    Printing Temperature: 185 (C)<br>
     Bed Temperature: 65 (C)<br>
     Fill Density: 20 (%)<br>
-    Filament Diameter: 1.75 (mm)
+    Filament Diameter: 1.75 (mm)<br>
     Filament Material : GREY PLA
 </p>
  
@@ -235,68 +236,97 @@ Flex Sensors are setted on a sketch I wrote with Arduino Ide. The data collected
 <div class="col-sm-6 portfolio-item"><img src="img/project/case6.jpg" class="img-responsive" alt=""></div>
 </div>
 </div>
+<p class="lead">7. MILLING ELECTRONICS BOARDS <br>
+  To made the electronic circuit of my project I need two boards. The Fabkit with the microcontroller and a shield for the sensors that I used. Unfortunately the first Fabkit I produced during the Fab Academy stopped working, so I had to made another one. Instead the the Input Shield has been designed specifically for the connection of the Flex Sensors, so I draw it in Eagle and then I made the PNG files. Once I had all the files I made the RML files on FabModules and I milled the boards using Panel  Software for the Milling Machine. <br></br>
+  PARAMETERS TO MILL BOARDS:<br>
+  ROLAND SRM-20 MACHINE<br>
+  Traces: tip 1/64<br>
+  Interiors: tip 1/32 <br>
+   
+</p>
+ 
+  <div id="portfolio">
+                        <div class="row">
+<div class="col-sm-6 portfolio-item"><img src="img/project/milling2.jpg" class="img-responsive" alt=""></div>
+<div class="col-sm-6 portfolio-item"><img src="img/project/milling1.jpg" class="img-responsive" alt=""></div>
+<div class="col-sm-6 portfolio-item"><img src="img/project/milling3.jpg" class="img-responsive" alt=""></div>
+<div class="col-sm-6 portfolio-item"><img src="img/project/milling4.jpg" class="img-responsive" alt=""></div>
 
+</div>
+</div>
 
-                   
-                       
-                    
+  <h3 class="featurette-heading" id="electronics">ELECTRONICS:<span class="text-muted"></h3>
+                      <p class="lead">About Electronics Component E_Motion <sup>1.0</sup> has a removable circuit inserted in it's inner part. It consist of following parts:<br></br>  
+                      1. A FabKit that is the main board made by myself also during the INPUT DEVICES <a href="Week10.html">WEEK 10</a>, with an Atmega328p microcontroller. The others components that I put in the board are:<br>
+                     -capacitor 0.1 uf n° 2<br>
+                     -capacitor 10 uf <br>
+                     -smt pcb button 6 mm<br>
+                     -resonator 8 Mz <br>
+                     -resistor 10 K <br>
+                     -resistor 499 Ω <br>
+                     -red led smd<br>
+                     -header 6 pins<br> </br> 
+                      2. An Input Shield, always made by myself, to connect the Flex Sensors the FabKit. On this shield I put the 4 resistances 10 k each one for a Flex Sensor.<br>
+                      3. 4 Flex Sensors connected by wires to the Input Shield. Each sensor has two pins, one for VCC and the other for the GND. The Resistance of the sensor changes when the metal pads, which are on it, are on the outside of the bend. So as the sensor is flexed, the resistance across the sensor increases. For more technical specifications is possible read the datasheet in the references.<br> 
+                      4. A commercial Bluetooth Device to send data from the Board to PC with 4 pins (TX,RX,VCC,GND). <br> 
+                      5. A Power of 4.8 V consisting of 4 alkaline batteries 1.2 V assembled by myself to feed the circuit.<br></br> 
 
+                      In a schematic way I can describe the functioning of the circuit:
+                      The performer moves bending elbows and raising and lowering the shoulders so the resistance of the Flex Sensor changes accordingly.Input Data are sendig via Bluetooth from the Fabkit to the PC and an audio device emits sounds. <br></br>
+                      All the circuit, except flex sensor are inserted in a protective case that I had designed and printed in the Fab Lab. The case and the sensors with wires are inserted trough slots in the interior of the blaze. 
+                       </p>
+                        <p class="lead">REFERENCES:<br>
+                      <a href="http://www.atmel.com/devices/atmega328p.aspx"> Atmega 328</a><br> 
+                      <a href="https://cdn.sparkfun.com/datasheets/Sensors/ForceFlex/FLEXSENSORREVA1.pdf"> Flex Sensor </a><br>
+                      <a href="http://www.cutedigi.com/pub/Bluetooth/BMX_Bluetooth_quanxin.pdf"> Bluetooth Device</a> </p>
+        <div id="portfolio">
+          <div class="row">
+            <div class="col-sm-6 portfolio-item"><img src="img/project/electronic2.jpg" class="img-responsive" alt=""></div>
+            <div class="col-sm-6 portfolio-item"><img src="img/project/electronic3.jpg" class="img-responsive" alt=""></div>
+            <div class="col-sm-6 portfolio-item"><img src="img/project/electronic4.jpg" class="img-responsive" alt=""></div>
+            <div class="col-sm-6 portfolio-item"><img src="img/project/electronic5.jpg" class="img-responsive" alt=""></div>
+             <div class="col-sm-6 portfolio-item"><img src="img/project/electronic6.jpg" class="img-responsive" alt=""></div>
+            <div class="col-sm-6 portfolio-item"><img src="img/project/electronic7.jpg" class="img-responsive" alt=""></div>
+            <div class="col-sm-6 portfolio-item"><img src="img/project/electronic8.jpg" class="img-responsive" alt=""></div>
+             <div class="col-sm-6 portfolio-item"><img src="img/project/electronic9.jpg" class="img-responsive" alt=""></div>
+          </div>
+        </div>
 
+ <h3 class="featurette-heading" id="programming">PROGRAMMING:<span class="text-muted"></h3>
+                      <p class="lead"> To programm my project I wrote two sketches of code, one for the Input with the Arduino Ide and the other one for the output with Processing. In the Ide I declared and setted the 4 Flex Sensors, mapping each of them with a minimum and maximum values (which are the equivalent of the quietness position and flexion one of the sensors). Then I split the range in 10 positions. I modified the baud from 9600 to 115200 for the reading of data via bluetooth in the serial monitor.<br></br>
+                      With Processing I wrote the code for output using the sound Beads Library to emit sounds. The communication between Ide and Processing is trough serial port where is connected the Bluetooth device (on my pc usually is COM10).
+                    </p>
+ 
+  <div id="portfolio">
+                        <div class="row">
+<div class="col-sm-6 portfolio-item"><img src="img/project/code1.jpg" class="img-responsive" alt=""></div>
+<div class="col-sm-6 portfolio-item"><img src="img/project/code2.jpg" class="img-responsive" alt=""></div>
+</div>
+</div>
 
+<h2 class="featurette-heading" id="first-prototype">First Prototype:<span class="text-muted"> </h2>
+<p class="lead">E_Motion <sup>1.0</sup> is a basic Prototype. It is in absolute my first made project and I'm very satisfied of the goal achieved in so little time. In general the prject works and it is completed in each tasks. Some problems during evolution of the work have done several things to change, from the design of the blaze to the insertion of the electronic circuit.<br> 
+certainly now I have a greater knowledge of base from which working on the project to develop and improve it.<br>
+The total cost of the project is changed from the initial budget: from about 120 euro (130 USD) it was about 70 euro (80 USD).
+</p>
+<p class="lead">RELATED LINKS:<br>  
+     
+  <a href="Week15">APPLICATIONS AND IMPLICATIONS</a>
+  <a href="Week17">INVENTION,INTELLECTUAL PROPERTY & INCOME</a>
+  <a href="Week18">PROJECT DEVELOPMENT</a>
 
+<div id="portfolio">
+                        <div class="row">
+<div class="col-sm-6 portfolio-item"><img src="img/project/prot1.jpg" class="img-responsive" alt=""></div>
+<div class="col-sm-6 portfolio-item"><img src="img/project/prot2.jpg" class="img-responsive" alt=""></div>
+<div class="col-sm-6 portfolio-item"><img src="img/project/prot3.jpg" class="img-responsive" alt=""></div>
+<div class="col-sm-6 portfolio-item"><img src="img/project/prot4.jpg" class="img-responsive" alt=""></div>
+<div class="col-sm-6 portfolio-item"><img src="img/project/prot5.jpg" class="img-responsive" alt=""></div>
+<div class="col-sm-6 portfolio-item"><img src="img/project/prot6.jpg" class="img-responsive" alt=""></div>
+</div>
+</div>
 
-
-
-
-
-
-                      <h3 class="featurette-heading" id="electronics">ELECTRONICS:<span class="text-muted"></h3>
-                      <p class="lead">  </p> 
-                      <h3 class="featurette-heading" id="programming">PROGRAMMING:<span class="text-muted"></h3>
-                      <p class="lead">  </p> 
-                    
-               <div id="portfolio">
-                <div class="row">
-
-
-    <div class="col-sm-6 portfolio-item">
-            <img src="img/WEEK12/.jpg" class="img-responsive" alt="">
-                        </a>
-                        <div class="portfolio-caption">
-                            <h4>Sanding the Mold.</h4>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 portfolio-item">
-                            <img src="img/WEEK12/.jpg" class="img-responsive" alt="">
-                        <!--/a -->
-                        <div class="portfolio-caption">
-                            <h4>What I need for the mixtures.</h4>
-                        </div>
-                    </div>
-
-            
-                
-                    <h2 class="featurette-heading" id="first-prototype">First Prototype:<span class="text-muted"> </h2>
-<p class="lead">Once </p>
-
-               <div id="portfolio">
-                <div class="row">
-
-    <div class="col-sm-6 portfolio-item">
-            <img src="img/WEEK12/.jpg" class="img-responsive" alt="">
-                        </a>
-                        <div class="portfolio-caption">
-                            <h4>.</h4>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 portfolio-item">
-                            <img src="img/WEEK12/.jpg" class="img-responsive" alt="">
-                        <!--/a -->
-                        <div class="portfolio-caption">
-                            <h4>.</h4>
-                        </div>
-                    </div>
-
+              
         
          <footer>
             <div class="container">
