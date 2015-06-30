@@ -55,60 +55,71 @@
 <div class="container">
 
     <div class="text-center">
-        <iframe src="https://player.vimeo.com/video/132071423" width="1170" height="656"></iframe> <p><a href="https://vimeo.com/132071423"></a></p>
+        <iframe src="https://player.vimeo.com/video/132071423" width="1170" height="656"></iframe> <p><a href="https://vimeo.com/132071423"></a></p>  </div> 
    
    <div id="services">
-            <h1 class="featurette-heading">E_MOTION - A WEARABLE COMPUTING PROJECT </h1>
-                <p class="lead"> plays sounds by the movements</p>
-              <p>
-                     <strong="lead">CLASS WEB PAGE: </strong>
-                <a href="http://academy.cba.mit.edu/classes/composites/index.html" target="_blank"> http://academy.cba.mit.edu/classes/composites/index.html
-                </a>
-                <br>
-            </p>
-        </div>
-                <span class="text-muted">  
-            </h2>
- <p class="lead">For this week, the exercise was about composite; design and make a 3D mould and produce a fibre composite part in it, by using air-vacuum process. Since you can reuse the mould it allows you to make repetitive things fast. 
-  </p> <br> <br/> 
-     <p class="lead">DOWNLOAD: <a href="https://github.com/elenapapetti/FabAcademy2015files/tree/master/Week12">'File'</a> 
-            <br> <br/>
-            <h2 class="featurette-heading">First Phase: Concept.
-                <span class="text-muted">  
-            </h2>
-             <p class="lead">.........................................  </p> 
-<p class="lead">  <p> </p> 
-             <p class="lead">    </p>
+            <h1 class="featurette-heading">E_MOTION<sup>1.0</sup> - A WEARABLE COMPUTING PROJECT </h1>
+                <h2 class="featurette-heading">plays sounds by body movements</h2>
+            </div><br>
+
+<p class="lead">E_Motion<sup>1.0</sup> is a Blazer with a removable electronic circuit, in its inner part, consisting of 4 Flex Sensors placed along the sleeves of the blazer, up to the shoulders and the elbows. This Sensors generate sounds making movements with arms like raising a shoulder or bending an elbow.<br> 
+ The project is made taking care about three important aspects: Mechanical, Electronics, Programming.<br><br/>  
+MECHANICAL: <br> 
+E_Motion<sup>1.0</sup> is made of a three layers fabric according to a sandwich stratification. The two outers layers, which form the coating, are of a thin NON WOVEN FABRIC which locally in Italy calls "telina sotto palma" and the layer in the middle is of a Hypoallergenic Polyester with a thickness about 3 mm for a total of about 5 mm. I wanted this thickness to give to the design a solid structure. I thought about it as 3D object so I used the Polyester fabric to make outer 5 cm wide bands on the blaze.   <br> <br/> 
+ELECTRONICS:<br> 
+The electronics circuit consisting of several components.<br>  
+-The Fabkit by myself produced, which is the main board, with an Atmega328p as microcontroller.<br>  
+-An Input Shield, always produced by myself, to connect the sensor to the Board.<br> 
+-A commercial Bluetooth Device to send data from the Board to PC. <br>  
+-A 5V Battery assembled by myself for the power of the circuit.<br>  
+-4 Flex Sensors connected by wires to the Input Shield.<br> 
+All the circuit, except flex sensor are inserted in a protective case that I had designed and printed in the Fab Lab. The case and the sensor with wires are inserted trough slots in the interior of the blaze. <br> <br/> 
+PROGRAMMING:<br>
+This is the heart of E_Motion. It works thanx input and output codes required to complete the project as a basic prototype.<br>
+Flex Sensors are setted on a sketch I wrote with Arduino Ide. The data collected by the microcontroller are sent via Bluetooth to PC. To translate this data in a sound output I need a second sketch which I  wrote with Processing using the Beads Library. </p>       
+
+        <p class="lead">DOWNLOAD FILES:<br> 
+     MECHANICAL= 
+    <a href="https://github.com/elenapapetti/FabAcademy2015files/tree/master/final%20project/modeling/paper%20model">PROJECT 2D</a>
+<a href="https://github.com/elenapapetti/FabAcademy2015files/tree/master/final%20project/modeling/case">| ELECTRONICS CASE 2D-3D</a>
+<br>
+    PROTOTYPING= 
+    <a href="https://github.com/elenapapetti/FabAcademy2015files/tree/master/final%20project/prototyping/3D%20printing">3D PRINTING</a>
+    <a href="https://github.com/elenapapetti/FabAcademy2015files/tree/master/final%20project/prototyping/Laser%20Machine/dxf">| LASER CUTTING</a>
+    <br> 
+     ELECTRONICS= 
+    <a href="https://github.com/elenapapetti/FabAcademy2015files/tree/master/final%20project/electronics/FABKIT">FABKIT EAGLE-PNG-RML</a>
+    <a href="https://github.com/elenapapetti/FabAcademy2015files/tree/master/final%20project/electronics/SENSOR%20SHIELD">| SENSORS SHIELD EAGLE-PNG-RML</a>
+    <br> 
+     PROGRAMMING= 
+    <a href="hhttps://github.com/elenapapetti/FabAcademy2015files/tree/master/final%20project/programming/input/_4_Sensor_Flex">INPUT</a>
+    <a href="https://github.com/elenapapetti/FabAcademy2015files/tree/master/final%20project/programming/output/ProgrammaSuoniAnalogic2">| OUTPUT</a>
+               
+ <br> <br/>   <img class="img-responsive main-picture" width="100%" src="img/project/1.jpg">
+     
+            <h3 class="featurette-heading">THE CONCEPT:<span class="text-muted"></h3>
+             <p class="lead">At the beginning of Fab Academy my <a href="week1.html" >project proposal</a> was always about wearable to study the right posture during fitness or physical activities. With my background as an Architect and doing some reasearches I quickly realized that to reach that goal I should begin by one step easier. So I decided to focuson on still body movement E_Motion is the brainchild to study the body movement related to an output.
+             </p> 
+
+            
+            
              <div id="portfolio">
                 <div class="row">
 
-    <div class="col-sm-6 portfolio-item">
-            <img src="img/WEEK12/.jpg" class="img-responsive" alt="">
-                        </a>
-                        <div class="portfolio-caption">
-                            <h4>The mesh Model for the Mold to mill.</h4>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 portfolio-item">
-                            <img src="img/WEEK12/.jpg" class="img-responsive" alt="">
-                        <!--/a -->
-                        <div class="portfolio-caption">
-                            <h4>Setting of the .stl File for the Milling Machine</h4>
-                        </div>
-                    </div>
+    
 
  <div class="col-sm-6 portfolio-item">
-            <img src="img/WEEK12/.jpg" class="img-responsive" alt="">
+            <img src="img/project/concept1.jpg" class="img-responsive" alt="">
                         </a>
                         <div class="portfolio-caption">
-                            <h4>Roughing Settings</h4>
+                            <h4>a sketch to starts</h4>
                         </div>
                     </div>
                     <div class="col-sm-6 portfolio-item">
-                            <img src="img/WEEK12/.jpg" class="img-responsive" alt="">
+                            <img src="img/project/concept2.jpg" class="img-responsive" alt="">
                         <!--/a -->
                         <div class="portfolio-caption">
-                            <h4>Finishing Settings</h4>
+                            <h4>Handmade Sketch of the Blaze </h4>
                         </div>
                     </div>
                       </p> <br> <br/> 
@@ -155,21 +166,8 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-6 portfolio-item">
-            <img src="img/WEEK12/.jpg" class="img-responsive" alt="">
-                        </a>
-                        <div class="portfolio-caption">
-                            <h4>r</h4>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 portfolio-item">
-                            <img src="img/WEEK12/.jpg" class="img-responsive" alt="">
-                        <!--/a -->
-                        <div class="portfolio-caption">
-                            <h4></h4>
-                        </div>
-                    </div>
-                    <br></br>
+            
+                
                     <h2 class="featurette-heading">Third Phase: Prototype.
  <span class="text-muted">  </h2>
 <p class="lead">Once ready the Mold, followed a long procedure of some subphases. The coordination with some colleagues was crucial to perform simultaneously some procedures.

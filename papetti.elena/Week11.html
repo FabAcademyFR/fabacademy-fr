@@ -65,7 +65,7 @@
                 <p class="lead">On this week it was requested to add an output device to a microcontroller board we designed and program it to do something. I decided to use this assignment to test a sound output useful for my final project. The idea is to obtain a sound that origins from a motion through the stretching of a cloth. To generate my output it's enough to me an Audio Transducer (piezo) to which I add a Potentiometer to adjust the frequency. </p>  
                          <p class="lead">CLASS WEB PAGE: <br>
                 <a href="http://academy.cba.mit.edu/classes/output_devices/index.html" target="_blank"> http://academy.cba.mit.edu/classes/output_devices/index.html</a>
-             </p><br> <br/>
+             </p>
 
              <p class="lead">DOWNLOAD FILES:<br> 
             <a href="https://github.com/elenapapetti/FabAcademy2015files/tree/master/Week11/EAGLE">EAGLE</a><br> 
@@ -87,10 +87,9 @@
                 <span class="text-muted">  
             </h2>
              <p class="lead"> To design my output shield I have to think which components I need to put in it. They are definitely a Potentiometer and a Piezo. Precaution, I chose not to solder directly the components on the shield but I preferred put on it the respective female header and connect them when I need it. To draw the board I used again Eagle Software and Photoshop for png files to generate the rml files to send on the milling machine.    </p> 
-<p class="lead">  <p> </p> 
-             <p class="lead">    </p>
-             <div id="portfolio">
-                <div class="row">
+
+            
+          
 
     <div class="col-sm-6 portfolio-item">
             <img src="img/WEEK11/components.jpg" class="img-responsive" alt="">
@@ -106,26 +105,25 @@
                             <h4>Shield design with Eagle software </h4>
                         </div>
                     </div>
-
- <div class="col-sm-6 portfolio-item">
-            <img src="img/WEEK11/png output.jpg" class="img-responsive" alt="">
-                        </a>
+                         <div class="col-sm-6 portfolio-item">
+                            <img src="img/WEEK11/outputpng.jpg" class="img-responsive" alt="">
+                        <!--/a -->
                         <div class="portfolio-caption">
-                            <h4>PNG Files for the Fabmodules</h4>
+                            <h4>RML Files preparation for Milling Machine</h4>
                         </div>
                     </div>
-                    <div class="col-sm-6 portfolio-item">
+                     <div class="col-sm-6 portfolio-item">
                             <img src="img/WEEK11/fabmodules.jpg" class="img-responsive" alt="">
                         <!--/a -->
                         <div class="portfolio-caption">
                             <h4>RML Files preparation for Milling Machine</h4>
                         </div>
                     </div>
-                      </p> <br> <br/> 
+                  
 
- <h2 class="featurette-heading">Second Phase: Milling & Soldering.
-                <span class="text-muted">  
-            </h2>
+ <h2 class="featurette-heading">Second Phase: Milling & Soldering.</h2>
+              
+            
              <p class="lead">    </p> 
             <p class="lead">The process to mill the shield is already know. I imported the png files on fabmodules to prepare the rml files. As the Fabkit Board I had trhee files to put in the Machine: one for the traces with 1/64 tip and the holes and interior files with 1/32 tip. Once milled the shield I went to solder the headers.   <div id="portfolio">
                 <div class="row">
@@ -144,7 +142,7 @@
                             <h4>Soldering step was really quickly!</h4>
                         </div>
                     </div>
- <h2 class="featurette-heading">Third Phase: Sketch & Output.</H2>
+ <h2 class="featurette-heading">Third Phase: Sketch & Output.</h2>
 
             <p class="lead">Before programming the sound output on my shield, I needed to understand the working of my circuit with the help of Arduino Board. Searching an example with both the piezo and potentiometerI found several example that use the <a href="https://www.arduino.cc/en/Reference/Tone"> 'ARDUINO TONE LIBRARY'</a>. After doing a test with Arduino I used my Fabkit and Output Device to reproduce the same thing. On the pinout of <a href="http://www.atmel.com/devices/atmega328p.aspx"> 'Atmega 328'</a> I verified the correspondence of the pins to use. 
                 <br> 
@@ -159,7 +157,7 @@
                         </div>
                     </div>
                     <div class="col-sm-6 portfolio-item">
-                      <iframe src="https://player.vimeo.com/video/125606396" width="600" height="440" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/125606396"></a></p> 
+                      <iframe src="https://player.vimeo.com/video/125606396" width="600" height="430" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/125606396"></a></p> 
                         <!--/a -->
                         <div class="portfolio-caption">
                             <h4> Testing the Piezo with Arduino Board</h4>
@@ -167,8 +165,6 @@
                     </div>
 
 
- <span class="text-muted">  
-  </h2> 
 <p class="lead">While I was reproducing the output with my Shield, I had some problems with my Fabkit. With the help of a tutor I checked again my Fabkit and I verified that all was ok. So the conclusion is that Arduino Ide not always read my board.</p> 
                 <div class="row">
 
@@ -195,7 +191,7 @@
                         </div>
                     </div>
                     <div class="col-sm-6 portfolio-item">
-                            <iframe src="https://player.vimeo.com/video/125562279" width="600" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/125562279"></a></p>
+                            <iframe src="https://player.vimeo.com/video/125562279" width="600" height="440" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <a href="https://vimeo.com/125562279"></a>
                         <!--/a -->
                         <div class="portfolio-caption">
                             <h4>The Goal of my Assignment</h4>
@@ -205,7 +201,7 @@
                     <h2 class="featurette-heading">WHAT I LEARNED:
                 <span class="text-muted">  
             </h2>
-             <p class="lead">Theese last weeks were really intense for me because I'm a beginner with the Eletronics and Arduino Ide, so I spent a lot of time trying to understand principles and practices that for many people be simple. Step by step I'm learning several concepts and I'm really satisfied!  </p> 
+             <p class="lead">Theese last weeks were really intense for me because I'm a beginner in Eletronics and Arduino Ide, so I spent a lot of time trying to understand principles and practices that for many people be simple. Step by step I'm learning several concepts and I'm really satisfied!  </p> 
 
            
 
