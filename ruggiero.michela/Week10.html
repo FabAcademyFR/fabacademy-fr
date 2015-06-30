@@ -108,7 +108,7 @@
 <a href="http://academy.cba.mit.edu/content/tutorials/akf/input_device_examples_C.html"><h5>input_device_examples_C.html</h5></a> 
  </p><br>
     <div><h3 class="featured-heading">MIKYFABKIT: microcontroller board</h3></div>
-  	<p class="lead"> I choose to use the FABKIT to read the sensor for this assignment and move the actuator for the upcoming output device's one.</p>
+  	<p class="lead"> I choose to use the FABKIT to read the sensor.</p>
 	<img class="featured-image  img-responsive pull-center" src="img/week10/fabkit.jpg">
 	<br>
 	<p class="lead"> Components: 
@@ -126,11 +126,11 @@
 	<img class="featured-image  img-responsive pull-center" src="img/week10/ATMEGA.jpg">
 	<br>
    <div><h3 class="featured-heading">INPUT: Photoresistor CDS LDR</h3></div> 
-	<p class="lead"> As my final project is a wall that responding to humidity, light and sound, I decided to experiment Photoresistors as input devices. </p> 
+	<p class="lead"> As my final project is a wall responding to humidity, light and sound, I decided to experiment Photoresistors as input devices. </p> 
   <p class="lead">Photoresistors (also know as light-dependent resistor) are a particular kind of variable resistors capable of change their resistance proportionally to the incident light intensity.
 <br>
 <br>A photoresistor has a resistance which decreases in the presence of light. As the microcontroller ADC read voltage variations, it's necessary to use the photoresistor with a voltage divider.
-Inserting it in a resistive divider in the "high" art (the one toward the power supply) and a 10Kohm reference resistor toward ground, we get that the voltage across the second resistor increases according to the light hitting the photoresistor. Inverting the position of the two elements makes the circuit work in reverse. The 10kohm value for the fixed resistor is a conventional one.</p> 
+Inserting it in a resistive divider in the "high" branch (the one toward the power supply) and a 10Kohm reference resistor toward ground, we get that the voltage across the second resistor increases according to the light hitting the photoresistor. Inverting the position of the two elements makes the circuit work in reverse. The 10kohm value for the fixed resistor is a conventional one.</p> 
   
 </p>
 <br>
@@ -183,8 +183,8 @@ Inserting it in a resistive divider in the "high" art (the one toward the power 
 	<br>
 <h4 class="section-subheading text-muted">PROGRAMMING:</h4>
 	<p class="lead"> Arduino Sketch to program the microcontroller.
-	<br>The Sketch initializes the serial connection, reads the value of analog pin (A0), and saves it into sensorValue variable. Then it sends the string "sensor = " to the serial Monitor of Arduino, and then the value of sensorValue. After that it stops for one second and then restarts.
-	<br>Sketch-Photosensor
+	<br>The Sketch initializes the serial connection, reads the value of analog pin (A0), and saves it into sensorValue variable. Then it sends the string "sensor =" to the serial monitor of Arduino, and then the value of sensorValue. After that it stops for one second and then restarts.
+	<br><br>Sketch-Photosensor
 	<br>int sensorValue = A0;
  <br>
 <br>void setup() {

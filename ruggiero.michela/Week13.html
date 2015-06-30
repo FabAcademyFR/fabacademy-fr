@@ -96,11 +96,12 @@
             <a href="http://academy.cba.mit.edu/classes/networking_communications/index.html"> networking_communications/index.html</a> 
             <br></br> 
         <p class="lead">Goal: The aim of this assignement is to network several boards together in the form of a serial bus. The bridge board is connected to a computer with a FTDI cable, the two node boards are connected to the bridge board.</p>
-        <a href="http://academy.cba.mit.edu/content/tutorials/akf/networking_serial_bus.html"> TUTORIAL</a> </p>
+        <br>
+        <p class="lead">TUTORIAL:<a href="http://academy.cba.mit.edu/content/tutorials/akf/networking_serial_bus.html"> networking_serial_bus.html</a> </p>
       <br>
 <p class="lead">I used: <a href="http://academy.cba.mit.edu/classes/networking_communications/index.html">  1 Hello.bus.45.bridge and 2 hello.bus.45.node.</a>
          </p>
-         	<p class="lead">At the beginning, I downloaded the .png files for milling 2 nodes and 1 bridge. The only difference between the boards is that the bridge has 6 extra pins for connecting to the FTDI cable, while the nodes have only a 4 pin header to communicate. This is also the node that will power the rest.</p>
+         	<p class="lead">At the beginning, I downloaded the .png files for milling 2 nodes and 1 bridge. The only difference between the boards is that the bridge has 6 extra pins for connecting to the FTDI cable, while the nodes have only a 4 pin header to communicate. The brigde gives power to other nodes.</p>
          	</p>
  <p class="lead"> BRIDGE: Hello.bus.45.bridge
 	<img class="featured-image  img-responsive pull-center" src="img/week13/bridge.jpg">
@@ -141,10 +142,13 @@
 	<br>
 <h4 class="section-subheading text-muted">PROGRAMMING:</h4>  </p>
 
-<p class="lead">Use the <a href="http://academy.cba.mit.edu/classes/networking_communications/bus/hello.bus.45.c">hello.bus.45.c</a> code  and makefile reported  in the Fab Academy website. Every single board has to be programmed singly. You have to program the C code for each board. Each node, in fact, needs a different node id number. So, the hello.bus.45.c has to be downloaded and modified three times: one time to flash the bridge board, the second and third time to flash the node boards.
+<p class="lead">
+To program the board you can use  <a href="http://academy.cba.mit.edu/classes/networking_communications/bus/hello.bus.45.c">hello.bus.45.c</a> code and the makefile as reported in the Fab Academy website. You have to program the C code for each board. Each node, in fact, needs a different node id number.
 
-<br>- In the C code, define node_id '0' and save the file. Then connect the bridge board to computer with the FTDI header and program it using the USB programmer, flash the bridge board as node 0: sudo make -f hello.bus.45.make program-usbtiny.
-<br>- Modify the C code, define node_id '1' and save the file. Use the bridge board "0" to power node boards and connect them to TX and RX. Then flash the node board as node "1": sudo make -f hello.bus.45.make program-usbtiny.
+ So, the hello.bus.45.c has to be downloaded and modified three times: one time to flash the bridge board, the second and third time to flash the node boards.
+
+<br><br>- In the C code, define node_id '0' and save the file. Then you have to connect the bridge board to computer with the FTDI header and program it using the USB programmer. Then flash the bridge board as node 0: sudo make -f hello.bus.45.make program-usbtiny.
+<br>- Then take another node board, modify the C code, define node_id '1' and save the file. Use the bridge board "0" to power node boards and connect them to TX and RX. Then flash the node board as node "1": sudo make -f hello.bus.45.make program-usbtiny.
 <br>- In the C code, define node_id '2', and repeat the process.</p>
 <img class="featured-image  img-responsive pull-center" src="img/week13/nodes.jpg">
 <br>
