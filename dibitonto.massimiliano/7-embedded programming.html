@@ -60,9 +60,9 @@
 								</ul>
                                 <ul>
 								<li><a id="top-link" class="skel-layers-ignoreHref">Downloads for this week:</a></li>
-                                <li><a href="http://www.massimilianodibitonto.it/fablab/Button_hello.ino"><span class="icon fa-file-code-o">Arduino code</span></a></li><li><a href="http://www.massimilianodibitonto.it/fablab/hellomax2.brd"><span class="icon fa-cube">Eagle brd file</span></a></li>
+                                <li><a href="files/Button_hello.ino"><span class="icon fa-file-code-o">Arduino code</span></a></li><li><a href="files/hellomax2.brd"><span class="icon fa-cube">Eagle brd file</span></a></li>
 								
-                                <li><a href="http://www.massimilianodibitonto.it/fablab/hellomax2.sch"><span class="icon fa-cube">Eagle sch file</span></a></li>
+                                <li><a href="files/hellomax2.sch"><span class="icon fa-cube">Eagle sch file</span></a></li>
 								</ul>
 						</nav>
 						
@@ -149,7 +149,7 @@ buttonState = digitalRead(buttonPin);
                           <p>To use the FabISP i removed the two jumpers as reported in this very useful <a href="http://fabacademy.org/archives/2015/doc/programming_FabISP.html">tutorial</a> then I gave power to the Echo Board through the FTDI connector. I started using the FabISP to program the Echo Board, however I received many errors, the most common was &quot;target not responding&quot;. So to reduce the possible causes of error i used a commercial programmer &quot;<a href="http://www.fischl.de/usbasp/">usbasp</a>&quot; . It gave me the same error so I checked the board for electrical problems.</p>
                           <p>After several attempts of flashing the board I realized that the problem was caused by several short circuits. Indeed a trace underneath the microcontroller was too close to the pads and, after soldering there were unwanted junctions. I used the desoldering wire and the desoldering pump but I wasn't able to fix. So I designed another version of the board with more space between pads and traces adding an extra 0 ohm resistor as a jumper. </p>
                           <p><img src="images/problem_hellob.jpg" width="300" height="375"> </p>
-                          <p>Above the first version of the board. Below the second version. You can download the <a href="http://www.massimilianodibitonto.it/fablab/hellomax2.sch">scheme</a> and the <a href="http://www.massimilianodibitonto.it/fablab/hellomax2.brd">board</a> file for Eagle</p>
+                          <p>Above the first version of the board. Below the second version. You can download the <a href="files/hellomax2.sch">scheme</a> and the <a href="files/hellomax2.brd">board</a> file for Eagle</p>
                           <p><img src="images/traces_hello2.jpg" width="300" height="245"></p>
                           <p>After milling and soldering again the board I was able to program it using the Arduino IDE and the usbasp. The ArduinoIDEwas already configured as I already changed the boards.txt. At the beginning i burnt the bootloader using the Arduino IDE. However it doesn't really load the bootloader but just set the fuses. Then </p>
                           <p>&nbsp;</p>
@@ -162,9 +162,9 @@ buttonState = digitalRead(buttonPin);
                             <h3>Downloads</h3>
                           </header>
                              <ul>
-                                <li><a href="http://www.massimilianodibitonto.it/fablab/Button_hello.ino"><span class="icon fa-file-code-o">Arduino code</span></a></li><li><a href="http://www.massimilianodibitonto.it/fablab/hellomax2.brd"><span class="icon fa-cube">Eagle brd file</span></a></li>
+                                <li><a href="files/Button_hello.ino"><span class="icon fa-file-code-o">Arduino code</span></a></li><li><a href="files/hellomax2.brd"><span class="icon fa-cube">Eagle brd file</span></a></li>
 								
-                                <li><a href="http://www.massimilianodibitonto.it/fablab/hellomax2.sch"><span class="icon fa-cube">Eagle sch file</span></a></li>
+                                <li><a href="files/hellomax2.sch"><span class="icon fa-cube">Eagle sch file</span></a></li>
 								</ul>
                          
 </div>

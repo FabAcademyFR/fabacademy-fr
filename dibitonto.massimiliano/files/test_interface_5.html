@@ -1,0 +1,157 @@
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Machine that makes</title>
+  
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.js"></script>
+
+  
+  <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  
+  <style type="text/css">
+    
+  </style>
+  
+
+
+<script type="text/javascript">//<![CDATA[ 
+$(window).load(function(){
+$('#action-button').click(function() {
+   $.ajax({
+      url: 'http://127.0.0.1:27272/test',
+      
+   });
+});
+
+$('#load-button').click(function() {
+   $.ajax({
+      url: 'http://127.0.0.1:27272/loadLocal?fileName="square.txt"&',
+      
+   });
+});
+
+$('#run-button').click(function() {
+   $.ajax({
+      url: 'http://127.0.0.1:27272/runFile?',
+      
+   });
+});
+
+$('#home-button').click(function() {
+   $.ajax({
+      url: 'http://127.0.0.1:27272/setPosition?position=[0,0,0,0]&',
+      
+   });
+});
+
+$('#jogx1-button').click(function() {
+   $.ajax({
+      url: 'http://127.0.0.1:27272/jog?incrementalPosition=10,0,0,0&',
+      
+   });
+});
+$('#jogx2-button').click(function() {
+   $.ajax({
+      url: 'http://127.0.0.1:27272/jog?incrementalPosition=-10,0,0,0&',
+      
+   });
+});
+$('#jogy1-button').click(function() {
+   $.ajax({
+      url: 'http://127.0.0.1:27272/jog?incrementalPosition=0,10,0,0&',
+      
+   });
+});
+$('#jogy2-button').click(function() {
+   $.ajax({
+      url: 'http://127.0.0.1:27272/jog?incrementalPosition=0,-10,0,0&',
+      
+   });
+});
+$('#jogz1-button').click(function() {
+   $.ajax({
+      url: 'http://127.0.0.1:27272/jog?incrementalPosition=0,0,5,5&',
+      
+   });
+});
+$('#jogz2-button').click(function() {
+   $.ajax({
+      url: 'http://127.0.0.1:27272/jog?incrementalPosition=0,0,-5,-5&',
+      
+   });
+});
+$('#jogk1-button').click(function() {
+   $.ajax({
+      url: 'http://127.0.0.1:27272/jog?incrementalPosition=0,0,0,10&',
+      
+   });
+});
+$('#jogk2-button').click(function() {
+   $.ajax({
+      url: 'http://127.0.0.1:27272/jog?incrementalPosition=0,0,0,-10&',
+      
+   });
+});
+
+
+
+});//]]> 
+
+
+</script>
+
+
+</head>
+<body>
+  
+      
+       
+<p>&nbsp;</p>
+<table width="200" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td><button id="jogy1-button">y+10</button></td>
+    <td>&nbsp;</td>
+    <td><button id="jogz1-button">z+10</button></td>
+    <td><button id="jogk1-button">k+10</button></td>
+  </tr>
+  <tr>
+    <td><button id="jogx1-button">x+10</button></td>
+    <td><button id="home-button">set home position</button></td>
+    <td><button id="jogx2-button">x-10</button></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><button id="jogy2-button">y-10</button></td>
+    <td>&nbsp;</td>
+    <td><button id="jogz2-button">z-10</button></td>
+    <td><button id="jogk2-button">k-10</button></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table width="200" border="1">
+  <tr>
+    <td><button id="load-button">Load File</button>
+    </td>
+    <td><button id="run-button">Run File</button></td>
+    <td><button id="action-button">Click me to test!</button></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<form action="upload.php" method="post" enctype="multipart/form-data">
+    Select image to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload File" name="submit">
+</form>
+
+<div id="info"></div>
+
+  
+
+
+
+
+
+</body></html>

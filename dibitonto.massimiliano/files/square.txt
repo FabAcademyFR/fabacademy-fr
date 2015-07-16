@@ -1,0 +1,12 @@
+;GENERATED WITH PATHFINDER ON 2015-05-28 14:25:06
+;
+;---PATH 0---
+;
+;PASS # 1 @ -0.2032mm 
+/move?position=[None,None,0,0]&velocity=1
+/move?position=[None,50,None,None]&velocity=1
+/move?position=[50,None,None,None]&velocity=1
+/move?position=[None,0,None,None]&velocity=1
+/move?position=[0,None,None,None]&velocity=1
+/move?position=[None,None,10,10]&velocity=1
+;
